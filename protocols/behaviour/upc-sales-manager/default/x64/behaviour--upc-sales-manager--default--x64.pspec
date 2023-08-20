@@ -1,0 +1,261 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/upc-sales-manager/default/x64",
+  "description": [
+    "Design protocol for a micro-payment-channel sales-manager.",
+    "",
+    "A sales-manager interfaces a sales catalogue to purchase and sales requests and acts as a payment end-point.",
+    "",
+    "A purchase request can be made by the sales-manager to a remote sales manager.",
+    "A sales manager performs sales authorisation to approve the delivery of goods or services.",
+    "",
+    "The sales manager responds to a purchase request with an invoice.",
+    "Upon making payment, a sales manager responds to an invoice with a remittance.",
+    "A sales manager matches a remittance with a payment receipt to authorise sales.",
+    "",
+    "A sales manager can create/accept sales requests for/from alternate external components."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "item sales terms maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales partner",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales reference",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales request",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "request ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "new sales request (catalogue item UID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "authorise sale (sales request, request ID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "request purchase (sales request, sales partner, request ID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "set success callback",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "set failure callback",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales catalogue",
+        "protocol": "/data/sales-catalogue/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "catalogue item UID max length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "request ID minimum",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "request ID maximum",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/upc-sales-manager/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, item_sales_terms_maximum_length, sales_initialisation, sales_partner, catalogue_item_UID, sales_reference, sales_request, request_ID, new_sales_request__catalogue_item_UID_, authorise_sale__sales_request__request_ID_, request_purchase__sales_request__sales_partner__request_ID_, set_success_callback, set_failure_callback, sales_catalogue, catalogue_item_UID_max_length, request_ID_minimum, request_ID_maximum, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( core, $, item_sales_terms_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, sales_initialisation, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, sales_partner, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, catalogue_item_UID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, sales_reference, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, sales_request, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, request_ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, new_sales_request__catalogue_item_UID_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, authorise_sale__sales_request__request_ID_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, request_purchase__sales_request__sales_partner__request_ID_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, set_success_callback, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, set_failure_callback, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, sales_catalogue, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, catalogue_item_UID_max_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/minimum/x64@codevalley( core, $, request_ID_minimum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, request_ID_maximum, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "catalogue item UID max length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "request ID minimum",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "request ID maximum",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/upc-sales-manager/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "item sales terms maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales partner",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales reference",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales request",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "request ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "new sales request (catalogue item UID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "authorise sale (sales request, request ID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "request purchase (sales request, request ID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "set success callback",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "set failure callback",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "sales catalogue",
+        "protocol": "/data/sales-catalogue/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, catalogue_item_UID_max_length, request_ID_minimum, request_ID_maximum, self, item_sales_terms_maximum_length, sales_initialisation, sales_partner, catalogue_item_UID, sales_reference, sales_request, request_ID, new_sales_request__catalogue_item_UID_, authorise_sale__sales_request__request_ID_, request_purchase__sales_request__request_ID_, set_success_callback, set_failure_callback, sales_catalogue,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( core, $, item_sales_terms_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, sales_initialisation, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, sales_partner, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, catalogue_item_UID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, sales_reference, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, sales_request, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, request_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, new_sales_request__catalogue_item_UID_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, authorise_sale__sales_request__request_ID_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, request_purchase__sales_request__request_ID_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, set_success_callback, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, set_failure_callback, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, sales_catalogue, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, catalogue_item_UID_max_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/minimum/x64@codevalley( core, $, request_ID_minimum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, request_ID_maximum, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

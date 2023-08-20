@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/copy/uri/default/x64",
+  "description": [
+    "Copy a URI.",
+    "Design a contribution to copy the properties of a /source/ URI to a /target/ URI at run time. It is the client's design responsibility to ensure that the constraints of the target URI properties do not cause the copy operation to fail."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "copy",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "source uri",
+      "protocol": "/data/uri/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target uri",
+      "protocol": "/data/uri/default/x64"
+    }
+  ],
+  "obligations": []
+}

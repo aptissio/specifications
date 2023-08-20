@@ -1,0 +1,61 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/json-data-string/default/x64",
+  "description": [
+    "Create a new string within a JSON Data Types Collection & set the initial value.",
+    "",
+    "The result will either be success or one of the following failure flows depending on the result code:",
+    "      ",
+    "       Result Code",
+    "       [0,1,2] -> RESULT_SUCCESS, RESULT_EXISTING, RESULT_ERROR",
+    "     ",
+    "   0. Successfully added new string.",
+    "   1. Existing string found.",
+    "   2. Failed to add string, error encountered when adding to the string BST.",
+    "       ",
+    "       ",
+    "       ",
+    "",
+    "       Example:  \"dog\""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "json data types",
+      "protocol": "/data/json-data-types/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "initial value",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new string",
+      "protocol": "/data/json-data-string/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "existing string",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{"name": "/data/bitcoin-seed-entropy/default/x64",
+"type": "protocol",
+"policy":"0",
+"description":[""],
+"host": {
+"requirements": [
+{"name":  "entropy ",
+"type": "abstraction",
+"protocol": "/data/unsigned-integer/default/x64"}
+],
+"obligations": [
+{"name": "<self>",
+"type": "abstraction",
+"protocol": "/data/bitcoin-seed-entropy/default/x64"}
+], 
+"macro":  ["def (acs, entropy_, self, trigger, debug_msg) :",
+"sub /behaviour/add/collaboration-endpoint/host/x64@codevalley(acs, self, trigger, debug_msg) -> {",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, entropy_, trigger, debug_msg)",
+"}",
+"end"]
+},
+"join": {
+"requirements": [
+{"name": "<self>",
+"type": "abstraction",
+"protocol": "/data/bitcoin-seed-entropy/default/x64"}
+],
+"obligations": [
+{"name":  "entropy ",
+"type": "abstraction",
+"protocol": "/data/unsigned-integer/default/x64"}
+],
+"macro":  ["def (acs, self, entropy_,  trigger, debug_msg) :",
+"sub /behaviour/add/collaboration-endpoint/join/x64@codevalley(acs, self, trigger, debug_msg) -> {",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, entropy_, trigger, debug_msg)",
+"}",
+"end"]
+}
+}

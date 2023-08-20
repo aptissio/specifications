@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/bitcoin-network-message/command-name/x64",
+  "description": [
+    "Unpack \"Bitcoin Network Message\" and return \"command name\" with no zero padding."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "command name",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

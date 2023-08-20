@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-network-seed/default/linux-x64",
+  "description": [
+    "Write details of Bitcoin network seeds to an output device.",
+    "Write out a list of Bitcoin network seed IPv6 addresses."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "network seeds",
+      "protocol": "/data/bitcoin-network-seed/default/x64"
+    }
+  ],
+  "obligations": []
+}

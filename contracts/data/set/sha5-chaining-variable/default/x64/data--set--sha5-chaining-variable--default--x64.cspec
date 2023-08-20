@@ -1,0 +1,69 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/sha5-chaining-variable/default/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set(words 1 to 8)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "sha chaining variable",
+      "protocol": "/data/sha-chaining-variable/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "word 1",
+      "length": "1048576",
+      "hint": "1MB"
+    },
+    {
+      "type": "string",
+      "name": "word 2",
+      "length": "1048576",
+      "hint": "1MB"
+    },
+    {
+      "type": "string",
+      "name": "word 3",
+      "length": "1048576",
+      "hint": "1MB"
+    },
+    {
+      "type": "string",
+      "name": "word 4",
+      "length": "1048576",
+      "hint": "1MB"
+    },
+    {
+      "type": "string",
+      "name": "word 5",
+      "length": "1048576",
+      "hint": "1MB"
+    },
+    {
+      "type": "string",
+      "name": "word 6",
+      "length": "1048576",
+      "hint": "1MB"
+    },
+    {
+      "type": "string",
+      "name": "word 7",
+      "length": "1048576",
+      "hint": "1MB"
+    },
+    {
+      "type": "string",
+      "name": "word 8",
+      "length": "1048576",
+      "hint": "1MB"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/web-document/default/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "event driven application core",
+      "protocol": "/system/execution-bundle/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "page title",
+      "length": "64",
+      "hint": "64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

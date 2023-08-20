@@ -1,0 +1,37 @@
+{
+	"type": "supplier",
+	"supplier": "aptissio",
+	"name": "/data/new/bitcoin-seed-entropy/reserve/x64",
+	"description": [
+		"Generate a new Bitcoin Seed Entropy.",
+		"",
+		"Choose an INTEGER between 0-4 for the ENT size. Options below:",
+		 "",
+		"    0. 128",
+		"    1. 160",
+		"    2. 192",
+		"    3. 224",
+		"    4. 256",
+		"",
+		"    [0, 1, 2, 3, 4] - > ENT_128, ENT_160, ENT_192, ENT_224, ENT_256 ",
+		"Reference for Entropy sizes: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
+	],
+	"requirements": [{
+			"type": "abstraction",
+			"name": "new flow",
+			"protocol": "/data/flow/default/x64"
+		},
+		{
+			"type": "integer",
+			"name": "entropy size",
+			"minimum": "0",
+			"maximum": "4",
+			"hint": "0 to 4"
+		}
+	],
+	"obligations": [{
+		"type": "abstraction",
+		"name": "entropy",
+		"protocol": "/data/bitcoin-seed-entropy/default/x64"
+	}]
+}

@@ -1,0 +1,173 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form-input-text-with-instance-uid/x64",
+  "description": [
+    "Defines a one-line text input field. This design takes an instance unique identifier generated from a splay tree element. Add attributes as desired.",
+    "",
+    "The form id style specifies which form the text input belongs to.",
+    "",
+    "Add label content & choose label position options relative to Child Element:",
+    "",
+    "    1. Above",
+    "    2. Left",
+    "    3. Right",
+    "    4. Below",
+    "    ",
+    "    [1, 2, 3, 4] -> LABELPOSITION_1ABOVE, LABELPOSITION_2LEFT, LABELPOSITION_3RIGHT, LABELPOSITION_4BELOW",
+    "    ",
+    "Set an initial value of the input.",
+    "",
+    "The read only attribute specifies that an input field is read-only.",
+    "",
+    "A disabled input field is unusable and un-clickable.",
+    "",
+    "The required attribute specifies that the element must be filled out before submitting the form.",
+    "",
+    "The autofocus attribute specifies that the element should automatically get focus when the page loads.",
+    "",
+    "Autocomplete allows the browser to predict the value.",
+    "",
+    "The placeholder is a short hint is displayed in the input field before the user enters a value.",
+    "",
+    "The title attribute specifies extra information about an element.",
+    "",
+    "The maxlength attribute specifies the maximum number of characters allowed in an input field.",
+    "",
+    "The regular expression that the input field's value is checked against, when the form is. Learn more: https://www.w3schools.com/js/js_regexp.asp",
+    "",
+    "",
+    "This design takes an instance unique identifier. This is required to participate with Splay Tree.",
+    "",
+    "Example:",
+    "",
+    " <label for=\"fname\">First name: </label>",
+    "  <input type=\"text\" style=\"caret-color:#c8703f; color:#c8703f;\" id=\"fname\" name=\"fname\"><br><br>",
+    "",
+    "Read more in Details:",
+    "",
+    "https://www.w3schools.com/tags/att_input_type_text.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "label content",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "integer",
+      "name": "label position",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    },
+    {
+      "type": "abstraction",
+      "name": "initial value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "read only"
+    },
+    {
+      "type": "boolean",
+      "name": "disabled"
+    },
+    {
+      "type": "boolean",
+      "name": "required"
+    },
+    {
+      "type": "boolean",
+      "name": "autofocus"
+    },
+    {
+      "type": "boolean",
+      "name": "autocomplete"
+    },
+    {
+      "type": "string",
+      "name": "placeholder",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "title",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "integer",
+      "name": "input maximum length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "string",
+      "name": "input regex validation",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "instance unique identifier",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form parameter decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "input ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input unique identifier",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "submitted data",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input processing",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

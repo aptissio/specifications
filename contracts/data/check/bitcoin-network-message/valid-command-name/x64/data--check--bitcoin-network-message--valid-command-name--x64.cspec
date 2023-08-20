@@ -1,0 +1,21 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/check/bitcoin-network-message/valid-command-name/x64",
+  "description": [
+    "Check \"command name\" valid or not"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "check",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    }
+  ],
+  "obligations": []
+}

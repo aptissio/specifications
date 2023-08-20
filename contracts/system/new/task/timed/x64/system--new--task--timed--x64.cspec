@@ -1,0 +1,101 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/new/task/timed/x64",
+  "description": [
+    "Designs a new `task-manager` task with a built-in timer.",
+    "",
+    "The timer is started at the end of the `non-blocking work` if the `run timer` flag is set. The initial value of the `run timer` flag is established at design time by the value of the `run timer by default` literal.",
+    "",
+    "If the timer is started and is not cancelled, the `timer expired` flow will execute `timer duration (decimilliseconds)` after the `non-blocking work` is complete.",
+    "",
+    "The client may cancel the timer at any time by providing the associated `cancel timer task ID` and executing the `cancel timer procedure`.",
+    "",
+    "It is recommended to cancel the timer as soon as it is no-longer required and prior to task clean-up, as task-manager clean-up work only executes after _all_ currently scheduled tasks (of the same task ID) have been run. Placing timer cancellation work within clean-up may result in unexpected `timer expired` work being executed.",
+    "",
+    "Both `timer cancelled` and `timer expired` are executed within the context of `task-manager`."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "task manager",
+      "protocol": "/system/task-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer duration (decimilliseconds)",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "run timer by default"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "task ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "context",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "context initialisation",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "entry point",
+      "protocol": "/system/task-entry/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "exit point",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "run timer",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "non blocking work",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "cleanup work",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "cancel timer task ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "cancel timer procedure",
+      "protocol": "/data/procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer cancelled",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer expired",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

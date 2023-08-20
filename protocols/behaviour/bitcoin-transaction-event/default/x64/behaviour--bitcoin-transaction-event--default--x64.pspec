@@ -1,0 +1,78 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/bitcoin-transaction-event/default/x64",
+  "description": [
+    "Design a bitcoin transaction event."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "transaction",
+        "protocol": "/data/bitcoin-transaction/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction epoch",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction event",
+        "protocol": "/system/app-flow/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/bitcoin-transaction-event/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, transaction, transaction_epoch, transaction_event, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, transaction, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, transaction_epoch, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, transaction_event, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/bitcoin-transaction-event/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "transaction",
+        "protocol": "/data/bitcoin-transaction/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction epoch",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction event",
+        "protocol": "/system/app-flow/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, self, transaction, transaction_epoch, transaction_event,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, transaction, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, transaction_epoch, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, transaction_event, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

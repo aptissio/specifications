@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/observe/bitcoin-transaction/transaction-id/x64",
+  "description": [
+    "Observe the `transaction id` collaboration from a `transaction` collaboration design."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "transaction id",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ]
+}

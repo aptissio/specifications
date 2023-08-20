@@ -1,0 +1,88 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/button-add-product-row-to-cashbar-core/x64",
+  "description": [
+    "Add an Add Product Row Button to a Splay Tree within a Web Document.",
+    "",
+    "Enable font awesome feature.",
+    "",
+    "This Delete Button assumes a Plus font awesome Icon. Example:",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/button-add-to-splay-tree.png\" width=\"100%\" height=\"450\">",
+    "",
+    "",
+    "Provide an element id style selector for the target element for this desired behaviour. ie: Add a Product Row to a Form.",
+    "",
+    "This design creates a new Product Row with a Delete Button to Remove the Row as seen above - styling to be applied as desired."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "javascript name-space",
+      "protocol": "/data/unique-identifier-scope/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "button class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome feature",
+      "protocol": "/data/html-document-feature-font-awesome/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome icon class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "product ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "product name",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "product price",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "product bch address",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "enable BCH (default: AUD)",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target element ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "button ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome icon ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

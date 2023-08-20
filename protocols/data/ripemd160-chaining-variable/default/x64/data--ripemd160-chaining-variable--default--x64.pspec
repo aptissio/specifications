@@ -1,0 +1,102 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/ripemd160-chaining-variable/default/x64",
+  "description": [
+    "A variable used to carry the result of one iteration to the next in an iterative hashing operation. This five variable are used in the Ripemd-160 functions"
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "word 1",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "word 2",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "word 3",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "word 4",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "word 5",
+        "protocol": "/data/unsigned-integer/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/ripemd160-chaining-variable/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, word_1, word_2, word_3, word_4, word_5, ripemd160_chaining_variable_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, ripemd160_chaining_variable_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, word_1, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, word_2, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, word_3, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, word_4, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, word_5, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/ripemd160-chaining-variable/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "word 1",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "word 2",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "word 3",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "word 4",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "word 5",
+        "protocol": "/data/unsigned-integer/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, ripemd160_chaining_variable_inout, word_1, word_2, word_3, word_4, word_5, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, ripemd160_chaining_variable_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, word_1, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, word_2, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, word_3, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, word_4, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, word_5, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  }
+}

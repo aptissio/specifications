@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-property/width/x64",
+  "description": [
+    "Add the Width property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "Specify the <i>width</i> of the element & whether the units are fixed(px) or relative(%)"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "width",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0 - 2000"
+    },
+    {
+      "type": "boolean",
+      "name": "width fixed"
+    }
+  ],
+  "obligations": []
+}

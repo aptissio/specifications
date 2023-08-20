@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/ipv6-address/default/x64",
+  "description": [
+    "Check two Ipv6 addresses are the same."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "address1",
+      "protocol": "/data/ipv6-address/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "address2",
+      "protocol": "/data/ipv6-address/default/x64"
+    }
+  ],
+  "obligations": []
+}

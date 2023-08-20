@@ -1,0 +1,24 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/bitcoin-public-key-script/p2pkh/x64",
+  "description": [
+    "Unpack a Bitcoin public key script hash from a pay to public key hash script. This script is associated with a Bitcoin transaction output.",
+    "Unpack the 20-byte RIPEMD160 hash from a transaction output public key script. The input data must include the full script, including OP-codes in the format: OP_DUP, OP_HASH160, hash160[20], OP_EQUALVERIFY, OP_CHECKSIG",
+    "The hash is provided as little-endian bytes."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "public key hash",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bytesequence/non-zero-length/linux-x64",
+  "description": [
+    "Write a bytesequence.",
+    "Write the given 'bytesequence in (having length greater than zero)' to standard out"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "1024",
+      "hint": "2^20"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequecne",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "suffix",
+      "length": "1024",
+      "hint": "2^20"
+    }
+  ],
+  "obligations": []
+}

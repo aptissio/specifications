@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/parse/secp256k1-public-key/default/x64",
+  "description": [
+    "type here to preview description"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "secp256k1 public key",
+      "protocol": "/data/secp256k1-public-key/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "public key",
+      "protocol": "/data/finite-field-elliptic-curve-point/default/x64"
+    }
+  ]
+}

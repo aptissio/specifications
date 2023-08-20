@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compute/bitcoin-checksum/bytesequence/x64",
+  "description": [
+    "Compute the Bitcoin checksum of a given structure. The checksum is defined as the four least significant bytes of the double SHA256 hash of the structure.",
+    "Compute a 4-byte /checksum/ from the given /bytesequence/ using a double-SHA256 hash. This is typically used in Bitcoin network communications."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compute",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "double sha256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "checksum",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ]
+}

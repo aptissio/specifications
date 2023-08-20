@@ -1,0 +1,234 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/http-request1/default/x64",
+  "description": [
+    "A protocol for designing a HTTP request."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "method",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "major version",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "minor version",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "header list",
+        "protocol": "/data/list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "header name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "header value",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "body",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "method length maximum",
+        "minimum": "0",
+        "maximum": "15",
+        "hint": "0 to 15"
+      },
+      {
+        "type": "integer",
+        "name": "target length maximum",
+        "minimum": "0",
+        "maximum": "2048",
+        "hint": "0 to 2048"
+      },
+      {
+        "type": "integer",
+        "name": "required header list capacity",
+        "minimum": "0",
+        "maximum": "1024",
+        "hint": "0 to 1024"
+      },
+      {
+        "type": "integer",
+        "name": "header name length maximum",
+        "minimum": "0",
+        "maximum": "16384",
+        "hint": "0 to 16384"
+      },
+      {
+        "type": "integer",
+        "name": "header value length maximum",
+        "minimum": "0",
+        "maximum": "16384",
+        "hint": "0 to 16384"
+      },
+      {
+        "type": "integer",
+        "name": "body length maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/http-request1/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, method, target, major_version, minor_version, header_list, header_name, header_value, body, method_length_maximum, target_length_maximum, required_header_list_capacity, header_name_length_maximum, header_value_length_maximum, body_length_maximum, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, method, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, major_version, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, minor_version, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, header_list, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, header_name, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, header_value, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, body, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, method_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, target_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/default/x64@codevalley( acs, $, required_header_list_capacity, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, header_name_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, header_value_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, body_length_maximum, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "method length maximum",
+        "minimum": "0",
+        "maximum": "15",
+        "hint": "0 to 15"
+      },
+      {
+        "type": "integer",
+        "name": "target length maximum",
+        "minimum": "0",
+        "maximum": "2048",
+        "hint": "0 to 2048"
+      },
+      {
+        "type": "integer",
+        "name": "required header list capacity",
+        "minimum": "0",
+        "maximum": "1024",
+        "hint": "0 to 1024"
+      },
+      {
+        "type": "integer",
+        "name": "header name length maximum",
+        "minimum": "0",
+        "maximum": "16384",
+        "hint": "0 to 16384"
+      },
+      {
+        "type": "integer",
+        "name": "header value length maximum",
+        "minimum": "0",
+        "maximum": "16384",
+        "hint": "0 to 16384"
+      },
+      {
+        "type": "integer",
+        "name": "body length maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/http-request1/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "method",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "major version",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "minor version",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "header list",
+        "protocol": "/data/list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "header name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "header value",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "body",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, method_length_maximum, target_length_maximum, required_header_list_capacity, header_name_length_maximum, header_value_length_maximum, body_length_maximum, self, method, target, major_version, minor_version, header_list, header_name, header_value, body,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, method, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, major_version, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, minor_version, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, header_list, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, header_name, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, header_value, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, body, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, method_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, target_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/default/x64@codevalley( acs, $, required_header_list_capacity, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, header_name_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, header_value_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, body_length_maximum, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

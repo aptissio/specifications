@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-redeem-script-map/reserve/linux-x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "redeem script map",
+      "protocol": "/data/bitcoin-redeem-script-map/default/x64"
+    }
+  ]
+}

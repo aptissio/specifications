@@ -1,0 +1,30 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/currency-value/from-unsigned-integer/x64",
+  "description": [
+    "Set a currency value at run-time. Set a /currency value/ based on the design-time /magnitude/ and /sign/."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set(positive sign, magnitude)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "currency value",
+      "protocol": "/data/currency-value/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "positive sign"
+    },
+    {
+      "type": "abstraction",
+      "name": "magnitude",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

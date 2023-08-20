@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/get/bytesequence-length/default/x64",
+  "description": [
+    "Retrieves the current length of a bytesequence",
+    "Provide a new integer, /bytesequence length/, equal in value to the current length of /bytesequence in/. The minimum and maximum values of /bytesequence length/ are inherited from the bytesequence."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "get(bytesequence)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence in",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "bytesequence length",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

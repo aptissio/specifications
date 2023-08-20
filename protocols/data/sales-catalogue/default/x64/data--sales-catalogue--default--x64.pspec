@@ -1,0 +1,102 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/sales-catalogue/default/x64",
+  "description": [
+    "Design and use a sales-catalogue with an efficient search by Unique ID (UID) capability."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "target item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue",
+        "protocol": "/data/binary-search-tree/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue item sales terms",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue item context",
+        "protocol": "/data/structure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/sales-catalogue/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, target_item_UID, catalogue, catalogue_item_UID, catalogue_item_sales_terms, catalogue_item_context, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, target_item_UID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, catalogue, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, catalogue_item_UID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, catalogue_item_sales_terms, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, catalogue_item_context, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/sales-catalogue/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "target item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue",
+        "protocol": "/data/binary-search-tree/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue item sales terms",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "catalogue item context",
+        "protocol": "/data/structure/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, self, target_item_UID, catalogue, catalogue_item_UID, catalogue_item_sales_terms, catalogue_item_context,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, target_item_UID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, catalogue, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, catalogue_item_UID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, catalogue_item_sales_terms, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, catalogue_item_context, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

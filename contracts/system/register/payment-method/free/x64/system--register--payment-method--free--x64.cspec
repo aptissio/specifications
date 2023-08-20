@@ -1,0 +1,48 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/register/payment-method/free/x64",
+  "description": [
+    "Register a payment-method.",
+    "Register a payment method that maintains a balance of 'payments' in a fictitious 'free' currency.",
+    "This design contribution is useful for run-time testing of systems.",
+    "",
+    "Payments registered to this payment method will always return 'payment complete', even if the destination's balance reduces below zero.",
+    "",
+    "A destination balance will saturate at +(2^63)-1 and -(2^63)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "register",
+      "protocol": "/system/payment-method/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "currency ticker",
+      "length": "10",
+      "hint": "10"
+    },
+    {
+      "type": "integer",
+      "name": "payment destination capacity",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "payment destination max length",
+      "minimum": "1",
+      "maximum": "1048576",
+      "hint": "1 to 2^20"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "free currency",
+      "protocol": "/data/currency/default/x64"
+    }
+  ]
+}

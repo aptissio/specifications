@@ -1,0 +1,21 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/check/sorted-map/full/x64",
+  "description": [
+    "Determine whether a sorted-map has no capacity available to add items."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "check(map)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "map",
+      "protocol": "/data/sorted-map/default/x64"
+    }
+  ],
+  "obligations": []
+}

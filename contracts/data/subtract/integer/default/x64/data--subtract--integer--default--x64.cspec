@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/subtract/integer/default/x64",
+  "description": [
+    "Subtract 'second operand in' from the 'first operand in' and write the result to 'result out.' ",
+    "",
+    "Notes:",
+    "* Principles of saturation arithmetic are upheld. If the subtraction result exceeds or is less than the maximum/minimum possible values of the result, 'result out' is set to the maximum/minimum value."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "result = subtract(op 1, op 2)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "op 1",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "op 2",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

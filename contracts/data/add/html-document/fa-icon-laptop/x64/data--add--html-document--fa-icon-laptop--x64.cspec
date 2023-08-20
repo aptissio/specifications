@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/fa-icon-laptop/x64",
+  "description": [
+    "Add a Laptop icon to a HTML Document. ",
+    "",
+    "Enable font awesome feature.",
+    "",
+    "Apply the desired styles to the division. Optional ID Selecter for styling CSS.",
+    "",
+    "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fas\" data-icon=\"laptop\" class=\"svg-inline--fa fa-laptop fa-w-20\" role=\"img\" height=\"50\" width=\"50\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 512\"><path fill=\"currentColor\" d=\"M624 416H381.54c-.74 19.81-14.71 32-32.74 32H288c-18.69 0-33.02-17.47-32.77-32H16c-8.8 0-16 7.2-16 16v16c0 35.2 28.8 64 64 64h512c35.2 0 64-28.8 64-64v-16c0-8.8-7.2-16-16-16zM576 48c0-26.4-21.6-48-48-48H112C85.6 0 64 21.6 64 48v336h512V48zm-64 272H128V64h384v256z\"></path></svg>",
+    "",
+    "See Docs for more info: ",
+    "",
+    "https://fontawesome.com/how-to-use/on-the-web/referencing-icons/basic-use"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome feature",
+      "protocol": "/data/html-document-feature-font-awesome/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

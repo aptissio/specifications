@@ -1,0 +1,38 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/iterate/over-array/until/x64",
+  "description": [
+    "Iterate over an array, providing each element.",
+    "Iterates over an array until the /pre-condition/ or /post-condition/ evaluate true. Array elements are made valid prior to the evaluation of both conditions."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "iterate(array, {each})",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "array",
+      "protocol": "/data/array/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "pre-condition",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "each(element)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "post-condition",
+      "protocol": "/data/boolean-condition/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/bitcoin-script-coin-index/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "target coin script hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target coin amount",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target coin transaction ID",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target coin output index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin index",
+        "protocol": "/data/binary-search-tree/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin script hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin amount",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin transaction ID",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin output index",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/bitcoin-script-coin-index/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, target_coin_script_hash, target_coin_amount, target_coin_transaction_ID, target_coin_output_index, coin_index, coin_script_hash, coin_amount, coin_transaction_ID, coin_output_index, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_coin_script_hash, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_coin_amount, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_coin_transaction_ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_coin_output_index, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, coin_index, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, coin_script_hash, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, coin_amount, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, coin_transaction_ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, coin_output_index, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/bitcoin-script-coin-index/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "target coin script hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target coin amount",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target coin transaction ID",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target coin output index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin index",
+        "protocol": "/data/binary-search-tree/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin script hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin amount",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin transaction ID",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "coin output index",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, self, target_coin_script_hash, target_coin_amount, target_coin_transaction_ID, target_coin_output_index, coin_index, coin_script_hash, coin_amount, coin_transaction_ID, coin_output_index,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_coin_script_hash, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_coin_amount, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_coin_transaction_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_coin_output_index, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, coin_index, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, coin_script_hash, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, coin_amount, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, coin_transaction_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, coin_output_index, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

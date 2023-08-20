@@ -1,0 +1,101 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/flexible-layout-item-profile-bio-card/x64",
+  "description": [
+    "Add a Profile biography Flexible Layout Card to a HTML Document.",
+    "",
+    "This card consists of an <i>image(headshot) source url</i>, a <i>Full Name</i>, <i>Job Title</i> &  <i>Biography Description.</i> ",
+    "",
+    "Provide a <i>font-family priority list</i> as desired.",
+    "",
+    "Specify a <i> Background, Heading, Description & Social Media Group background Colour</i> for the Card.",
+    "",
+    "Apply styling to the Class or ID Selectors as desired.",
+    "",
+    "<img src=\"https://res.cloudinary.com/dmt8fqzag/image/upload/v1613087645/Screenshot_347_djlrlt.png\" height=200>"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "flexible layout",
+      "protocol": "/data/flexible-layout/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "profile card class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "card background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "profile image url",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "font-family priority list",
+      "protocol": "/data/html-font-family-priority-list/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "name heading",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "job title heading",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "heading colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "heading hover colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "biography description",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "biography description colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "social media group background colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "card ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "social media group ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "social media group",
+      "protocol": "/data/web-document-social-media-group/default/x64"
+    }
+  ]
+}

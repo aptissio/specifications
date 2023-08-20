@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/ipv4-as-ipv6-network-address/default/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "little endian port"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "network",
+      "protocol": "/data/network-address/default/x64"
+    }
+  ]
+}

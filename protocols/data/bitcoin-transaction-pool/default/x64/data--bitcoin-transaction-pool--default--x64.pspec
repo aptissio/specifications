@@ -1,0 +1,622 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/bitcoin-transaction-pool/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "max serialised len",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "input capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "output capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "pubkey script capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "signature script capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "boolean",
+        "name": "ECDSA signatures enabled"
+      },
+      {
+        "type": "boolean",
+        "name": "uncompressed public keys enabled"
+      },
+      {
+        "type": "boolean",
+        "name": "null data outputs enabled"
+      },
+      {
+        "type": "integer",
+        "name": "required multisig signatures (M) capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "total multisig signatures (N) capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction uid",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "version",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction id",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "output count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "locktime",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input outpoint hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input outpoint index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input signature script",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input sequence number",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "output value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "output pubkey script",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add transaction procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup transaction procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add transaction input procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction input index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup transaction input procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add transaction output procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction output index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup transaction output procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "encode transaction procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "encoded serialised transaction",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "set transaction id proc",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "remove flag",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure error flag",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "callback procedure",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "maximum transaction input capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum transaction output capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "boolean",
+        "name": "enable ECDSA signatures"
+      },
+      {
+        "type": "boolean",
+        "name": "enable uncompressed public keys"
+      },
+      {
+        "type": "boolean",
+        "name": "enable null data outputs"
+      },
+      {
+        "type": "integer",
+        "name": "maximum required multisig signatures (M)",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum total multisig signatures (N)",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum public key script length override",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum signature script length override",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/bitcoin-transaction-pool/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, max_serialised_len, input_capacity, output_capacity, pubkey_script_capacity, signature_script_capacity, ECDSA_signatures_enabled, uncompressed_public_keys_enabled, null_data_outputs_enabled, required_multisig_signatures__M__capacity, total_multisig_signatures__N__capacity, transaction_uid, version, transaction_id, input_count, output_count, locktime, input_outpoint_hash, input_outpoint_index, input_signature_script, input_sequence_number, output_value, output_pubkey_script, add_transaction_procedure, lookup_transaction_procedure, add_transaction_input_procedure, transaction_input_index, lookup_transaction_input_procedure, add_transaction_output_procedure, transaction_output_index, lookup_transaction_output_procedure, encode_transaction_procedure, encoded_serialised_transaction, set_transaction_id_proc, remove_flag, procedure_error_flag, callback_procedure, maximum_transaction_input_capacity, maximum_transaction_output_capacity, enable_ECDSA_signatures, enable_uncompressed_public_keys, enable_null_data_outputs, maximum_required_multisig_signatures__M_, maximum_total_multisig_signatures__N_, maximum_public_key_script_length_override, maximum_signature_script_length_override, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, max_serialised_len, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, input_capacity, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, output_capacity, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, pubkey_script_capacity, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, signature_script_capacity, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-boolean/default/x64@codevalley( acs, $, ECDSA_signatures_enabled, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-boolean/default/x64@codevalley( acs, $, uncompressed_public_keys_enabled, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-boolean/default/x64@codevalley( acs, $, null_data_outputs_enabled, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, required_multisig_signatures__M__capacity, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, total_multisig_signatures__N__capacity, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, transaction_uid, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, version, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, transaction_id, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, input_count, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, output_count, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, locktime, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, input_outpoint_hash, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, input_outpoint_index, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, input_signature_script, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, input_sequence_number, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, output_value, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, output_pubkey_script, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, add_transaction_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, lookup_transaction_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, add_transaction_input_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, transaction_input_index, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, lookup_transaction_input_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, add_transaction_output_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, transaction_output_index, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, lookup_transaction_output_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, encode_transaction_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, encoded_serialised_transaction, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, set_transaction_id_proc, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, remove_flag, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, procedure_error_flag, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, callback_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_transaction_input_capacity, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_transaction_output_capacity, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-boolean/default/x64@codevalley( acs, $, enable_ECDSA_signatures, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-boolean/default/x64@codevalley( acs, $, enable_uncompressed_public_keys, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-boolean/default/x64@codevalley( acs, $, enable_null_data_outputs, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_required_multisig_signatures__M_, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_total_multisig_signatures__N_, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_public_key_script_length_override, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_signature_script_length_override, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "maximum transaction input capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum transaction output capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "boolean",
+        "name": "enable ECDSA signatures"
+      },
+      {
+        "type": "boolean",
+        "name": "enable uncompressed public keys"
+      },
+      {
+        "type": "boolean",
+        "name": "enable null data outputs"
+      },
+      {
+        "type": "integer",
+        "name": "maximum required multisig signatures (M)",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum total multisig signatures (N)",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum public key script length override",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum signature script length override",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/bitcoin-transaction-pool/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "max serialised len",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "input capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "output capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "pubkey script capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "signature script capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "boolean",
+        "name": "ECDSA signatures enabled"
+      },
+      {
+        "type": "boolean",
+        "name": "uncompressed public keys enabled"
+      },
+      {
+        "type": "boolean",
+        "name": "null data outputs enabled"
+      },
+      {
+        "type": "integer",
+        "name": "required multisig signatures (M) capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "total multisig signatures (N) capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction uid",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "version",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction id",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "output count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "locktime",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input outpoint hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input outpoint index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input signature script",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "input sequence number",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "output value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "output pubkey script",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add transaction procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup transaction procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add transaction input procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction input index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup transaction input procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add transaction output procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "transaction output index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup transaction output procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "encode transaction procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "encoded serialised transaction",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "set transaction id proc",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "remove flag",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure error flag",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "callback procedure",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, maximum_transaction_input_capacity, maximum_transaction_output_capacity, enable_ECDSA_signatures, enable_uncompressed_public_keys, enable_null_data_outputs, maximum_required_multisig_signatures__M_, maximum_total_multisig_signatures__N_, maximum_public_key_script_length_override, maximum_signature_script_length_override, self, max_serialised_len, input_capacity, output_capacity, pubkey_script_capacity, signature_script_capacity, ECDSA_signatures_enabled, uncompressed_public_keys_enabled, null_data_outputs_enabled, required_multisig_signatures__M__capacity, total_multisig_signatures__N__capacity, transaction_uid, version, transaction_id, input_count, output_count, locktime, input_outpoint_hash, input_outpoint_index, input_signature_script, input_sequence_number, output_value, output_pubkey_script, add_transaction_procedure, lookup_transaction_procedure, add_transaction_input_procedure, transaction_input_index, lookup_transaction_input_procedure, add_transaction_output_procedure, transaction_output_index, lookup_transaction_output_procedure, encode_transaction_procedure, encoded_serialised_transaction, set_transaction_id_proc, remove_flag, procedure_error_flag, callback_procedure,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, max_serialised_len, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, input_capacity, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, output_capacity, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, pubkey_script_capacity, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, signature_script_capacity, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-boolean/default/x64@codevalley( acs, $, ECDSA_signatures_enabled, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-boolean/default/x64@codevalley( acs, $, uncompressed_public_keys_enabled, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-boolean/default/x64@codevalley( acs, $, null_data_outputs_enabled, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, required_multisig_signatures__M__capacity, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, total_multisig_signatures__N__capacity, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, transaction_uid, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, version, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, transaction_id, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, input_count, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, output_count, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, locktime, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, input_outpoint_hash, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, input_outpoint_index, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, input_signature_script, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, input_sequence_number, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, output_value, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, output_pubkey_script, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, add_transaction_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, lookup_transaction_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, add_transaction_input_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, transaction_input_index, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, lookup_transaction_input_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, add_transaction_output_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, transaction_output_index, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, lookup_transaction_output_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, encode_transaction_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, encoded_serialised_transaction, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, set_transaction_id_proc, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, remove_flag, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, procedure_error_flag, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, callback_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_transaction_input_capacity, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_transaction_output_capacity, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-boolean/default/x64@codevalley( acs, $, enable_ECDSA_signatures, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-boolean/default/x64@codevalley( acs, $, enable_uncompressed_public_keys, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-boolean/default/x64@codevalley( acs, $, enable_null_data_outputs, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_required_multisig_signatures__M_, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_total_multisig_signatures__N_, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_public_key_script_length_override, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_signature_script_length_override, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

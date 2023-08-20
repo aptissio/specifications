@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/check/bitcoin-network-message/command-name/x64",
+  "description": [
+    "Compares the provided /command name/ with the command name of the Bitcoin network /message/ and return true if equal.",
+    "Note that the supplied /command name/ MUST be lower case as used in the protocol."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "check",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "command name",
+      "length": "12",
+      "hint": "12"
+    }
+  ],
+  "obligations": []
+}

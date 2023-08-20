@@ -1,0 +1,272 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/html-style-sheet/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "boolean",
+        "name": "formatted"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialise",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "style list",
+        "protocol": "/data/list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "style handle",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "id style",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "name style",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "class style",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "selector",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "property list",
+        "protocol": "/data/list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "parent style handle",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "property name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "property value",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "style count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum selector length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "property count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum property name length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum property value length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-style-sheet/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, formatted, initialise, style_list, style_handle, id_style, name_style, class_style, selector, property_list, parent_style_handle, property_name, property_value, style_count, maximum_selector_length, property_count, maximum_property_name_length, maximum_property_value_length, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/dictate/agent-boolean/default/x64@codevalley( acs, $, formatted, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, initialise, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, style_list, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, style_handle, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, id_style, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, name_style, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, class_style, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, selector, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, property_list, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, parent_style_handle, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, property_name, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, property_value, trigger, debug_msg)",
+      "sub /behaviour/new/agent-integer/constant/x64@codevalley( acs, 0, trigger, debug_msg) -> zero",
+      "sub /behaviour/collect-and-distribute/agent-integer/default/x64@codevalley( acs, $, zero, style_count, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_selector_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/default/x64@codevalley( acs, $, property_count, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_property_name_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_property_value_length, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "style count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum selector length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "property count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum property name length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum property value length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-style-sheet/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "boolean",
+        "name": "formatted"
+      },
+      {
+        "type": "integer",
+        "name": "allocated style handle",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialise",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "style list",
+        "protocol": "/data/list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "style handle",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "id style",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "name style",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "class style",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "selector",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "property list",
+        "protocol": "/data/list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "parent style handle",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "property name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "property value",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, style_count, maximum_selector_length, property_count, maximum_property_name_length, maximum_property_value_length, self, formatted, allocated_style_handle, initialise, style_list, style_handle, id_style, name_style, class_style, selector, property_list, parent_style_handle, property_name, property_value,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/accept/agent-boolean/default/x64@codevalley( acs, $, formatted, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, initialise, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, style_list, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, style_handle, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, id_style, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, name_style, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, class_style, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, selector, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, property_list, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, parent_style_handle, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, property_name, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, property_value, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-integer/default/x64@codevalley( acs, $, style_count, allocated_style_handle, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_selector_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/default/x64@codevalley( acs, $, property_count, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_property_name_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_property_value_length, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

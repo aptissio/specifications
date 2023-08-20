@@ -1,0 +1,72 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-wallet-account/default/x64",
+  "description": [
+    "Design a new Bitcoin wallet account.",
+    "Create a new account within the supplied Bitcoin /wallet/ using the given /account number/, /account title/ and /account description/.",
+    "",
+    "This contribution creates a new account key pair and their internal and external child key-pairs using _[[https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki][BIP44]]_ Hierarchical Deterministic key derivation.",
+    "",
+    "The client must provide procedures for SHA256, RipeMD160 and HMAC512 to enable key derivation for the account."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account title",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account description",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "SHA256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RipeMD160 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "HMAC512 procedure",
+      "protocol": "/data/hmac-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "already exists",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

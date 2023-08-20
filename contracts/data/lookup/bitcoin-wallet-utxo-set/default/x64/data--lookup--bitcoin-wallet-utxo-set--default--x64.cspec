@@ -1,0 +1,67 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/lookup/bitcoin-wallet-utxo-set/default/x64",
+  "description": [
+    "Lookup a Bitcoin wallet UTXO set."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "lookup",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet utxo set",
+      "protocol": "/data/bitcoin-wallet-utxo-set/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target transaction ID",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target index",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "amount",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo public key script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo p2pkh",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo height",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

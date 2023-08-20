@@ -1,0 +1,186 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/system/application-core/default/x64",
+  "description": [
+    "This protocol provides the core elements required by a typical application. It has been created to assist behaviour layer specialists to collaborate when integrating domain specific application tasks."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "maximum task manager instances",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum tasks per instance",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "task manager",
+        "protocol": "/system/task-manager/default/x64"
+      },
+      {
+        "type": "integer",
+        "name": "maximum simultaneous timers",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "timer manager",
+        "protocol": "/system/timer-manager/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "read monitor",
+        "protocol": "/system/io-monitor/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "write monitor",
+        "protocol": "/system/io-monitor/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialisation pid",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "context",
+        "protocol": "/data/structure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialisation exit",
+        "protocol": "/system/task-exit/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/system/application-core/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, maximum_task_manager_instances, maximum_tasks_per_instance, task_manager, maximum_simultaneous_timers, timer_manager, read_monitor, write_monitor, initialisation_pid, context, initialisation, initialisation_exit, application_core_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, application_core_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, maximum_task_manager_instances, trigger, debug_msg)",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, maximum_tasks_per_instance, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, task_manager, trigger, debug_msg)",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, maximum_simultaneous_timers, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, timer_manager, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, read_monitor, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, write_monitor, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, initialisation_pid, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, context, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, initialisation, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, initialisation_exit, trigger, debug_msg)",
+      "}",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/system/application-core/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "maximum task manager instances",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum tasks per instance",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "task manager",
+        "protocol": "/system/task-manager/default/x64"
+      },
+      {
+        "type": "integer",
+        "name": "maximum simultaneous timers",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "timer manager",
+        "protocol": "/system/timer-manager/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "read monitor",
+        "protocol": "/system/io-monitor/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "write monitor",
+        "protocol": "/system/io-monitor/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialisation pid",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "context",
+        "protocol": "/data/structure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialisation exit",
+        "protocol": "/system/task-exit/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, application_core_inout, maximum_task_manager_instances, maximum_tasks_per_instance, task_manager, maximum_simultaneous_timers, timer_manager, read_monitor, write_monitor, initialisation_pid, context, initialisation, initialisation_exit, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, application_core_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, maximum_task_manager_instances, trigger, debug_msg)",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, maximum_tasks_per_instance, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, task_manager, trigger, debug_msg)",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, maximum_simultaneous_timers, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, timer_manager, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, read_monitor, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, write_monitor, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, initialisation_pid, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, context, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, initialisation, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, initialisation_exit, trigger, debug_msg)",
+      "}",
+      "end "
+    ]
+  }
+}

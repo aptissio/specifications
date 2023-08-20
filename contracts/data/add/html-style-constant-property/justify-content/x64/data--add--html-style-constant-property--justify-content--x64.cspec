@@ -1,0 +1,51 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant-property/justify-content/x64",
+  "description": [
+    "Add the Justify Content property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).",
+    "",
+    "<img src=\"https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg\" width=\"400\" height=\"400\"> ",
+    "",
+    "Tip: Use the align-items property to align the items vertically.",
+    "",
+    "    -1 - inherit   Inherits this property from its parent element. ",
+    "     0 - initial    Sets this property to its default value. ",
+    "     1 - flex-start Default value. Items are positioned at the beginning ",
+    "                       of the container\t",
+    "     2 - flex-end   Items are positioned at the end of the container \t",
+    "     3 - center     Items are positioned in the center of the container\t",
+    "     4 - space-between   Items will have space between them \t",
+    "     5 - space-around   Items will have space before, between, and after them\t",
+    "     6 - space-evenly - items are distributed so that the spacing between any two items (and the ",
+    "          space to the edges) is equal.",
+    "",
+    "    [-1, 0, 1, 2, 3, 4, 5, 6] -> ",
+    "    JUSTIFYCONTENT_INHERIT, JUSTIFYCONTENT_0INITIAL, JUSTIFYCONTENT_1FLEXSTART, JUSTIFYCONTENT_2FLEXEND, JUSTIFYCONTENT_3CENTER, JUSTIFYCONTENT_4SPACEBETWEEN, JUSTIFYCONTENT_5SPACEAROUND, JUSTIFYCONTENT_6SPACEEVENLY",
+    "",
+    "",
+    "Learn more: https://www.w3schools.com/cssref/css3_pr_justify-content.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "value",
+      "minimum": "-1",
+      "maximum": "6",
+      "hint": "-1 to 6"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,39 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/command-line-menu/default/linux-x64",
+  "description": [
+    "Add a new command-line menu feature.",
+    "",
+    "If /enable clear screen/ is 'true' then the command-line screen will be cleared each time the menu is displayed."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "application core",
+      "protocol": "/system/execution-bundle/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "menu title",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "boolean",
+      "name": "enable clear screen"
+    },
+    {
+      "type": "abstraction",
+      "name": "start command-line menu",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "menu",
+      "protocol": "/behaviour/command-line-menu/default/x64"
+    }
+  ]
+}

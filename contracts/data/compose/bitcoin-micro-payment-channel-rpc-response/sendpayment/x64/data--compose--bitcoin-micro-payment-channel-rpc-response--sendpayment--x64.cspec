@@ -1,0 +1,32 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compose/bitcoin-micro-payment-channel-rpc-response/sendpayment/x64",
+  "description": [
+    "Compose a Bitcoin micro-payment channel RPC method response.",
+    "Assemble a JSON-RPC response to the Bitcoin micro-payment channel RPC method 'sendpayment'. The response includes the channel ID from the /micro-payment channel/ and the /channel balance/ which are assembled into the client provided /micro-payment channel RPC interface/ ready for sending using the \\/data\\/send\\/json-rpc\\/response."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compose()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "channel balance",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "micro-payment channel",
+      "protocol": "/data/bitcoin-micro-payment-channel/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "micro-payment channel RPC interface",
+      "protocol": "/data/json-rpc-interface/default/x64"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,66 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/json-data-object/default/x64",
+  "description": [
+    "Create an instance of a JSON Data object with a unique ID. Get access to all objects within a JSON Data Collection"
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "json data objects",
+        "protocol": "/data/json-data-objects/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "object id",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/json-data-object/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, json_data_objects, object_id, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, json_data_objects, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, object_id, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/json-data-object/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "json data objects",
+        "protocol": "/data/json-data-objects/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "object id",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, self, json_data_objects, object_id,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, json_data_objects, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, object_id, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

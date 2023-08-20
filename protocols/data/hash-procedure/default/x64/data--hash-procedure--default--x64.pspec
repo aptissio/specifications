@@ -1,0 +1,126 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/hash-procedure/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "block size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "hash size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "hash procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "hash payload",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "hash result",
+        "protocol": "/data/bytes/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "payload length max",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/hash-procedure/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, block_size, hash_size, hash_procedure, hash_payload, hash_result, payload_length_max, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, block_size, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, hash_size, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, hash_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, hash_payload, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, hash_result, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, payload_length_max, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "payload length max",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/hash-procedure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "block size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "hash size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "hash procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "hash payload",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "hash result",
+        "protocol": "/data/bytes/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, payload_length_max, self, block_size, hash_size, hash_procedure, hash_payload, hash_result,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, block_size, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, hash_size, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, hash_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, hash_payload, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, hash_result, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, payload_length_max, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

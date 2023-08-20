@@ -1,0 +1,17 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/enable/html-document/font-awesome/x64",
+  "description": [
+    "Enable font awesome for a HTML Document.",
+    "See https://fontawesome.com/ for Docs"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ],
+  "obligations": []
+}

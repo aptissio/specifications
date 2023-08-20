@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/bytesequence/json-constant-name/x64",
+  "description": [
+    "Contiguous raw bytes of variable length."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "name",
+      "length": "1024",
+      "hint": "1024"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": []
+}

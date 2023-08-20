@@ -1,0 +1,24 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/observe/bytesequence/maximum-length/x64",
+  "description": [
+    "Observe the `maximum length` resulting from the design of a bytesequence."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "integer",
+      "name": "maximum length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ]
+}

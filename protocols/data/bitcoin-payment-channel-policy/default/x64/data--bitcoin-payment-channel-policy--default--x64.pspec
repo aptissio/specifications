@@ -1,0 +1,116 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/bitcoin-payment-channel-policy/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "policy min value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy pref value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy max value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy min duration",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy pref duration",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy max duration",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-payment-channel-policy/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, policy_min_value, policy_pref_value, policy_max_value, policy_min_duration, policy_pref_duration, policy_max_duration, bitcoin_payment_channel_policy_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, bitcoin_payment_channel_policy_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, policy_min_value, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, policy_pref_value, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, policy_max_value, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, policy_min_duration, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, policy_pref_duration, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, policy_max_duration, trigger, debug_msg)",
+      "  }",
+      "end",
+      ""
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-payment-channel-policy/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "policy min value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy pref value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy max value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy min duration",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy pref duration",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "policy max duration",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, bitcoin_payment_channel_policy_inout, policy_min_value, policy_pref_value, policy_max_value, policy_min_duration, policy_pref_duration, policy_max_duration, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, bitcoin_payment_channel_policy_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, policy_min_value, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, policy_pref_value, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, policy_max_value, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, policy_min_duration, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, policy_pref_duration, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, policy_max_duration, trigger, debug_msg)",
+      "  }",
+      "end",
+      ""
+    ]
+  }
+}

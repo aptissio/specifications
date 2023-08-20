@@ -1,0 +1,32 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/finite-field-integer/subordinate/x64",
+  "description": [
+    "Create the structures for a finite-field integer.",
+    "Create a structure for a new finite-field /integer/.",
+    "",
+    "The provided /bit width/ must be greater than log2(maximum finite field order)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "finite field integer = reserve(finite field integer bit width)",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "finite field integer bit width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "1 to 2^23"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "integer",
+      "protocol": "/data/finite-field-integer/default/x64"
+    }
+  ]
+}

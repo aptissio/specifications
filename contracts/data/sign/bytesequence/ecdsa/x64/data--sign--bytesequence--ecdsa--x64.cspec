@@ -1,0 +1,58 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/sign/bytesequence/ecdsa/x64",
+  "description": [
+    "The Elliptic Curve Digital Signature Algorithm (ECDSA) offers a variant of the Digital Signature Algorithm (DSA) which uses elliptic curve cryptography. The returned signature is (r, s), z is the hash of the message. The public key or public point of the signer is also returned. ",
+    "Note: Bitcoin uses the double sha256 hash procedure. See example below."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "main flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "extended private key",
+      "protocol": "/data/bitcoin-extended-private-key/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "z",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "ecdsa signature",
+      "protocol": "/data/bitcoin-signature/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "public key",
+      "protocol": "/data/finite-field-elliptic-curve-point/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

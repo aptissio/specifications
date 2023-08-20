@@ -1,0 +1,62 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/remove/bitcoin-wallet/coin/x64",
+  "description": [
+    "Removes a coin (UTXO), if present, from a Bitcoin wallet."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "remove(transaction id, index)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "coin (UTXO) transaction ID",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "coin (UTXO) index",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "coin account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "coin value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "coin public key script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "coin is P2PKH",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "removing(account, value, script, is P2PKH)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "not present()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

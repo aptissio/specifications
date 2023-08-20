@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/upc-sales-manager/default/linux-x64",
+  "description": [
+    "Add a 'sales-manager' to an application."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "application core",
+      "protocol": "/system/event-driven-application-core/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "concurrent sales requests",
+      "minimum": "1",
+      "maximum": "65535",
+      "hint": "1, 65535"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "sales manager",
+      "protocol": "/behaviour/upc-sales-manager/default/x64"
+    }
+  ]
+}

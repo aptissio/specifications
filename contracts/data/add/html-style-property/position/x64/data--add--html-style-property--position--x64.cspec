@@ -1,0 +1,54 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-property/position/x64",
+  "description": [
+    "Add the Position property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The position property specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).",
+    "",
+    "    -1 - inherit    Inherits this property from its parent element. ",
+    "     0 - initial    Sets this property to its default value. ",
+    "     1 - static \tDefault value. Elements render in order, as they appear in the document flow \t",
+    "     2 - absolute   The element is positioned relative to its first positioned (not static)",
+    "                    ancestor element \t",
+    "     3 - fixed \t The element is positioned relative to the browser window\t",
+    "     4 - relative   The element is positioned relative to its normal position, so \"left:20px\" ",
+    "                    adds 20 pixels to the element's LEFT position \t",
+    "     5 - sticky \tThe element is positioned based on the user's scroll position. A sticky ",
+    "                    element toggles between relative and fixed, ",
+    "                    depending on the scroll position. It is positioned relative until a given",
+    "                    offset position is met in the viewport - ",
+    "                    then it \"sticks\" in place (like position:fixed).\t",
+    "                    ",
+    "Example:",
+    "",
+    "<code>h2 {",
+    "  position: absolute;",
+    "}</code>",
+    "",
+    "",
+    "",
+    "Learn more: https://www.w3schools.com/cssref/pr_class_position.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "value",
+      "minimum": "-1",
+      "maximum": "5",
+      "hint": "-1 to 5"
+    }
+  ],
+  "obligations": []
+}

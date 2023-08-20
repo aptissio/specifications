@@ -1,0 +1,38 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-property/gap/x64",
+  "description": [
+    "Add the Gap property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The gap property in CSS is a shorthand for row-gap and column-gap, specifying the size of gutters, which is the space between rows and columns within grid, flex, and multi-column layouts",
+    "",
+    "Specify the <i>Gap width</i> of the element & whether the units are fixed(px) or relative(%).",
+    "",
+    "Learn more: https://css-tricks.com/almanac/properties/g/gap/"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "gap width",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0 - 2000"
+    },
+    {
+      "type": "boolean",
+      "name": "gap fixed"
+    }
+  ],
+  "obligations": []
+}

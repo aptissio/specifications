@@ -1,0 +1,178 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/system/http-document-handler/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "handler initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "client address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "client session ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "handling context",
+        "protocol": "/data/structure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "context initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "HTTP request",
+        "protocol": "/data/http-request1/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "HTTP response",
+        "protocol": "/data/http-response1/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "document incomplete",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "response final",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "document task manager",
+        "protocol": "/system/task-manager/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "required handler tasks",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/system/http-document-handler/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, handler_initialisation, client_address, client_session_ID, handling_context, context_initialisation, HTTP_request, HTTP_response, document_incomplete, response_final, document_task_manager, required_handler_tasks, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, handler_initialisation, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, client_address, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, client_session_ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, handling_context, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, context_initialisation, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, HTTP_request, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, HTTP_response, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, document_incomplete, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, response_final, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, document_task_manager, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/default/x64@codevalley( acs, $, required_handler_tasks, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "required handler tasks",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/system/http-document-handler/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "handler initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "client address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "client session ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "handling context",
+        "protocol": "/data/structure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "context initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "HTTP request",
+        "protocol": "/data/http-request1/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "HTTP response",
+        "protocol": "/data/http-response1/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "document incomplete",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "response final",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "document task manager",
+        "protocol": "/system/task-manager/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, required_handler_tasks, self, handler_initialisation, client_address, client_session_ID, handling_context, context_initialisation, HTTP_request, HTTP_response, document_incomplete, response_final, document_task_manager,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, handler_initialisation, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, client_address, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, client_session_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, handling_context, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, context_initialisation, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, HTTP_request, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, HTTP_response, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, document_incomplete, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, response_final, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, document_task_manager, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/default/x64@codevalley( acs, $, required_handler_tasks, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

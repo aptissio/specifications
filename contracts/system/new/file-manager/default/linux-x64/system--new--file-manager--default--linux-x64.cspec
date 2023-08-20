@@ -1,0 +1,47 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/new/file-manager/default/linux-x64",
+  "description": [
+    "Add a file management system component.",
+    "",
+    "[0, 1, 2, 3] -> READ_WRITE_SUCCESS, OPEN_SUCCESS, OPEN_FAILURE, OPEN_FAIL_TO_SEEK, READ_WRITE_FAILURE, READ_BUFFER_OVERFLOW"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "system task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "configuration manager",
+      "protocol": "/system/configuration-manager/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "system label",
+      "length": "64",
+      "hint": "64"
+    },
+    {
+      "type": "integer",
+      "name": "file management task priority",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0, 65535"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "file manager",
+      "protocol": "/system/file-manager/default/x64"
+    }
+  ]
+}

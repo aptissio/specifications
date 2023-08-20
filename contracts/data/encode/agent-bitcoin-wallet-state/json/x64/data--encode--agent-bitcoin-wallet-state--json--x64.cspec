@@ -1,0 +1,40 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/encode/agent-bitcoin-wallet-state/json/x64",
+  "description": [
+    "Encode the agent Bitcoin wallet state to a JSON object with the format",
+    "",
+    "    {",
+    "      \"wallet-online\":true,",
+    "      \"wallet-peer-count\":1,",
+    "      \"wallet-address-index\":4,",
+    "      \"wallet-cashaddr\":\"bitcoincash:qzf8srdflcqv8dagk8cy2znpgah4skgvng0jnwd0q1\",",
+    "      \"wallet-balance\":1540032",
+    "    }"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "initialisation",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "encode",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent bitcoin wallet state",
+      "protocol": "/data/agent-bitcoin-wallet-state/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "json encoded state",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

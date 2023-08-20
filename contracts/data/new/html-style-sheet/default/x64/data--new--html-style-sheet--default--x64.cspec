@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/html-style-sheet/default/x64",
+  "description": [
+    "Design a new HTML style sheet.",
+    "Design the structures for a new HTML style sheet."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "formatted"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "style sheet",
+      "protocol": "/data/html-style-sheet/default/x64"
+    }
+  ]
+}

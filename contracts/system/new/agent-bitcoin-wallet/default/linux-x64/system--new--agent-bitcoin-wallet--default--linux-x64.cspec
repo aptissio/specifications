@@ -1,0 +1,162 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/new/agent-bitcoin-wallet/default/linux-x64",
+  "description": [
+    "Design an agent specific Bitcoin wallet.",
+    "",
+    "`wallet coin capacity` is the limit, provided at design time, on the number of \"coins\" that can be \"remembered\" by the wallet. If this limit is exceeded at run-time, new coins created on the Bitcoin blockchain will not be \"remembered\" and hence not available for the wallet to spend.",
+    "",
+    "`maximum subcontractor instance count` is the limit, provide at design-time, to the number of con-current sub contractors that the wallet supports.",
+    "",
+    "`transaction input capacity override` and `transaction output capacity override` may be provided to extend the capacity of the wallet to process transactions with a greater number of inputs and/or outputs beyond the minimums of 20 and 3 respectively, that the wallet requires to operate. This is useful in the case where Agents are funded with transactions with a large number of inputs and/or outputs."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "Bitcoin network core",
+      "protocol": "/system/bitcoin-network-core/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "Bitcoin network customisation",
+      "protocol": "/system/bitcoin-network-customisation/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "configuration manager",
+      "protocol": "/system/configuration-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file manager",
+      "protocol": "/system/file-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "TCP client manager",
+      "protocol": "/system/tcp-client-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "SHA256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RIPEMD160 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "HMAC512 procedure",
+      "protocol": "/data/hmac-procedure/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "system label",
+      "length": "64",
+      "hint": "64"
+    },
+    {
+      "type": "integer",
+      "name": "system priority",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0 to 65535"
+    },
+    {
+      "type": "abstraction",
+      "name": "peer metrics",
+      "protocol": "/data/bitcoin-network-peer-metrics/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum subcontractor instance count",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "transaction input capacity override",
+      "minimum": "1",
+      "maximum": "4294967295",
+      "hint": "1 to (2^32)-1"
+    },
+    {
+      "type": "integer",
+      "name": "transaction output capacity override",
+      "minimum": "1",
+      "maximum": "4294967295",
+      "hint": "1 to (2^32)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "start wallet",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "stop wallet",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "agent Bitcoin wallet",
+      "protocol": "/system/agent-bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent Bitcoin wallet state",
+      "protocol": "/data/agent-bitcoin-wallet-state/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet online",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet offline",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "received payment reference",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "received payment message",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "received payment amount",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payment received (reference, message, amount)",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ]
+}

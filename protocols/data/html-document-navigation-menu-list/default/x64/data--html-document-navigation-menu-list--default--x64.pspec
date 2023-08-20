@@ -1,0 +1,78 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/html-document-navigation-menu-list/default/x64",
+  "description": [
+    "Design the display of a list of navigation items as a menu."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "list",
+        "protocol": "/data/html-document-list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "child class",
+        "protocol": "/data/html-style-constant/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "child link class",
+        "protocol": "/data/html-style-constant/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-document-navigation-menu-list/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, list, child_class, child_link_class, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, list, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, child_class, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, child_link_class, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-document-navigation-menu-list/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "list",
+        "protocol": "/data/html-document-list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "child class",
+        "protocol": "/data/html-style-constant/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "child link class",
+        "protocol": "/data/html-style-constant/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, self, list, child_class, child_link_class,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, list, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, child_class, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, child_link_class, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

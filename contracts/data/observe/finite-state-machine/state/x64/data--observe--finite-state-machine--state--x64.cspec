@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/observe/finite-state-machine/state/x64",
+  "description": [
+    "Observe the `current state ID` and `current state description` of a `finite state machine`."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "finite state machine",
+      "protocol": "/data/finite-state-machine/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "current state ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "current state description",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

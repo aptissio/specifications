@@ -1,0 +1,129 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/import/bitcoin-wallet/file/linux-x64",
+  "description": [
+    "Import data from a file into the given `Bitcoin wallet` structure."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "import(Bitcoin wallet, file name, token in)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "configuration manager",
+      "protocol": "/system/configuration-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file manager",
+      "protocol": "/system/file-manager/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "SYSTEM LABEL",
+      "length": "64",
+      "hint": "64"
+    },
+    {
+      "type": "integer",
+      "name": "SYSTEM PRIORITY",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0, 65535"
+    },
+    {
+      "type": "integer",
+      "name": "maximum required multisignature (M) capacity",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum total multisignatures (N) capacity",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "boolean",
+      "name": "enable ECDSA signatures"
+    },
+    {
+      "type": "boolean",
+      "name": "enable uncompressed public keys"
+    },
+    {
+      "type": "integer",
+      "name": "redeem script capacity override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "sha256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "ripemd160 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "Bitcoin wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file name",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "unpack UTXOs and redeem scripts",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "token in",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "token out",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success (token out)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "error code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure (token out, error code)",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

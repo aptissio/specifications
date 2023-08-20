@@ -1,0 +1,59 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/svg-facebook-square-custom-colour/x64",
+  "description": [
+    "Add a square Facebook SVG to a Web Document.",
+    "",
+    "Provide a <i>Width</i> (px).",
+    "",
+    "Specify a foreground & background colour.",
+    "",
+    "Apply styling via class or optional ID Selector.",
+    "",
+    "<svg width=\"50px\" height=\"50px\" class='sharerbox-icon' id='fb-icon' viewBox='0 0 72 72'>",
+    "    <g transform='translate(-152,-43)'>",
+    "    <g transform='translate(152,43)'>",
+    "    <rect width='72' height='72' rx='0' ry='0' fill='#4267b2'/>",
+    "    <path d='m60.464 13.417v9.3105l-5.5259.01439c-4.3315 0-5.1661 2.0578-5.1661 5.0654v6.6627h10.318l-1.3383 10.419h-8.9795v27.111h-10.762v-27.111h-9.0097v-10.419h9.0097v-7.6844c0-8.922 5.4381-13.786 13.41-13.786 3.8005 0 7.08.2878 8.0441.41732z' fill='#fff'/>",
+    "    </g>",
+    "    </g>",
+    "    </svg>"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "width",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "abstraction",
+      "name": "foreground colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "background colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

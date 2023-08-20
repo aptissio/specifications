@@ -1,0 +1,63 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/html-document/dynamic/x64",
+  "description": [
+    "Create a new HTML document design with the ability to render its content run-time. ",
+    "",
+    "Peers may design run-time rendering to be based upon a run-time variable (JSON) data set known as the dynamic data.",
+    "",
+    "The dynamic data timeout is in milliseconds."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "initial document title",
+      "length": "64",
+      "hint": "64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum document length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum dynamic data length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "dynamic data timeout",
+      "minimum": "0",
+      "maximum": "2147483647",
+      "hint": "0 to (2^31)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "dynamic data",
+      "protocol": "/data/html-dynamic-data/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "dynamic data update scripts",
+      "protocol": "/data/pack/default/x64"
+    }
+  ]
+}

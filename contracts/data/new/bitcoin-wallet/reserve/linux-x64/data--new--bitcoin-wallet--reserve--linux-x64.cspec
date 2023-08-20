@@ -1,0 +1,44 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-wallet/reserve/linux-x64",
+  "description": [
+    "Design a new Bitcoin wallet.",
+    "Design a new Bitcoin wallet that is suitable for storing coins across multiple accounts.",
+    "The /coin capacity/ and /address capacity/ are totals across all accounts.",
+    "The client is required to provide the wallet /seed/.",
+    "If /test net/ is TRUE, then the wallet will derive accounts from a testnet keychain (m/44'/1') rather than a mainnet keychain (m/44'/145')"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "account capacity",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "address capacity",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "boolean",
+      "name": "test net"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    }
+  ]
+}

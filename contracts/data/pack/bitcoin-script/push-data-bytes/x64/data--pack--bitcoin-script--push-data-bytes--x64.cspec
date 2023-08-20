@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/bitcoin-script/push-data-bytes/x64",
+  "description": [
+    "Pack an element of a Bitcoin script.",
+    "Using the OP\\_DATA\\_X, OP\\_PUSHDATA1, OP\\_PUSHDATA2, OP\\_PUSHDATA4 opcode set, create a script snippet that when executed will push /data/ to the top of the stack."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "data",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": []
+}

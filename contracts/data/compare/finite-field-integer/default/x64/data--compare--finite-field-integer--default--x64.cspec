@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/finite-field-integer/default/x64",
+  "description": [
+    "Compare finite-field integers.",
+    "At run-time, compare two finite-field integers and return 'true' if both the value and order are equal."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare(integer 1, integer 2)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "integer 1",
+      "protocol": "/data/finite-field-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "integer 2",
+      "protocol": "/data/finite-field-integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

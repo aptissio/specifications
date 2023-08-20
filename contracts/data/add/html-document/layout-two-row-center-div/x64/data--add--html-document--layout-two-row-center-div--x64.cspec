@@ -1,0 +1,107 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/layout-two-row-center-div/x64",
+  "description": [
+    "Add a Two Row Layout with a fixed Centered Division to a HTML Document. ",
+    "",
+    "Specify the parent container width in Px. ",
+    "",
+    "Specify the row Heights. Choose a unit from options below:",
+    "",
+    "     1.  Fixed units (px)",
+    "      2. Relative units (fr)",
+    "      3. auto    ",
+    "      [1, 2, 3] -> UNIT_PX, UNIT_FR, UNIT_AUTO",
+    "      ",
+    "If the Auto units is selected than the size will be ignored.",
+    "",
+    "Add content & styling to the Top and Bottom rows as desired. ",
+    "",
+    "Utilize optional ID Selector if necessary."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply parent container class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply top row class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply bottom row class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "parent container width (px)",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "integer",
+      "name": "top row height",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "integer",
+      "name": "top row unit",
+      "minimum": "1",
+      "maximum": "3",
+      "hint": "1 to 3"
+    },
+    {
+      "type": "integer",
+      "name": "bottom row height",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "integer",
+      "name": "bottom row unit",
+      "minimum": "1",
+      "maximum": "3",
+      "hint": "1 to 3"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "parent container id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "top row id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "top row content",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bottom row id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bottom row content",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

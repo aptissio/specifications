@@ -1,0 +1,24 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/constant/inline/linux-x64",
+  "description": [
+    "Write predefined data to an output stream.",
+    "For example: logging a constant string to stdout or stderr.",
+    "Write a constant ~string~ to standard out without automatically appending a newline character at the end."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write(string)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "string",
+      "length": "1048576",
+      "hint": "(2^20)"
+    }
+  ],
+  "obligations": []
+}

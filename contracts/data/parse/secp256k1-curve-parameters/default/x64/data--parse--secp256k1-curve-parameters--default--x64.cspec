@@ -1,0 +1,60 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/parse/secp256k1-curve-parameters/default/x64",
+  "description": [
+    "type here to preview description"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "secp256k1 curve parameters",
+      "protocol": "/data/elliptic-curve-parameters/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "string",
+      "name": "gx",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "gy",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "prime(p)",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "order(n)",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "a",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "b",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "integer",
+      "name": "order width",
+      "minimum": "1",
+      "maximum": "256",
+      "hint": "256"
+    }
+  ]
+}

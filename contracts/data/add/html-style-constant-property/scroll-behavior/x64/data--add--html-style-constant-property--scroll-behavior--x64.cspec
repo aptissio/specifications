@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant-property/scroll-behavior/x64",
+  "description": [
+    "Add the scroll-behavior property to a cascaded Style Sheet CSS) style.",
+    "",
+    "The scroll-behavior property specifies whether to smoothly animate the scroll position, ",
+    "instead of a straight jump, when the user clicks on a link within a scrollable box.",
+    "",
+    "    -1 - inherit \t Inherits this property from its parent element. ",
+    "     0 - initial       Sets this property to its default value. ",
+    "     1 - auto \t     Allows a straight jump \"scroll effect\" between elements within the scrolling box. This is default \t",
+    "     2 - smooth \t   Allows a smooth animated \"scroll effect\" between elements within the scrolling box. \t",
+    "",
+    "",
+    "     [-1, 0, 1, 2] -> SCROLL_INHERIT, SCROLL_0INITIAL, SCROLL_1AUTO, SCROLL_2SMOOTH",
+    "",
+    "",
+    "Learn more: https://www.w3schools.com/cssref/pr_scroll-behavior.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "value",
+      "minimum": "-1",
+      "maximum": "2",
+      "hint": "-1 to 2"
+    }
+  ],
+  "obligations": []
+}

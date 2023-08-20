@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant/named/x64",
+  "description": [
+    "Add a new named style to the selected HTML document. The supplied element name must correspond to a valid, lower-case, HTML element tag. For example \"div\". \"<>\" characters are not required."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "element name",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

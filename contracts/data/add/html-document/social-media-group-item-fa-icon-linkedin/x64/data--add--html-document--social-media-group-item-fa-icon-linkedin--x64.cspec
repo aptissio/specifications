@@ -1,0 +1,70 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/social-media-group-item-fa-icon-linkedin/x64",
+  "description": [
+    "Add a LinkedIn Social Media Font Awesome Icon to a Social Media group. Add font awesome feature to enable.",
+    "",
+    "Example:",
+    "",
+    "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fab\" data-icon=\"linkedin-in\" class=\"svg-inline--fa fa-linkedin-in fa-w-14\" role=\"img\" height=\"50\" width=\"50\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 448 512\"><path fill=\"#0a66c2\" d=\"M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z\"></path></svg>",
+    "",
+    "",
+    "Utilise Class & ID Selectors to apply styling.",
+    "",
+    "Choose an INTEGER between 1-4 for the desired target window. Options below:",
+    "",
+    "    1. _blank",
+    "    2. _self",
+    "    3. _parent",
+    "    4. _top",
+    "",
+    "    [1, 2, 3, 4] -> TARGET_1BLANK, TARGET_2SELF, TARGET_3PARENT, TARGET_4TOP"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "social media group",
+      "protocol": "/data/web-document-social-media-group-font-awesome/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "social media profile",
+      "protocol": "/data/social-media-profile/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome feature",
+      "protocol": "/data/html-document-feature-font-awesome/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "link class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "target window",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "list item ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "link ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bank-account-au/default/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "bank-account-au",
+      "protocol": "/data/bank-account-au/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/new/http-server/sessions/linux-x64",
+  "description": [
+    "The http-server with sessions using the http-server [/system/new/http-server/default/linux-x64](/valley/view//system/new/http-server/default/linux-x64).",
+    "",
+    "The http-server with session provides the `http session context` protocol. To gain access to the context of the session while routing requests, please use suite of agents **/system/route/http-session-request**.",
+    "",
+    "Example:",
+    "",
+    "    \"SES-TASK-MAN\" -> SESSION_TASK_MAN_SYSTEM_LABEL",
+    "    0 -> SESSION_TASK_MAN_SYSTEM_PRIORITY",
+    "    \"\" -> PATH1",
+    "    maxlen(\"POST\") -> METHOD_LEN_MAX",
+    "    max(maxlen(\"services.aptissio.com\"), maxlen(\"255.255.255.255:65535\")) -> AUTHORITY_LEN_MAX",
+    "    205 -> PATH_LEN_MAX",
+    "    203 -> QUERY_LEN_MAX",
+    "    30 -> FRAGMENT_LEN_MAX",
+    "    1248 -> REQ_HEADER_NAME_LEN_MAX_OVERRIDE",
+    "    1137 -> REQ_HEADER_VALUE_LEN_MAX_OVERRIDE",
+    "    50 -> REQ_HEADER_COUNT_MAX_OVERRIDE",
+    "    5000 -> REQ_BODY_MAX_LEN",
+    "    1750 -> RES_HEADER_NAME_LEN_MAX_OVERRIDE",
+    "    2048 -> RES_HEADER_VALUE_LEN_MAX_OVERRIDE",
+    "    50 -> RES_HEADER_COUNT_MAX_OVERRIDE",
+    "    5000 -> RES_BODY_MAX_LEN",
+    "    1010 -> SERV_AGENT_STRING_LEN_MAX_OVERRIDE",
+    "    990 -> SERV_PUB_HOSTNAME_LEN_MAX_OVERRIDE\n",
+    "    sub /system/new/http-server/sessions/linux-x64@aptissio(config_man, log_man, task_sched, tcp_server_manager, send_response, SESSION_TASK_MAN_SYSTEM_LABEL, SESSION_TASK_MAN_SYSTEM_PRIORITY, METHOD_LEN_MAX, AUTHORITY_LEN_MAX, PATH_LEN_MAX, QUERY_LEN_MAX, FRAGMENT_LEN_MAX, REQ_HEADER_NAME_LEN_MAX_OVERRIDE, REQ_HEADER_VALUE_LEN_MAX_OVERRIDE, REQ_HEADER_COUNT_MAX_OVERRIDE, REQ_BODY_MAX_LEN, RES_HEADER_NAME_LEN_MAX_OVERRIDE, RES_HEADER_VALUE_LEN_MAX_OVERRIDE, RES_HEADER_COUNT_MAX_OVERRIDE, RES_BODY_MAX_LEN, SERV_AGENT_STRING_LEN_MAX_OVERRIDE, SERV_PUB_HOSTNAME_LEN_MAX_OVERRIDE) -> http_server, http_session_context, http_server__task_exit, server_exception_task_work_flow\n",
+    "    sub /system/route/http-session-request/asynchronous@aptissio(log_man, config_man, task_sched, http_server, http_session_context, http_server__task_exit, \"default\", 40, false) -> send_response, _, _, route_path, {",
+    "      sub compare/bytesequence/constant@aptissio($, route_path, \"\")",
+    "    }, {",
+    "      sub new/integer/subordinate($, ARCH_INT_MIN, ARCH_INT_MAX) -> reload_count",
+    "    },{",
+    "      sub set/integer($, reload_count, 0)",
+    "    }, _, _, {",
+    "      sub increment/integer($, reload_count)",
+    "    }, _, http_response, _,{ ",
+    "      sub /data/render/web-document/http-response2@aptissio($, web_doc_default, http_response)",
+    "      sub set/http-response2/status@aptissio($, http_response, 200)",
+    "    }, _"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "configuration manager",
+      "protocol": "/system/configuration-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "tcp server manager",
+      "protocol": "/system/tcp-server-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "last request handler task exit",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "session task manager system label",
+      "length": "64",
+      "hint": "64"
+    },
+    {
+      "type": "integer",
+      "name": "session task manager system priority",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0 to 65535"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request method length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum authority length",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum path length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum query length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum fragment length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request header name length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request header value length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request header count",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request body length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum response header name length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum response header value length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum response header count",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum response body length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum server agent string length",
+      "minimum": "1",
+      "maximum": "10000",
+      "hint": "1 to 10000"
+    },
+    {
+      "type": "integer",
+      "name": "maximum server public host name length",
+      "minimum": "1",
+      "maximum": "10000",
+      "hint": "1 to 10000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "http server",
+      "protocol": "/system/http-server/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http session context",
+      "protocol": "/system/http-session-context/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "new request task exit",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "server exception task work flow",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

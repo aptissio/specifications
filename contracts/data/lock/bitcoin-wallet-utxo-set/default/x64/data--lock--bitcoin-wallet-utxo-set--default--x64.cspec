@@ -1,0 +1,43 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/lock/bitcoin-wallet-utxo-set/default/x64",
+  "description": [
+    "Lock a Bitcoin wallet UTXO structure.",
+    "Lock a UTXO within a Bitcoin /wallet UTXO set/. Execute /not locked/ if the specified UTXO cannot be found within the UTXO wallet or another error occurs when attempting to lock the coin."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "lock(wallet utxo set, utxo elements)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet utxo set",
+      "protocol": "/data/bitcoin-wallet-utxo-set/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo transaction id",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo index",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "locked",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "not locked",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

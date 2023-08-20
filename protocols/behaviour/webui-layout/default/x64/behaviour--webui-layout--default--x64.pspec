@@ -1,0 +1,54 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/webui-layout/default/x64",
+  "description": [
+    "type here to preview description"
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "webui-layout",
+        "protocol": "/data/html-document/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/webui-layout/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, webui-layout, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, webui-layout, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/webui-layout/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "webui-layout",
+        "protocol": "/data/html-document/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, self, webui-layout,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, webui-layout, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

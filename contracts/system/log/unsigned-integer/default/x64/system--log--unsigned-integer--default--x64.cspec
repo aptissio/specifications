@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/log/unsigned-integer/default/x64",
+  "description": [
+    "Log a /base/ encoded /unsigned integer/."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "log-item",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "base",
+      "minimum": "2",
+      "maximum": "16",
+      "hint": "2, 16"
+    },
+    {
+      "type": "abstraction",
+      "name": "unsigned integer",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

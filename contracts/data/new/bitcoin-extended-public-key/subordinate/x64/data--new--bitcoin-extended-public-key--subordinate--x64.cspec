@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-extended-public-key/subordinate/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new()",
+      "protocol": "/data/structure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "extended public key",
+      "protocol": "/data/bitcoin-extended-public-key/default/x64"
+    }
+  ]
+}

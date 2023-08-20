@@ -1,0 +1,37 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/benchmark/default/linux-x64",
+  "description": [
+    "Write a benchmark report of N iterations of _benchmark work_ to standard out.",
+    "",
+    "The report is prepended with the given _prefix_"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write(prefix)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "N",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "benchmark work",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

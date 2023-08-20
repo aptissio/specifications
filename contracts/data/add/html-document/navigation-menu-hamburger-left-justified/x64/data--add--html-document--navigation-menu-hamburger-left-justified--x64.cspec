@@ -1,0 +1,108 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/navigation-menu-hamburger-left-justified/x64",
+  "description": [
+    "Add a Hamburger fold out menu to a HTML Document. The position for this design is in the Top Left of the Viewport. ",
+    "",
+    "Example:",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/nav_menu_left.png\" width=\"400\" height=\"400\">",
+    "",
+    "Apply a Navigation Class. Specify a Navigation bar height bewteen (50px-100px).",
+    "",
+    "Specify a colour to apply to the Burger Menu.",
+    "",
+    "Specify a width (px) to apply to the Menu list.",
+    "",
+    "Enable Menu List Height full page if desired, otherwise list will be the height of content provided.",
+    "",
+    "Specify a font-size (px), colour & hover colour to apply to the Menu list items.",
+    "",
+    "Enable list item bottom border if desired.",
+    "",
+    "Add Menu List Items and apply Styling as desired to the list."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "navigation style class",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "navigation background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "navigation height (px)",
+      "minimum": "50",
+      "maximum": "100",
+      "hint": "50, 100"
+    },
+    {
+      "type": "abstraction",
+      "name": "burger menu colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "menu list width",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "boolean",
+      "name": "enable menu list height full page"
+    },
+    {
+      "type": "abstraction",
+      "name": "menu list background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "list item font-size",
+      "minimum": "0",
+      "maximum": "1000",
+      "hint": "0, 1000"
+    },
+    {
+      "type": "abstraction",
+      "name": "list item colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "list item hover colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable list item uppercase"
+    },
+    {
+      "type": "boolean",
+      "name": "enable list item bottom border"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "child list",
+      "protocol": "/data/html-document-navigation-menu-list/default/x64"
+    }
+  ]
+}

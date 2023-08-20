@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-script-coin-index/default/linux-x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "label",
+      "length": "255",
+      "hint": "255"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin script coin index",
+      "protocol": "/data/bitcoin-script-coin-index/default/x64"
+    }
+  ],
+  "obligations": []
+}

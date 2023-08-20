@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/ipv6-address/default/x64",
+  "description": [
+    "Unpack a binary IPv6 address.",
+    "Unpack an IPv6 address, most significant byte first."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "address",
+      "protocol": "/data/ipv6-address/default/x64"
+    }
+  ]
+}

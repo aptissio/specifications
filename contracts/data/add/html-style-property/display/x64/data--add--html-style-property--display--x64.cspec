@@ -1,0 +1,62 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-property/display/x64",
+  "description": [
+    "Add the Display property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The Display property specifies the display behavior (the type of rendering box) of an element. Select from value options below:",
+    "",
+    "    -1 - inherit \t(Inherits this property from its parent element. ",
+    "    0 - initial (Sets this property to its default value. ",
+    "    1 - inline \t(Displays an element as an inline element (like span). Any height and width properties will have no effect) \t",
+    "    2 - block \t(Displays an element as a block element (like p element). It starts on a new line, and takes up the whole width) \t",
+    "    3 - contents \t(Makes the container disappear, making the child elements children of the element the next level up in the DOM)\t",
+    "    4 - flex \t(Displays an element as a block-level flex container) \t",
+    "    5 - grid \t(Displays an element as a block-level grid container) \t",
+    "    6 - inline-block \t(Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values) \t",
+    "    7 - inline-flex \t(Displays an element as an inline-level flex container) \t",
+    "    8 - inline-grid \t(Displays an element as an inline-level grid container)",
+    "    9 - inline-table \t(The element is displayed as an inline-level table) \t",
+    "    10 - list-item \t(Let the element behave like a li element.)",
+    "    11 - run-in \t(Displays an element as either block or inline, depending on context) \t",
+    "    12 - table \t(Let the element behave like a table element) \t",
+    "    13 - table-caption \t(Let the element behave like a caption element) \t",
+    "    14 - table-column-group \t(Let the element behave like a colgroup element) \t",
+    "    15 - table-header-group \t(Let the element behave like a thead element) \t",
+    "    16 - table-footer-group \t(Let the element behave like a tfoot element) \t",
+    "    17 - table-row-group \t(Let the element behave like a tbody element) \t",
+    "    18 - table-cell (\tLet the element behave like a td element)",
+    "    19 - table-column \t(Let the element behave like a col element) \t",
+    "    20 - table-row \t(Let the element behave like a tr element) \t",
+    "    21 - none \t(The element is completely removed) \t",
+    "    ",
+    "    [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21] -> DISPLAY_INHERIT, DISPLAY_0INITIAL, DISPLAY_1INLINE, ",
+    "    DISPLAY_2BLOCK, DISPLAY_3CONTENTS, DISPLAY_4FLEX, DISPLAY_5GRID, DISPLAY_6INLINEBLOCK, DISPLAY_7INLINEFLEX, DISPLAY_8INLINEGRID, ",
+    "    DISPLAY_9INLINETABLE, DISPLAY_10LISTITEM, DISPLAY_11RUNIN, DISPLAY_12TABLE, DISPLAY_13TABLECAPTION, ",
+    "    DISPLAY_14TABLECOLUMNGROUP, DISPLAY_15TABLEHEADERGROUP, DISPLAY_16TABLEFOOTERGROUP, DISPLAY_17TABLEROWGROUP, DISPLAY_18TABLECELL, ",
+    "    DISPLAY_19TABLECOLUMN, DISPLAY_20TABLEROW, DISPLAY_21NONE",
+    "",
+    "Learn more: https://www.w3schools.com/cssref/pr_class_display.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "value",
+      "minimum": "-1",
+      "maximum": "21",
+      "hint": "-1 to 21"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,47 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-wallet/account/linux-x64",
+  "description": [
+    "Write a Bitcoin wallet to an output device."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "label",
+      "length": "50",
+      "hint": "50"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "keychain address"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account not found",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

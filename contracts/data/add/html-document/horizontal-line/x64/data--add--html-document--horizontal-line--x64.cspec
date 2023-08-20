@@ -1,0 +1,30 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/horizontal-line/x64",
+  "description": [
+    "Add a horizontal-line within a HTML-Document.",
+    "",
+    "The \\<hr> element is most often displayed as a horizontal rule that is used to separate content (or define a change) in an HTML page",
+    "",
+    "Example:",
+    "",
+    "<hr style=\"border: 10px solid green; border-radius: 5px;\">",
+    "",
+    "Style the line with ID Selector if desired."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

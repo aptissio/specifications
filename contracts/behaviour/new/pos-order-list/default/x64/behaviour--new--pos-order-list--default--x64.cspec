@@ -1,0 +1,52 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/pos-order-list/default/x64",
+  "description": [
+    "Create a new Point Of Sale (POS) order list.",
+    "Create and initialise the structures required for a Point Of Sale (POS) order list."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "list context",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "list initialisation",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum order count",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum items per order",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "pos product list",
+      "protocol": "/behaviour/pos-product-list/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "pos order list",
+      "protocol": "/behaviour/pos-order-list/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "pos order attributes",
+      "protocol": "/behaviour/pos-list-attributes/default/x64"
+    }
+  ]
+}

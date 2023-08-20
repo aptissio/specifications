@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/decode/as-base58/bytes-bitcoin/x64",
+  "description": [
+    "Decode data using a 58 character alphabet.",
+    "Decode the /encoded data/ using a Bitcoin base-58 alphabet and provide the /decoded data/ to the client."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "initialise",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "decode(encoded data)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "encoded data",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "decoded data",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

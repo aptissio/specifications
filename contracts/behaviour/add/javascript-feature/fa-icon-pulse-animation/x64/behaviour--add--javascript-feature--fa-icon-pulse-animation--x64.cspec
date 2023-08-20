@@ -1,0 +1,38 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/add/javascript-feature/fa-icon-pulse-animation/x64",
+  "description": [
+    "Add a pulse animation to a font awesome icon within a Web Document. ",
+    "",
+    "Specify a unique identifier scope for the javascript.",
+    "",
+    "Provide an ID style of the fa icon to apply this animation. ",
+    "",
+    "Example:",
+    "",
+    "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fas\" height='50' width='50' data-icon=\"spinner\" class=\"svg-inline--fa fa-spinner fa-pulse fa-w-16\" role=\"img\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M304 48c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48 48 21.49 48 48zm-48 368c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zm208-208c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48zM96 256c0-26.51-21.49-48-48-48S0 229.49 0 256s21.49 48 48 48 48-21.49 48-48zm12.922 99.078c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.491-48-48-48zm294.156 0c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48c0-26.509-21.49-48-48-48zM108.922 60.922c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.491-48-48-48z\"></path></svg>",
+    "",
+    "See Docs for more info:",
+    "",
+    "https://fontawesome.com/v5.15/how-to-use/on-the-web/styling/animating-icons"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "uid scope",
+      "protocol": "/data/unique-identifier-scope/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "fa icon ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ],
+  "obligations": []
+}

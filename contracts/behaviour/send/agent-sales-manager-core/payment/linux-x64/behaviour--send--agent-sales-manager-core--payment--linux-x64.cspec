@@ -1,0 +1,47 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/send/agent-sales-manager-core/payment/linux-x64",
+  "description": [
+    "Design a feature to send an agent sales manager payment."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "agent sales manager core",
+      "protocol": "/behaviour/agent-sales-manager-core/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "remote sales address",
+      "protocol": "/data/anp-address/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "remote payment entity",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent price tag",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "send",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "payment reference",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/sign/bitcoin-transaction/default/x64",
+  "description": [
+    "Sign a Bitcoin transaction",
+    "Sign a Bitcoin `transaction` using keys from the provided `wallet`.",
+    "This design contribution will attempt to sign all inputs.",
+    "If `schnorr signature` is set TRUE, then Schnorr signatures will be created, otherwise ECDSA signatures are created.",
+    "",
+    "The client should ensure the `error code` is \"none\" before testing the value of the `result code`.",
+    "#### Result Codes",
+    "",
+    "| Code | Description |",
+    "| :---: | --- |",
+    "| -1 | No result|",
+    "|0|Signatures Complete",
+    "|1|Signatures Partially Complete|",
+    "|2|Not signed|",
+    "",
+    "#### Error codes",
+    "| Code | Description |",
+    "| :---: | --- |",
+    "|0|None|",
+    "|1|UTXO not found in wallet|",
+    "|2|UTXO type not supported|",
+    "|3|UTXO public key not found|",
+    "|4|UTXO private key not found|",
+    "|5|Signature preimage failed|",
+    "|6|Signature script failed|"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "initialise",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "sign(transaction, wallet)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "schnorr signature"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "double SHA256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "error code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success (result code, error code)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure (result code, error code)",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

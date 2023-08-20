@@ -1,0 +1,39 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/ipv6-address/default/x64",
+  "description": [
+    "Set an IPv6 address.",
+    "Set an IPv6 address from a constant. For example \"::1\" or \"2001:0db8:85a3:0000:0000:8a2e:0370:7334\"."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set(address, constant)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "IPv6 address",
+      "protocol": "/data/ipv6-address/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "constant",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

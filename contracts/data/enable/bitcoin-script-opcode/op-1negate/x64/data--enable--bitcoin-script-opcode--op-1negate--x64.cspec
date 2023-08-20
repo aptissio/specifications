@@ -1,0 +1,16 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/enable/bitcoin-script-opcode/op-1negate/x64",
+  "description": [
+    "Enable the OP_1NEGATE Bitcoin script opcode."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "opcode",
+      "protocol": "/data/bitcoin-script-opcode/default/x64"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/encode/as-base16/integer/x64",
+  "description": [
+    "Encode binary data into an ASCII string format by translating it into a radix-16 representation.",
+    "Convert the given 'integer in' into a string of ASCII characters in base16 coding, writing the encoded result to the bytesequence 'encoded bytesequence inout'.",
+    "Convert the given 'number in' into a string of ASCII characters in base16 coding, writing the encoded result to the bytesequence 'encoded bytesequence inout'. If the supplied bytesequence is not large enough, the most significant bytes are truncated. Encoding is 'Big Endian\\."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "bytesequence = encode(bytesequence, number)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "number",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

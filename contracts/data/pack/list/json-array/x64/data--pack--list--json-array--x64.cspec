@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/list/json-array/x64",
+  "description": [
+    "Values in JSON can be arrays."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "name",
+      "length": "1000000",
+      "hint": "10^6"
+    },
+    {
+      "type": "abstraction",
+      "name": "list",
+      "protocol": "/data/list/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "client_pack_json_value",
+      "protocol": "/data/pack/default/x64"
+    }
+  ]
+}

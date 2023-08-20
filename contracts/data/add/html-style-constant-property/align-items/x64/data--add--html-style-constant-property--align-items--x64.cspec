@@ -1,0 +1,47 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant-property/align-items/x64",
+  "description": [
+    "Add the Align Items property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The align-items property specifies the default alignment for items inside the flexible container.",
+    "",
+    "<img src=\"https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg\" width=\"100%\" height=\"400\"> ",
+    "",
+    "      -1 - inherit    Inherits this property from its parent element. ",
+    "       0 - initial    Sets this property to its default value. ",
+    "       1. stretch (default) - stretch to fill the container",
+    "       2. flex-start - items are placed at the start of the cross axis.",
+    "       3. flex-end - items are placed at the end of the cross axis. ",
+    "       4. center - items are centered in the cross-axis",
+    "       5. baseline - items are aligned such as their baselines align",
+    "",
+    "       [-1, 0, 1, 2, 3, 4, 5] ->  ALIGN_ITEMS_INHERIT, ALIGN_ITEMS_0INITIAL, ALIGN_ITEMS_1STRETCH,  ALIGN_ITEMS_2FLEX_START, ALIGN_ITEMS_3FLEX_END, ALIGN_ITEMS_4CENTER, ALIGN_ITEMS_5BASELINE",
+    "",
+    "",
+    "",
+    "",
+    "Learn more: https://www.w3schools.com/cssref/css3_pr_align-items.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "align items",
+      "minimum": "-1",
+      "maximum": "5",
+      "hint": "-1 to 5"
+    }
+  ],
+  "obligations": []
+}

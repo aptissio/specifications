@@ -1,0 +1,37 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/update/agent-map/from-routes-file/x64",
+  "description": [
+    "Agent will update agent sortedmap by providing agent file address."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "core",
+      "protocol": "/system/event-driven-application-core/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent dashboard",
+      "protocol": "/behaviour/agent-dashboard/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "appflow",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "init agent state",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent name",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

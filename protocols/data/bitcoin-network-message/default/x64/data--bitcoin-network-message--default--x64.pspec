@@ -1,0 +1,102 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/bitcoin-network-message/default/x64",
+  "description": [
+    "A message structure used to communicate on the Bitcoin peer-to-peer network."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "magic bytes",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "command",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "length",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "checksum",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payload",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-network-message/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, magic_bytes, command, length, checksum, payload, chain_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, magic_bytes, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, command, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, length, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, checksum, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, payload, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-network-message/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "magic bytes",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "command",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "length",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "checksum",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payload",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, chain_inout, magic_bytes, command, length, checksum, payload, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, magic_bytes, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, command, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, length, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, checksum, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, payload, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  }
+}

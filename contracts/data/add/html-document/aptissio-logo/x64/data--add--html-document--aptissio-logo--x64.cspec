@@ -1,0 +1,67 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/aptissio-logo/x64",
+  "description": [
+    "Add Aptissio logo to a HTML Document",
+    "",
+    "Specify a width in px.",
+    "",
+    "<?xml version='1.0' encoding='UTF-8' standalone='no'?>",
+    "<svg",
+    "   xmlns:dc='http://purl.org/dc/elements/1.1/'",
+    "   xmlns:cc='http://creativecommons.org/ns#'",
+    "   xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'",
+    "   xmlns:svg='http://www.w3.org/2000/svg'",
+    "   xmlns='http://www.w3.org/2000/svg'",
+    "   viewBox='0 0 3182.3201 170.30667'",
+    "   height='85'",
+    "   width='1591'",
+    "   xml:space='preserve'",
+    "   version='1.1'><metadata",
+    "     id='metadata821'><rdf:RDF><cc:Work",
+    "         rdf:about=''><dc:format>image/svg+xml</dc:format><dc:type",
+    "           rdf:resource='http://purl.org/dc/dcmitype/StillImage' /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs",
+    "     id='defs819' /><g",
+    "     style='display:inline'",
+    "     transform='matrix(1.3333333,0,0,-1.3333333,0,170.30667)'",
+    "     id='g823'><path",
+    "       d='M 111.039,66.2566 72.9188,66.2426 53.8512,33.2156 H 91.9629 L 111.031,0.217188 h 30.231 c 3.517,0 5.715,3.806642 3.957,6.852732 l -34.18,59.18668'",
+    "       style='fill:#40b93c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1'",
+    "       id='path1137' /><path",
+    "       d='m 68.9625,125.443 -34.1801,-59.2004 19.0688,-33.027 19.0676,33.027 38.1202,0.014 -34.1636,59.1854 c -1.7582,3.047 -6.1547,3.047 -7.9129,0.001'",
+    "       style='fill:#a9118e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1'",
+    "       id='path1139' /><path",
+    "       d='M 0.619141,7.06914 34.7824,66.2426 53.8512,33.2156 H 91.9629 L 111.039,0.203125 4.57461,0.216016 C 1.0582,0.217188 -1.13906,4.02305 0.619141,7.06914'",
+    "       style='fill:#fcd205;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.1'",
+    "       id='path1141' /></g></svg>",
+    "       ",
+    "Apply styling via class or optional ID Selector"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "width",
+      "minimum": "0",
+      "maximum": "3182",
+      "hint": "0, 3182"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

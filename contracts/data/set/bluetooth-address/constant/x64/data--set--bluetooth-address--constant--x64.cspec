@@ -1,0 +1,35 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/bluetooth-address/constant/x64",
+  "description": [
+    "Set the values within a Bluetooth address structure.",
+    "Set the /MAC address/ and /channel/ of a /bluetooth address/. The format of the /MAC address/ should follow \"XX:XX:XX:XX:XX:XX\" where XX is the hexadecimal representation of the address octets. A valid channel between 0 and 255 should be provided in accordance with platform requirements."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set()",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bluetooth address",
+      "protocol": "/data/bluetooth-address/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "mac address",
+      "length": "17",
+      "hint": "17"
+    },
+    {
+      "type": "integer",
+      "name": "channel",
+      "minimum": "0",
+      "maximum": "255",
+      "hint": "0, 255"
+    }
+  ],
+  "obligations": []
+}

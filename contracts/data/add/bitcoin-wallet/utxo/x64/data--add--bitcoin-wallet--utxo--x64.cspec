@@ -1,0 +1,75 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/bitcoin-wallet/utxo/x64",
+  "description": [
+    "Add to a Bitcoin wallet.",
+    "Adds a Bitcoin UTXO to a Bitcoin wallet.",
+    "UTXOs may be added to the set as 'locked' or 'unlocked' coins.",
+    "",
+    "Locked coins are typically not selected for new transactions but contribute to a wallet's balance until they are observed in a broadcast blockchain transaction when they are considered 'spent' and are typically removed from the wallet UTXO set."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "add",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo transaction ID",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo output index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo amount",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo public key script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo is p2pkh",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "add as locked utxo"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success(utxo data)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "already exists(utxo data)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "insufficient utxo capacity",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

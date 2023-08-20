@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/bitcoin-network-message/default/x64",
+  "description": [
+    "Unpack a Bitcoin network message into the provided /bitcoin network message/ structure.",
+    "Messages are only valid for the specified /Bitcoin network/ where 0 = mainnet, 1 = testnet and 3 = regtest."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin network",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin network message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    }
+  ],
+  "obligations": []
+}

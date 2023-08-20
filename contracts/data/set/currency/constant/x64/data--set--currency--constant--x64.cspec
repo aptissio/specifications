@@ -1,0 +1,47 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/currency/constant/x64",
+  "description": [
+    "Set the properties of a currency.",
+    "Set the properties of a currency from design time literals."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "currency",
+      "protocol": "/data/currency/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "precision",
+      "minimum": "0",
+      "maximum": "18",
+      "hint": "0, 18"
+    },
+    {
+      "type": "string",
+      "name": "symbol",
+      "length": "10",
+      "hint": "10"
+    },
+    {
+      "type": "string",
+      "name": "ticker",
+      "length": "10",
+      "hint": "10"
+    },
+    {
+      "type": "string",
+      "name": "description",
+      "length": "100",
+      "hint": "100"
+    }
+  ],
+  "obligations": []
+}

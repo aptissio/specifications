@@ -1,0 +1,16 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/javascript/name-space/x64",
+  "description": [
+    "Create a unique identifier namespace within a Javascript scope."
+  ],
+  "requirements": [],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "uid scope",
+      "protocol": "/data/unique-identifier-scope/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/copy/bitcoin-txo-tree/default/x64",
+  "description": [
+    "Copy a Bitcoin transaction output tree",
+    "",
+    "The client is responsible for ensuring the TxID bytes of each tree are of equal length.",
+    "",
+    "If the structures of the destination tree are smaller than than of the source, run-time tests are performed to ensure tree data is consistent.",
+    "",
+    "If at run-time data is found to be inconsistent, or there is insufficient destination tree-capacity, the failure flow will be executed."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "copy",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "source",
+      "protocol": "/data/txo-tree/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "destination",
+      "protocol": "/data/txo-tree/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/feature-appzi-script-loader/x64",
+  "description": [
+    "Add an Appzi Feedback feature to a Web Document.",
+    "",
+    "Provide your Appzi Customer ID.",
+    "",
+    "The customer ID can be obtained by logging in and capturing the piece of the URL:",
+    "",
+    "     https://portal.appzi.com/portals/<customerID>/widgets ",
+    "     ",
+    "Example:",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/hubspot_chatBox.png\" width=\"100%\" height=\"450\">",
+    "",
+    "Add to every Web Document Page you want Appzi to appear.",
+    "",
+    "Learn more: https://www.appzi.com/"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "appzi customer ID",
+      "length": "9900",
+      "hint": "0 to 9900"
+    }
+  ],
+  "obligations": []
+}

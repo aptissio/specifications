@@ -1,0 +1,51 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/derive/key/pbkdf2-hmac/x64",
+  "description": [
+    "PBKDF2(Password-Based Key Derivation Function 2) applies a pseudorandom function to derive keys. The length of the derived key is essentially unbounded. (However, the maximum effective search space for the derived key may be limited by the structure of the underlying pseudorandom function)"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "derive",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "password",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "salt",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "number of iterations",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "derived key length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "pseudo random procedure",
+      "protocol": "/data/hmac-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "key",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ]
+}

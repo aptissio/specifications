@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/colour/default/x64",
+  "description": [
+    "Unpack a colour from a HTML Document"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "alpha"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ]
+}

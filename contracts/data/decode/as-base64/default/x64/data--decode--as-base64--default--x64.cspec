@@ -1,0 +1,41 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/decode/as-base64/default/x64",
+  "description": [
+    "Decode  an `input bytesequence` according to the provided alphabet. This design assumes the padding character is a `=` as per RFC4648.",
+    "",
+    "\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\" -> BASE64_RFC4648",
+    "\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_\" -> BASE64_URL"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "initialise",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "decode",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "alphabet",
+      "length": "64",
+      "hint": "64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

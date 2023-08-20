@@ -1,0 +1,90 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant-property/height-with-content-control/x64",
+  "description": [
+    "Add the Height property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The Height property sets the height of an element.",
+    "",
+    "Specify the <i>Height value & its units</i> from the options:",
+    "",
+    "    1 - px     pixels (1px = 1/96th of 1in)",
+    "    2 - %      Relative to the parent element",
+    "    3 - rem    Relative to font-size of the root element",
+    "    4 - em     Relative to the font-size of the element (2em means 2 times the size of the current font)",
+    "    5 - cm \tcentimeters",
+    "    6 - mm \tmillimeters",
+    "    7 - in \tinches (1in = 96px = 2.54cm)",
+    "    8 - pt \tpoints (1pt = 1/72 of 1in)",
+    "    9 - pc     picas (1pc = 12 pt) ",
+    "    10- ex \tRelative to the x-height of the current font (rarely used) \t",
+    "    11- ch \tRelative to the width of the \"0\" (zero) \t",
+    "    12- vw \tRelative to 1% of the width of the viewport* \t",
+    "    13- vh \tRelative to 1% of the height of the viewport* \t",
+    "    14- vmin   Relative to 1% of viewport's* smaller dimension ",
+    "    15 -vmax   Relative to 1% of viewport's* larger dimension \t",
+    "    ",
+    "    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] -> UNIT_1PX, UNIT_2PERCENTAGE, UNIT_3REM, UNIT_4EM, UNIT_5CM, UNIT_6MM, UNIT_7IN, UNIT_8PT, UNIT_9PC, UNIT_10EX, UNIT_11CH, UNIT_12VW, UNIT_13VH, UNIT_14VMIN, UNIT_15VMAX",
+    "",
+    "Not applying the Height to a property will assume the default behaviour - Height: auto",
+    "",
+    "(the element will automatically adjust its height to allow its content to be displayed correctly.)",
+    "",
+    "If the content does not fit within the specified height, it will overflow.",
+    "",
+    "Select a <i>Content Control</i> method from the following options:",
+    "",
+    "    -1 = inherit    (Inherits this property from its parent element. Read about inherit)",
+    "     0 = visible \t(The overflow is not clipped. It renders outside the element's box. ",
+    "                     This is default) \t",
+    "     1 = hidden \t (The overflow is clipped, and the rest of the content will be invisible) \t",
+    "     2 = scroll \t (The overflow is clipped, but a scroll-bar is added to see the ",
+    "                     rest of the content) \t",
+    "     3 = auto \t   (If overflow is clipped, a scroll-bar should be added to see the ",
+    "                     rest of the content) \t",
+    "     4 = initial \t(Sets this property to its default value. Read about initial) \t",
+    "",
+    "     [-1, 0, 1, 2, 3, 4] -> HEIGHT_INHERIT, HEIGHT_0VISIBLE, HEIGHT_1HIDDEN, HEIGHT_2SCROLL, HEIGHT_3AUTO, HEIGHT_4INITIAL",
+    "",
+    "Tip: ",
+    "",
+    "The Height of an element does not include padding, borders, or margins!",
+    "",
+    "Learn more: https://www.w3schools.com/cssref/pr_dim_height.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "height",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "2000"
+    },
+    {
+      "type": "integer",
+      "name": "height unit",
+      "minimum": "1",
+      "maximum": "15",
+      "hint": "1 - 15"
+    },
+    {
+      "type": "integer",
+      "name": "content control",
+      "minimum": "-1",
+      "maximum": "4",
+      "hint": "-1, 4"
+    }
+  ],
+  "obligations": []
+}

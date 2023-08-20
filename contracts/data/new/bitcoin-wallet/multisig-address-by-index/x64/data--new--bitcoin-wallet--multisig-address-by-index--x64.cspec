@@ -1,0 +1,114 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-wallet/multisig-address-by-index/x64",
+  "description": [
+    "Create a new Bitcoin multisig address.",
+    "",
+    "`account number` and `address index` are used to nominate which key-pair from the `wallet` will be used in the creation of the address which is an N-of-M multisig address. Where N = `signatures required` and M = len(`public key list`) + 1.",
+    "",
+    "If the key-pair nominated by `account number` and `address index` do not exist in the `wallet`, then they are created.",
+    "",
+    "The supplied `public key list` is interpreted a list of SEC `encoded public key`. Given that the unique order of public keys creates a unique multisig address, the public key from the local wallet is inserted into the `public key list` at the index given by the `redeem script public key index`.",
+    "",
+    "`my encoded public key` is the SEC encoding of the local wallet public key used in the creation of the new multisig address.",
+    "",
+    "`redeem script` is the redeem script of the new multisig address. It is added to the `wallet`.",
+    "",
+    "Set `enable ECDSA signatures` if you will use ECDSA signatures when signing against this address.",
+    "",
+    "Set `enable uncompressed public keys` if you require the use of uncompressed keys within the multisig redeem script."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "address index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "redeem script public key index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "signatures required",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "public key list",
+      "protocol": "/data/list/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "encoded public key",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable ECDSA Signatures"
+    },
+    {
+      "type": "boolean",
+      "name": "enable uncompressed public keys"
+    },
+    {
+      "type": "abstraction",
+      "name": "SHA256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RIPEMD160 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "HMAC512 procedure",
+      "protocol": "/data/hmac-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "multisig address",
+      "protocol": "/data/bitcoin-address/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "my encoded public key",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "redeem script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success(multisig address, my encoded public key, redeem script)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

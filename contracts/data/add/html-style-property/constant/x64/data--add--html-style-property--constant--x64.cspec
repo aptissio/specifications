@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-property/constant/x64",
+  "description": [
+    "Add one or more properties to a HTML Cascaded Style Sheet (CSS) style",
+    "",
+    "Add constant Property name & value to CSS styling.",
+    "",
+    "Example:",
+    "",
+    "<code>#example2 {",
+    "   padding: 10px;",
+    " }",
+    "</code>"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "property name",
+      "length": "30",
+      "hint": "30"
+    },
+    {
+      "type": "string",
+      "name": "property value",
+      "length": "200",
+      "hint": "200"
+    }
+  ],
+  "obligations": []
+}

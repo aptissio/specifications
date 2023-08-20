@@ -1,0 +1,39 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/to-bytesequence/with-padding-right-justified/x64",
+  "description": [
+    "Add more bytes to a bytesequence."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "add to-bytesequence with-padding-right-justified",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "source bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "padded length",
+      "minimum": "1",
+      "maximum": "1048576",
+      "hint": "1 to 2^20"
+    },
+    {
+      "type": "string",
+      "name": "padding character",
+      "length": "1048576",
+      "hint": "2^20"
+    }
+  ],
+  "obligations": []
+}

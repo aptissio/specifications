@@ -1,0 +1,32 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compute/jacobi-symbol/default/x64",
+  "description": [
+    "Compute jacobi symbol used for keeping track whether or not an integer(a) is a quadratic residue modulo of a prime(p)"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compute",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "integer(a)",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "prime(p)",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "jacobi symbol(s)",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

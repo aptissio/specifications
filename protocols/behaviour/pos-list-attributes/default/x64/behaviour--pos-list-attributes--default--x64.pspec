@@ -1,0 +1,153 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/pos-list-attributes/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "attribute initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "attributes",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "attribute name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "attribute values",
+        "protocol": "/data/structure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "attribute units",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "attribute count",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (63^2)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum attribute name length",
+        "minimum": "0",
+        "maximum": "1048576",
+        "hint": "0 to 2^20"
+      },
+      {
+        "type": "integer",
+        "name": "maximum order attribute units length",
+        "minimum": "0",
+        "maximum": "1048576",
+        "hint": "0 to 2^20"
+      },
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, attr_init, attr_list, attr_name, attr_values, attr_units, attr_count, attr_name_len_max, attr_units_len_max, chain_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, attr_init, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, attr_list, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, attr_name, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, attr_values, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, attr_units, trigger, debug_msg)",
+      "    sub /behaviour/new/agent-integer/constant/x64@codevalley( acs, 0, trigger, debug_msg) -> zero",
+      " sub /behaviour/collect-and-distribute/agent-integer/default/x64@codevalley( acs, $, zero, attr_count, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, attr_name_len_max, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, attr_units_len_max, trigger, debug_msg)",
+      "  }",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "requested order attribute name length",
+        "minimum": "0",
+        "maximum": "1048576",
+        "hint": "0 to 2^20"
+      },
+      {
+        "type": "integer",
+        "name": "requested order attribute units length",
+        "minimum": "0",
+        "maximum": "1048576",
+        "hint": "0 to 2^20"
+      },
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "attribute initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "attributes",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "attribute name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "attribute values",
+        "protocol": "/data/structure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "attribute units",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "integer",
+        "name": "attribute ID",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (63^2)-1"
+      }
+    ],
+    "macro": [
+      "def(acs, req_attr_name_len, req_attr_units_len, chain_inout, attr_init, attr_list, attr_name, attr_values, attr_units, attr_id, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, attr_init, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, attr_list, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, attr_name, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, attr_values, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, attr_units, trigger, debug_msg)",
+      " sub /behaviour/new/agent-integer/constant/x64@codevalley( acs, 1, trigger, debug_msg) -> one",
+      " sub /behaviour/fold-and-allocate/agent-integer/default/x64@codevalley( acs, $, one, attr_id, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, req_attr_name_len, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, req_attr_units_len, trigger, debug_msg)",
+      "  }",
+      "end",
+      ""
+    ]
+  }
+}

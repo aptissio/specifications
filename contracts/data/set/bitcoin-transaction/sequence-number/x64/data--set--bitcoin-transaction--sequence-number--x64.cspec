@@ -1,0 +1,37 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/bitcoin-transaction/sequence-number/x64",
+  "description": [
+    "Set values within the bitcoin-transaction structure.",
+    "Set the transaction input sequence number to that given by the client."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set [bitcoin-transaction]",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction id",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input count",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input sequence number",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

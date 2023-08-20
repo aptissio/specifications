@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-signature/reserve/x64",
+  "description": [
+    "Create a new bitcoin signature (ecdsa or schnorr)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "r width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "8MB"
+    },
+    {
+      "type": "integer",
+      "name": "s width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "8MB"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "signature",
+      "protocol": "/data/bitcoin-signature/default/x64"
+    }
+  ]
+}

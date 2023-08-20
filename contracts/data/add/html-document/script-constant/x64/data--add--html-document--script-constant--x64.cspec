@@ -1,0 +1,63 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/script-constant/x64",
+  "description": [
+    "Add to a HTML document.",
+    "The <script> element either contains scripting statements, or it points to an external script file through the src attribute.",
+    "",
+    "Script /execution/ is parser blocking. This means when the browser encounters a script it must pause DOM construction, hand this over to the JavaScript engine and allow script execution before proceeding with DOM construction. The 3 options include:",
+    "",
+    "1 null",
+    "2 async",
+    "3 defer",
+    "",
+    "/null/ leave empty",
+    "",
+    "/async/ specifies that the script is executed asynchronously (only for external scripts)",
+    "",
+    "/defer/ specifies that the script is executed when the page has finished parsing (only for external scripts)",
+    "",
+    "",
+    "/charset/ specifies the character encoding used in an external script file",
+    "",
+    "/src url/ specifies the URL of an external script file",
+    "",
+    "/type/ specifies the media type of the script",
+    "",
+    "[[https://www.w3schools.com/tags/tag_script.asp][Learn more..]]"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "execution",
+      "minimum": "1",
+      "maximum": "3",
+      "hint": "1, 3"
+    },
+    {
+      "type": "string",
+      "name": "charset",
+      "length": "1024",
+      "hint": "1024"
+    },
+    {
+      "type": "string",
+      "name": "src url",
+      "length": "1024",
+      "hint": "1024"
+    },
+    {
+      "type": "string",
+      "name": "type",
+      "length": "1024",
+      "hint": "1024"
+    }
+  ],
+  "obligations": []
+}

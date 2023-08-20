@@ -1,0 +1,58 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/ascii-signed-integer-real/default/x64",
+  "description": [
+    "Unpack a ascii signed integer real. ",
+    "",
+    "Specify the minimum & maximum values as well as the number of decimal places desired.",
+    "",
+    "Provide the desired number of decimal places.",
+    "",
+    "",
+    "Examples:",
+    "",
+    "       -1.23",
+    "        112"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack(ascii-signed-integer-real)",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "minimum value",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "(-2^63)-1 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum value",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "(-2^63)-1 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum no. of decimal places",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "precision",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

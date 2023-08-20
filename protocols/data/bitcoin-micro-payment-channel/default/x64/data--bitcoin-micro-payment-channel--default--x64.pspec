@@ -1,0 +1,187 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/bitcoin-micro-payment-channel/default/x64",
+  "description": [
+    "A Bitcoin micro-payment channel enables off-chain negotiation of on-chain payments.",
+    "\\/data\\/bitcoin-micro-payment-channel associates data required to operate a Bitcoin micro-payment channel."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "protocol version",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "channel value",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "channel duration",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "local address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "peer address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "channel ID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "local public key",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "peer public key",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "credit UTXO",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment address",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "change address",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "last payment transaction",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-micro-payment-channel/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, protocol_version, channel_value, channel_duration, local_address, peer_address, channel_ID, local_public_key, peer_public_key, credit_UTXO, payment_address, change_address, last_payment_transaction, chain_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, protocol_version, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, channel_value, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, channel_duration, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, local_address, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, peer_address, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, channel_ID, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, local_public_key, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, peer_public_key, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, credit_UTXO, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, payment_address, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, change_address, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, last_payment_transaction, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-micro-payment-channel/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "protocol version",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "channel value",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "channel duration",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "local address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "peer address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "channel ID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "local public key",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "peer public key",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "credit UTXO",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment address",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "change address",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "last payment transaction",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, chain_inout, protocol_version, channel_value, channel_duration, local_address, peer_address, channel_ID, local_public_key, peer_public_key, credit_UTXO, payment_address, change_address, last_payment_transaction, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, protocol_version, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, channel_value, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, channel_duration, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, local_address, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, peer_address, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, channel_ID, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, local_public_key, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, peer_public_key, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, credit_UTXO, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, payment_address, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, change_address, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, last_payment_transaction, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  }
+}

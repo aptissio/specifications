@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/bytesequence/starts-with-constant/x64",
+  "description": [
+    "Compare one bytesequence against another."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare(bytesequence, constant)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "constant",
+      "length": "1048576",
+      "hint": "1MB"
+    }
+  ],
+  "obligations": []
+}

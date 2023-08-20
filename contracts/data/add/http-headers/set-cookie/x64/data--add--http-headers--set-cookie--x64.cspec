@@ -1,0 +1,94 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/http-headers/set-cookie/x64",
+  "description": [
+    "Add to http-header list a header \"Set-Cookie\".",
+    "",
+    "`add flow` is a flow of the process",
+	"",
+	"`http-headers` protocol to access the headers",
+	"",
+	"`http headers cookie name` the name of the cookie",
+	"",
+	"`http headers cookie value` the value of the cookie",
+	"",
+	"`expiry time in seconds` the seconds from now when the cookie should expire",
+	"",
+	"`http only flag` if set this adds HttpOnly attribute to cookie",
+	"",
+	"`secure flag` if set this adds Secure attribute to cookie",
+  "",
+  "`same site` sets value of attribute as one of the enumrerates (0 - won't set the attribute): ",
+  "",
+    "      0 - attribute and value ommited",
+    "      1 - Strict",
+    "      2 - Lax",
+    "      3 - None",
+    "",
+    "Returns the size of added cookie in `cookie value length`."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "add flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http-headers",
+      "protocol": "/data/http-headers/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http headers cookie name",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http headers cookie value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "expiry time in seconds",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http only flag",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "secure flag",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "same site",
+      "minimum": "0",
+      "maximum": "3",
+      "hint": "0 to 3"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "integer",
+      "name": "cookie value length",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "-(2^63) to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "success flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure flow",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

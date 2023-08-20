@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/list-item/x64",
+  "description": [
+    "The li tag defines a list item.",
+    "",
+    "The li tag is used inside ordered lists(ol), unordered lists (ul), and in menu lists (menu).",
+    "",
+    "Learn more...https://www.w3schools.com/tags/tag_li.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "list",
+      "protocol": "/data/html-document-list/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

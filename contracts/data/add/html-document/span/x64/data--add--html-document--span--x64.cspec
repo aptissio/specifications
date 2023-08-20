@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/span/x64",
+  "description": [
+    "The \\<span> tag is an inline container used to mark up a part of a text, or a part of a document.",
+    "",
+    "The \\<span> tag provides no visual change by itself, but when it is marked, you can style it with CSS, or manipulate it with JavaScript."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "child document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

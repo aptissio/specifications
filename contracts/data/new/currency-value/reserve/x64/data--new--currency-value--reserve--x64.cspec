@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/currency-value/reserve/x64",
+  "description": [
+    "Design for the provision of a new currency value.",
+    "Reserves the structures for a new currency value.",
+    "The maximum value that can be represented is calculated as (2^/value width/)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "reserve(value width, currency)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "value width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "1 to 2^23"
+    },
+    {
+      "type": "abstraction",
+      "name": "currency",
+      "protocol": "/data/currency/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "currency value",
+      "protocol": "/data/currency-value/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/finite-state-machine/state-constant/x64",
+  "description": [
+    "Compare a constant `state ID` with the current state of a `finite state machine`.",
+    "",
+    "compare type: [0, 1] -> EQUALS, NOT_EQUAL"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "finite state machine",
+      "protocol": "/data/finite-state-machine/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "compare type",
+      "minimum": "0",
+      "maximum": "1",
+      "hint": "0 or 1"
+    },
+    {
+      "type": "integer",
+      "name": "state id",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ],
+  "obligations": []
+}

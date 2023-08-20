@@ -1,0 +1,80 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/feature-social-media-sharebox/x64",
+  "description": [
+    "Add a Social Media Sharebox to a Web Document.",
+    "",
+    "Example:",
+    "",
+    " <video width=\"100%\" height=\"500\" controls>",
+    "  <source src=\"https://aptissio.ddns.net:8443/images/sharebox.mp4\"\" type=\"video/mp4\">",
+    "</video>",
+    "",
+    "Select from the following platforms to include:",
+    "",
+    "      1. Facebook",
+    "      2. Twitter",
+    "      3. Whatsapp",
+    "      4. Reddit",
+    "      5. LinkedIn",
+    "      6. Pinterest",
+    "      7. Telegram",
+    "      8. Tumblr",
+    "      ",
+    "Specify a font-size for the social media icons.",
+    "",
+    "Choose position right for sharebox to be positioned on right side of viewport. Default position is left side of viewport."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable facebook"
+    },
+    {
+      "type": "boolean",
+      "name": "enable twitter"
+    },
+    {
+      "type": "boolean",
+      "name": "enable whatsapp"
+    },
+    {
+      "type": "boolean",
+      "name": "enable reddit"
+    },
+    {
+      "type": "boolean",
+      "name": "enable linkedin"
+    },
+    {
+      "type": "boolean",
+      "name": "enable pinterest"
+    },
+    {
+      "type": "boolean",
+      "name": "enable telegram"
+    },
+    {
+      "type": "boolean",
+      "name": "enable tumblr"
+    },
+    {
+      "type": "integer",
+      "name": "icon font-size",
+      "minimum": "25",
+      "maximum": "100",
+      "hint": "25, 100"
+    },
+    {
+      "type": "boolean",
+      "name": "position right"
+    }
+  ],
+  "obligations": []
+}

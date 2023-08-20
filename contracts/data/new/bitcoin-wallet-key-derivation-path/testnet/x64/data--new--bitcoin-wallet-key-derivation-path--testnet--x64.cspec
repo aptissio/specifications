@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-wallet-key-derivation-path/testnet/x64",
+  "description": [
+    "Design the structures required for a Bitcoin wallet key derivation path.",
+    "Design a *_[[https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki][BIP 44]]_* compliant key derivation path for a Testnet wallet (all coin types)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "derivation path",
+      "protocol": "/data/bitcoin-wallet-key-derivation-path/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/accumulate/bitcoin-transaction-outputs/default/x64",
+  "description": [
+    "Create a total of Bitcoin transaction outputs.",
+    "Calculate the /accumulated transaction output value/ of the provided /bitcoin transaction/ where each output matches a given /match criteria/. If one or more outputs matches the given criteria, provide a /matched/ flow, else a /no match found/ flow.",
+    "The /accumulated transaction output value/ is valid in the scope of both /matched/ and /no match found/.",
+    "/Each output public key script/, /each output index/ and /each output value/ are made valid for use within the scopes of /match criteria/ and /match/."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "accumulate",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "match criteria",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "each output public key script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "each output index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "each output value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "accumulated transaction output value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "each matched output",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "matched",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "no match found",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

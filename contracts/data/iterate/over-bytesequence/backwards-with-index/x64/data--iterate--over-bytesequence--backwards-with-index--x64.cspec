@@ -1,0 +1,41 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/iterate/over-bytesequence/backwards-with-index/x64",
+  "description": [
+    "Iterate over each byte*s in a bytesequence.",
+    "",
+    "Iterate over and write each byte out within 'bytesequence in' from end to beginning. Iteration index begins at zero.",
+    "",
+    "Iterate over and write each byte out within 'bytesequence in' from end to beginning. Iteration index begins at zero. Contribution built for the x64 architecture."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "iterate(bytesequence, {each})",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "byte",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "i",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "each(byte, i)",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

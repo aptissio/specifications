@@ -1,0 +1,32 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/bitcoin-signature-script/p2pkh/x64",
+  "description": [
+    "Pack a Bitcoin signature script.",
+    "Pack an ECDSA or a Schnorr /signature/, /hash type/ and /public key/ as a Bitcoin signature script."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "signature",
+      "protocol": "/data/bitcoin-signature/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash type",
+      "protocol": "/data/bit-array/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "public key",
+      "protocol": "/data/finite-field-elliptic-curve-point/default/x64"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,65 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/filter/bitcoin-transaction-events/hula-merchants/x64",
+  "description": [
+    "Reduce a set of Bitcoin transaction events.",
+    "Reduce the real-time set of transaction events to those that pay HULA merchants.",
+    "Trigger a /merchant transaction output event/ for every transaction output matching the merchants Bitcoin address and trigger a /merchant transaction event/ for every transaction matching the merchants Bitcoin address.",
+    "The /payment amount/ is valid within the scopes of /merchant transaction output event/ and /merchant transaction event/ providing the transaction output value and total transaction value paid to the merchant respectively."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "core",
+      "protocol": "/system/execution-bundle/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction event",
+      "protocol": "/behaviour/bitcoin-transaction-event/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "merchants",
+      "protocol": "/behaviour/hula-merchants/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "network",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new merchant payment",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction epoch",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction id",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction outpoint index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payment amount",
+      "protocol": "/data/currency-value/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "merchant cashaddr",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

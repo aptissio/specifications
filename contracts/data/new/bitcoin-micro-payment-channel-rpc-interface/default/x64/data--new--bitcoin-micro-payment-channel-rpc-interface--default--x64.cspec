@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-micro-payment-channel-rpc-interface/default/x64",
+  "description": [
+    "Create the structures required to utilise Bitcoin micro-payment channel RPC agents."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "RPC interface",
+      "protocol": "/data/json-rpc-interface/default/x64"
+    }
+  ]
+}

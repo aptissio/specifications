@@ -1,0 +1,45 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/heading-constant/x64",
+  "description": [
+    "Add a <h5>HEADING</h5> to a HTML Document. HTML Heading levels are defined with the to \\<h6> tags. ",
+    "",
+    "Integer Range (1-6). If Integer outside range, Default Header Tag will be set to \\<h1>.",
+    "",
+    "Utilize the style handle to apply the desired styles to the heading. Optional ID selector ",
+    "for further CSS Styling"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "heading level",
+      "minimum": "1",
+      "maximum": "6",
+      "hint": "1, 6"
+    },
+    {
+      "type": "string",
+      "name": "heading content",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

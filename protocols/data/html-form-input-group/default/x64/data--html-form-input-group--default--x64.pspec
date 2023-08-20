@@ -1,0 +1,100 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/html-form-input-group/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "input group document",
+        "protocol": "/data/html-document/default/x64"
+      },
+      {
+        "type": "string",
+        "name": "form input key",
+        "length": "1024",
+        "hint": "1024"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "maximum input value length",
+        "minimum": "0",
+        "maximum": "1024",
+        "hint": "0 to 1024"
+      },
+      {
+        "type": "integer",
+        "name": "required number of input values",
+        "minimum": "0",
+        "maximum": "1024",
+        "hint": "0 to 1024"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-form-input-group/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, input_group_document, form_input_key, maximum_input_value_length, required_number_of_input_values, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, input_group_document, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, form_input_key, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_input_value_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/default/x64@codevalley( acs, $, required_number_of_input_values, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "maximum input value length",
+        "minimum": "0",
+        "maximum": "1024",
+        "hint": "0 to 1024"
+      },
+      {
+        "type": "integer",
+        "name": "required number of input values",
+        "minimum": "0",
+        "maximum": "1024",
+        "hint": "0 to 1024"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-form-input-group/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "input group document",
+        "protocol": "/data/html-document/default/x64"
+      },
+      {
+        "type": "string",
+        "name": "form input key",
+        "length": "1024",
+        "hint": "1024"
+      }
+    ],
+    "macro": [
+      "def (acs, maximum_input_value_length, required_number_of_input_values, self, input_group_document, form_input_key,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, input_group_document, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, form_input_key, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_input_value_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/default/x64@codevalley( acs, $, required_number_of_input_values, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

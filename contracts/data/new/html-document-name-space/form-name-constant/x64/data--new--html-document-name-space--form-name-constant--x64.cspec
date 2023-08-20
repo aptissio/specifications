@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/html-document-name-space/form-name-constant/x64",
+  "description": [
+    "Add a unique form name to a Web Document scope. This design appends \"form\" with a unique number.",
+    "",
+    "Example:",
+    "",
+    "      function name = form1"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "uid scope",
+      "protocol": "/data/unique-identifier-scope/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "string",
+      "name": "form name",
+      "length": "100",
+      "hint": "100"
+    }
+  ]
+}

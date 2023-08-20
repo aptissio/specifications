@@ -1,0 +1,135 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/system/agent-purchase-authorisation-manager/default/x64",
+  "description": [
+    "Design protocol wherby the host provides the following functions:",
+    "",
+    "procedure callback{purchase authorisation, procedure token, procedure result code} = issue auth procedure(issue auth item name, procedure token, procedure callback)",
+    "",
+    "procedure callback{procedure token, procedure result code} = cancel auth procedure(purchase authorisation, procedure token, procedure callback)",
+    "",
+    "|Result Code|Description|",
+    "|--|--|",
+    "|0|success|",
+    "|1|failure|"
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "issue auth item name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "issue auth procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "purchase authorisation",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "cancel auth procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure token",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure result code",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure callback",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/system/agent-purchase-authorisation-manager/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, issue_auth_item_name, issue_auth_procedure, purchase_authorisation, cancel_auth_procedure, procedure_token, procedure_result_code, procedure_callback, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, issue_auth_item_name, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, issue_auth_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, purchase_authorisation, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, cancel_auth_procedure, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, procedure_token, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, procedure_result_code, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, procedure_callback, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/system/agent-purchase-authorisation-manager/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "issue auth item name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "issue auth procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "purchase authorisation",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "cancel auth procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure token",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure result code",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure callback",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, self, issue_auth_item_name, issue_auth_procedure, purchase_authorisation, cancel_auth_procedure, procedure_token, procedure_result_code, procedure_callback,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, issue_auth_item_name, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, issue_auth_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, purchase_authorisation, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, cancel_auth_procedure, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, procedure_token, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, procedure_result_code, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, procedure_callback, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/decode/as-sign-magnitude/big-endian/x64",
+  "description": [
+    "Decode a series of octets as a number in sign plus magnitude representation.",
+    "Decode a (variable length) /input/ bytesequence from a big-endian,sign-plus-magnitude representation to in integer within the saturation limits of /result/.",
+    "An empty bytesequence returns the value of zero provided it is within saturation limits."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "decode",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

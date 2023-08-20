@@ -1,0 +1,45 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/bitcoin-seed/mnemonic-sentence-passphrase/x64",
+  "description": [
+    "Set a Bitcoin seed mnemonic sentence passphrase."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "mnemonic sentence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "passphrase",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hmac 512",
+      "protocol": "/data/hmac-procedure/default/x64"
+    },
+	 {
+      "type": "abstraction",
+      "name": "bitcoin seed",
+      "protocol": "/data/bitcoin-seed/default/x64"
+    }
+  ],
+  "obligations": [
+  {
+        "type": "integer",
+        "name": "bitcoin seed width",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      }
+   
+  ]
+}

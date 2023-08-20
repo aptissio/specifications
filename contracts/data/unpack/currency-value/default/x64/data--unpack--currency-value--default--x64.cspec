@@ -1,0 +1,57 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/currency-value/default/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum value",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "1, 2^23"
+    },
+    {
+      "type": "integer",
+      "name": "maximum precision",
+      "minimum": "0",
+      "maximum": "18",
+      "hint": "0, 18"
+    },
+    {
+      "type": "integer",
+      "name": "maximum symbol length",
+      "minimum": "0",
+      "maximum": "10",
+      "hint": "0, 10"
+    },
+    {
+      "type": "integer",
+      "name": "maximum ticker length",
+      "minimum": "0",
+      "maximum": "10",
+      "hint": "0, 10"
+    },
+    {
+      "type": "integer",
+      "name": "maximum description length",
+      "minimum": "0",
+      "maximum": "100",
+      "hint": "0, 100"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "currency value",
+      "protocol": "/data/currency-value/default/x64"
+    }
+  ]
+}

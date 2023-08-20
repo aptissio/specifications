@@ -1,0 +1,69 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-version-message/default/linux-x64",
+  "description": [
+    "Creates a 'version' message as defined in the Bitcoin network protocol.",
+    "Assembles a complete 'version' message into the beginning of the /message buffer/. Upon successful assembly, the contents of the buffer is ready for network transmission.",
+    "If the buffer is of insufficient size or an invalid value is provided, then the /failure/ flow will trigger."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message buffer",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "local network address",
+      "protocol": "/data/network-address/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "remote network address",
+      "protocol": "/data/network-address/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "user agent string",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "local services bitfield",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "remote services bitfield",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "start height",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction relay",
+      "protocol": "/data/flag/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

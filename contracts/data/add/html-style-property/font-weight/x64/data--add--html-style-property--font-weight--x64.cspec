@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-property/font-weight/x64",
+  "description": [
+    "Add the Font weight property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The font-weight property sets how thick or thin characters in text should be displayed.",
+    "",
+    "Specify the <i>font weight value </i>",
+    "",
+    "Learn more: https://www.w3schools.com/cssref/pr_font_weight.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "font weight",
+      "minimum": "0",
+      "maximum": "1000",
+      "hint": "0 - 1000"
+    }
+  ],
+  "obligations": []
+}

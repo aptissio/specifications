@@ -1,0 +1,75 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form-fieldset/x64",
+  "description": [
+    "The form attribute specifies the form the fieldset belongs to.",
+    "",
+    "The value of this attribute must be equal to the id attribute of a \\<form> element in the same document",
+    "",
+    "The name attribute specifies a name for a fieldset. It is used to reference elements in a JavaScript, or to reference form data after a form is submitted.",
+    "",
+    "The disabled attribute is a boolean attribute.",
+    "",
+    "When present, it specifies that a group of related form elements (a fieldset) should be disabled.",
+    "",
+    "A disabled fieldset is unusable and un-clickable.",
+    "",
+    "Example:",
+    "",
+    "<fieldset>",
+    "  <legend>Personalia:</legend>",
+    "  <label for=\"fname\">First name:</label>",
+    "  <input type=\"text\" id=\"fname\" name=\"fname\"><br><br>",
+    "  <label for=\"lname\">Last name:</label>",
+    "  <input type=\"text\" id=\"lname\" name=\"lname\"><br><br>",
+    "  <label for=\"email\">Email:</label>",
+    "  <input type=\"email\" id=\"email\" name=\"email\"><br><br>",
+    "  <label for=\"birthday\">Birthday:</label>",
+    "  <input type=\"date\" id=\"birthday\" name=\"birthday\"><br><br>",
+    "  <input type=\"submit\" value=\"Submit\">",
+    " </fieldset>",
+    "",
+    "Read more:",
+    "",
+    "https//:www.w3schools.com/tags/tag_fieldset.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form id",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "fieldset name",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "disabled"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "child document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

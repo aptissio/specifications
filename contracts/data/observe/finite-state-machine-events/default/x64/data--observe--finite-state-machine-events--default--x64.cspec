@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/observe/finite-state-machine-events/default/x64",
+  "description": [
+    "Observes `finite state machine events` (FSM).",
+    "",
+    "The `event id maximum` is 0 based, as this contract provides the current offset."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "finite state machine",
+      "protocol": "/data/finite-state-machine-events/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "integer",
+      "name": "event always",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "event id maximum",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/finite-state-machine-transition/default/x64",
+  "description": [
+    "Design a new `finite state machine` transition which transitions the finite state machine from one state (`from state`) to another state (`to state`).",
+    "",
+    "The transition will only occur at run-time if:",
+    "- it is triggered by a finite state machine event AND the `transition condition` evaluates true, or",
+    "- another finite state machine transition has occured, the design-time literal `include immediate` is true AND the `transition condition` evaluates true.",
+    "",
+    "If the transition occurs, the `transition action` work will be immediately executed."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "finite state machine",
+      "protocol": "/data/finite-state-machine/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "from state",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "to state",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "boolean",
+      "name": "include immediate"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new transition",
+      "protocol": "/data/finite-state-machine-transition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transition condition",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transition action",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

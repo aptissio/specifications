@@ -1,0 +1,127 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form-single-column-sign-up/x64",
+  "description": [
+    "Add a Single Column Sign Up Form to a Web Document.",
+    "",
+    "Example:",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/form_sign_up.png\" width=\"350\" height=\"450\"> ",
+    "",
+    "Provide a Form Heading & form action url. The <i>form action url</i> specifies where to send the form-data when a form is submitted.",
+    "",
+    "Provide an input & label class style for all form inputs.",
+    "",
+    "Specify colours for form heading/background, submit button heading/background & hover background.",
+    "",
+    "Populate the Form group with Single Column Form elements as desired.",
+    "",
+    "The form name attribute specifies the name of a form. It is used to reference elements in a JavaScript, or to reference form data after a form is submitted.",
+    "",
+    "This form design assumes a submit button. See https://gw3.agops1.local.dmz/valley/edit?ref=/behaviour/new/web-document-form/single-column-without-submit-button/x64 for a form without it.",
+    "",
+    "Provide a unique identifier scope for the Javascript.",
+    "",
+    "",
+    "Add a final message in replacement of \"Don't Hesitate!\" shown in example provided above."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form container style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form action url",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "form heading",
+      "length": "10000",
+      "hint": "0 to 10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "form heading colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "submit button heading",
+      "length": "10000",
+      "hint": "0 to 10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "submit button heading colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "submit button background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "submit button hover colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "final message",
+      "length": "10000",
+      "hint": "0 to 10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "javascript namespace",
+      "protocol": "/data/unique-identifier-scope/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http parameter decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "string",
+      "name": "form name",
+      "length": "10000",
+      "hint": "0 to 10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "form ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form group",
+      "protocol": "/data/form-single-column-group/default/x64"
+    }
+  ]
+}

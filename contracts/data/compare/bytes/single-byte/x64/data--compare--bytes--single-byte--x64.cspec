@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/bytes/single-byte/x64",
+  "description": [
+    "Compare bytes against bytes."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare(primary bytes, secondary bytes)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "primary bytes",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "secondary bytes",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": []
+}

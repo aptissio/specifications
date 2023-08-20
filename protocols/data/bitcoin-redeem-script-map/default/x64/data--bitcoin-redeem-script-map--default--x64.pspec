@@ -1,0 +1,250 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/bitcoin-redeem-script-map/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "target script hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "map",
+        "protocol": "/data/binary-search-tree/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "script hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "redeem script",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "multi signature script flag",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "required signature count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "total signature count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "maximum signature script length",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "account number",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "public key hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "redeem script public key index",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "required signature count maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "total signature count maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "signature script length maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "redeem script maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/bitcoin-redeem-script-map/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, target_script_hash, map, script_hash, redeem_script, multi_signature_script_flag, required_signature_count, total_signature_count, maximum_signature_script_length, account_number, key_chain_index, public_key_hash, redeem_script_public_key_index, required_signature_count_maximum, total_signature_count_maximum, signature_script_length_maximum, redeem_script_maximum, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_script_hash, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, map, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, script_hash, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, redeem_script, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, multi_signature_script_flag, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, required_signature_count, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, total_signature_count, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, maximum_signature_script_length, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, account_number, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, key_chain_index, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, public_key_hash, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, redeem_script_public_key_index, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, required_signature_count_maximum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, total_signature_count_maximum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, signature_script_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, redeem_script_maximum, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "required signature count maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "total signature count maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "signature script length maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "redeem script maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/bitcoin-redeem-script-map/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "target script hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "map",
+        "protocol": "/data/binary-search-tree/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "script hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "redeem script",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "multi signature script flag",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "required signature count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "total signature count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "maximum signature script length",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "account number",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "public key hash",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "redeem script public key index",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, required_signature_count_maximum, total_signature_count_maximum, signature_script_length_maximum, redeem_script_maximum, self, target_script_hash, map, script_hash, redeem_script, multi_signature_script_flag, required_signature_count, total_signature_count, maximum_signature_script_length, account_number, key_chain_index, public_key_hash, redeem_script_public_key_index,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_script_hash, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, map, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, script_hash, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, redeem_script, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, multi_signature_script_flag, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, required_signature_count, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, total_signature_count, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, maximum_signature_script_length, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, account_number, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, key_chain_index, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, public_key_hash, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, redeem_script_public_key_index, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, required_signature_count_maximum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, total_signature_count_maximum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, signature_script_length_maximum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, redeem_script_maximum, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

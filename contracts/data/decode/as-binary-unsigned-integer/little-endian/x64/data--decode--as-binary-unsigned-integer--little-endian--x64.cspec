@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/decode/as-binary-unsigned-integer/little-endian/x64",
+  "description": [
+    "Decode a structure as an unsigned-integer value.",
+    "Decode the given /bytesequence in/ as an /unsigned integer out/.",
+    "If the provided /unsigned-integer/ is of insufficient size, the condition will return 'false' at run-time."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "decode()",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence in",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "unsigned integer out",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

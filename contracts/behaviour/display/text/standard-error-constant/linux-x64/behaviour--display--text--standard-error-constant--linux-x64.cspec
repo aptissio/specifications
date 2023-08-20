@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/display/text/standard-error-constant/linux-x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "display",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "text",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": []
+}

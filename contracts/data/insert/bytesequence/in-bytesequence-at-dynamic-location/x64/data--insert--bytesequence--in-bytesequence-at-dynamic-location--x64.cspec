@@ -1,0 +1,37 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/insert/bytesequence/in-bytesequence-at-dynamic-location/x64",
+  "description": [
+    "Insert source [bytesequence] at given position in the target [bytesequence]."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "insert",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "source",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "postion",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

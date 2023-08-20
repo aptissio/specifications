@@ -1,0 +1,64 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/feature-calendly-widget/x64",
+  "description": [
+    "Add a new Calendly Widget feature to a Web Document.",
+    "",
+    "See Example:",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/calendly_widget.png\" height=\"500\"></img>",
+    "",
+    "Provide content for the widget button text & specify a colour.",
+    "",
+    "Allocate a background colour for the widget button.",
+    "",
+    "Choose to display the Calendly brand on the widget if desired.",
+    "",
+    "Add a Calendly account ID & event type.",
+    "",
+    "See Live: ",
+    "",
+    "https://calendly-embed.com/popup-widget/"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "button text",
+      "length": "1000",
+      "hint": "0 to 1000"
+    },
+    {
+      "type": "abstraction",
+      "name": "button text colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "button background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "display calendly brand"
+    },
+    {
+      "type": "string",
+      "name": "account ID",
+      "length": "1000",
+      "hint": "0 to 1000"
+    },
+    {
+      "type": "string",
+      "name": "event type",
+      "length": "1000",
+      "hint": "0 to 1000"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,63 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/html-document/default/x64",
+  "description": [
+    "Pack a HTML document.",
+    "Pack the /meta data/, /document body/ and /javascript/ into a valid HTML document.",
+    "",
+    "/Language/ should be set to a valid [[ISO 639-1 code],[https://www.w3schools.com/tags/ref_language_codes.asp]]. If no code is provided or it is invalid, the default value of \"en\" is applied.",
+    "",
+    "Document styling will be added to the provided /style sheet/.",
+    "",
+    "If /default padding/ is false, a padding of zero is applied to the document body.",
+    "If /default margin/ is false, a margin of zero is applied to the document body.",
+    "",
+    "If /formatted/ is 'true', white space is added to improve human readability of the serialised output."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "document title",
+      "length": "1024",
+      "hint": "1024"
+    },
+    {
+      "type": "abstraction",
+      "name": "style sheet",
+      "protocol": "/data/html-style-sheet/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "language",
+      "length": "2",
+      "hint": "2"
+    },
+    {
+      "type": "boolean",
+      "name": "formatted"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "meta data",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "document body",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "javascript",
+      "protocol": "/data/pack/default/x64"
+    }
+  ]
+}

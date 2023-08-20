@@ -1,0 +1,127 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/bitcoin-utxo-set/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "target txid",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo set",
+        "protocol": "/data/sorted-map/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo txid",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo pubkey script",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-utxo-set/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, target_txid, target_index, utxo_set, utxo_txid, utxo_index, utxo_value, utxo_pubkey_script, bitcoin_utxo_set_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, bitcoin_utxo_set_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_txid, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_index, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, utxo_set, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, utxo_txid, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, utxo_index, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, utxo_value, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, utxo_pubkey_script, trigger, debug_msg)",
+      "  }",
+      "end",
+      ""
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-utxo-set/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "target txid",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo set",
+        "protocol": "/data/sorted-map/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo txid",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "utxo pubkey script",
+        "protocol": "/data/bytesequence/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, bitcoin_utxo_set_inout, target_txid, target_index, utxo_set, utxo_txid, utxo_index, utxo_value, utxo_pubkey_script, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, bitcoin_utxo_set_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_txid, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_index, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, utxo_set, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, utxo_txid, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, utxo_index, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, utxo_value, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, utxo_pubkey_script, trigger, debug_msg)",
+      "}",
+      "end "
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{"name": "/behaviour/agent-payments/default/x64",
+"type": "protocol",
+"policy":"0",
+"description":[""],
+"host": {
+"requirements": [
+{"name":  "agent sales manager core",
+"type": "abstraction",
+"protocol": "/system/agent-sales-manager-core/default/x64"},
+{"name":  "agent payment methods",
+"type": "abstraction",
+"protocol": "/system/agent-payment-methods/default/x64"},
+{"name":  "agent wallet state",
+"type": "abstraction",
+"protocol": "/data/agent-bitcoin-wallet-state/default/x64"}
+],
+"obligations": [
+{"name": "<self>",
+"type": "abstraction",
+"protocol": "/behaviour/agent-payments/default/x64"}
+], 
+"macro":  ["def (acs, agent_sales_manager_core, agent_payment_methods, agent_wallet_state, self, trigger, debug_msg) :",
+"sub /behaviour/add/collaboration-endpoint/host/x64@codevalley(acs, self, trigger, debug_msg) -> {",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, agent_sales_manager_core, trigger, debug_msg)",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, agent_payment_methods, trigger, debug_msg)",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, agent_wallet_state, trigger, debug_msg)",
+"}",
+"end"]
+},
+"join": {
+"requirements": [
+{"name": "<self>",
+"type": "abstraction",
+"protocol": "/behaviour/agent-payments/default/x64"}
+],
+"obligations": [
+{"name":  "agent sales manager core",
+"type": "abstraction",
+"protocol": "/system/agent-sales-manager-core/default/x64"},
+{"name":  "agent payment methods",
+"type": "abstraction",
+"protocol": "/system/agent-payment-methods/default/x64"},
+{"name":  "agent wallet state",
+"type": "abstraction",
+"protocol": "/data/agent-bitcoin-wallet-state/default/x64"}
+],
+"macro":  ["def (acs, self, agent_sales_manager_core, agent_payment_methods, agent_wallet_state,  trigger, debug_msg) :",
+"sub /behaviour/add/collaboration-endpoint/join/x64@codevalley(acs, self, trigger, debug_msg) -> {",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, agent_sales_manager_core, trigger, debug_msg)",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, agent_payment_methods, trigger, debug_msg)",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, agent_wallet_state, trigger, debug_msg)",
+"}",
+"end"]
+}
+}

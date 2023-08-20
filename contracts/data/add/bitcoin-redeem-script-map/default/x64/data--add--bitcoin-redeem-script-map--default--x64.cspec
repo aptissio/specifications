@@ -1,0 +1,92 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/bitcoin-redeem-script-map/default/x64",
+  "description": [
+    "Add to a Bitcoin redeem script map."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "add",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "SHA256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "ripemd160 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "redeem script map",
+      "protocol": "/data/bitcoin-redeem-script-map/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "redeem script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "multi signature script flag",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "required signature count",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "total signature count",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "maximum signature script length",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "key chain index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "public key hash",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "redeem script public key index",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "added(map elements)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "already present",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "not added",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/encode/finite-field-elliptic-curve-point/default/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "encode",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "Compressed Format"
+    },
+    {
+      "type": "abstraction",
+      "name": "elliptic curve point",
+      "protocol": "/data/finite-field-elliptic-curve-point/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "encoded key",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

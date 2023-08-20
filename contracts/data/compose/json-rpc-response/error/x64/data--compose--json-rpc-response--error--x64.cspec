@@ -1,0 +1,35 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compose/json-rpc-response/error/x64",
+  "description": [
+    "Compose a JSON RPC response from its components.",
+    "Compose a JSON RPC error response from an /error code/ and /error message/. The response is stored in the provided /JSON RPC interface/."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compose()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "error code",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "-(2^63) to (2^63)-1"
+    },
+    {
+      "type": "string",
+      "name": "error message",
+      "length": "1048576",
+      "hint": "2^20"
+    },
+    {
+      "type": "abstraction",
+      "name": "JSON RPC interface",
+      "protocol": "/data/json-rpc-interface/default/x64"
+    }
+  ],
+  "obligations": []
+}

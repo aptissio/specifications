@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/network-address/constant/x64",
+  "description": [
+    "Set a network address.",
+    "",
+    "Set the value of 'network address' to be the given constant, complying with the design-time bounds of 'network address.'"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "network address = set(ip, port)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "network address",
+      "protocol": "/data/network-address/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "ipv4 address",
+      "length": "15",
+      "hint": "15"
+    },
+    {
+      "type": "integer",
+      "name": "port",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0, 65535"
+    }
+  ],
+  "obligations": []
+}

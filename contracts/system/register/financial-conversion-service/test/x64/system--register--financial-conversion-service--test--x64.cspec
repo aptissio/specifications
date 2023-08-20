@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/register/financial-conversion-service/test/x64",
+  "description": [
+    "Register a financial conversion service with a manager.",
+    "This is a test for service registration."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "financial conversion manager",
+      "protocol": "/system/financial-conversion-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager2/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "service handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "service description",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

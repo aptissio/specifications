@@ -1,0 +1,53 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/emergentcoding-logo/x64",
+  "description": [
+    "Add Emergent Coding logo to a HTML Document.",
+    "",
+    "Specify a width in px units for the logo.",
+    "",
+    "Specify a colour for the logo.",
+    "",
+    "Apply styling via class or optional ID Selector.",
+    "",
+    "<svg xmlns='http://www.w3.org/2000/svg'",
+    " width='",
+    " 100' ",
+    " height='",
+    " 100' viewBox='0 0 1000 1000'>",
+    " <path d='M361.199 226.543h88.906C428.45 150.006 358.025 95.065 276 95.065c-99.927 0-180.935 81.007-180.935 180.935S176.073 456.935 276 456.935c61.073 0 116.951-30.468 150.36-80.254l5.53-8.241h105.926l-12.767 26.653C479.503 490.181 383.321 552 276 552 123.569 552 0 428.431 0 276S123.569 0 276 0s276 123.569 276 276c0 11.249-.674 22.419-2.011 33.469l-1.981 16.377H451.35l.061-.39h-90.213L276 374l-86-49v-98l86-49 85.199 48.543zM234 252.5v49l43 24.5 43-24.5v-49L277 228l-43 24.5z' fill='",
+    " #5656fc'/></svg>"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "width",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "abstraction",
+      "name": "colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

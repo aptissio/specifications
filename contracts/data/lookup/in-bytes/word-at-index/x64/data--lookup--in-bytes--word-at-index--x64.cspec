@@ -1,0 +1,47 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/lookup/in-bytes/word-at-index/x64",
+  "description": [
+    "Search a given sequence of bytes.",
+    "Search for a particular word using 'word index' within a set of bytes ('bytes to search in'), and write the word found at that index to 'byte out.'",
+    "",
+    "The index is reference to the number of words within the bytes, not the number of bytes.",
+    "",
+    "If an entire word cannot be returned because bytes is too short, the index out of bounds flow is triggered."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "lookup(bytes, index, {success}, {index out of bounds})",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "word index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytes",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "word",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success(word)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "index out of bounds()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

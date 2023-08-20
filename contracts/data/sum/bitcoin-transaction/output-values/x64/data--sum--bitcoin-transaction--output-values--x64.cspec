@@ -1,0 +1,32 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/sum/bitcoin-transaction/output-values/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "sum (transaction)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "transaction output count",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "total transaction output value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ]
+}

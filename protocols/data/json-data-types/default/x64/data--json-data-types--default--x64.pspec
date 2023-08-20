@@ -1,0 +1,138 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/json-data-types/default/x64",
+  "description": [
+    "Create a new json data types collection."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "json data types definition",
+        "protocol": "/data/json-data-types-definition/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data objects",
+        "protocol": "/data/json-data-objects/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data arrays",
+        "protocol": "/data/json-data-arrays/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data integers",
+        "protocol": "/data/json-data-integers/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data strings",
+        "protocol": "/data/json-data-strings/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data booleans",
+        "protocol": "/data/json-data-booleans/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data nulls",
+        "protocol": "/data/json-data-nulls/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data undefined",
+        "protocol": "/data/json-data-undefined/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/json-data-types/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, json_data_types_definition, json_data_objects, json_data_arrays, json_data_integers, json_data_strings, json_data_booleans, json_data_nulls, json_data_undefined, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, json_data_types_definition, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, json_data_objects, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, json_data_arrays, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, json_data_integers, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, json_data_strings, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, json_data_booleans, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, json_data_nulls, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, json_data_undefined, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/json-data-types/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "json data types definition",
+        "protocol": "/data/json-data-types-definition/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data objects",
+        "protocol": "/data/json-data-objects/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data arrays",
+        "protocol": "/data/json-data-arrays/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data integers",
+        "protocol": "/data/json-data-integers/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data strings",
+        "protocol": "/data/json-data-strings/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data booleans",
+        "protocol": "/data/json-data-booleans/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data nulls",
+        "protocol": "/data/json-data-nulls/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "json data undefined",
+        "protocol": "/data/json-data-undefined/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, self, json_data_types_definition, json_data_objects, json_data_arrays, json_data_integers, json_data_strings, json_data_booleans, json_data_nulls, json_data_undefined,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, json_data_types_definition, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, json_data_objects, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, json_data_arrays, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, json_data_integers, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, json_data_strings, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, json_data_booleans, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, json_data_nulls, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, json_data_undefined, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

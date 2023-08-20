@@ -1,0 +1,55 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style/pseudo/x64",
+  "description": [
+    "Add a new HTML style.",
+    "",
+    "A pseudo-class is used to define a special state of an element. If pseudo class false then the agent assumes the pseudo-element.",
+    "",
+    "A CSS pseudo-element is used to style specified parts of an element.",
+    "",
+    "Example:",
+    "",
+    "<code>a:hover {  ",
+    "color: #FF00FF",
+    ";}",
+    "</code>"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "pseudo name",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "boolean",
+      "name": "pseudo class"
+    },
+    {
+      "type": "abstraction",
+      "name": "base style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "base style prefix length",
+      "minimum": "0",
+      "maximum": "1000",
+      "hint": "0, 1000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

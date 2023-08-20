@@ -1,0 +1,39 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/as-ascii-real/default/x64",
+  "description": [
+    "Pack number in a \"real\" number format.",
+    "Pack a number in a real, decimal representation using a /number/ value raised to a design-time /exponent/.",
+    "For example a decimal number '1563' with an exponent of '-2' will pack the ASCII string \"15.63\".",
+    "",
+    "The specification of /maximum significant figures/ should include any leading or trailing zeros produced by the exponentiation, but does not include the decimal point or zeros leading real numbers less than one."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum significant figures",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "exponent",
+      "minimum": "-1048574",
+      "maximum": "8191",
+      "hint": "-(2^20-2) to (2^13-1)"
+    },
+    {
+      "type": "abstraction",
+      "name": "number",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

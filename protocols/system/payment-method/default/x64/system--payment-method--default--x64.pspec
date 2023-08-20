@@ -1,0 +1,404 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/system/payment-method/default/x64",
+  "description": [
+    "Design elements and processes required for a payment method.",
+    "The payment-method protocol defines the design details that need to be exchanged between a host (typically a payment manager) and peers (typically one or more payment methods) to implement a payment-method feature.",
+    "",
+    "A payment manager provides consistent payment services amongst disparate payment methods. Each payment method is responsible for tracking balances across multiple destinations. The payment manager is expected to register a payment request with a payment method and receive an asynchronous response. A payment method may provide incoming payment notifications.",
+    "",
+    "Peers acting as payment method providers must provide procedures for reset, payment registration, balance adjustment, balance retrieval, payment reporting and balance reporting. Each of these procedures should use the /currency value/ and /payment destination entity/ as required. This includes reading from and writing to the currency value /currency/.",
+    "It is expected that the host will use a /payment token in/ as the primary method of identifying payment outcomes (/complete/, /failed/) against a previous payment registration."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "concurrent payment capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "method initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment token in",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "currency value",
+        "protocol": "/data/currency-value/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment destination entity",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "receipt reference",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add reset procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add register payment procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add adjust balance procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add retrieve balance procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add report balances procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure result code",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment complete procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment failed procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment received procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "each balance report",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "total payment method count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "currency value width max",
+        "minimum": "0",
+        "maximum": "8388608",
+        "hint": "0 to 2^23"
+      },
+      {
+        "type": "integer",
+        "name": "currency precision max",
+        "minimum": "0",
+        "maximum": "18",
+        "hint": "0, 18"
+      },
+      {
+        "type": "integer",
+        "name": "currency symbol length max",
+        "minimum": "0",
+        "maximum": "10",
+        "hint": "0, 10"
+      },
+      {
+        "type": "integer",
+        "name": "currency ticker length max",
+        "minimum": "0",
+        "maximum": "10",
+        "hint": "0, 10"
+      },
+      {
+        "type": "integer",
+        "name": "currency description length max",
+        "minimum": "0",
+        "maximum": "100",
+        "hint": "0, 100"
+      },
+      {
+        "type": "integer",
+        "name": "payment destination length max",
+        "minimum": "0",
+        "maximum": "1048576",
+        "hint": "0 to 2^20"
+      },
+      {
+        "type": "integer",
+        "name": "receipt reference length max",
+        "minimum": "0",
+        "maximum": "1048576",
+        "hint": "0 to 2^20"
+      },
+      {
+        "type": "integer",
+        "name": "result code min",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "result code max",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/system/payment-method/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, concurrent_payment_capacity, method_initialisation, payment_token_in, currency_value, payment_destination_entity, receipt_reference, add_reset_procedure, add_register_payment_procedure, add_adjust_balance_procedure, add_retrieve_balance_procedure, add_report_balances_procedure, procedure_result_code, payment_complete_procedure, payment_failed_procedure, payment_received_procedure, each_balance_report, total_payment_method_count, currency_value_width_max, currency_precision_max, currency_symbol_length_max, currency_ticker_length_max, currency_description_length_max, payment_destination_length_max, receipt_reference_length_max, result_code_min, result_code_max, payment_method_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, payment_method_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, concurrent_payment_capacity, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, method_initialisation, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, payment_token_in, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, currency_value, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, payment_destination_entity, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, receipt_reference, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, add_reset_procedure, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, add_register_payment_procedure, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, add_adjust_balance_procedure, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, add_retrieve_balance_procedure, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, add_report_balances_procedure, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, procedure_result_code, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, payment_complete_procedure, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, payment_failed_procedure, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, payment_received_procedure, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, each_balance_report, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/default/x64@codevalley( acs, $, total_payment_method_count, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, currency_value_width_max, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, currency_precision_max, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, currency_symbol_length_max, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, currency_ticker_length_max, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, currency_description_length_max, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, payment_destination_length_max, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, receipt_reference_length_max, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/minimum/x64@codevalley( acs, $, result_code_min, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, result_code_max, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "payment method count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "currency value width max",
+        "minimum": "0",
+        "maximum": "8388608",
+        "hint": "0 to 2^23"
+      },
+      {
+        "type": "integer",
+        "name": "currency precision max",
+        "minimum": "0",
+        "maximum": "18",
+        "hint": "0, 18"
+      },
+      {
+        "type": "integer",
+        "name": "currency symbol length max",
+        "minimum": "0",
+        "maximum": "10",
+        "hint": "0, 10"
+      },
+      {
+        "type": "integer",
+        "name": "currency ticker length max",
+        "minimum": "0",
+        "maximum": "10",
+        "hint": "0, 10"
+      },
+      {
+        "type": "integer",
+        "name": "currency description length max",
+        "minimum": "0",
+        "maximum": "100",
+        "hint": "0, 100"
+      },
+      {
+        "type": "integer",
+        "name": "payment destination length max",
+        "minimum": "0",
+        "maximum": "1048576",
+        "hint": "0 to 2^20"
+      },
+      {
+        "type": "integer",
+        "name": "receipt reference length max",
+        "minimum": "0",
+        "maximum": "1048576",
+        "hint": "0 to 2^20"
+      },
+      {
+        "type": "integer",
+        "name": "result code min",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "result code max",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/system/payment-method/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "concurrent payment capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "method initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment token in",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "currency value",
+        "protocol": "/data/currency-value/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment destination entity",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "receipt reference",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add reset procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add register payment procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add adjust balance procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add retrieve balance procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add report balances procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "procedure result code",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment complete procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment failed procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "payment received procedure",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "each balance report",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, payment_method_count, currency_value_width_max, currency_precision_max, currency_symbol_length_max, currency_ticker_length_max, currency_description_length_max, payment_destination_length_max, receipt_reference_length_max, result_code_min, result_code_max, payment_method_inout, concurrent_payment_capacity, method_initialisation, payment_token_in, currency_value, payment_destination_entity, receipt_reference, add_reset_procedure, add_register_payment_procedure, add_adjust_balance_procedure, add_retrieve_balance_procedure, add_report_balances_procedure, procedure_result_code, payment_complete_procedure, payment_failed_procedure, payment_received_procedure, each_balance_report, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, payment_method_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold/agent-integer/default/x64@codevalley( acs, $, payment_method_count, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, currency_value_width_max, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, currency_precision_max, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, currency_symbol_length_max, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, currency_ticker_length_max, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, currency_description_length_max, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, payment_destination_length_max, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, receipt_reference_length_max, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/minimum/x64@codevalley( acs, $, result_code_min, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, result_code_max, trigger, debug_msg)",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, concurrent_payment_capacity, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, method_initialisation, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, payment_token_in, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, currency_value, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, payment_destination_entity, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, receipt_reference, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, add_reset_procedure, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, add_register_payment_procedure, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, add_adjust_balance_procedure, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, add_retrieve_balance_procedure, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, add_report_balances_procedure, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, procedure_result_code, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, payment_complete_procedure, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, payment_failed_procedure, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, payment_received_procedure, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, each_balance_report, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

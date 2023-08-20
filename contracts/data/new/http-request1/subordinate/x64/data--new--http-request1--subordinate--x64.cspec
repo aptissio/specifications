@@ -1,0 +1,64 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/http-request1/subordinate/x64",
+  "description": [
+    "Create a subordinate http request."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new request",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum method length",
+      "minimum": "0",
+      "maximum": "15",
+      "hint": "0 to 15"
+    },
+    {
+      "type": "integer",
+      "name": "maximum target length",
+      "minimum": "0",
+      "maximum": "2048",
+      "hint": "0 to 2048"
+    },
+    {
+      "type": "integer",
+      "name": "required header list capacity",
+      "minimum": "0",
+      "maximum": "1024",
+      "hint": "0 to 1024"
+    },
+    {
+      "type": "integer",
+      "name": "maximum header name length",
+      "minimum": "0",
+      "maximum": "16384",
+      "hint": "0 to 16384"
+    },
+    {
+      "type": "integer",
+      "name": "maximum header value length",
+      "minimum": "0",
+      "maximum": "16384",
+      "hint": "0 to 16384"
+    },
+    {
+      "type": "integer",
+      "name": "maximum body length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "http request",
+      "protocol": "/data/http-request1/default/x64"
+    }
+  ]
+}

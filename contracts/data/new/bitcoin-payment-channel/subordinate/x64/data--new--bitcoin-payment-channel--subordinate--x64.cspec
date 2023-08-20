@@ -1,0 +1,86 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-payment-channel/subordinate/x64",
+  "description": [
+    "Create sub-ordinate structures for a Bitcoin payment channel."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "global initialisation",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "context initialisation",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "context cleanup",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "subordinate",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "minimum protocol version",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum protocol version",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "credit output capacity",
+      "minimum": "1",
+      "maximum": "4294967295",
+      "hint": "1 to (2^32)-1"
+    },
+    {
+      "type": "integer",
+      "name": "return input capacity",
+      "minimum": "1",
+      "maximum": "4294967295",
+      "hint": "1 to (2^32)-1"
+    },
+    {
+      "type": "integer",
+      "name": "return output capacity",
+      "minimum": "1",
+      "maximum": "4294967295",
+      "hint": "1 to (2^32)-1"
+    },
+    {
+      "type": "integer",
+      "name": "last payment input capacity",
+      "minimum": "1",
+      "maximum": "4294967295",
+      "hint": "1 to (2^32)-1"
+    },
+    {
+      "type": "integer",
+      "name": "last payment output capacity",
+      "minimum": "1",
+      "maximum": "4294967295",
+      "hint": "1 to (2^32)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "bitcoin payment channel",
+      "protocol": "/data/bitcoin-payment-channel/default/x64"
+    }
+  ]
+}

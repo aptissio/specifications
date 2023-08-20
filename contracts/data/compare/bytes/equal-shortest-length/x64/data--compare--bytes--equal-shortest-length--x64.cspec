@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/bytes/equal-shortest-length/x64",
+  "description": [
+    "Compare two `bytes` for equality to the length of the shortest operand.",
+    "If both operands are of the same length, this will test if they hold identical bytes."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "operand 1",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "operand 2",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": []
+}

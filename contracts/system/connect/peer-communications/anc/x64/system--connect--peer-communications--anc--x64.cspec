@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/connect/peer-communications/anc/x64",
+  "description": [
+    "Establish a new connection to an ANP peer via a peer communications system."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "connect",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "anc peer communications",
+      "protocol": "/system/peer-communications-anc/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "peer anp address",
+      "protocol": "/data/anp-address/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "peer ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "connection request queued",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failed to queue connection request",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

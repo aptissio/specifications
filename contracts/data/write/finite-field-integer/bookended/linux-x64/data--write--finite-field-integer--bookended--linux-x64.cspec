@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/finite-field-integer/bookended/linux-x64",
+  "description": [
+    "Write the details of a finite-field-integer to an output device."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write(prefix, integer, suffix)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "1048574",
+      "hint": "(2^20)-2"
+    },
+    {
+      "type": "abstraction",
+      "name": "integer",
+      "protocol": "/data/finite-field-integer/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "suffix",
+      "length": "1048574",
+      "hint": "(2^20)-2"
+    }
+  ],
+  "obligations": []
+}

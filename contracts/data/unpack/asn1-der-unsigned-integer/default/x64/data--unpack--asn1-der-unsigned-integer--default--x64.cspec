@@ -1,0 +1,31 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/asn1-der-unsigned-integer/default/x64",
+  "description": [
+    "This design contribution will, at run-time, unpack an ASN.1 DER integer into an unsigned integer structure. The unpacked format includes the 0x02 ASN.1 DER integer marker.",
+    "",
+    "If, at run time, the ASN.1 DER value is found to be negative, the pack operation will fail."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "unsigned integer width",
+      "minimum": "8",
+      "maximum": "8388608",
+      "hint": "8 to 2^23"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "unsigned integer",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ]
+}

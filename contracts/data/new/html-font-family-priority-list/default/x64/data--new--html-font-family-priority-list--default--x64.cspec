@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/html-font-family-priority-list/default/x64",
+  "description": [
+    "Add a Font Family Priority List to a HTML Document.",
+    "",
+    "Provide the Fallback Font Family maximum length.",
+    "",
+    "This design assumes sans serif\" as the fallback font family"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "fallback font family maximum length",
+      "minimum": "0",
+      "maximum": "1024",
+      "hint": "0, 1024"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "family font priority list",
+      "protocol": "/data/html-font-family-priority-list/default/x64"
+    }
+  ]
+}

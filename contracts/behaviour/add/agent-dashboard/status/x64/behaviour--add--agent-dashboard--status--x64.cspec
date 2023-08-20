@@ -1,0 +1,31 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/add/agent-dashboard/status/x64",
+  "description": [
+    "type here to preview description"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "core",
+      "protocol": "/system/event-driven-application-core/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent dashboard",
+      "protocol": "/behaviour/agent-dashboard/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "initialise agent status",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "refresh agent status",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": []
+}

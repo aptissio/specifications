@@ -1,0 +1,43 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/parse/colour/8bit-alpha/x64",
+  "description": [
+    "The aim of this subcategory is to decipher values for RGB that a client may input and change them to 2^8-1 values (0 - 255).",
+    "Parse a /colour/ into an 8-bit RGB representation where values are valid between 0 and 255 inclusive. Alpha is provided as a percentage where a valid value is between 0 and 100 inclusive."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parse(colour)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "red",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "green",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "blue",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "alpha",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

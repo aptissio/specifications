@@ -1,0 +1,55 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/decode/http-server-request-parameters/default/x64",
+  "description": [
+    "This agent is working with http-server [/system/new/http-server/default/linux-x64](/valley/view//system/new/http-server/default/linux-x64) in response handling process.",
+    "",
+    "This agent is operating with protocol [/system/http-server-request-parameters/default/x64](/valley/view//system/http-server-request-parameters/default/x64).",
+    "",
+    "Primary function of this agent is to decode parameters from the incoming request. It also provides the structure for client to use. It doesn't contribute to the maximum lengths of the design.",
+    "",
+    "The contract requires `task-scheduler`, `log-manager`, `http-server`, and `previous task exit`. It provides `this task exit`, `http-form-parameter-decoder` and `parameters available flag`. Clients are encouraged to check if the parameters are available before attempting to use them.",
+    "",
+    "The provided data must be in RFC defined format. The decode fails if it finds unrecognise data format."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http server",
+      "protocol": "/system/http-server/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "previous task exit",
+      "protocol": "/system/task-exit/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "this task exit",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "parameters available flag",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http form parameter decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ]
+}

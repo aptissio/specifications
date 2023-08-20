@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compute/sha2-compression-function/default/x64",
+  "description": [
+    "Computes the main SHA2 hash computation (compression) as per RFC6234.",
+    "Computes the main SHA2 hash computation (compression) as per RFC6234. The computation takes constant array K[0-63], message schedule array W[0-63] along with a working variable hash value (RFC6234 variables a-h). The result is stored in the working variable hash value."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compute(working variables, k array, w array)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "working variables",
+      "protocol": "/data/sha2-chaining-variable/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "k array(k array element bytes)",
+      "protocol": "/data/array/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "k array element bytes",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "w array(w array element bytes)",
+      "protocol": "/data/array/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "w array element bytes",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": []
+}

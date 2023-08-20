@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/trigger/finite-state-machine/default/x64",
+  "description": [
+    "Design a run-time `trigger` that will cause `finite state machine` transitions to be evaluated."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "trigger",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "finite state machine",
+      "protocol": "/data/finite-state-machine/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "event id",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

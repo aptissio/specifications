@@ -1,0 +1,130 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form-input-radio/x64",
+  "description": [
+    "The <input type=\"radio\" defines a radio button.",
+    "",
+    "Radio buttons are normally presented in radio groups (a collection of radio buttons describing a set of related options). Only one radio button in a group can be selected at the same time.",
+    "",
+    "Add label content & choose to display label position options relative to Child Element:",
+    "",
+    "    1. Above",
+    "    2. Left",
+    "    3. Right",
+    "    4. Below",
+    "    ",
+    "    [1, 2, 3, 4] -> LABELPOSITION_1ABOVE, LABELPOSITION_2LEFT, LABELPOSITION_3RIGHT, LABELPOSITION_4BELOW",
+    "    ",
+    "The autofocus attribute is a boolean attribute. It specifies that an \\<input> element should automatically get focus when the page loads.",
+    "",
+    "The initially checked sets whether or not this checkbox is checked by default (when the page loads)",
+    "",
+    "The disabled attribute is a boolean attribute that specifies that the \\<input> element should be disabled.",
+    "",
+    "The required attribute specifies that an input field must be filled out before submitting the form.",
+    "",
+    "The title attribute specifies extra information about an element.",
+    "",
+    "Example:",
+    "<div style=\"width: 50%; background:#c8703f; color:#0992f9\">",
+    "<label style=\"padding: 20px; for=\"male\">Male <-----LABEL",
+    "<input type=\"radio\" id=\"male\" name=\"gender\" value=\"male\">",
+    "  </label><br>",
+    "  <label style=\"padding: 20px;for=\"female\">Female <-----LABEL<input type=\"radio\" id=\"female\" name=\"gender\" value=\"female\">",
+    "  </label><br>",
+    "  <label style=\"padding: 20px;for=\"other\">Other <-----LABEL<input type=\"radio\" id=\"other\" name=\"gender\" value=\"other\">",
+    "  </label>",
+    "</div>",
+    "",
+    "Apply styling with the Class or optional ID selector provided.",
+    "",
+    "Learn more:",
+    "",
+    "https://www.w3schools.com/tags/att_input_type_radio.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "label content",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "integer",
+      "name": "label position",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    },
+    {
+      "type": "abstraction",
+      "name": "value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "autofocus"
+    },
+    {
+      "type": "boolean",
+      "name": "checked"
+    },
+    {
+      "type": "boolean",
+      "name": "disabled"
+    },
+    {
+      "type": "boolean",
+      "name": "required"
+    },
+    {
+      "type": "string",
+      "name": "title",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "abstraction",
+      "name": "form parameter decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "input ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

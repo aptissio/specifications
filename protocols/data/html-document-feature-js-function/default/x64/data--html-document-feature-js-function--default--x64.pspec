@@ -1,0 +1,70 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/html-document-feature-js-function/default/x64",
+  "description": [
+    "Add a QR Code generator feature function to a HTML Document.",
+    "",
+    "Pass the Object name to the Required JS Function"
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "feature functions",
+        "protocol": "/data/html-document/default/x64"
+      },
+      {
+        "type": "string",
+        "name": "object name",
+        "length": "200",
+        "hint": "200"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-document-feature-js-function/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, html_document, object_name, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, html_document, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-string/default/x64@codevalley( core, $, object_name, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-document-feature-js-function/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "feature functions",
+        "protocol": "/data/html-document/default/x64"
+      },
+      {
+        "type": "string",
+        "name": "object name",
+        "length": "200",
+        "hint": "200"
+      }
+    ],
+    "macro": [
+      "def (core, self, html_document, object_name,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, html_document, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-string/default/x64@codevalley( core, $, object_name, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

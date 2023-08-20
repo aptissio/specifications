@@ -1,0 +1,35 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/bytes/masked-single-byte-with-character/x64",
+  "description": [
+    "Compare bytes against bytes.",
+    "Check whether a single /byte/ with an applied design-time /mask/ matches the given design-time /character/.",
+    "The /mask/ is applied as a logical AND."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare(byte, character)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "mask",
+      "length": "1",
+      "hint": "1"
+    },
+    {
+      "type": "abstraction",
+      "name": "byte",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "character",
+      "length": "1",
+      "hint": "1"
+    }
+  ],
+  "obligations": []
+}

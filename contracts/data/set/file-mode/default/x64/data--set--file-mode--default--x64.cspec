@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/file-mode/default/x64",
+  "description": [
+    "Set the read and write access modes of a file mode."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set(read, write)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file mode",
+      "protocol": "/data/file-mode/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "read"
+    },
+    {
+      "type": "boolean",
+      "name": "write"
+    }
+  ],
+  "obligations": []
+}

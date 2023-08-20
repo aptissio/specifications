@@ -1,0 +1,21 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/non-breaking-space/x64",
+  "description": [
+    "Add to a HTML document.",
+    "A commonly used entity in HTML is the non-breaking space: &nbsp;",
+    "",
+    "A non-breaking space is a space that will not break into a new line.",
+    "",
+    "Two words separated by a non-breaking space will stick together (not break into a new line). This is handy when breaking the words might be disruptive."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ],
+  "obligations": []
+}

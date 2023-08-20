@@ -1,0 +1,311 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/json-data-arrays/default/x64",
+  "description": [
+    "Arrays with a JSON Data collection. This design has procedures to add/remove/lookup Arrays & their members. Array Members may be any of the Data Types as described below labelled as JSON Data Items. A JSON <b><i>Data item </b></i> consists of a TYPE & ID for a specific JSON Data Types Collection. The ID is unique and the TYPE indicates if the item is one of the following data types:",
+    "",
+    "     Object = {}",
+    "     Array = []",
+    "     Integer = <INTEGER>",
+    "     String = \"STRING\"",
+    "     Boolean = true/false",
+    "     Null = null",
+    "     Undefined = undefined",
+    "",
+    "Make use of the <b><i>new array</i></b> procedure to add a new Array:",
+    "",
+    "     SETUP: new array data item",
+    "     CALL: add array",
+    "     OUTPUTS: array tree parent data item, array tree array ID",
+    "     RESULTS: success callback, failure callback ",
+    "",
+    " Utilise the <b><i>lookup array by ID</i></b> procedure to lookup & delete/read an array. Make use of the delete if found flag if this behaviour is desired.",
+    "",
+    "      SETUP: target array ID",
+    "      CALL: lookup array by ID ",
+    "      OUTPUTS: delete if found flag",
+    "      RESULTS: success callback, failure callback",
+    "      ",
+    "Utilise the <b><i>add array member</i></b> procedure to add an array member.",
+    "",
+    "      SETUP: new array member data item, success callback, failure callback",
+    "      CALL: add array member ",
+    "      OUTPUTS: array members tree json data item",
+    "      RESULTS: success callback(result code), ",
+    "               failure callback(result code)",
+    "      ",
+    "      Result Code:",
+    "      [0,1,2] -> RESULT_SUCCESS, RESULT_EXISTING, RESULT_ERROR",
+    "      ",
+    "      A New Array Member may be in the form of a JSON Data Item.",
+    "      A JSON Data item consists of a TYPE & ID for a specific JSON Data Types Collection. The ID is unique and the TYPE indicates if the item is one of the following data types mentioned above.",
+    "",
+    "Utilise the <b><i>lookup array member by ID</i></b> procedure to lookup delete/read an array member. Make use of the delete if found flag if this behaviour is desired.",
+    "",
+    "      SETUP: target array member ID",
+    "      CALL: lookup array member by ID",
+    "      OUTPUTS: delete if found flag",
+    "      RESULTS: success callback, failure callback",
+    "",
+    "Utilize the <b><i>iterate over array members</b></i>. Get access to the success/each & failure/empty flow depending on the result.",
+    "",
+    "      CALL: iterate over array members",
+    "      OUTPUTS: array member tree ID, array members tree json data item",
+    "      RESULTS: success/each callback, failure/empty callback"
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "data type",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "success/each",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "failure/empty",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "result code",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "delete if found",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "create if not found",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "new array parent data item",
+        "protocol": "/data/json-data-item/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "new array",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target array ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup array by ID",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "array  tree parent data item",
+        "protocol": "/data/json-data-item/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "array tree array ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add array member",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "array members tree member ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "array member tree data item",
+        "protocol": "/data/json-data-item/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target array member  ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup array member by ID",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "iterate over array members",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/json-data-arrays/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, data_type, success_each_, failure_empty_, result_code, delete_if_found, create_if_not_found, new_array_parent_data_item, new_array, target_array_ID, lookup_array_by_ID_, array__tree_parent_data_item, array_tree_array_ID, add_array_member_, array_members_tree_member_ID, array_member_tree_data_item, target_array_member__ID, lookup_array_member_by_ID, iterate_over_array_members, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, data_type, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, success_each_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, failure_empty_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, result_code, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, delete_if_found, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, create_if_not_found, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, new_array_parent_data_item, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, new_array, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_array_ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, lookup_array_by_ID_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, array__tree_parent_data_item, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, array_tree_array_ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, add_array_member_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, array_members_tree_member_ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, array_member_tree_data_item, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_array_member__ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, lookup_array_member_by_ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, iterate_over_array_members, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/json-data-arrays/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "data type",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "success/each",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "failure/empty",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "result code",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "delete if found",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "create if not found",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "new array parent data item",
+        "protocol": "/data/json-data-item/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "new array",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target array ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup array by ID",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "array  tree parent data item",
+        "protocol": "/data/json-data-item/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "array tree array ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add array member",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "array members tree member ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "array member tree data item",
+        "protocol": "/data/json-data-item/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target array member  ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup array member by ID",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "iterate over array members",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, self, data_type, success_each_, failure_empty_, result_code, delete_if_found, create_if_not_found, new_array_parent_data_item, new_array, target_array_ID, lookup_array_by_ID_, array__tree_parent_data_item, array_tree_array_ID, add_array_member_, array_members_tree_member_ID, array_member_tree_data_item, target_array_member__ID, lookup_array_member_by_ID, iterate_over_array_members,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, data_type, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, success_each_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, failure_empty_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, result_code, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, delete_if_found, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, create_if_not_found, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, new_array_parent_data_item, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, new_array, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_array_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, lookup_array_by_ID_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, array__tree_parent_data_item, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, array_tree_array_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, add_array_member_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, array_members_tree_member_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, array_member_tree_data_item, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_array_member__ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, lookup_array_member_by_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, iterate_over_array_members, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

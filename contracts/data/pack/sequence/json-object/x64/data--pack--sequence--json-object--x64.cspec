@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/sequence/json-object/x64",
+  "description": [
+    "A contiguous sequence of fields which must pack in its entirety or else the packing process fails.",
+    "JSON objects are surrounded by curly braces {}.",
+    "",
+    "Keys must be strings, and values must be a valid JSON data type (string, number, object, array, boolean or null).",
+    "",
+    "Pack in Object content"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "pack object items",
+      "protocol": "/data/pack/default/x64"
+    }
+  ]
+}

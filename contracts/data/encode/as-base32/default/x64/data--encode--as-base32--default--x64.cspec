@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/encode/as-base32/default/x64",
+  "description": [
+    "Encode data using a 32 character alphabet.",
+    "Encode bytesequence /data/ using the given 32-character /alphabet/. If the length of /alphabet/ is not 32 characters, the default alphabet of \"qpzry9x8gf2tvdw0s3jn54khce6mua7l\" is used."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "encode(data, alphabet)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "data",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "alphabet",
+      "length": "32",
+      "hint": "32"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "encoded data",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

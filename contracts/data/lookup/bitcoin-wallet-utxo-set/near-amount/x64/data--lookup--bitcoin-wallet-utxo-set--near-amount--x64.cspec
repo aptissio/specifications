@@ -1,0 +1,89 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/lookup/bitcoin-wallet-utxo-set/near-amount/x64",
+  "description": [
+    "Lookup a Bitcoin wallet UTXO set.",
+    "Lookup an unlocked UTXO from a Bitcoin wallet UTXO set that is equal to or preferably greater in value. If the wallet UTXO set only contains amounts smaller than /amount/ then lookup the UTXO with the largest amount.",
+    "If the UTXO set is empty or there are no coins matching the given account number, then execute /not found/."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "program initialisation",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "lookup(wallet utxo set, account number, amount)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet utxo set",
+      "protocol": "/data/bitcoin-wallet-utxo-set/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "amount",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "prefer greater value",
+      "protocol": "/data/flag/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "utxo account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo transaction ID",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo amount",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo p2pkh",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo height",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "found(utxo elements)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "empty()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

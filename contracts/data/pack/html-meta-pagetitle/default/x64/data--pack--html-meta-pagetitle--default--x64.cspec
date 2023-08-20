@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/html-meta-pagetitle/default/x64",
+  "description": [
+    "Pack HTML page title meta data.",
+    "Pack a /page title/ into a HTML document. The client is responsible for placing the /pack/ into the document meta data."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "page title",
+      "length": "1024",
+      "hint": "1024"
+    }
+  ],
+  "obligations": []
+}

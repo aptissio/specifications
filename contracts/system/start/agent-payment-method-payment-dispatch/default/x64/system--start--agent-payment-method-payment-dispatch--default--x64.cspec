@@ -1,0 +1,79 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/start/agent-payment-method-payment-dispatch/default/x64",
+  "description": [
+    "Start an agent payment method payment dispatch process for the given `method ID` and `price data` for payment to the given `peer ID`. The provided `callback procedure` will be later called during which the `callback token`, `callback result code` are valid.",
+    "",
+    "If the `callback result code` is not an error code (a positive result), then the `payment reference is also valid during the callback procedure."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "start",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent payment method payment dispatch",
+      "protocol": "/system/agent-payment-method-payment-dispatch/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "method ID",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "token",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "peer ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payment entity",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "price data",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "callback procedure",
+      "protocol": "/data/procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "callback token",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "callback result code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "callback payment reference",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "dispatch queued",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "dispatch not queued",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

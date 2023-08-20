@@ -1,0 +1,59 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/constant-colour/x64",
+  "description": [
+    "Add to a HTML document.",
+    "Design a new RGB colour for HTML Style Sheet. ",
+    "",
+    "Choose whether to /include alpha/ with Boolean, otherwise this design assumes an Alpha of 1.",
+    "",
+    "[[https://www.w3schools.com/cssref/css3_pr_opacity.asp][Learn more..]]"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "red",
+      "minimum": "0",
+      "maximum": "255",
+      "hint": "0, 255"
+    },
+    {
+      "type": "integer",
+      "name": "green",
+      "minimum": "0",
+      "maximum": "255",
+      "hint": "0, 255"
+    },
+    {
+      "type": "integer",
+      "name": "blue",
+      "minimum": "0",
+      "maximum": "255",
+      "hint": "0, 255"
+    },
+    {
+      "type": "integer",
+      "name": "alpha",
+      "minimum": "0",
+      "maximum": "100",
+      "hint": "0, 100"
+    },
+    {
+      "type": "boolean",
+      "name": "include alpha"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ]
+}

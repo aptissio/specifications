@@ -1,0 +1,180 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/coordinate-dimension/default/x64",
+  "description": [
+    "A protocol to design a coordinate dimension."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "dimension array",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "minimum value",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "maximum value",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "value",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "label",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialise dimension",
+        "protocol": "/data/flow/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "dimension count",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "minimum minimum value",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum maximum value",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum label length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/coordinate-dimension/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, dimension_array, minimum_value, maximum_value, value, label, initialise_dimension, dimension_count, minimum_minimum_value, maximum_maximum_value, maximum_label_length, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, dimension_array, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, minimum_value, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, maximum_value, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, value, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, label, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, initialise_dimension, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-integer/default/x64@codevalley( acs, $, zero, dimension_count, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/minimum/x64@codevalley( acs, $, minimum_minimum_value, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_maximum_value, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_label_length, trigger, debug_msg)",
+      "sub /behaviour/new/agent-integer/constant/x64@codevalley( acs, 0, trigger, debug_msg) -> zero",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "minimum minimum value",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum maximum value",
+        "minimum": "-9223372036854775808",
+        "maximum": "9223372036854775807",
+        "hint": "-(2^63) to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum label length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/coordinate-dimension/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "dimension ID",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "dimension array",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "minimum value",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "maximum value",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "value",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "label",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "initialise dimension",
+        "protocol": "/data/flow/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, minimum_minimum_value, maximum_maximum_value, maximum_label_length, self, dimension_ID, dimension_array, minimum_value, maximum_value, value, label, initialise_dimension,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-integer/default/x64@codevalley( acs, $, one, dimension_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, dimension_array, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, minimum_value, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, maximum_value, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, value, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, label, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, initialise_dimension, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/minimum/x64@codevalley( acs, $, minimum_minimum_value, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_maximum_value, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_label_length, trigger, debug_msg)",
+      "sub /behaviour/new/agent-integer/constant/x64@codevalley( acs, 1, trigger, debug_msg) -> one",
+      "}",
+      "end"
+    ]
+  }
+}

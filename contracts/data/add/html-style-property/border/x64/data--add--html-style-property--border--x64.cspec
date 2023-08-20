@@ -1,0 +1,100 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-property/border/x64",
+  "description": [
+    "Add the Border property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The border property is a shorthand property for:",
+    "",
+    "",
+    "    border-width",
+    "    border-style ",
+    "    border-color",
+    "",
+    "",
+    "Select which Border to incorporate:",
+    "",
+    "     1 - border \t        Default value. \tApply a border to all sides of element",
+    "     2 - border-top \t    Apply a border to top of element",
+    "     3 - border-right \t\tApply a border to right of element",
+    "     4 - border-bottom \t    Apply a border to top of element",
+    "     5 - border-left \t    Apply a border to left of element",
+    "     ",
+    "     [1, 2, 3, 4, 5 ] -> BORDERSEL_1BORDER, BORDERSEL_2BORDERTOP, BORDERSEL_3BORDERRIGHT, ",
+    "                         BORDERSEL_4BORDERBOTTOM, BORDERSEL_5BORDERLEFT",
+    "",
+    "",
+    "Provide a width & specify if the units are fixed(px) or relative(%).",
+    "",
+    "Choose which border style to apply:",
+    "",
+    "",
+    "    -1 - inherit     Inherits this property from its parent element. ",
+    "     0 - initial      Sets this property to its default value. ",
+    "     1 - none \t    Default value. Specifies no border \t",
+    "     2 - hidden \t  The same as \"none\", except in border conflict resolution for table elements \t",
+    "     3 - dotted \t  Specifies a dotted border",
+    "     4 - dashed \t  Specifies a dashed border ",
+    "     5 - solid \t   Specifies a solid border\t",
+    "     6 - double \t  Specifies a double border",
+    "     7 - groove \t  Specifies a 3D grooved border. The effect depends on the border-color value",
+    "     8 - ridge \t   Specifies a 3D ridged border. The effect depends on the border-color value",
+    "     9 - inset \t   Specifies a 3D inset border. The effect depends on the border-color value",
+    "    10 - outset \t  Specifies a 3D outset border. The effect depends on the border-color value",
+    "     ",
+    "      [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] -> ",
+    "      BORDERSTYLE_INHERIT, BORDERSTYLE_0INITIAL,BORDERSTYLE_1NONE, BORDERSTYLE_2HIDDEN, ",
+    "      BORDERSTYLE_3DOTTED, BORDERSTYLE_4DASHED, BORDERSTYLE_5SOLID, BORDERSTYLE_6DOUBLE, ",
+    "      BORDERSTYLE_7GROOVE, BORDERSTYLE_8RIDGE, BORDERSTYLE_9INSET, BORDERSTYLE_10OFFSET",
+    "     ",
+    "Specify a border colour. If border-color is omitted, the color applied will be the color of the text.",
+    "",
+    "",
+    "",
+    "Learn more: https://www.w3schools.com/cssref/pr_border.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "border selection",
+      "minimum": "1",
+      "maximum": "5",
+      "hint": "1 to 5"
+    },
+    {
+      "type": "integer",
+      "name": "border width",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "boolean",
+      "name": "border width fixed"
+    },
+    {
+      "type": "integer",
+      "name": "border style",
+      "minimum": "-1",
+      "maximum": "10",
+      "hint": "-1 to 10"
+    },
+    {
+      "type": "abstraction",
+      "name": "border colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ],
+  "obligations": []
+}

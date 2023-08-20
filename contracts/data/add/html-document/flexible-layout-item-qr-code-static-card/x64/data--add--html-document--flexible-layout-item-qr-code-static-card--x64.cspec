@@ -1,0 +1,74 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/flexible-layout-item-qr-code-static-card/x64",
+  "description": [
+    "Add a static QR Code Card to a responsive row.",
+    "",
+    "Specify a <i>size </i> (px). (Be mindful of parent container dimensions for best results.)",
+    "",
+    "Provide a JS Feature function for the QR Code. ",
+    "",
+    "Enable Box shadow &/or Rounded Edges for QR Code.",
+    "",
+    "Provide a qr code value.",
+    "",
+    "Apply styling to the Class or ID Selectors as desired.",
+    "",
+    "Specify a <i> Colour & Background Colour</i> for the QR code."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "flexible layout",
+      "protocol": "/data/flexible-layout/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "qr code style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "js feature function",
+      "protocol": "/data/html-document-feature-js-function/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable box shadow"
+    },
+    {
+      "type": "boolean",
+      "name": "enable rounded edges"
+    },
+    {
+      "type": "integer",
+      "name": "size (px)",
+      "minimum": "0",
+      "maximum": "1000",
+      "hint": "0, 1000"
+    },
+    {
+      "type": "abstraction",
+      "name": "qr code value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "qr code colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "qr code background colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "qr code ID style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

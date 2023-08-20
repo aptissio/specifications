@@ -1,0 +1,60 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/bitcoin-network-message/getdata/x64",
+  "description": [
+    "Populate the header and payload of a Bitcoin network message.",
+    "",
+    "The getdata message requests one or more data objects from another node. The objects are requested by an inventory, which the requesting node typically previously received by way of an inv message.",
+    "The response to a getdata message can be a tx message, block message, merkleblock message, or notfound message.",
+    "The format and maximum size limitations of the getdata message are identical to the inv message; only the message header differs.",
+    "",
+    " \t               ",
+    "DataType Identifier [1] ",
+    "Name [MSG_TX] \t                ",
+    "Description [The hash is a TXID]",
+    "",
+    "DataType Identifier [2] \t               ",
+    "Name [MSG_BLOCK] \t        ",
+    "Description [The hash is of a block header]",
+    "",
+    "DataType Identifier [3]",
+    "Name [MSG_FILTERED_BLOCK] ",
+    "Description [The hash is of a block header; identical to MSG_BLOCK. When used in a getdata message, this indicates the response should be a merkleblock message rather than a block message (but this only works if a bloom filter was previously configured). Only for use in getdata messages]",
+    "",
+    "Type identifier zero and type identifiers greater than three are reserved for future implementations. Bitcoin Core ignores all inventories with one of these unknown types."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "network",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "inv list",
+      "protocol": "/data/list/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "data type",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": []
+}

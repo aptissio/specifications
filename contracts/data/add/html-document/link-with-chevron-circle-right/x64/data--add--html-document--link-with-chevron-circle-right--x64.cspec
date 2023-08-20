@@ -1,0 +1,144 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/link-with-chevron-circle-right/x64",
+  "description": [
+    "Add an interactive Link to a Web Document. The link includes a Chevron right Icon and will transition to the right on hover.",
+    "",
+    "Example (Without Hover Transition)",
+    "",
+    "<a href=\"https://aptissio.com\">My link </a>",
+    "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fas\" data-icon=\"chevron-circle-right\" class=\"svg-inline--fa fa-chevron-circle-right fa-w-16\" role=\"img\" height=\"20\" width=\"20\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\"><path fill=\"currentColor\" d=\"M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z\"></path></svg>",
+    "",
+    "Specify the Colour, Url & content for the Link.",
+    "",
+    "The <i>ping url/s</i> specifies a space-separated list of URLs typically used for tracking.",
+    "",
+    "The <i>referrer policy</i> specifies which referrer to send. Options below:",
+    "",
+    "    1. no-referrer",
+    "    2. no-referrer-when-downgrade",
+    "    3. origin",
+    "    4. origin-when-cross-origin",
+    "    5. unsafe-url",
+    "    ",
+    "    [1, 2, 3, 4, 5] -> REFERRER_1NONE , REFERRER_2NONEWHENDOWNGRADE, REFERRER_3ORIGIN, REFERRER_4ORIGINWHENCROSS, REFERRER_5UNSAFEURL",
+    "",
+    "",
+    "The <i>rel</i> specifies relationship between the current document and the linked document.",
+    "https://www.w3schools.com/tags/tag_a.asp. Options listed respectively 1-13 below:",
+    "",
+    "    1. alternate",
+    "    2. author",
+    "    3. bookmark",
+    "    4. external",
+    "    5. help",
+    "    6. license",
+    "    7. next",
+    "    8. nofollow",
+    "    9. noreferrer",
+    "    10. noopener",
+    "    11. prev",
+    "    12. search",
+    "    13. tag",
+    "    ",
+    "    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] -> REL_1ALTERNATE, REL_2AUTHOR, REL_3BOOKMARK, REL_4EXTERNAL, REL_5HELP, REL_6LICENSE, REL_7NEXT, REL_8NOFOLLOW, REL_9NOREFERRER, REL_10NOOPENER, REL_11PREV, REL_12SEARCH, REL_13TAG",
+    "",
+    "Enable underline if desired.",
+    "",
+    "",
+    "Choose an INTEGER between 1-4 for the desired target window. Options below:",
+    "",
+    "    1. _blank",
+    "    2. _self",
+    "    3. _parent",
+    "    4. _top",
+    "",
+    "    [1, 2, 3, 4] -> TARGET_1BLANK, TARGET_2SELF, TARGET_3PARENT, TARGET_4TOP",
+    "",
+    "",
+    "Apply styling to the Class or ID Selectors as desired."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome feature",
+      "protocol": "/data/html-document-feature-font-awesome/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome icon style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "link style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "filename",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "string",
+      "name": "ping url",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "integer",
+      "name": "referrer policy",
+      "minimum": "1",
+      "maximum": "5",
+      "hint": "1, 5"
+    },
+    {
+      "type": "integer",
+      "name": "rel",
+      "minimum": "1",
+      "maximum": "13",
+      "hint": "1, 13"
+    },
+    {
+      "type": "boolean",
+      "name": "enable underline"
+    },
+    {
+      "type": "integer",
+      "name": "target window",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    },
+    {
+      "type": "abstraction",
+      "name": "link colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "link url",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "link content",
+      "length": "1000",
+      "hint": "1000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "link ID style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/get/coordinate-dimension/default/x64",
+  "description": [
+    "Get information about the dimension of a coordinate.",
+    "Get the value and label of a coordinate dimension. The condition will evaluate to false at run-time of the requested dimension does not exist."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "get(coordinate, dimension)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "coordinate",
+      "protocol": "/data/coordinate/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "dimension",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "value out",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label out",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": []
+}

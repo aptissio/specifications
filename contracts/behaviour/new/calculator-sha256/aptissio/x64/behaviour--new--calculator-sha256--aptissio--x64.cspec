@@ -1,0 +1,19 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/calculator-sha256/aptissio/x64",
+  "description": [
+    "A SHA256 Calculator within a Web Document. ",
+    "",
+    "Example:",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/sha_256.png\" width=\"350\" height=\"450\">"
+  ],
+  "requirements": [
+    {
+      "type": "site",
+      "name": "site"
+    }
+  ],
+  "obligations": []
+}

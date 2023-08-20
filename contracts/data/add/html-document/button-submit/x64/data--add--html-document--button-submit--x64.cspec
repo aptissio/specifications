@@ -1,0 +1,280 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/button-submit/x64",
+  "description": [
+    "The \\<button> tag defines a clickable  <button style=\"width: auto;\">SUBMIT</button> button.",
+    "",
+    "`applied child class style` is the class applied to the button.",
+    "",
+    "The form id style specifies which form the text area belongs to.",
+    "",
+    "A disabled input field is unusable and un-clickable.",
+    "",
+    "Form action url specifies where to send the form-data when a form is submitted.",
+    "",
+    "Form enctype specifies how form-data should be encoded before sending it to a server. Options: ",
+    "",
+    "    1. application/x-www-form-urlencoded: (Default. All characters are encoded before ",
+    "                                           sent (spaces are converted to \"+\" symbols, ",
+    "                                           and special characters are converted to ASCII HEX values)",
+    "    ",
+    "    2. multipart/form-data:  (No characters are encoded. This value is required when you are using ",
+    "                             forms that have a file upload control)",
+    "    3. text/plain: (Spaces are converted to \"+\" symbols, but no special characters are encoded)",
+    "    ",
+    "    [1,2,3] -> ENCTYPE_1FORM_URLENCODED, ENCTYPE_2MULTIPART, ENCTYPE_3TEXTPLAIN",
+    "",
+    "",
+    "Enable Form Validation ensures that the form-data should be validated on submission.",
+    "",
+    "Form target window specifies where to display the response after submitting the form. Options:",
+    "",
+    "    1. _blank",
+    "    2. _self",
+    "    3. _parent",
+    "    4. _top",
+    "    5. framename",
+    "",
+    "    [1, 2, 3, 4, 5] -> TARGET_1BLANK, TARGET_2SELF, TARGET_3PARENT, TARGET_4TOP, TARGET_5FRAMENAME",
+    "    ",
+    "Set the height, width, font-size, padding, margin styling properties. Specify the units from the options:",
+    "",
+    "    1 - px     pixels (1px = 1/96th of 1in)",
+    "    2 - %      Relative to the parent element",
+    "    3 - rem    Relative to font-size of the root element",
+    "    4 - em     Relative to the font-size of the element (2em means 2 times the size of the current font)",
+    "    5 - cm \tcentimeters",
+    "    6 - mm \tmillimeters",
+    "    7 - in \tinches (1in = 96px = 2.54cm)",
+    "    8 - pt \tpoints (1pt = 1/72 of 1in)",
+    "    9 - pc     picas (1pc = 12 pt) ",
+    "    10- ex \tRelative to the x-height of the current font (rarely used) \t",
+    "    11- ch \tRelative to the width of the \"0\" (zero) \t",
+    "    12- vw \tRelative to 1% of the width of the viewport* \t",
+    "    13- vh \tRelative to 1% of the height of the viewport* \t",
+    "    14- vmin   Relative to 1% of viewport's* smaller dimension ",
+    "    15 -vmax   Relative to 1% of viewport's* larger dimension \t",
+    "    16 -fr     Fractional units",
+    "    17 -auto   If the Auto units is selected than the size will be ignored.",
+    "",
+    "    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] -> UNIT_1PX, UNIT_2PERCENTAGE, UNIT_3REM, UNIT_4EM, UNIT_5CM, UNIT_6MM, UNIT_7IN, UNIT_8PT, UNIT_9PC, UNIT_10EX, UNIT_11CH, UNIT_12VW, UNIT_13VH, UNIT_14VMIN, UNIT_15VMAX, UNIT_16FR, UNIT_17AUTO",
+    "",
+    "Set colours for background & text.",
+    "",
+    "Enable hover and rounded edges if these features are desired.",
+    "",
+    "This design sets a submitted flag on form submission & decodes \"t\" indicating parameter true. Example:",
+    "",
+    "         0 = t",
+    "",
+    "Add styling with style selectors provided.",
+    "",
+    "For manipulating values the `http form parameter decoder` is required."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "disabled"
+    },
+    {
+      "type": "abstraction",
+      "name": "form action url",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "form enctype",
+      "minimum": "1",
+      "maximum": "3",
+      "hint": "1, 3"
+    },
+    {
+      "type": "boolean",
+      "name": "enable form validation"
+    },
+    {
+      "type": "integer",
+      "name": "form target window",
+      "minimum": "1",
+      "maximum": "5",
+      "hint": "1, 5"
+    },
+    {
+      "type": "integer",
+      "name": "height",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "height unit",
+      "minimum": "1",
+      "maximum": "17",
+      "hint": "1 - 17"
+    },
+    {
+      "type": "integer",
+      "name": "width",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "width unit",
+      "minimum": "1",
+      "maximum": "17",
+      "hint": "1 - 17"
+    },
+    {
+      "type": "abstraction",
+      "name": "text colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "font-size",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "font size unit",
+      "minimum": "1",
+      "maximum": "17",
+      "hint": "1 - 17"
+    },
+    {
+      "type": "abstraction",
+      "name": "background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "padding top",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "padding right",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "padding left",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "padding bottom",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "padding unit",
+      "minimum": "1",
+      "maximum": "17",
+      "hint": "1 - 17"
+    },
+    {
+      "type": "integer",
+      "name": "margin top",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "margin right",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "margin left",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "margin bottom",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "margin unit",
+      "minimum": "1",
+      "maximum": "17",
+      "hint": "1 - 17"
+    },
+    {
+      "type": "boolean",
+      "name": "enable border"
+    },
+    {
+      "type": "boolean",
+      "name": "enable hover"
+    },
+    {
+      "type": "boolean",
+      "name": "rounded edges"
+    },
+    {
+      "type": "abstraction",
+      "name": "http form parameter decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hover class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "submitted",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "child document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

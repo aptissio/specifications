@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/agent-payment-method/bitcoin-payment-channel-seller/linux-x64",
+  "description": [
+    "Add a Bitcoin payment channel, agent payment method, 'seller' end-point.",
+    "",
+    "A seller receives payment via Bitcoin payment channels in exchange for goods or services authorised via an agent sales manager."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "agent payment methods",
+      "protocol": "/behaviour/agent-payment-methods/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent-bitcoin-wallet",
+      "protocol": "/behaviour/agent-bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "start-up",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "shutdown",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": []
+}

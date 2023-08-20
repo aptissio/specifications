@@ -1,0 +1,102 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/pos-core-services/default/x64",
+  "description": [
+    "A protocol to design the core services required in a Point-Of-Sale (POS) system."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "product list",
+        "protocol": "/behaviour/pos-product-list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product list attributes",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "order list",
+        "protocol": "/behaviour/pos-order-list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "order list attributes",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "application core services",
+        "protocol": "/system/application-core/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/pos-core-services/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, prod_list, prod_attrs, order_list, order_attributes, app_core, chain_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, prod_list, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, prod_attrs, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, order_list, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, order_attributes, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, app_core, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/pos-core-services/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "product list",
+        "protocol": "/behaviour/pos-product-list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product list attributes",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "order list",
+        "protocol": "/behaviour/pos-order-list/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "order list attributes",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "application core services",
+        "protocol": "/system/application-core/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, services_inout, prod_list, prod_attrs, order_list, order_attributes, app_core, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, services_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, prod_list, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, prod_attrs, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, order_list, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, order_attributes, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, app_core, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  }
+}

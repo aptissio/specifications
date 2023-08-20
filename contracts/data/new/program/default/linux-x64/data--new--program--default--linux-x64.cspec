@@ -1,0 +1,25 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/program/default/linux-x64",
+  "description": [
+    "Reserve resources for a program core. Greet the user upon start. ",
+    "Reserve resources for a program core. Exit with success.",
+    "Reserve resources for a Linux program. Exit with success.",
+    "",
+    "Note: This contribution is replacing the deprecated data::contribute::linux-program::with-success-exit-status::x64."
+  ],
+  "requirements": [
+    {
+      "type": "site",
+      "name": "site"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "main()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/filter/cashbar-core-products/via-bch-addr/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "cashbar core",
+      "protocol": "/behaviour/cashbar-core/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "search",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "product bch address",
+      "protocol": "/data/bitcoin-address/default/x64"
+    }
+  ],
+  "obligations": []
+}

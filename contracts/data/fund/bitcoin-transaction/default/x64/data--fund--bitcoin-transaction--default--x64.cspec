@@ -1,0 +1,78 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/fund/bitcoin-transaction/default/x64",
+  "description": [
+    "This design will, at run-time, fund given bitcoin `transaction` based on given `wallet`, `account number`, `fee rate`, `minimum change value` (Dust Limit) and `change address`. ",
+    "",
+    "The `fee rate`, measured in satoshi per byte, is required to estimate the network fee. That is, *network fee*  =  `fee rate` x *serialised transaction byte count*",
+    "",
+    "The `minimum change value` is the minimum value of the change output that is added to return excess coin value to the wallet. The transaction will be funded to ensure that the change output value is equal to or greater than this amount.",
+    "",
+    "The `change address` is the address that the change output will be sent to.  ",
+    "",
+    "---",
+    "The funding result code is enumerated as per the following table. The `fund` boolean-condition will return *set* if the result code is zero; else *clear*.",
+    "",
+    "Error<br>Code | Error Description",
+    ":---: |---",
+    "0|none",
+    "1|insufficient wallet funds",
+    "2|unable to add amount in bitcoin transaction",
+    "3|unable to find given account number"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "application initialisation",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "fund (transaction)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "enable locktime",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "fee rate",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "minimum change value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "change address",
+      "protocol": "/data/bitcoin-address/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result code",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

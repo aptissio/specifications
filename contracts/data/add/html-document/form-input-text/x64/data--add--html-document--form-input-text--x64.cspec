@@ -1,0 +1,169 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form-input-text/x64",
+  "description": [
+    "*IMPORTANT* the `parent document` must be in the context of the decode, and needs to happen after the decode is done, otherwise the parameters are not accessible. Best practice is to contract parent document in the route where it is provided as response.",
+    "",
+    "Defines a one-line text input field with label. Add attributes as desired.",
+    "",
+    "Input class style defines the class name for the input field.",
+    "",
+    "The form id style specifies which form the text area belongs to.",
+    "",
+    "Label class style defines the class name for the input field.",
+    "",
+    "Add label content & choose label position options relative to Child Element:",
+    "",
+    "    1. Above",
+    "    2. Left",
+    "    3. Right",
+    "    4. Below",
+    "    ",
+    "    [1, 2, 3, 4] -> LABELPOSITION_1ABOVE, LABELPOSITION_2LEFT, LABELPOSITION_3RIGHT, LABELPOSITION_4BELOW",
+    "    ",
+    "Set an initial value of the input.",
+    "",
+    "The read only attribute specifies that an input field is read-only.",
+    "",
+    "A disabled input field is unusable and un-clickable.",
+    "",
+    "The required attribute specifies that the element must be filled out before submitting the form.",
+    "",
+    "The autofocus attribute specifies that the element should automatically get focus when the page loads.",
+    "",
+    "Autocomplete allows the browser to predict the value.",
+    "",
+    "The placeholder is a short hint displayed in the input field before the user enters a value.",
+    "",
+    "The title attribute specifies extra information about an element.",
+    "",
+    "The maxlength attribute specifies the maximum number of characters allowed in an input field.",
+    "",
+    "The regular expression that the input field's value is checked against, prior to submission. Learn more: https://www.w3schools.com/js/js_regexp.asp",
+    "",
+    "Specify the colour of the cursor (caret) in inputs, textareas, or any element that is editable.",
+    "",
+    "For manipulating values the form parameter is required. The value of the form input text is provided in obligation `input`.",
+    "",
+    "Example:",
+    "",
+    " <label for=\"fname\">First name: </label>",
+    "  <input type=\"text\" style=\"caret-color:#c8703f; color:#c8703f;\" id=\"fname\" name=\"fname\">",
+    "",
+    "Read more in Details:",
+    "",
+    "https://www.w3schools.com/tags/att_input_type_text.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "label content",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "integer",
+      "name": "label position",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    },
+    {
+      "type": "abstraction",
+      "name": "initial value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "read only"
+    },
+    {
+      "type": "boolean",
+      "name": "disabled"
+    },
+    {
+      "type": "boolean",
+      "name": "required"
+    },
+    {
+      "type": "boolean",
+      "name": "autofocus"
+    },
+    {
+      "type": "boolean",
+      "name": "autocomplete"
+    },
+    {
+      "type": "string",
+      "name": "placeholder",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "string",
+      "name": "title",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "integer",
+      "name": "input maximum length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "input regex validation",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "cursor colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form parameter decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "input ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

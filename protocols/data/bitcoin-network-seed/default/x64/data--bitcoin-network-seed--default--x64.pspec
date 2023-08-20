@@ -1,0 +1,110 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/bitcoin-network-seed/default/x64",
+  "description": [
+    "Design a Bitcoin network seed."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "seed capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "target network address",
+        "protocol": "/data/ipv6-socket-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "seed address map",
+        "protocol": "/data/sorted-map/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "seed address",
+        "protocol": "/data/ipv6-socket-address/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "required seed addresses",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-network-seed/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, seed_capacity, target_network_address, seed_address_map, seed_address, required_seed_addresses, bitcoin_network_seed_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, bitcoin_network_seed_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, seed_capacity, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_network_address, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, seed_address_map, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, seed_address, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/default/x64@codevalley( acs, $, required_seed_addresses, trigger, debug_msg)",
+      "}",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "required seed addresses",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/bitcoin-network-seed/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "seed capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "target network address",
+        "protocol": "/data/ipv6-socket-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "seed address map",
+        "protocol": "/data/sorted-map/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "seed address",
+        "protocol": "/data/ipv6-socket-address/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, required_seed_addresses, bitcoin_network_seed_inout, seed_capacity, target_network_address, seed_address_map, seed_address, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, bitcoin_network_seed_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold/agent-integer/default/x64@codevalley( acs, $, required_seed_addresses, trigger, debug_msg)",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, seed_capacity, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_network_address, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, seed_address_map, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, seed_address, trigger, debug_msg)",
+      "}",
+      "end "
+    ]
+  }
+}

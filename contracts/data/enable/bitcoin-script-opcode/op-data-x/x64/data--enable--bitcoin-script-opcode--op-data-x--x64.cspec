@@ -1,0 +1,16 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/enable/bitcoin-script-opcode/op-data-x/x64",
+  "description": [
+    "Enable the Bitcoin script opcode range 0x01 to 0x4b. Also known as \"OP_DATA_X\"."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "opcode",
+      "protocol": "/data/bitcoin-script-opcode/default/x64"
+    }
+  ],
+  "obligations": []
+}

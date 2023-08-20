@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/sales-catalogue/default/linux-x64",
+  "description": [
+    "Create a new sales catalogue that relates unique items to sales terms."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "initialise",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "item UID maximum length",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "item sales terms maximum length",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "sales catalogue",
+      "protocol": "/data/sales-catalogue/default/x64"
+    }
+  ]
+}

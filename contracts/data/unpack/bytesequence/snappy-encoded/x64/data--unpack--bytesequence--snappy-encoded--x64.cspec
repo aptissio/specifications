@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/bytesequence/snappy-encoded/x64",
+  "description": [
+    "Contiguous raw bytes of variable length."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum decoded length",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "decoded data",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

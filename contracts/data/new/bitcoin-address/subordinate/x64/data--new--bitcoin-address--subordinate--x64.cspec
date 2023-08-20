@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-address/subordinate/x64",
+  "description": [
+    "Provides a new Bitcoin address and public key."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/structure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "bitcoin-address",
+      "protocol": "/data/bitcoin-address/default/x64"
+    }
+  ]
+}

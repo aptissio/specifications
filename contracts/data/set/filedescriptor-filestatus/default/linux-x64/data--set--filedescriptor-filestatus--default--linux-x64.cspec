@@ -1,0 +1,38 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/filedescriptor-filestatus/default/linux-x64",
+  "description": [
+    "Set the file status of a file descriptor.",
+    "Sets the file status flags of the file descriptor as given by the bit-array."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file descriptor",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "status",
+      "protocol": "/data/bit-array/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

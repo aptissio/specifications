@@ -1,0 +1,48 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/create/socket/network-listener/linux-x64",
+  "description": [
+    "Create a socket.",
+    "Creates and listens to a new socket that bound to the given /bind address/. The connection queue is limited to /maximum pending connections/.",
+    "A /socket file decriptor/ is provided for the client to perform 'accept' operations with and is valid with the scope of /socket open/. The socket will be closed after /socket open/ tasks are completed.",
+    "If an error occurs during socket creation, the /failure/ flow will trigger.",
+    "Note: The maximum number of pending connections may be further limited by operating system constraints."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "create()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bind address",
+      "protocol": "/data/network-address/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum pending connections",
+      "minimum": "1",
+      "maximum": "32767",
+      "hint": "1, 32767"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "socket file descriptor",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "socket open",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

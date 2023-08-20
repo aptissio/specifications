@@ -1,0 +1,21 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/check/bitcoin-network-message/magic-bytes/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "check",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "magic bytes",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": []
+}

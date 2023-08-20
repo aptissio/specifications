@@ -1,0 +1,17 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/play/sound/standard-output-bell/linux-x64",
+  "description": [
+    "Play a sound.",
+    "Play a 'bell' sound using the standard output device."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "play",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": []
+}

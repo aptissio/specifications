@@ -1,0 +1,53 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant-property/place-items/x64",
+  "description": [
+    "Add place-items property to a HTML Cascaded Style Sheet (CSS). ",
+    "",
+    "Place-items sets both the align-items and justify-items properties in a single declaration.",
+    "",
+    "\\<align-items/justify-items> \u2013 The first value sets align-items, the second value justify-items.",
+    "",
+    "",
+    "Values:",
+    "",
+    "    ",
+    "    1 - start \u2013 aligns items to be flush with the start edge of their cell",
+    "     2 - end \u2013 aligns items to be flush with the end edge of their cell",
+    "     3 - center \u2013 aligns items in the center of their cell \t",
+    "     4 - stretch \u2013 fills the whole width of the cell (this is the default)",
+    "    ",
+    "     [1, 2, 3, 4] -> PLACEITEMS_1START, PLACEITEMS_2END, PLACEITEMS_3CENTER, ",
+    "                    PLACEITEMS_4STETCH",
+    "    ",
+    "Learn more: https://css-tricks.com/snippets/css/complete-guide-grid/"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "align items value",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1 to 4"
+    },
+    {
+      "type": "integer",
+      "name": "justify items value",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1 to 4"
+    }
+  ],
+  "obligations": []
+}

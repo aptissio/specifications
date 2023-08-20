@@ -1,0 +1,53 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/iterate/over-bitcoin-transaction-inputs/default/x64",
+  "description": [
+    "Iterate over the inputs of a Bitcoin transaction providing access to the input attributes.",
+    "Iterate over the inputs of a Bitcoin transaction providing access to the input attributes."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "iterate()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "input index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input outpoint transaction ID",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input outpoint index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input outpoint signature script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input sequence number",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "each output",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

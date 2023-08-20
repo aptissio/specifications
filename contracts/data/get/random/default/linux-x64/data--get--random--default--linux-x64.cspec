@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/get/random/default/linux-x64",
+  "description": [
+    "Generate a random output.",
+    "",
+    "Generate a random integer, within the minimum and maximum bounds (inclusive) of the given `integer` , using the Linux device `/dev/urandom` as the source of the random number."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "get({success}, {failure})",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "integer",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success(integer)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/ipv6-address/default/x64",
+  "description": [
+    "This protocol implements the storage of an IPv6 address as little-endian, 128-bit integer.",
+    "",
+    "This protocol implements the storage of an IPv6 address as little-endian, 128-bit integer."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "address",
+        "protocol": "/data/bytes/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/ipv6-address/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, address, ipv6_address_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, ipv6_address_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, address, trigger, debug_msg)",
+      " }",
+      "end",
+      ""
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/ipv6-address/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "address",
+        "protocol": "/data/bytes/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, ipv6_address_inout, address, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, ipv6_address_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, address, trigger, debug_msg)",
+      " }",
+      "end",
+      ""
+    ]
+  }
+}

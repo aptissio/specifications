@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/colour/red-dark/x64",
+  "description": [
+    "Design a new colour.",
+    "Add the colour Red Dark to a HTML Style Sheet"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "red-dark",
+      "protocol": "/data/colour/default/x64"
+    }
+  ]
+}

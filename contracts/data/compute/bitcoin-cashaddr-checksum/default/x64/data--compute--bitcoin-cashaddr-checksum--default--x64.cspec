@@ -1,0 +1,74 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compute/bitcoin-cashaddr-checksum/default/x64",
+  "description": [
+    "Compute what eight 5-bit values to XOR into the last 8 input values, in order to make the checksum 0. These 8 values are packed together in a single 40-bit integer. The higher bits correspond to earlier values.",
+    "",
+    "The input is interpreted as a list of coefficients of a polynomial over F = GF(32), with an implicit 1 in front.",
+    "",
+    "If the input is [v0,v1,v2,v3,v4], that polynomial is",
+    "  v(x) = 1*x^5 + v0*x^4 + v1*x^3 + v2*x^2 + v3*x + v4.",
+    "The implicit 1 guarantees that [v0,v1,v2,...] has a distinct checksum from [0,v0,v1,v2,...].",
+    "",
+    "The output is a 40-bit integer whose 5-bit groups are the coefficients of the remainder of v(x) mod g(x), where g(x) is the cashaddr generator,",
+    "x^8 + {19}*x^7 + {3}*x^6 + {25}*x^5 + {11}*x^4 + {25}*x^3 + {3}*x^2 + {19}*x + {1}.",
+    "g(x) is chosen in such a way that the resulting code is a BCH code, guaranteeing detection of up to 4 errors within a window of 1025 characters.",
+    "Compute the Bitcoin 'cashaddr' checksum given the client supplied /network/ integer (0 \\= mainnet, 1 \\= testnet, 2 \\= regtest), /hash type/ (0 \\= p2kh, 1 \\= p2sh) and /hash/.",
+    "",
+    "The checksum is computed as defined in the *[[https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/cashaddr.md][Cashadr specification]]*.",
+    "",
+    "The /prefix/ and /version hash data/ are provide as a by-product of the checksum computation and are useful for other procedures.",
+    "",
+    "Failures may result from invalid /network/ or /hash type/ values or from an incompatible /hash/ size."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compute",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "network",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash type",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "prefix",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "version hash data",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "checksum",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success(prefix, version hash data, checksum)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

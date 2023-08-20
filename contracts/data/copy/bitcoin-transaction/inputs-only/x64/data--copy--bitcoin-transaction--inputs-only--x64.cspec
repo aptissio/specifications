@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/copy/bitcoin-transaction/inputs-only/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "copy [bitcoin-transaction]",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "copy transaction-id"
+    },
+    {
+      "type": "abstraction",
+      "name": "input",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "copy locktime"
+    },
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    }
+  ],
+  "obligations": []
+}

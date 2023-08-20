@@ -1,0 +1,39 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/copy/currency-value/default/x64",
+  "description": [
+    "Design a process to copy a currency-value.",
+    "Copies a currency value from /source/ to /target/ while managing any change in currency precision.",
+    "That is, a source with a precision of 2 and a value of 1.05 will result in a target with a precision of 4 having a value of 1.0500."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "copy",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "source",
+      "protocol": "/data/currency-value/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target",
+      "protocol": "/data/currency-value/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "overflow",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

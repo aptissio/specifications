@@ -1,0 +1,44 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/bitcoin-redeem-script/default/x64",
+  "description": [
+    "type here to preview description"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "ENABLE UNCOMPRESSED PUBKEYS"
+    },
+    {
+      "type": "boolean",
+      "name": "ENABLE INPUT IS BASE16"
+    },
+    {
+      "type": "integer",
+      "name": "MAX MULTISIG(N)",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "MAX SCRIPT LENGTH OVERRIDE",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "redeem script",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/check/json-rpc-method/default/x64",
+  "description": [
+    "Check the method of a JSON RPC structure.",
+    "Checks if the /RPC method/ matches that stored in the /RPC interface/ and returns a true result if they are equal."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "check",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "RPC method",
+      "length": "1048576",
+      "hint": "2^20"
+    },
+    {
+      "type": "abstraction",
+      "name": "RPC interface",
+      "protocol": "/data/json-rpc-interface/default/x64"
+    }
+  ],
+  "obligations": []
+}

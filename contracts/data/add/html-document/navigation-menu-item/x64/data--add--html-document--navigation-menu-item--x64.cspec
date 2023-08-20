@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/navigation-menu-item/x64",
+  "description": [
+    "Add an item to a Navigation menu list. ",
+    "",
+    "Apply styling with optional ID Selector"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "url",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "name",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

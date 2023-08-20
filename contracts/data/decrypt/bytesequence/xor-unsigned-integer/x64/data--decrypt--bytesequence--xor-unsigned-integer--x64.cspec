@@ -1,0 +1,32 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/decrypt/bytesequence/xor-unsigned-integer/x64",
+  "description": [
+    "Agent performs XOR decryption scheme on a ciphertext and a key and returns a message."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "decrypt()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "key",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "ciphertext",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

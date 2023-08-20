@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/bitcoin-wallet/master-key/x64",
+  "description": [
+    "Set the master key(secret key, chain code) in a `Bitcoin wallet` from the given `seed`. At run-time, if the new master key is 0 or > order n the `failure` flow is executed, else the `success` flow is executed."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "Bitcoin wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "seed",
+      "protocol": "/data/bitcoin-seed/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hmac 512",
+      "protocol": "/data/hmac-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

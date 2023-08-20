@@ -1,0 +1,113 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/route/http-session-request/default/x64",
+  "description": [
+    "This agent works with the http-server with sessions [/system/new/http-server/sessions/linux-x64](/valley/view//system/new/http-server/sessions/linux-x64).",
+    "",
+    "It requires protocols http-server and session-context. Also requires the exit from the previous task in **http-server-task-manager** to link to. It contributes the workspace for client to do work in session context and contribute to response.",
+    "",
+    "The route agent provides the access to `route method`, `route authority` and `route path` from the http request to compare to desired values in provided `route condition`. If the `route condition` is not successful, route work will not execute.",
+    "",
+    "The agent provides also access to the http-response2 and http-response-headers for client to contribute to the response in the work flow.",
+    "",
+    "The client may request the reset of the session by setting the `reset session flag`. The flow `work after reset` is only accessed if the `reset session flag` is set.",
+    "",
+    "The agent automatically handles the exception if the session can't be recalled or reset session fails. The route work will not be executed.",
+    "",
+    "The agent provides the option to client not to finalise the response by setting the `dont finalise respone` to TRUE."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http server",
+      "protocol": "/system/http-server/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http session context",
+      "protocol": "/system/http-session-context/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "new request task exit",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "dont finalise response"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "last request task exit",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "route method",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "route authority",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "route path",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "route condition",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "session context",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "session context initialisation",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "session context clean up",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "reset session flag",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "session work",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http response2",
+      "protocol": "/data/http-response2/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http response headers",
+      "protocol": "/data/http-headers/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "work after reset",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

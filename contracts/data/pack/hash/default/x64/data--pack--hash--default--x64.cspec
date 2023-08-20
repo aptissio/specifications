@@ -1,0 +1,38 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/hash/default/x64",
+  "description": [
+    "This contribution performs a hash operation and packs the result as part of the clients /pack/ collaboration. The client provides the hash payload via the /client pack/ which must result is a serialised length of no more than /maximum payload length/. The byte ordering of the result that is packed for the client is the reverse of the natural ordering from the given /hash procedure/"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "little endian result"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "payload maximum length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 - (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "client pack",
+      "protocol": "/data/pack/default/x64"
+    }
+  ]
+}

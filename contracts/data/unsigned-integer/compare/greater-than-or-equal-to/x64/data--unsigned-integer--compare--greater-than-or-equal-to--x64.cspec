@@ -1,0 +1,37 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unsigned-integer/compare/greater-than-or-equal-to/x64",
+  "description": [
+    "Compare if operand 1 \u2265 operand 2"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "operand 1",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "operand 2",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "true",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "false",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

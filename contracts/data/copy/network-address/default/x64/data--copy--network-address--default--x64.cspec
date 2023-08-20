@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/copy/network-address/default/x64",
+  "description": [
+    "Copy a network address.",
+    "Copies the network /address in/ to the network /address out/."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "copy()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "address in",
+      "protocol": "/data/network-address/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "address out",
+      "protocol": "/data/network-address/default/x64"
+    }
+  ],
+  "obligations": []
+}

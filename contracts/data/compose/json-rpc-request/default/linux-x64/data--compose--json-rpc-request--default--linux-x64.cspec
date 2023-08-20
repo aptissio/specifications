@@ -1,0 +1,49 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compose/json-rpc-request/default/linux-x64",
+  "description": [
+    "Combine an RPC method and parameters into a HTTP POST request.",
+    "Compose a /HTTP request/ in the form of a JSON-RPC 2.0 compliant POST request. The HTTP POST URL, IP address and credentials are fetched from the /json RPC endpoint/. If the endpoint username is empty, no authentication is included in the request.",
+    "A random /RPC session ID/ is returned to allow correlation with JSON-RPC communication responses."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compose()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "JSON RPC endpoint",
+      "protocol": "/data/api-endpoint/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "JSON RPC interface",
+      "protocol": "/data/json-rpc-interface/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RPC session ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "HTTP request",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

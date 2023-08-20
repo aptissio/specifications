@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-seed/reserve/x64",
+  "description": [
+    "Design a new Bitcoin seed structure."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "reserve",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "seed width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "1 to 2^23"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "seed",
+      "protocol": "/data/bitcoin-seed/default/x64"
+    }
+  ]
+}

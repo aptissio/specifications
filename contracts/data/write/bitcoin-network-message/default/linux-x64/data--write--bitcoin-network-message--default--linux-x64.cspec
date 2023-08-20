@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-network-message/default/linux-x64",
+  "description": [
+    "Writes a raw bitcoin network message to an output.",
+    "Writes a raw/binary bitcoin network message to a formatted, human readable stdout message."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "1048576",
+      "hint": "2^20"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    }
+  ],
+  "obligations": []
+}

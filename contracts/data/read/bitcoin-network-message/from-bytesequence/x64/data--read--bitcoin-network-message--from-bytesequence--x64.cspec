@@ -1,0 +1,66 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/read/bitcoin-network-message/from-bytesequence/x64",
+  "description": [
+    "Searches a data structure to return a valid bitcoin peer-to-peer network message.",
+    "Searches from the beginning of a /message buffer/ for a valid bitcoin peer-to-peer network message. The header is examined to extract the /message type/ (a.k.a. command), the payload and to validate the payload against the header checksum.",
+    "If the /mainnet/ flag and the /testnet/ flags are false, then the search will return regtest network messages. If both /mainnet/ and /testnet/ flags are true, then the search will return /testnet/ message results.",
+    "If a message is found, /message start/ indicates the location in the buffer of the message and /message length/ indicates the total length of the valid message (valid within the scope of /success/).",
+    "If a message is not found, then /failure/ tasks are executed and /command/, /message start/ and /message length/ are undefined."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "read()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message buffer",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "mainnet",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "testnet",
+      "protocol": "/data/flag/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "message type",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payload",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message start",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message length",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

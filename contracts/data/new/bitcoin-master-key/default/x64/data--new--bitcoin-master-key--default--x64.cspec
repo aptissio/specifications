@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-master-key/default/x64",
+  "description": [
+    "Generate a master key(secret key, chain code). In case master secret key is 0 or > order n, an invalid key is returned."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "network",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "seed",
+      "protocol": "/data/bitcoin-seed/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "master key",
+      "protocol": "/data/bitcoin-extended-private-key/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hmac 512",
+      "protocol": "/data/hmac-procedure/default/x64"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,83 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/insert/bitcoin-signature-script/multisig-signature/x64",
+  "description": [
+    "Insert data within a Bitcoin signature script.",
+    "Insert a new /encoded/ signature into a /signature script/ at the given /signature index/. The client provides the expected /required signatures/, /total signatures/ and /redeem script/ to ensure that any existing signature script data matches the intended multi-signature address.",
+    "",
+    "If the provided /signature script/ is empty, it is initialised with the new /encoded signature/ and the provided /redeem script/.",
+    "If sufficient signatures exist after adding the /encoded signature/ to meet the number of /required signatures/, the /signature script/ is finalised into a valid script.",
+    "If the /required signatures/ are not yet provided, \"empty\" signatures are marked with an invalid op-code (0xFF).",
+    "`signature count` indicates the number of signatures present after signature insertion.",
+    "",
+    "  ",
+    "__Result Codes__<br>",
+    "<span style=\"float:left;width:40px;\">0</span>Input fully signed<br>",
+    "<span style=\"float:left;width:40px;\">1</span>Input partially signed<br>",
+    "<span style=\"float:left;width:40px;\">127</span>Invalid script<br>",
+    "<span style=\"float:left;width:40px;\">128</span>No more signatures required<br>",
+    "<span style=\"float:left;width:40px;\">129</span>Invalid signature index<br>",
+    "<span style=\"float:left;width:40px;\">130</span>Signature already exists<br>",
+    "<span style=\"float:left;width:40px;\">131</span>Insufficient script capacity"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "insert",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "signature script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "signature index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "encoded signature",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "required signatures",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "total signatures",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "redeem script",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "signature count",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

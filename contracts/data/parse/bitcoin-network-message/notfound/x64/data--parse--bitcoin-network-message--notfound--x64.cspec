@@ -1,0 +1,60 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/parse/bitcoin-network-message/notfound/x64",
+  "description": [
+    "The `notfound` message (not found message) is a response message that transmits one or more inventories of objects not known to the transmitting peer. It is sent in reply to a request for objects such as a `getgata` message.",
+    "`inventory count` indicates the number of inventory items indicated in the `bitcoin network message`. It may exceed the length of the `inventory array` in which case `insufficient length` is executed."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parse",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin network message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "inventory capacity",
+      "minimum": "1",
+      "maximum": "50000",
+      "hint": "1, 50000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "inventory count",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "inventory array",
+      "protocol": "/data/array/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "inventory type",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "inventory hash",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "insufficient length",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

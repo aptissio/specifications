@@ -1,0 +1,80 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/check/json-data-item/default/x64",
+  "description": [
+    "Check a json data item & identify the unique ID & which data type within a JSON data collection.  A JSON <b><i>Data item  </b></i> consists of a TYPE & ID for a specific JSON Data Types Collection. The ID is unique and the TYPE indicates if the item is one of the following data types:",
+    "",
+    "     Object = {}",
+    "     Array = []",
+    "     Integer = <INTEGER>",
+    "     String = \"STRING\"",
+    "     Boolean = true/false",
+    "     Null = null",
+    "     Undefined = undefined"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "check",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "json data item",
+      "protocol": "/data/json-data-item/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "data item ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "data item type",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "is object",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "is array",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "is integer",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "is string",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "is boolean",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "is null",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "is undefined",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

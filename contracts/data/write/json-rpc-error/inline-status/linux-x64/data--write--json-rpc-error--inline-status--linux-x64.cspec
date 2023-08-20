@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/json-rpc-error/inline-status/linux-x64",
+  "description": [
+    "Write a JSON RPC error to an output.",
+    "Writes the error code and message from an /RPC interface/ to standard out using a fixed-width /status width/ format /status/ in the specified /colour/.",
+    "Contribution utilises ANSI escape sequences to position and colour standard out."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "status",
+      "length": "30",
+      "hint": "30"
+    },
+    {
+      "type": "integer",
+      "name": "status width",
+      "minimum": "0",
+      "maximum": "32",
+      "hint": "0, 32"
+    },
+    {
+      "type": "string",
+      "name": "colour",
+      "length": "7",
+      "hint": "7"
+    },
+    {
+      "type": "abstraction",
+      "name": "RPC interface",
+      "protocol": "/data/json-rpc-interface/default/x64"
+    }
+  ],
+  "obligations": []
+}

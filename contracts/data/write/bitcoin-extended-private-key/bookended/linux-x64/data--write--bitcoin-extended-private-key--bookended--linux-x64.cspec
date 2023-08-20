@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-extended-private-key/bookended/linux-x64",
+  "description": [
+    "Write bitcoin extended private key as base 58 encoding to standard out. (Add a new line at the end for human readability.)"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "100",
+      "hint": "100"
+    },
+    {
+      "type": "abstraction",
+      "name": "extended private key",
+      "protocol": "/data/bitcoin-extended-private-key/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "suffix",
+      "length": "100",
+      "hint": "100"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/parse/json-rpc-request/boolean/x64",
+  "description": [
+    "Parse a HTTP response into a JSON-RPC object.",
+    "Parse the content of an input /bytesequence/ storing the method and parameters of a valid JSON-RPC into /RPC interface/ and extracting the /RPC ID/ for this request.",
+    "If an error occurs during the parsing process, the /parse/ condition returns 'false'."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parse(bytesequence, RPC interface)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RPC interface",
+      "protocol": "/data/json-rpc-interface/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RPC ID",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

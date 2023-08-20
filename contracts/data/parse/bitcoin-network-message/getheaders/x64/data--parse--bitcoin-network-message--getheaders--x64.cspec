@@ -1,0 +1,43 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/parse/bitcoin-network-message/getheaders/x64",
+  "description": [
+    "Return a headers packet containing the headers of blocks starting right after the last known hash in the block locator object, up to hash_stop or 2000 blocks, whichever comes first. To receive the next block headers, one needs to issue getheaders again with a new block locator object. Keep in mind that some clients may provide headers of blocks which are invalid if the block locator object contains a hash on the invalid branch. ",
+    "",
+    "hash count : number of block locator hash entries ",
+    "",
+    "block locator hashes : block locator object; newest back to genesis block (dense to start, but then sparse) ",
+    "",
+    "hash_stop: hash of the last desired block header; set to zero to get as many blocks as possible (2000)"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parse()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin network message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "hash count",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "block locator hashes",
+      "protocol": "/data/list/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hashes",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ]
+}

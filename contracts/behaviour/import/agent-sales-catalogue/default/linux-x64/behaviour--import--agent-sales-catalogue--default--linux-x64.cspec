@@ -1,0 +1,39 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/import/agent-sales-catalogue/default/linux-x64",
+  "description": [
+    "Import data from file into a sales-catalogue.",
+    "The filename for the import is provided at run-time from the command-line.",
+    "<br>If 'force exit on file access error' is TRUE, the application will exit if the file is not present or does not have 'read' access."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "application core",
+      "protocol": "/system/execution-bundle/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "sales manager",
+      "protocol": "/behaviour/upc-sales-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file manager",
+      "protocol": "/system/file-manager/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "default catalogue filename",
+      "length": "255",
+      "hint": "255"
+    },
+    {
+      "type": "abstraction",
+      "name": "import",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": []
+}

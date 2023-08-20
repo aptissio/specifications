@@ -1,0 +1,71 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/iframe-google-maps-constant/x64",
+  "description": [
+    "Add a Google maps iframe to a HTML Document and apply the desired styles. ",
+    "",
+    "Provide a Height and Width & specify units, choose fixed for (px) or relative for (%).",
+    "",
+    "Add a desired Google Maps constant Url.",
+    "",
+    "Allow fullscreen to allow certain map parts to go full screen.",
+    "       ",
+    "Optional ID Selecter for further styling CSS. ",
+    "",
+    "This design provides the iframe tags & styling selectors.",
+    "",
+    "Learn more about google maps parameters: https://developers.google.com/maps/documentation/embed/embedding-map"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "width",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "boolean",
+      "name": "width fixed"
+    },
+    {
+      "type": "integer",
+      "name": "height",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "boolean",
+      "name": "height fixed"
+    },
+    {
+      "type": "string",
+      "name": "google maps url",
+      "length": "9950",
+      "hint": "0 to 9950"
+    },
+    {
+      "type": "boolean",
+      "name": "allow fullscreen"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

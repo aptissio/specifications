@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/text-constant/x64",
+  "description": [
+    "Add text constant to a HTML Document"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "text",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": []
+}

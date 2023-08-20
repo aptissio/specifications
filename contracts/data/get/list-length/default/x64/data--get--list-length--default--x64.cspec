@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/get/list-length/default/x64",
+  "description": [
+    "Get the length of list.",
+    "Provide the length of a list."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "list",
+      "protocol": "/data/list/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "length",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

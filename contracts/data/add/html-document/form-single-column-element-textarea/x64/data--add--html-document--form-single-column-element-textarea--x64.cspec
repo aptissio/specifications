@@ -1,0 +1,155 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form-single-column-element-textarea/x64",
+  "description": [
+    "Add a textarea element to a single-column web document form.",
+    "",
+    "A Textarea defines a multi-line text input control. It is often used in a form, to collect user inputs like comments or reviews.",
+    "",
+    "Example (See Aptissio.com Below):",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/sha_256.png\" width=\"350\" height=\"450\">",
+    "",
+    "Add label content.",
+    "",
+    "Provide an initial value if desired. ",
+    "",
+    "Specify a number of Rows & Columns desired for the textarea input.",
+    "",
+    "Dirname specifies that the text direction of the textarea will be.",
+    "",
+    "The read only attribute specifies that an input field is read-only.",
+    "",
+    "A disabled input field is unusable and un-clickable.",
+    "",
+    "The required attribute specifies that the element must be filled out before submitting the form.",
+    "",
+    "The autofocus attribute specifies that the element should automatically get focus when the page loads.",
+    "",
+    "The placeholder is a short hint is displayed in the input field before the user enters a value.",
+    "",
+    "The title attribute specifies extra information about an element.",
+    "",
+    "Specify a cursor colour.",
+    "",
+    "Enable an input counter in the bottom right corner of the texarea to display to user if desired eg 10/20. If enabled, this content will adopt the cursor colour specified above. This adds a function that may be used to call externally if required.",
+    "",
+    "Disable resize to enable the user to drag and resize the textarea.",
+    "",
+    "Specif a maximum character length of textarea input element."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "form group",
+      "protocol": "/data/form-single-column-group/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "label content",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "abstraction",
+      "name": "initial value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "columns",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "rows",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "string",
+      "name": "dirname",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "boolean",
+      "name": "read only"
+    },
+    {
+      "type": "boolean",
+      "name": "disabled"
+    },
+    {
+      "type": "boolean",
+      "name": "required"
+    },
+    {
+      "type": "boolean",
+      "name": "autofocus"
+    },
+    {
+      "type": "boolean",
+      "name": "enable hard wrap"
+    },
+    {
+      "type": "string",
+      "name": "title",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "string",
+      "name": "placeholder",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "abstraction",
+      "name": "cursor colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable input counter"
+    },
+    {
+      "type": "boolean",
+      "name": "disable resize"
+    },
+    {
+      "type": "integer",
+      "name": "input maximum length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "input ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "function name",
+      "length": "100",
+      "hint": "100"
+    },
+    {
+      "type": "abstraction",
+      "name": "input textarea",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

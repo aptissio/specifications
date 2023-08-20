@@ -1,0 +1,41 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/asn-1-integer/dynamic-length/x64",
+  "description": [
+    "type here to preview description"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "value = unpack(minimum, maximum, integer)",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "minimum value",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "-(2^63) to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum value",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "-(2^63) to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "integer octet length",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "value",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/truncate/bytesequence/default/x64",
+  "description": [
+    "Shorten a bytesequence.",
+    "Update the given bytesequence with the 'new length in' (truncating from the end of the bytesequence). This will not pad the bytesequence. If the current bytesequence length is less than or equal to the new 'new length' then the bytesequence is not affected.",
+    "Update the given bytesequence with the 'new length in' (truncating from the end of the bytesequence)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "bytesequence = truncate(bytesequence, new length)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "new length",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

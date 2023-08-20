@@ -1,0 +1,45 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/colour/8bit-alpha/x64",
+  "description": [
+    "Design a new colour.",
+    "Create the structure and set the 'value' of colour based upon the 8-bit intensity values of /red/, /green/ and /blue/ (RGB) and the /alpha/ channel percentage.",
+    "Valid values of /red/, /blue/ and /green/ are 0 to 255 inclusive, and valid values of /alpha/ are between 0 and 100 inclusive.",
+    "Invalid values will be interpreted as 'saturated' values at the respective minimum or maximum. For example, red values of -5 and 1024 will be interpreted as 0 and 255 respectively."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new(red, green, blue, alpha)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "red",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "green",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "blue",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "alpha",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ]
+}

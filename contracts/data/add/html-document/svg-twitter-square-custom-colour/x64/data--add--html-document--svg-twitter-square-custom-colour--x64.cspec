@@ -1,0 +1,59 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/svg-twitter-square-custom-colour/x64",
+  "description": [
+    "Add a square Twitter SVG to a Web Document.",
+    "",
+    "Provide a <i>Width</i> (px).",
+    "",
+    "Specify a foreground & background colour.",
+    "",
+    "Apply styling via class or optional ID Selector.",
+    "",
+    "<svg width=\"50px\" height=\"50px\" viewBox='0 0 72 72'>",
+    "        <g transform='translate(-264 -43)'>",
+    "        <g transform='translate(264 43)'>",
+    "        <polygon id='Square' points='0 72 72 72 72 0 0 0' fill='#1da1f2'/>",
+    "        <path d='m55.087 25.715c.62155 13.851-9.7066 29.294-27.991 29.294-5.561 0-10.737-1.6311-15.095-4.4252 5.2236.61566 10.439-.83267 14.579-4.0784-4.3084-.079021-7.9457-2.9261-9.1983-6.8383 1.5427.29485 3.0606.20876 4.4464-.16748-4.7365-.95297-8.0047-5.2189-7.8986-9.7809 1.328.73714 2.8471 1.1806 4.4617 1.2301-4.3863-2.9297-5.6282-8.7206-3.0476-13.147 4.8557 5.9584 12.111 9.8788 20.297 10.29-1.4354-6.1613 3.2375-12.093 9.5934-12.093 2.833 0 5.3923 1.1948 7.1874 3.1089 2.2433-.4411 4.3509-1.2608 6.2533-2.3895-.73478 2.2999-2.2963 4.2306-4.3296 5.4477 1.992-.23706 3.8897-.76662 5.6565-1.5498-1.3198 1.9755-2.9898 3.7093-4.9135 5.0974' fill='#fff'/>",
+    "        </g>",
+    "        </g>",
+    "        </svg>"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "width",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "abstraction",
+      "name": "foreground colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "background colour",
+      "protocol": "/data/colour/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

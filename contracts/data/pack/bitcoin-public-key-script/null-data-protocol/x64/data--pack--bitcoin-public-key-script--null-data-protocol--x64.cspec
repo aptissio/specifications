@@ -1,0 +1,35 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/bitcoin-public-key-script/null-data-protocol/x64",
+  "description": [
+    "Pack a Bitcoin public key script.",
+    "Pack a Bitcoin public key script that containing OP\\_RETURN data flagged as belonging to the given /protocol ID/.",
+    "This contribution implements the \"Lokad\" guidelines *_[[https://github.com/bitcoincashorg/bitcoincash.org/blob/master/spec/op_return-prefix-guideline.md][found here]]_*.",
+    "The client is responsible for packing the protocol data push operations within /pack push opcodes/",
+    "",
+    "_CAUTION_: This type of script will make an output provably unspendable!",
+    "",
+    "The client is responsible for ensuring that the total length of the /pack push opcodes/ is less than 217 bytes, otherwise the resulting public key script would produce a \"non-standard\" transaction."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "protocol ID",
+      "length": "4",
+      "hint": "4"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "pack push opcodes",
+      "protocol": "/data/pack/default/x64"
+    }
+  ]
+}

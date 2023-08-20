@@ -1,0 +1,44 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/emergent-coding-website/project-summary/x64",
+  "description": [
+    "Emergent Coding Website - Project Summary.",
+    "",
+    "Add Emergent Coding Projects as desired.",
+    "",
+    "Example:",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/ProjectSummaryPage.png\" width=\"100%\" height=\"450\"> ",
+    "",
+    "      Command Line example of running exe:",
+    "      ./1046456_37__ec_website--x64.elf --http-server.ip4-socket=127.0.0.1:8 080 --bitcn-bch.current=50 ",
+    "      --bitcn-bch.target=100 --bitcn-bch.agent-count=3 --aptissio.current=50 --aptissio.target=100 --aptissio.agent-count=3"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "core",
+      "protocol": "/system/execution-bundle/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "document length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "project groups",
+      "protocol": "/behaviour/emergent-coding-project-group/default/x64"
+    }
+  ]
+}

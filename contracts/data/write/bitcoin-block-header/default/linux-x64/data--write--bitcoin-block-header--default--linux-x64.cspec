@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-block-header/default/linux-x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "1048576",
+      "hint": "2^20"
+    },
+    {
+      "type": "abstraction",
+      "name": "block header",
+      "protocol": "/data/bitcoin-block-header/default/x64"
+    }
+  ],
+  "obligations": []
+}

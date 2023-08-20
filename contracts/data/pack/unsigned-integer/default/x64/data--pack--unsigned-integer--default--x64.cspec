@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/unsigned-integer/default/x64",
+  "description": [
+    "Pack an unsigned-integer into a structure.",
+    "Pack the /value/ into a sequence of /octet length/ bytes. If the /octet length/ is shorter than that required to represent the unsigned-integer, only the lowest-order bytes are packed. Zero padding is provided in the case where the representation of the unsigned-integer /value/ requires less octets than /octet length/."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack(value)",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "octet length",
+      "minimum": "1",
+      "maximum": "1048576",
+      "hint": "1 to 2^20"
+    },
+    {
+      "type": "abstraction",
+      "name": "value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

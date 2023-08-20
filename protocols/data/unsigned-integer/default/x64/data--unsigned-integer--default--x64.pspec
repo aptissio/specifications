@@ -1,0 +1,80 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/unsigned-integer/default/x64",
+  "description": [
+    "****level 2 protocol****",
+    "",
+    "",
+    "",
+    "The [/data/unsigned-integer/default/x64](/valley/view/data/unsigned-integer/default/x64) protocol designs an integer whole number that can be greater than or equal to 0 (i.e. positive values only). ",
+    "",
+    "To declare an unsigned integer variable, use [/data/unsigned-integer/new/default/x64](/valley/view/data/unsigned-integer/new/default/x64) , specifying the precision required (in terms of maximum bit `width`), which will determine the size of the unsigned integer reserved in memory. The maximum size that can be reserved is 1MB, and will be in little endian format. ",
+    "",
+    "The [/data/unsigned-integer/default/x64](/valley/view/data/unsigned-integer/default/x64) protocol implements modulo arithmetic. The modulo is equal 2^N where N is the bit `width` specified when defining the unsigned integer. For this reason, unsigned integer types will appear to wrap around on overflow.",
+    "",
+    "Key agents that use the [/data/unsigned-integer/default/x64](/valley/view/data/unsigned-integer/default/x64) protocol to design integer operations include: [/data/unsigned-integer/add/default/x64](/valley/view/data/unsigned-integer/add/default/x64) , [/data/unsigned-integer/subtract/default/x64](/valley/view/data/unsigned-integer/subtract/default/x64) , [/data/unsigned-integer/multiply/default/x64](/valley/view/data/unsigned-integer/multiply/default/x64) , [/data/unsigned-integer/divide/default/x64](/valley/view/data/unsigned-integer/divide/default/x64) , [/data/unsigned-integer/mod/default/x64](/valley/view/data/unsigned-integer/mod/default/x64) , [/data/unsigned-integer/exponent/default/x64](/valley/view/data/unsigned-integer/exponent/default/x64) , among others. Agents that design control-flow checks and comparisons can be found under [/data/unsigned-integer/check/default/x64](/valley/view/data/unsigned-integer/check/default/x64) and [/data/unsigned-integer/compare/default/x64](/valley/view/data/unsigned-integer/compare/default/x64) . An example program demonstrating how the above agents use the [/data/unsigned-integer/default/x64](/valley/view/data/unsigned-integer/default/x64) protocol is shown below."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "bit width",
+        "minimum": "1",
+        "maximum": "8388608",
+        "hint": "1, 8MB"
+      },
+      {
+        "type": "abstraction",
+        "name": "octets",
+        "protocol": "/data/bytes/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/unsigned-integer/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, width, octets, the_uint, trigger, debug_msg):",
+      "  sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, the_uint, trigger, debug_msg) -> {",
+      "    sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, width, trigger, debug_msg)",
+      "    sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, octets, trigger, debug_msg)",
+      "  }",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/unsigned-integer/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "bit width",
+        "minimum": "1",
+        "maximum": "8388608",
+        "hint": "1, 8MB"
+      },
+      {
+        "type": "abstraction",
+        "name": "octets",
+        "protocol": "/data/bytes/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, the_uint, width, octets, trigger, debug_msg):",
+      "  sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, the_uint, trigger, debug_msg) -> {",
+      "    sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, width, trigger, debug_msg)",
+      "    sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, octets, trigger, debug_msg)",
+      "  }",
+      "end"
+    ]
+  }
+}

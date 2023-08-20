@@ -1,0 +1,24 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/purchase-order-book/default/linux-x64",
+  "description": [
+    "Create a new purchase order book.",
+    "Purchase orders are used to associate sales catalog data with sales terms (including payment terms) and a purchasers authorisation to exchange goods for payment.",
+    "Purchase order books include the ability to create communications data to convey purchase orders between customers and suppliers."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "purchase order book",
+      "protocol": "/data/purchase-order-book/default/x64"
+    }
+  ]
+}

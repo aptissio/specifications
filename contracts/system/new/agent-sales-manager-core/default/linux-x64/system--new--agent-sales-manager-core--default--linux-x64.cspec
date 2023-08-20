@@ -1,0 +1,124 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/new/agent-sales-manager-core/default/linux-x64",
+  "description": [
+    "Design an agent sales manager core that can be customised and be used with one or more payment methods."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "configuration manager",
+      "protocol": "/system/configuration-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file manager",
+      "protocol": "/system/file-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "TCP client manager",
+      "protocol": "/system/tcp-client-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent network sales communications",
+      "protocol": "/system/agent-network-comms/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "kademlia node",
+      "protocol": "/system/kademlia-node/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "system label",
+      "length": "64",
+      "hint": "64"
+    },
+    {
+      "type": "integer",
+      "name": "system priority",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0 - 65535"
+    },
+    {
+      "type": "integer",
+      "name": "maximum agent name length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "subcontractor instance count maximum",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent sales catalogue",
+      "protocol": "/behaviour/agent-sales-catalogue/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "SHA256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RIPEMD160 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "HMAC512 procedure",
+      "protocol": "/data/hmac-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "start",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "stop",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "agent sales manager core",
+      "protocol": "/system/agent-sales-manager-core/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent payment methods",
+      "protocol": "/system/agent-payment-methods/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent wallet state",
+      "protocol": "/data/agent-bitcoin-wallet-state/default/x64"
+    }
+  ]
+}

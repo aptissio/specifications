@@ -1,0 +1,38 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/prepend/bytesequence/constant/x64",
+  "description": [
+    "Prepend a bytesequence with a design time /constant/ string. If there is insufficient length, the /failure/ flow will be executed."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "prepend",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "constant",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

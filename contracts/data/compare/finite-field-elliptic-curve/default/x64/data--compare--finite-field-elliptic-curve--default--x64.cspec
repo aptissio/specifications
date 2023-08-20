@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/finite-field-elliptic-curve/default/x64",
+  "description": [
+    "Compare finite-field elliptic curves.",
+    "At run-time, compare two elliptic curves and return a 'true' boolean condition if they are 'equal'."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare(curve 1, curve 2)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "curve 1",
+      "protocol": "/data/finite-field-elliptic-curve/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "curve 2",
+      "protocol": "/data/finite-field-elliptic-curve/default/x64"
+    }
+  ],
+  "obligations": []
+}

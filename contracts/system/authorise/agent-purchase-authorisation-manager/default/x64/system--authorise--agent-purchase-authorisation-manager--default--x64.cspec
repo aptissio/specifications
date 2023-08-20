@@ -1,0 +1,43 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/authorise/agent-purchase-authorisation-manager/default/x64",
+  "description": [
+    "Design a purchase authorisation feature into an agent purchase authorisation manager.",
+    "",
+    "A purchase authorisation consists of:",
+    "* The customer's sales network address",
+    "* An authorisation token",
+    "* The fully-qualified specialist name of the agent contract to be purchased.",
+    "* The \"price tag\" of the agent contract to be purchased.",
+    "* The customer's \"payment entity\".",
+    "",
+    "Where __price tag__ and __payment entity__ are strings defined by the applicable payment method to be used.",
+    "",
+    "The client is responsible for transporting the purchase authorisation to the supplier who is expected to submit it to the feature `/behaviour/authorise/agent-sales-manager/sale/linux-x64`."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "agent purchase authorisation manager",
+      "protocol": "/system/agent-purchase-authorisation-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "specialist name",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "create purchase authorisation (specialist name)",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new purchase authorisation",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

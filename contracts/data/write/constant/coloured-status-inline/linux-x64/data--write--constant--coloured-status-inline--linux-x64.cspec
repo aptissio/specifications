@@ -1,0 +1,38 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/constant/coloured-status-inline/linux-x64",
+  "description": [
+    "Write predefined data to an output stream.",
+    "For example: logging a constant string to stdout or stderr.",
+    "Write a coloured constant /status/ string enclosed in []'s, a trailing space but no carriage return or linefeed to standard out. The /status/ string will be written with the design-time /colour/ and of fixed-width /status width/. The width includes the []'s.",
+    "Contribution utilises ANSI escape sequences to position and colour standard out."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write(string)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "status",
+      "length": "30",
+      "hint": "30"
+    },
+    {
+      "type": "integer",
+      "name": "status width",
+      "minimum": "0",
+      "maximum": "32",
+      "hint": "0, 32"
+    },
+    {
+      "type": "string",
+      "name": "colour",
+      "length": "7",
+      "hint": "7"
+    }
+  ],
+  "obligations": []
+}

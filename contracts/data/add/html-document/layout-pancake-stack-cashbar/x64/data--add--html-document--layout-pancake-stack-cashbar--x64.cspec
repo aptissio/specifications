@@ -1,0 +1,210 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/layout-pancake-stack-cashbar/x64",
+  "description": [
+    "Add a responsive CashBar Pancake Stack to a Web Document. This layout consists of three rows, a header, body & footer. ",
+    "",
+    "Enable the Font Awesome Feature.",
+    "",
+    "Provide a Url for the home Icon.",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/layout-cashbar.png\" width=\"100%\" height=\"450\"> ",
+    "",
+    "Provide heading content to replace \"SETTINGS\" in image above.",
+    "",
+    "Specify colours for the Home Icon, Home Icon border, Header, Body & Footer Backgrounds.",
+    "",
+    "Specify the element Height of the Header & Footer Elements. Choose a unit from options below:",
+    "",
+    "      [1, 2, 3, 4] -> ELEMENT_UNIT_PX, ELEMENT_UNIT_FR, ELEMENT_UNIT_AUTO, ELEMENT_UNIT_PERCENTAGE",
+    "",
+    "",
+    "Choose an INTEGER between 1-4 for the desired target window. Options below:",
+    "",
+    "    1. _blank: Opens the linked document in a new window or tab",
+    "    2. _self: Opens the linked document in the same frame as it was clicked (this is default)",
+    "    3. _parent: Opens the linked document in the parent frame",
+    "    4. _top: Opens the linked document in the full body of the window",
+    "",
+    "    [1, 2, 3, 4] -> TARGET_1BLANK, TARGET_2SELF, TARGET_3PARENT, TARGET_4TOP",
+    "",
+    "",
+    "Apply styling and utilize optional ID Selector if required."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome feature",
+      "protocol": "/data/html-document-feature-font-awesome/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "home icon url",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "heading content",
+      "length": "10000",
+      "hint": "0 to 10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome home icon colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome home icon border colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "header height",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "header height unit",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1 to 4"
+    },
+    {
+      "type": "abstraction",
+      "name": "body background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "footer height",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "footer height unit",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1 to 4"
+    },
+    {
+      "type": "integer",
+      "name": "target window",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "header ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header left ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "home icon link ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "home icon ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header center ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "heading ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header right ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header right document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "body ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "body document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer left ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer left document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer center ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer center document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer right ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer right document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

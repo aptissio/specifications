@@ -1,0 +1,68 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/agent-payment-method/bitcoin/linux-x64",
+  "description": [
+    "Design a Bitcoin payment method for Emergent Coding agents.",
+    "",
+    "This payment method facilitates direct payments between agent contract customers and suppliers.",
+    "It includes direct participation in the Bitcoin network to send and receive payment transactions.",
+    "",
+    "Each agent utilises a single payment address from a Bitcoin Wallet. The wallet can be created from a mnemonic (command-line argument), or imported from a wallet file. The `wallet address index` is used to allocate a single `payment address` from the wallet. The use of a single address allows undisputed access to wallet coins between agents.",
+    "Upon receiving an application `stop` signal, the wallet state will be saved to disk as a wallet file, overwriting any existing data.",
+    "",
+    "A configuration file provides the Bitcoin network `seed` addresses used for network connections. This file requires one seed address per line in either an IPv6 or IPv4 format.",
+    "",
+    "Example bitcoin.conf file:",
+    "```",
+    "# Comment",
+    "Seed 117.20.65.54:8333",
+    "Seed 31.125.197.254:8333",
+    "Seed [0000:0000:0000:0000:0000:FFFF:0A0A:0ADC]:8333",
+    "```",
+    "",
+    "#### Command line arguments",
+    "|Argument key|(O)ptional /<br>(M)andatory|Description|Value Example|",
+    "|:---:|---|---|---|",
+    "|ipv4|O|IPv4 address for to bind Bitcoin network TCP traffic||",
+    "|port|O|IP Port address for incoming Bitcoin network TCP traffic||",
+    "|conf|O|Name of file containing Bitcoin configuration.|`./bitcoin.conf`|",
+    "|testnet|O|Enable testnet operation on the Bitcoin network if this argument is present|N/A|",
+    "|public-ipv4|O|Public IPv4 address for Bitcoin network TCP traffic.<br>Note that some Bitcoin nodes will not accept connections whose public IP address is not routable.||",
+    "|public-port|O|Public IP Port address for Bitcoin network TCP traffic.||",
+    "|usatring|O|The Bitcoin User Agent string reported when connecting to other Bitcoin nodes.|`/Bitcoin Anode:0.1.0/`|",
+    "|wallet-file|O|Location and name of file to store and retrieve wallet data.|`./wallet.dat`|",
+    "|wallet-mnemonic|O|Mnemonic phrase to restore wallet seed from as a space delimited list of words enclosed in quotes.||",
+    "|wallet-address-index|M|Index of the wallet address that this agent will use.||",
+    "|wallet-send-timeout|O|Transaction send time-out in seconds.||"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "agent payment methods",
+      "protocol": "/behaviour/agent-payment-methods/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file manager",
+      "protocol": "/system/file-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "shutdown",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "agent payment entity",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

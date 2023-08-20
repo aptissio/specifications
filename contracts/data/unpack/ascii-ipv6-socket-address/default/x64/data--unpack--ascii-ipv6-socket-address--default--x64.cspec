@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/ascii-ipv6-socket-address/default/x64",
+  "description": [
+    "Unpack an ASCII encoded IPv6 socket address, from an ASCII format like \"[2001:0db8:85a3:0000:0000:8a2e:0370:7334]:8080\" or \"[::1]:8080\"."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "decode(encoded address)",
+      "protocol": "/data/unpack/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "ipv6 socket address",
+      "protocol": "/data/ipv6-socket-address/default/x64"
+    }
+  ]
+}

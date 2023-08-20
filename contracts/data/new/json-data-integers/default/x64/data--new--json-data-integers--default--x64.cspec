@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/json-data-integers/default/x64",
+  "description": [
+    "This design creates a new JSON Data Integers Collection."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "json data types definition",
+      "protocol": "/data/json-data-types-definition/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "json data integers",
+      "protocol": "/data/json-data-integers/default/x64"
+    }
+  ]
+}

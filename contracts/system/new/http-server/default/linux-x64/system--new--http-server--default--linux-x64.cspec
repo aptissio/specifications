@@ -1,0 +1,164 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/new/http-server/default/linux-x64",
+  "description": [
+    "The http-server build following the RFC 7231. [Ref: https://www.rfc-editor.org/rfc/rfc7231]",
+    "",
+    "The http-server using task-manager rather than app-flow.",
+    "",
+    "`last response task exit` - is the **task-exit** of the last task in http-server task manager chain to link the last task in http-server to provide the response.",
+    "",
+    "The http-server is using URI and requires the input from the client `maximum authority length, maximum path length, maximum query length, maximum fragment length`",
+    "",
+    "`request and response` maximum length attributes override. Client have a contribution in what the maximum values could be.",
+    "",
+    "It provides `http-server` and `handle request task exit` for others to provide work to request or response.",
+    "",
+    "Client is required to provide maximum number of domain names/IP addresses for public host names in `maximum server public host names`. [Ref: https://web.archive.org/web/20190518124533/, https://devblogs.microsoft.com/oldnewthing/?p=7873, https://www.ietf.org/rfc/rfc1034.txt]"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "configuration manager",
+      "protocol": "/system/configuration-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "last response task exit",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "tcp server manager",
+      "protocol": "/system/tcp-server-manager/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request method length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum authority length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum path length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum query length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum fragment length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request header name length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request header value length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request header count override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum request body length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum response header name length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum response header value length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum response header count override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum response body length override",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "maximum server agent string length",
+      "minimum": "1",
+      "maximum": "10000",
+      "hint": "1 to 10000"
+    },
+    {
+      "type": "integer",
+      "name": "maximum number of server public host names",
+      "minimum": "1",
+      "maximum": "10000",
+      "hint": "1 to 10000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "http server",
+      "protocol": "/system/http-server/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "handle request task exit",
+      "protocol": "/system/task-exit/default/x64"
+    }
+  ]
+}

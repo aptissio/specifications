@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/enable/bitcoin-script-opcode/op-pushdata4/x64",
+  "description": [
+    "Enable the OP_PUSHDATA4 Bitcoin script opcode."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "opcode",
+      "protocol": "/data/bitcoin-script-opcode/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum script length",
+      "minimum": "1",
+      "maximum": "4294967295",
+      "hint": "1 to (2^32)-1"
+    }
+  ],
+  "obligations": []
+}

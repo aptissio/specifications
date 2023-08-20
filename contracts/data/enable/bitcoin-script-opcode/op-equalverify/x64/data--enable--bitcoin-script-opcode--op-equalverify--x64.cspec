@@ -1,0 +1,16 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/enable/bitcoin-script-opcode/op-equalverify/x64",
+  "description": [
+    "Enable the OP_EQUALVERIFY Bitcoin script opcode."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "opcode",
+      "protocol": "/data/bitcoin-script-opcode/default/x64"
+    }
+  ],
+  "obligations": []
+}

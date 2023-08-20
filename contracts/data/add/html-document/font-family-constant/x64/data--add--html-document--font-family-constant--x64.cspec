@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/font-family-constant/x64",
+  "description": [
+    "Add a Font Family to a HTML Document",
+    "",
+    "Add the Font Family to a Priority List."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font family priority list",
+      "protocol": "/data/html-font-family-priority-list/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "font family",
+      "length": "1024",
+      "hint": "1024"
+    }
+  ],
+  "obligations": []
+}

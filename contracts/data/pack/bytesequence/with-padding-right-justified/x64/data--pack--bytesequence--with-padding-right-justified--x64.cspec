@@ -1,0 +1,35 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/bytesequence/with-padding-right-justified/x64",
+  "description": [
+    "Contiguous raw bytes of variable length.",
+    "Aligned bytesequence to the left and filled with padding character of given length."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "padded length",
+      "minimum": "1",
+      "maximum": "1048576",
+      "hint": "1 to 2^20"
+    },
+    {
+      "type": "string",
+      "name": "padding character",
+      "length": "1048576",
+      "hint": "2^20"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/log/currency-value/default/x64",
+  "description": [
+    "Log a currency value.",
+    "Log a decimal currency value including the currency symbol."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "log-item",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum number of value digits",
+      "minimum": "1",
+      "maximum": "1048576",
+      "hint": "2^20"
+    },
+    {
+      "type": "abstraction",
+      "name": "currency value",
+      "protocol": "/data/currency-value/default/x64"
+    }
+  ],
+  "obligations": []
+}

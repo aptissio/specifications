@@ -1,0 +1,46 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/http-response2/version/x64",
+  "description": [
+    "Set a http-response version with a major, minor numbering scheme.",
+    "",
+    "    HTTP uses a \"<major>.<minor>\" numbering scheme to indicate versions of the protocol. The protocol versioning policy is intended to allow the sender to  indicate the format of a message and its capacity for understanding further HTTP  communication, rather than the features obtained via that communication. No change  is made to the version number for the addition of message components which do not  affect communication behavior or which only add to extensible field values. The <minor> number is incremented when the changes made to the protocol add features which do not change the general message parsing algorithm, but which may add to the message semantics and imply additional capabilities of the sender. The <major> number is incremented when the format of a message within the protocol is changed.  See RFC 2145 [36] for a fuller explanation.",
+    "",
+    "    The version of an HTTP message is indicated by an HTTP-Version field in the first line of the message.",
+    "",
+    "       HTTP-Version   = \"HTTP\" \"/\" 1*DIGIT \".\" 1*DIGIT",
+    "       ",
+    "       Example: HTTP/2.4",
+    "",
+    "",
+    "",
+    "",
+    "Learn  more: ",
+    "",
+    "https://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "response",
+      "protocol": "/data/http-response2/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "major",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "minor",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

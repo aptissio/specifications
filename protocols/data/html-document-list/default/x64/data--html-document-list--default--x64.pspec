@@ -1,0 +1,54 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/html-document-list/default/x64",
+  "description": [
+    "Create a HTML Document List."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "list item document",
+        "protocol": "/data/html-document/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-document-list/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, list_item_document, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, list_item_document, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-document-list/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "list item document",
+        "protocol": "/data/html-document/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, self, list_item_document,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, list_item_document, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

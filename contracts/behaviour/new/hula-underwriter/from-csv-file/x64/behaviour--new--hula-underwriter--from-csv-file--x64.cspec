@@ -1,0 +1,43 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/hula-underwriter/from-csv-file/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new underwriter",
+      "protocol": "/behaviour/bitcoin-network-application/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "underwriter capacity",
+      "minimum": "1",
+      "maximum": "1099511627776",
+      "hint": "1 to (2^40)"
+    },
+    {
+      "type": "integer",
+      "name": "file header row count",
+      "minimum": "0",
+      "maximum": "1024",
+      "hint": "0, 1024"
+    },
+    {
+      "type": "integer",
+      "name": "file comment capacity",
+      "minimum": "0",
+      "maximum": "1099511627776",
+      "hint": "1 to (2^40)"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "underwriter",
+      "protocol": "/behaviour/hula-underwriter/default/x64"
+    }
+  ]
+}

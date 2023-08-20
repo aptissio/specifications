@@ -1,0 +1,16 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/enable/bitcoin-script-opcode/op-2-to-op-16/x64",
+  "description": [
+    "Enable the range of Bitcoin script opcodes OP_2 to OP_16."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "opcode",
+      "protocol": "/data/bitcoin-script-opcode/default/x64"
+    }
+  ],
+  "obligations": []
+}

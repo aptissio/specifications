@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/lookup/agent-bitcoin-wallet/coin/x64",
+  "description": [
+    "Lookup a P2PKH coin from an agent Bitcoin wallet."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "lookup",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent bitcoin wallet",
+      "protocol": "/behaviour/agent-bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target transaction ID",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target index",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "amount",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo pkscript",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

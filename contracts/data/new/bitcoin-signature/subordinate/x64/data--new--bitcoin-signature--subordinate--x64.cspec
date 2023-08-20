@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-signature/subordinate/x64",
+  "description": [
+    "Create a structure required for bitcoin signature (ecdsa or Schnorr)"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "structure",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "r width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "8MB"
+    },
+    {
+      "type": "integer",
+      "name": "s width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "8MB"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "signature",
+      "protocol": "/data/bitcoin-signature/default/x64"
+    }
+  ]
+}

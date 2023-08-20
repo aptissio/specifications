@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant-property/no-outline-on-focus/x64",
+  "description": [
+    "Add the following style to a cascaded Style Sheet (CSS) style. This will remove all default outlines of the following elements on focus.",
+    "",
+    "input:focus,",
+    "",
+    "select:focus,",
+    "",
+    "textarea:focus,",
+    "",
+    "button:focus {",
+    "    outline: none;",
+    "}"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ],
+  "obligations": []
+}

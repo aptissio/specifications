@@ -1,0 +1,119 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/list-ordered/x64",
+  "description": [
+    "The \\<ol> tag defines an ordered list. An ordered list can be numerical or alphabetical.",
+    "",
+    "Specify a <i>list style type</i> from options below:",
+    "",
+    "",
+    "        -1 - inherit \tInherits this property from its parent element. ",
+    "         0 - initial \tSets this property to its default value. \t",
+    "         1 - disc \tDefault value. The marker is a filled circle ",
+    "         2 - armenian \tThe marker is traditional Armenian numbering \t",
+    "         3 - circle \tThe marker is a circle \t",
+    "         4 - cjk-ideographic \tThe marker is plain ideographic numbers \t",
+    "         5 - decimal \tThe marker is a number \t",
+    "         6 - decimal-leading-zero \tThe marker is a number with leading zeros (01, 02, 03, etc.) \t",
+    "         7 - georgian \tThe marker is traditional Georgian numbering \t",
+    "         8 - hebrew \tThe marker is traditional Hebrew numbering \t",
+    "         9 - hiragana \tThe marker is traditional Hiragana numbering \t",
+    "         10 - hiragana-iroha \tThe marker is traditional Hiragana iroha numbering \t",
+    "         11 - katakana \tThe marker is traditional Katakana numbering \t",
+    "         12 - katakana-iroha \tThe marker is traditional Katakana iroha numbering \t",
+    "         13 - lower-alpha \tThe marker is lower-alpha (a, b, c, d, e, etc.) \t",
+    "         14 - lower-greek \tThe marker is lower-greek \t",
+    "         15 - lower-latin \tThe marker is lower-latin (a, b, c, d, e, etc.) \t",
+    "         16 - lower-roman \tThe marker is lower-roman (i, ii, iii, iv, v, etc.) \t",
+    "         17 - square \tThe marker is a square \t",
+    "         18 - upper-alpha \tThe marker is upper-alpha (A, B, C, D, E, etc.)  \t",
+    "         19 - upper-greek \tThe marker is upper-greek \t",
+    "         20 - upper-latin \tThe marker is upper-latin (A, B, C, D, E, etc.) \t",
+    "         21 - upper-roman \tThe marker is upper-roman (I, II, III, IV, V, etc.) \t",
+    "         22 - none \tThe list items will not be marked ",
+    "         ",
+    "         [-1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22] -> ",
+    "         LISTTYPE_INHERIT, LISTTYPE_0INITIAL, LISTTYPE_1BULLET, LISTTYPE_2ARMENIAN, LISTTYPE_3CIRCLE, ",
+    "         LISTTYPE_4CJKIDEO, LISTTYPE_5DECIMAL, LISTTYPE_6DEC_LEADING_ZERO, LISTTYPE_7GEORGIAN, LISTTYPE_8HEBREW,",
+    "         LISTTYPE_9HIRAGANA, LISTTYPE_10HIRIGANAIROHA, LISTTYPE_11KATAKANA, LISTTYPE_12KATAKANAIROHA, ",
+    "         LISTTYPE_13LOWERALPHA, LISTTYPE_14LOWERGREEK, LISTTYPE_15LOWERLATIN, LISTTYPE_16LOWERROMAN, ",
+    "         LISTTYPE_17SQUARE, LISTTYPE_18UPPERALPHA, LISTTYPE_19UPPERGREEK, LISTTYPE_20UPPERLATIN, LISTTYPE_21UPPERROMAN, ",
+    "         LISTTYPE_22NONE",
+    "",
+    "",
+    "",
+    "The list-style-position property specifies the position of the list-item markers (bullet points). Enable <i>position outside</i> to place markers outside the list item (default). ",
+    "",
+    "Provide an <i>image url</i> if desired in place of the list item marker. ",
+    "",
+    "Specify if the list is to be <i>ascending or descending.</i>. ",
+    "",
+    "The <i>start value</i> attribute specifies the start value of the first list item in an ordered list.This value is always an integer, even when the numbering type is letters or romans. E.g., to start counting list items from the letter \"c\" or the roman number \"iii\", use start=\"3\".",
+    "",
+    "",
+    "Apply Styling to the Class or ID Selectors as desired.",
+    "",
+    "Example:",
+    "",
+    "   <ol type=\"I\">",
+    "     <li>Coffee</li>",
+    "     <li>Tea</li>",
+    "     <li>Milk</li>",
+    "     </ol> ",
+    "",
+    "Read more: https://www.w3schools.com/tags/att_ol_type.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "list style type",
+      "minimum": "-1",
+      "maximum": "22",
+      "hint": "-1, 22"
+    },
+    {
+      "type": "boolean",
+      "name": "position outside"
+    },
+    {
+      "type": "string",
+      "name": "image url",
+      "length": "150",
+      "hint": "0, 150"
+    },
+    {
+      "type": "boolean",
+      "name": "ascending"
+    },
+    {
+      "type": "integer",
+      "name": "start value",
+      "minimum": "0",
+      "maximum": "2000000000",
+      "hint": "0 - 2,000,000,000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "list",
+      "protocol": "/data/html-document-list/default/x64"
+    }
+  ]
+}

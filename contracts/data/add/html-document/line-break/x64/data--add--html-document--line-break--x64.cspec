@@ -1,0 +1,17 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/line-break/x64",
+  "description": [
+    "Add to a HTML document.",
+    "Add a line-break within a HTML-Document"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/hash/bytesequence/linux-x64",
+  "description": [
+    "Agent will reverse, encode and write hash bytesequence.",
+    "Agent will write \"hash bytesequence\" in reverse and encoded."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": []
+}

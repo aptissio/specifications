@@ -1,0 +1,50 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/copy/bytes/backward-dynamic-length/x64",
+  "description": [
+    "#defaults: data, default, x64",
+    "",
+    "Copy ``bytes``.",
+    "Copy a /number of bytes/ from /source/ bytes to a /target/ bytes in reverse order. The modified /target/ bytes are always at its beginning (zero offset).",
+    "A /failure/ is triggered if the number of bytes that _can_ be copied is zero. This may occur if:",
+    "+ /number/ is zero.",
+    "+ /source/ bytes or /target/ bytes is of zero length.",
+    "",
+    "Note: If one or more bytes can be copied, then /success/ will result, even if the number of bytes copied is less than /number/."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "out = copy(in, number)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "number of bytes",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "source",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "target",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

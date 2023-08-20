@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/coordinate/bookended/linux-x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "coordinate",
+      "protocol": "/data/coordinate/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "suffix",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": []
+}

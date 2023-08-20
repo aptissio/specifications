@@ -1,0 +1,72 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/bitcoin-seed/random/x64",
+  "description": [
+    "Set a random Bitcoin Seed.",
+		"",
+		"Choose an INTEGER between 0-4 for the ENT size. Options below:",
+		 "",
+		"    0. 128",
+		"    1. 160",
+		"    2. 192",
+		"    3. 224",
+		"    4. 256",
+		"",
+		"    [0, 1, 2, 3, 4] - > ENT_128, ENT_160, ENT_192, ENT_224, ENT_256 ",
+		"Reference for Entropy sizes: https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set flow",
+      "protocol": "/data/flow/default/x64"
+    },
+	 {
+      "type": "integer",
+      "name": "entropy size",
+      "minimum": "0",
+      "maximum": "4",
+      "hint": "0 to 4"
+    },
+	{
+      "type": "abstraction",
+      "name": "bitcoin mnemonic dictionary",
+      "protocol": "/data/bitcoin-mnemonic-dictionary/default/x64"
+    },
+	{
+      "type": "abstraction",
+      "name": "sha256",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+	{
+      "type": "abstraction",
+      "name": "hmac 512",
+      "protocol": "/data/hmac-procedure/default/x64"
+    },
+	{
+      "type": "abstraction",
+      "name": "passphrase",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin seed",
+      "protocol": "/data/bitcoin-seed/default/x64"
+    }
+  ],
+  "obligations": [
+  {
+      "type": "integer",
+      "name": "bitcoin seed width",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+	 {
+      "type": "abstraction",
+      "name": "mnemonic sentence",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/new/peer-communications-channel/default/x64",
+  "description": [
+    "Create a messaging channel to communicate with peers via a peer communications network."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "peer communications",
+      "protocol": "/system/peer-communications/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "unique channel ID",
+      "length": "3",
+      "hint": "3"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "peer communications channel",
+      "protocol": "/system/peer-communications-channel/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/bitcoin-wallet-utxo-set/default/x64",
+  "description": [
+    "Add to a Bitcoin wallet UTXO set.",
+    "Add a UTXO to a Bitcoin /wallet UTXO set/ and associates the UTXO with a /wallet account number/. This variation adds UTXOs as 'unlocked' UTXOs."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "add(wallet utxo set, wallet account number, utxo elements)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet utxo set",
+      "protocol": "/data/bitcoin-wallet-utxo-set/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo transaction id",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo amount",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo is p2pkh",
+      "protocol": "/data/flag/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "added(utxo elements)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "already present(utxo elements)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "not added()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

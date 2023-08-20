@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/as-ascii-real/dynamic/x64",
+  "description": [
+    "type here to preview description"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "exponent",
+      "minimum": "-1048574",
+      "maximum": "8191",
+      "hint": "-(2^20-2) to (2^13-1)"
+    },
+    {
+      "type": "abstraction",
+      "name": "number",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

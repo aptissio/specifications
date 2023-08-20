@@ -1,0 +1,55 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/currency/constant/x64",
+  "description": [
+    "Create the structures associated with a currency.",
+    "Captures the meta-data of a new currency.",
+    "/Precision/ specifies the number of decimal places to be applied to currency values.",
+    "/Symbol/ is one or more UTF-8 characters that is used when displaying currency values.",
+    "/Ticker/ is one or more UTF-8 characters used to uniquely identify the currency. Where possible, *[[https://www.iso.org/iso-4217-currency-codes.html][ISO currency codes]]* should be used.",
+    "/Description/ is used to provide the full name of the currency and any clarifying remarks.",
+    "Note: The Bitcoin symbol is unicode character \\u+20BF \"\\xE2\\x82\\xBF\"",
+    "",
+    "This contribution is not suitable for run-time changes to the currency meta data."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "precision",
+      "minimum": "0",
+      "maximum": "18",
+      "hint": "0, 18"
+    },
+    {
+      "type": "string",
+      "name": "symbol",
+      "length": "10",
+      "hint": "10"
+    },
+    {
+      "type": "string",
+      "name": "ticker",
+      "length": "10",
+      "hint": "10"
+    },
+    {
+      "type": "string",
+      "name": "description",
+      "length": "100",
+      "hint": "100"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "currency",
+      "protocol": "/data/currency/default/x64"
+    }
+  ]
+}

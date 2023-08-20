@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/ipv6-socket-address/subordinate/x64",
+  "description": [
+    "Design a new subordinate IPv6 socket address."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/structure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "ipv6 socket address",
+      "protocol": "/data/ipv6-socket-address/default/x64"
+    }
+  ]
+}

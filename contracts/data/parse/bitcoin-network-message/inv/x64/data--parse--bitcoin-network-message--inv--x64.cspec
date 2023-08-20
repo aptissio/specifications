@@ -1,0 +1,60 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/parse/bitcoin-network-message/inv/x64",
+  "description": [
+    "The inv message (inventory message) transmits one or more inventories of objects known to the transmitting peer. It can be sent unsolicited to announce new transactions or blocks, or it can be sent in reply to a getblocks message or mempool message.",
+    "The receiving peer can compare the inventories from an inv message against the inventories it has already seen, and then use a follow-up message to request unseen objects."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parse",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin network message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "number of inventory entries",
+      "minimum": "1",
+      "maximum": "50000",
+      "hint": "1, 50000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "number of inventory",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "inventory",
+      "protocol": "/data/array/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "type identifier",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "insufficient length",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

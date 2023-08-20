@@ -1,0 +1,114 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/ansi-terminal-display/default/x64",
+  "description": [
+    "Protocol used to distribute ANSI terminal display requirements."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "display width",
+        "minimum": "1",
+        "maximum": "1048576",
+        "hint": "1 to 2^20"
+      },
+      {
+        "type": "integer",
+        "name": "display height",
+        "minimum": "1",
+        "maximum": "1048576",
+        "hint": "1 to 2^20"
+      },
+      {
+        "type": "string",
+        "name": "default foreground colour",
+        "length": "16",
+        "hint": "16"
+      },
+      {
+        "type": "string",
+        "name": "default background colour",
+        "length": "16",
+        "hint": "16"
+      },
+      {
+        "type": "abstraction",
+        "name": "parent refresh exit",
+        "protocol": "/system/task-exit/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/ansi-terminal-display/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, max_width, max_height, fg_colour, bg_colour, parent_exit, chain_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, max_width, trigger, debug_msg)",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, max_height, trigger, debug_msg)",
+      " sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, fg_colour, trigger, debug_msg)",
+      " sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, bg_colour, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, parent_exit, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/ansi-terminal-display/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "display width",
+        "minimum": "1",
+        "maximum": "1048576",
+        "hint": "1 to 2^20"
+      },
+      {
+        "type": "integer",
+        "name": "display height",
+        "minimum": "1",
+        "maximum": "1048576",
+        "hint": "1 to 2^20"
+      },
+      {
+        "type": "string",
+        "name": "default foreground colour",
+        "length": "16",
+        "hint": "16"
+      },
+      {
+        "type": "string",
+        "name": "default background colour",
+        "length": "16",
+        "hint": "16"
+      },
+      {
+        "type": "abstraction",
+        "name": "parent refresh exit",
+        "protocol": "/system/task-exit/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, display, max_width, max_height, fg_colour, bg_colour, parent_exit, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, display, trigger, debug_msg) -> {",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, max_width, trigger, debug_msg)",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, max_height, trigger, debug_msg)",
+      " sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, fg_colour, trigger, debug_msg)",
+      " sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, bg_colour, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, parent_exit, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  }
+}

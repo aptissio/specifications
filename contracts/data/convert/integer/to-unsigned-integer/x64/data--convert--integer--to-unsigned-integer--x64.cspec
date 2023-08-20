@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/convert/integer/to-unsigned-integer/x64",
+  "description": [
+    "Convert integer to unsigned integer of width 8mb"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "convert",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "interger in",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "unsigned interger width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "8MB"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "unsigned integer out",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/add/command-line-menu/default/linux-x64",
+  "description": [
+    "Add a command-line menu item that starts an app-flow action."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "application core",
+      "protocol": "/system/execution-bundle/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "menu",
+      "protocol": "/behaviour/command-line-menu/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "menu item description",
+      "length": "40",
+      "hint": "40"
+    },
+    {
+      "type": "string",
+      "name": "menu item help text",
+      "length": "80",
+      "hint": "80"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "menu item action",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ]
+}

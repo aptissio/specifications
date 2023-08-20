@@ -1,0 +1,59 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/lookup/html-style/default/x64",
+  "description": [
+    "Lookup a HTML style.",
+    "At run-time, lookup a style, by its /style handle/ within a /style sheet/ and return its type flags and /selector/ within the scope of /success/.",
+    "If the /style handle/ is not valid, the /handle invalid/ flow is triggered."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "lookup(style handle)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "style sheet",
+      "protocol": "/data/html-style-sheet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "ID selector",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "Name selector",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "Class selector",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "selector",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success(ID selector, Name selector, Class selector, selector)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "handle invalid",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

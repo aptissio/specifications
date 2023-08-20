@@ -1,0 +1,76 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/webui-responsive-layout/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "webui-layout",
+        "protocol": "/data/html-document/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "child item class",
+        "protocol": "/data/html-style-constant/default/x64"
+      },
+      {
+        "type": "boolean",
+        "name": "fixed width"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/webui-responsive-layout/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, webui-layout, child_item_class, fixed_width, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, webui-layout, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, child_item_class, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-boolean/default/x64@codevalley( core, $, fixed_width, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/webui-responsive-layout/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "webui-layout",
+        "protocol": "/data/html-document/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "child item class",
+        "protocol": "/data/html-style-constant/default/x64"
+      },
+      {
+        "type": "boolean",
+        "name": "fixed width"
+      }
+    ],
+    "macro": [
+      "def (core, self, webui-layout, child_item_class, fixed_width,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, webui-layout, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, child_item_class, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-boolean/default/x64@codevalley( core, $, fixed_width, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

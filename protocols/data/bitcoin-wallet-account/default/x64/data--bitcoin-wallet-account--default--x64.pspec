@@ -1,0 +1,306 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/bitcoin-wallet-account/default/x64",
+  "description": [
+    "Design the structure of a Bitcoin wallet account."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "account number",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "watch only",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "private key",
+        "protocol": "/data/bitcoin-extended-private-key/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "public key",
+        "protocol": "/data/bitcoin-extended-public-key/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target key chain index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain map",
+        "protocol": "/data/sorted-map/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain private key",
+        "protocol": "/data/bitcoin-extended-private-key/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain public key",
+        "protocol": "/data/bitcoin-extended-public-key/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "account title",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "account description",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "actual balance",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "available balance",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "hardened addresses",
+        "protocol": "/data/flag/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "minimum account number",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum account number",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "required account title length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "required account description length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "required balance width",
+        "minimum": "0",
+        "maximum": "8388608",
+        "hint": "0 to 8 x (2^20)"
+      },
+      {
+        "type": "integer",
+        "name": "required key chains",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/bitcoin-wallet-account/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, account_number, watch_only, private_key, public_key, target_key_chain_index, key_chain_map, key_chain_index, key_chain_private_key, key_chain_public_key, account_title, account_description, actual_balance, available_balance, hardened_addresses, minimum_account_number, maximum_account_number, required_account_title_length, required_account_description_length, required_balance_width, required_key_chains, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, account_number, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, watch_only, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, private_key, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, public_key, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, target_key_chain_index, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, key_chain_map, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, key_chain_index, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, key_chain_private_key, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, key_chain_public_key, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, account_title, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, account_description, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, actual_balance, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, available_balance, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, hardened_addresses, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/minimum/x64@codevalley( acs, $, minimum_account_number, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, maximum_account_number, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, required_account_title_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, required_account_description_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, required_balance_width, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/default/x64@codevalley( acs, $, required_key_chains, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "minimum account number",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "maximum account number",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "required account title length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "required account description length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "required balance width",
+        "minimum": "0",
+        "maximum": "8388608",
+        "hint": "0 to 8 x (2^20)"
+      },
+      {
+        "type": "integer",
+        "name": "required key chains",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/bitcoin-wallet-account/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "account number",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "watch only",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "private key",
+        "protocol": "/data/bitcoin-extended-private-key/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "public key",
+        "protocol": "/data/bitcoin-extended-public-key/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target key chain index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain map",
+        "protocol": "/data/sorted-map/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain index",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain private key",
+        "protocol": "/data/bitcoin-extended-private-key/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "key chain public key",
+        "protocol": "/data/bitcoin-extended-public-key/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "account title",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "account description",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "actual balance",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "available balance",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "hardened addresses",
+        "protocol": "/data/flag/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, minimum_account_number, maximum_account_number, required_account_title_length, required_account_description_length, required_balance_width, required_key_chains, self, account_number, watch_only, private_key, public_key, target_key_chain_index, key_chain_map, key_chain_index, key_chain_private_key, key_chain_public_key, account_title, account_description, actual_balance, available_balance, hardened_addresses,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, account_number, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, watch_only, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, private_key, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, public_key, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, target_key_chain_index, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, key_chain_map, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, key_chain_index, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, key_chain_private_key, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, key_chain_public_key, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, account_title, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, account_description, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, actual_balance, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, available_balance, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, hardened_addresses, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/minimum/x64@codevalley( acs, $, minimum_account_number, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, maximum_account_number, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, required_account_title_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, required_account_description_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, required_balance_width, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/default/x64@codevalley( acs, $, required_key_chains, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

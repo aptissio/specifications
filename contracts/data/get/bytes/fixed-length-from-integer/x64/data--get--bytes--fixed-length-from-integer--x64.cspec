@@ -1,0 +1,35 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/get/bytes/fixed-length-from-integer/x64",
+  "description": [
+    "Given an object, handle or otherwise, do work to retrieve a specified result in the form of bytes.",
+    "Design a bytes structure that represents the /integer/ stored in memory. The bytes structure will be  of /bytes length/. Note that integers are stored in a 'little endian' representation and this is not changed by this design contribution."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "get(integer, bytes length)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "integer",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "bytes length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "bytes out",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/bitcoin-transaction/for-signing/x64",
+  "description": [
+    "Pack payload required for hash pre-image used in signature verification. Client is required to provide a forkID. The forkID is \"zero\" for Bitcoin Cash.",
+    "",
+    "When packing transactions for signature validation, enabling the `sighash cache` will  provide faster validation of multi-input transactions as the signature hashes will be the same for each input. The `sighash cache` should always be disabled when signing transaction inputs."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "signing input index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "script code",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "previous transaction output value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash type",
+      "protocol": "/data/bit-array/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "fork ID",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "enable sighash cache",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "double sha256",
+      "protocol": "/data/hash-procedure/default/x64"
+    }
+  ],
+  "obligations": []
+}

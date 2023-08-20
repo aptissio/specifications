@@ -1,0 +1,64 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/handle/bitcoin-transaction-event/log-summary-with-exchange-rate/linux-x64",
+  "description": [
+    "To derive, observe, mutate or terminate the processing of a bitcoin transaction event."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "event in",
+      "protocol": "/behaviour/bitcoin-transaction-event-handler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin network application",
+      "protocol": "/behaviour/bitcoin-network-application/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "time zone offset",
+      "minimum": "-1440",
+      "maximum": "1440",
+      "hint": "-1440, 1440"
+    },
+    {
+      "type": "abstraction",
+      "name": "hula merchants",
+      "protocol": "/behaviour/hula-merchants/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin cash address",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction output index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "exchange rate",
+      "protocol": "/data/currency-value/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "secondary value",
+      "protocol": "/data/currency-value/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "currency conversion success",
+      "protocol": "/data/flag/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "event out",
+      "protocol": "/behaviour/bitcoin-transaction-event-handler/default/x64"
+    }
+  ]
+}

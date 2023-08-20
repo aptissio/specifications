@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/query/file-status/default/linux-x64",
+  "description": [
+    "The run-time behaviour of this design queries the linux operating system to determine the status of a given file. Note that directories are considered a special type of file.",
+    "",
+    "File properties are returned within the context of the `query` app-flow. If the file doesn't exist, the app-flow returns failure."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "query(filename)",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "filename",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "file properties",
+      "protocol": "/data/file-properties/default/x64"
+    }
+  ]
+}

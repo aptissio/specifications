@@ -1,0 +1,21 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/ecies/aptissio/x64",
+  "description": [
+    "An Elliptic curve Integrated Encryption Scheme (ECIES) Tool within a Web Document. ",
+    "",
+    "Example:",
+    "",
+    " <video width=\"100%\" height=\"500\" controls>",
+    "  <source src=\"https://aptissio.ddns.net:8443/images/ecies.mp4\"\" type=\"video/mp4\">",
+    "</video>"
+  ],
+  "requirements": [
+    {
+      "type": "site",
+      "name": "site"
+    }
+  ],
+  "obligations": []
+}

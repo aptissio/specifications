@@ -1,0 +1,69 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/lookup/in-bytesequence/json-name/x64",
+  "description": [
+    "Search a given bytesequence.",
+    "Look for a named value in the /JSON in/ bytesequence. If found, /JSON value out/ represents the JSON encoded 'value' including enclosing characters (e.g. \"\" or {} or [])."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "lookup()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "JSON name",
+      "length": "1024",
+      "hint": "1024"
+    },
+    {
+      "type": "abstraction",
+      "name": "JSON in",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "JSON value out",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "literal found",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "string found",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "number found",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "object found",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "array found",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "name not found",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "invalid JSON",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/validate/bitcoin-transaction/input/x64",
+  "description": [
+    "Validate a Bitcoin transaction.",
+    "This contribution validates the signature script of a single Bitcoin transaction input.",
+    "",
+    "It is the client's responsibility to ensure that the elements of the target transaction input are valid when the /validate/ condition is checked.",
+    "The client is required to provide the public key script of the of the previous transaction output referenced by the validating input outpoint."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "initialise",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "validate",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "previous public key script",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "error number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "script opcodes",
+      "protocol": "/data/bitcoin-script-opcode/default/x64"
+    }
+  ]
+}

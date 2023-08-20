@@ -1,0 +1,45 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-coin-index/default/linux-x64",
+  "description": [
+    "Design a new Bitcoin coin index structure.",
+    "",
+    "Design a new Bitcoin coin index that permits lookup of coins (unspent transaction outputs) by account number and value."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "transaction id length",
+      "minimum": "1",
+      "maximum": "1048576",
+      "hint": "1 to 2^20"
+    },
+    {
+      "type": "integer",
+      "name": "maximum transaction output index",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "coin value width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "1 to 8MB"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "index",
+      "protocol": "/data/bitcoin-coin-index/default/x64"
+    }
+  ]
+}

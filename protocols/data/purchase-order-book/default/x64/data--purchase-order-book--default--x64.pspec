@@ -1,0 +1,470 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/purchase-order-book/default/x64",
+  "description": [
+    "Design a purchase order book including standard encoding formats and the ability to sign purchase orders and verify purchase order signatures."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "PO form UID",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form customer reference",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form customer UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form target item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form items",
+        "protocol": "/data/binary-search-tree/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form item quantity",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form item value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form payment method ID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form payment method parameters",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "issue PO (PO form data)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "remove PO (PO form ID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup PO (PO form ID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "validate PO (PO form data)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "encoded PO",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "binary encode PO",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "XML encode PO",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "binary decode PO",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "XML decode PO",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add success callback",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add failure callback",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "customer reference maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "customer UID minimum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "customer UID maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO items required",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO item UID maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO item quantity minimum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO item quantity maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO item value width",
+        "minimum": "1",
+        "maximum": "8388608",
+        "hint": "1 , 8MB"
+      },
+      {
+        "type": "integer",
+        "name": "PO item value decimal digit count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO payment method UID maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO payment method parameters maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/purchase-order-book/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, PO_form_UID, PO_form_customer_reference, PO_form_customer_UID, PO_form_target_item_UID, PO_form_items, PO_form_item_UID, PO_form_item_quantity, PO_form_item_value, PO_form_payment_method_ID, PO_form_payment_method_parameters, issue_PO__PO_form_data_, remove_PO__PO_form_ID_, lookup_PO__PO_form_ID_, validate_PO__PO_form_data_, encoded_PO, binary_encode_PO, XML_encode_PO, binary_decode_PO, XML_decode_PO_, add_success_callback, add_failure_callback, customer_reference_maximum_length, customer_UID_minimum_length, customer_UID_maximum_length, PO_items_required, PO_item_UID_maximum_length, PO_item_quantity_minimum, PO_item_quantity_maximum, PO_item_value_width, PO_item_value_decimal_digit_count, PO_payment_method_UID_maximum_length, PO_payment_method_parameters_maximum_length, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_UID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_customer_reference, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_customer_UID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_target_item_UID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_items, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_item_UID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_item_quantity, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_item_value, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_payment_method_ID, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, PO_form_payment_method_parameters, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, issue_PO__PO_form_data_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, remove_PO__PO_form_ID_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, lookup_PO__PO_form_ID_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, validate_PO__PO_form_data_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, encoded_PO, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, binary_encode_PO, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, XML_encode_PO, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, binary_decode_PO, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, XML_decode_PO_, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, add_success_callback, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, add_failure_callback, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, customer_reference_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/minimum/x64@codevalley( core, $, customer_UID_minimum_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, customer_UID_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/default/x64@codevalley( core, $, PO_items_required, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, PO_item_UID_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/minimum/x64@codevalley( core, $, PO_item_quantity_minimum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, PO_item_quantity_maximum, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, PO_item_value_width, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, PO_item_value_decimal_digit_count, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, PO_payment_method_UID_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/maximum/x64@codevalley( core, $, PO_payment_method_parameters_maximum_length, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "customer reference maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "customer UID minimum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "customer UID maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO items required",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO item UID maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO item quantity minimum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO item quantity maximum",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO item value width",
+        "minimum": "1",
+        "maximum": "8388608",
+        "hint": "1 , 8MB"
+      },
+      {
+        "type": "integer",
+        "name": "PO item value decimal digit count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO payment method UID maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "PO payment method parameters maximum length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/purchase-order-book/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "PO form UID",
+        "protocol": "/data/bytes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form customer reference",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form customer UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form target item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form items",
+        "protocol": "/data/binary-search-tree/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form item UID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form item quantity",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form item value",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form payment method ID",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "PO form payment method parameters",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "issue PO (PO form data)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "remove PO (PO form ID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "lookup PO (PO form ID)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "validate PO (PO form data)",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "encoded PO",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "binary encode PO",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "XML encode PO",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "binary decode PO",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "XML decode PO",
+        "protocol": "/data/procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add success callback",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "add failure callback",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, customer_reference_maximum_length, customer_UID_minimum_length, customer_UID_maximum_length, PO_items_required, PO_item_UID_maximum_length, PO_item_quantity_minimum, PO_item_quantity_maximum, PO_item_value_width, PO_item_value_decimal_digit_count, PO_payment_method_UID_maximum_length, PO_payment_method_parameters_maximum_length, self, PO_form_UID, PO_form_customer_reference, PO_form_customer_UID, PO_form_target_item_UID, PO_form_items, PO_form_item_UID, PO_form_item_quantity, PO_form_item_value, PO_form_payment_method_ID, PO_form_payment_method_parameters, issue_PO__PO_form_data_, remove_PO__PO_form_ID_, lookup_PO__PO_form_ID_, validate_PO__PO_form_data_, encoded_PO, binary_encode_PO, XML_encode_PO, binary_decode_PO, XML_decode_PO_, add_success_callback, add_failure_callback,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_UID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_customer_reference, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_customer_UID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_target_item_UID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_items, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_item_UID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_item_quantity, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_item_value, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_payment_method_ID, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, PO_form_payment_method_parameters, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, issue_PO__PO_form_data_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, remove_PO__PO_form_ID_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, lookup_PO__PO_form_ID_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, validate_PO__PO_form_data_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, encoded_PO, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, binary_encode_PO, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, XML_encode_PO, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, binary_decode_PO, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, XML_decode_PO_, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, add_success_callback, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, add_failure_callback, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, customer_reference_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/minimum/x64@codevalley( core, $, customer_UID_minimum_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, customer_UID_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/default/x64@codevalley( core, $, PO_items_required, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, PO_item_UID_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/minimum/x64@codevalley( core, $, PO_item_quantity_minimum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, PO_item_quantity_maximum, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, PO_item_value_width, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, PO_item_value_decimal_digit_count, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, PO_payment_method_UID_maximum_length, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/maximum/x64@codevalley( core, $, PO_payment_method_parameters_maximum_length, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/select/x64",
+  "description": [
+    "The < select > <select><option>Options</option><option>Emergent Coding</option><option>Is the Future</option> </select> element is used to create a drop-down list.",
+    "",
+    "The < select > element is most often used in a form, to collect user input.",
+    "",
+    "The form style ID specifies one or more forms the label element belongs to.",
+    "",
+    "The form input key attribute is needed to reference the form data after the form is submitted ",
+    "(if you omit the form input key attribute, no data from the drop-down list will be submitted).",
+    "",
+    "The size defines the number of visible options in a drop-down list.",
+    "",
+    "Enable multi-select to allow multiple options to be selected at once.",
+    "",
+    "Enable required specifies that the user is required to select a value before submitting the form",
+    "",
+    "Enable onchange form submit to submit form on option select."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form style ID",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "form input key",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "integer",
+      "name": "number of options displayed",
+      "minimum": "0",
+      "maximum": "1000",
+      "hint": "0 - 1000"
+    },
+    {
+      "type": "boolean",
+      "name": "enable multi select"
+    },
+    {
+      "type": "boolean",
+      "name": "enable onchange submit"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "select id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "child document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

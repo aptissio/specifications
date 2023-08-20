@@ -1,0 +1,32 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/observe/http-server-request/default/x64",
+  "description": [
+    "Join without joining http server request protocol."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "http server request",
+      "protocol": "/data/http-server-request/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "http request",
+      "protocol": "/data/http-request2/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http headers",
+      "protocol": "/data/http-headers/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "source ip",
+      "protocol": "/data/network-address/default/x64"
+    }
+  ]
+}

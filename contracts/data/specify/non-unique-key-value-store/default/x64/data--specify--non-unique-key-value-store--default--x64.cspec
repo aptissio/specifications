@@ -1,0 +1,30 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/specify/non-unique-key-value-store/default/x64",
+  "description": [
+    "This agent provides opportunity to contribute with the maximum lengths to the non-unique-key-pair-store protocol."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "non-unique key-value store",
+      "protocol": "/data/non-unique-key-value-store/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "key length maximum",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to 2^63-1"
+    },
+    {
+      "type": "integer",
+      "name": "value length maximum",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to 2^63-1"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,224 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/system/financial-conversion-service/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "concurrent conversion capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "service context",
+        "protocol": "/data/structure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "conversion service handle",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "service source currencies",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "service target currencies",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "service conversion procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "register service",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "conversion task ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "conversion task success",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "conversion task complete",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "process count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "source currency length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "target currency length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/system/financial-conversion-service/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, concurrent_conversion_capacity, service_context, conversion_service_handle, service_source_currencies, service_target_currencies, service_conversion_procedure, register_service, conversion_task_ID, conversion_task_success, conversion_task_complete, process_count, source_currency_length, target_currency_length, financial_conversion_service_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, financial_conversion_service_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/new/agent-integer/constant/x64@codevalley( acs, 0, trigger, debug_msg) -> zero",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, concurrent_conversion_capacity, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, service_context, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, conversion_service_handle, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, service_source_currencies, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, service_target_currencies, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, service_conversion_procedure, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, register_service, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, conversion_task_ID, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, conversion_task_success, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, conversion_task_complete, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-integer/default/x64@codevalley( acs, $, zero, process_count, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, source_currency_length, trigger, debug_msg)",
+      " sub /behaviour/collect/agent-integer/maximum/x64@codevalley( acs, $, target_currency_length, trigger, debug_msg)",
+      " }",
+      "end",
+      ""
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "process count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "source currency length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "target currency length",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/system/financial-conversion-service/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "concurrent conversion capacity",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "allocated service id",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "service context",
+        "protocol": "/data/structure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "conversion service handle",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "service source currencies",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "service target currencies",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "service conversion procedure",
+        "protocol": "/data/higher-order-procedure/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "register service",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "conversion task ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "conversion task success",
+        "protocol": "/data/flag/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "conversion task complete",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, process_count, source_currency_length, target_currency_length, financial_conversion_service_inout, concurrent_conversion_capacity, allocated_service_id, service_context, conversion_service_handle, service_source_currencies, service_target_currencies, service_conversion_procedure, register_service, conversion_task_ID, conversion_task_success, conversion_task_complete, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, financial_conversion_service_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-integer/default/x64@codevalley( acs, $, process_count, allocated_service_id, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, source_currency_length, trigger, debug_msg)",
+      " sub /behaviour/fold/agent-integer/maximum/x64@codevalley( acs, $, target_currency_length, trigger, debug_msg)",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, concurrent_conversion_capacity, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, service_context, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, conversion_service_handle, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, service_source_currencies, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, service_target_currencies, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, service_conversion_procedure, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, register_service, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, conversion_task_ID, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, conversion_task_success, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, conversion_task_complete, trigger, debug_msg)",
+      " }",
+      "end",
+      ""
+    ]
+  }
+}

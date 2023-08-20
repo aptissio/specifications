@@ -1,0 +1,53 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-property/padding-specific/x64",
+  "description": [
+    "Add a Padding property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The CSS padding properties are used to generate space around an element's content, inside of any defined borders.",
+    "",
+    "With CSS, you have full control over the padding. There are properties for setting the padding for each side of an element (top, right, bottom, and left).",
+    " ",
+    "    1 - padding",
+    "    2 - padding-top",
+    "    3 - padding-right",
+    "    4 - padding-bottom",
+    "    5 - padding-left",
+    "    ",
+    "    [1, 2, 3, 4, 5 ] -> PADDING1, PADDING_2TOP, PADDING_3RIGHT, PADDING_4BOTTOM, PADDING_5LEFT",
+    "",
+    "Specify the <i>padding value </i> and if the <i>padding units</i> are fixed(px) or relative (%)"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "padding property",
+      "minimum": "1",
+      "maximum": "5",
+      "hint": "1 - 5"
+    },
+    {
+      "type": "integer",
+      "name": "padding value",
+      "minimum": "-2000",
+      "maximum": "2000",
+      "hint": "-2000 - 2000"
+    },
+    {
+      "type": "boolean",
+      "name": "padding value fixed"
+    }
+  ],
+  "obligations": []
+}

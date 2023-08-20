@@ -1,0 +1,22 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/secp256k1-private-key/subordinate/x64",
+  "description": [
+    "type here to preview description"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "structure",
+      "protocol": "/data/structure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "private key",
+      "protocol": "/data/secp256k1-private-key/default/x64"
+    }
+  ]
+}

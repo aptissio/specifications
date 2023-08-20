@@ -1,0 +1,51 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/bitcoin-network-seed/constant/x64",
+  "description": [
+    "Add one or more Bitcoin network seeds.",
+    "Add a Bitcoin network seed from a design-time IPv6 address and port."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "add",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "network seeds",
+      "protocol": "/data/bitcoin-network-seed/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "IPv6 address",
+      "length": "39",
+      "hint": "39"
+    },
+    {
+      "type": "integer",
+      "name": "port number",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0, 65535"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "added",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "already present",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "not added",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

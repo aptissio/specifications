@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/bitcoin-network-message/verack/x64",
+  "description": [
+    "Populate the header and payload of a Bitcoin network message.",
+    "",
+    "This agent acknowledges a previously-received version message, informing the connecting node that it can begin to send other messages. The verack message has no payload.",
+    "",
+    "Network type \"integer\" helps to determine which network is that:",
+    "0 testnet ",
+    "1 mainnet",
+    "2 other"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "network",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

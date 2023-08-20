@@ -1,0 +1,89 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/social-media-group-font-awesome/x64",
+  "description": [
+    "Add a Social Media Group to a Web Document. This design requires font awesome icons to display the social media platforms.",
+    "",
+    "Example:",
+    "",
+    "<video width=\"100%\" height=\"500\" controls>",
+    "  <source src=\"https://aptissio.ddns.net:8443/images/social_media_group_fa.mp4\"\" type=\"video/mp4\">",
+    "</video>",
+    "",
+    "Specify the <i>font size value for the font awesome icons within the group </i>",
+    "",
+    "Choose the <i>font size unit</i> from the options below:",
+    "",
+    "    1 - px     pixels (1px = 1/96th of 1in)",
+    "    2 - %      Relative to the parent element",
+    "    3 - rem    Relative to font-size of the root element",
+    "    4 - em     Relative to the font-size of the element (2em means 2 times the size of the current font)",
+    "    5 - cm \tcentimeters",
+    "    6 - mm \tmillimeters",
+    "    7 - in \tinches (1in = 96px = 2.54cm)",
+    "    8 - pt \tpoints (1pt = 1/72 of 1in)",
+    "    9 - pc     picas (1pc = 12 pt) ",
+    "    10- ex \tRelative to the x-height of the current font (rarely used) \t",
+    "    11- ch \tRelative to the width of the \"0\" (zero) \t",
+    "    12- vw \tRelative to 1% of the width of the viewport* \t",
+    "    13- vh \tRelative to 1% of the height of the viewport* \t",
+    "    14- vmin   Relative to 1% of viewport's* smaller dimension ",
+    "    15 -vmax   Relative to 1% of viewport's* larger dimension \t",
+    "    ",
+    "    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] -> FONTSIZE_1PX, FONTSIZE_2PERCENTAGE, FONTSIZE_3REM, FONTSIZE_4EM, FONTSIZE_5CM, ",
+    "    FONTSIZE_6MM, FONTSIZE_7IN, FONTSIZE_8PT, FONTSIZE_9PC, FONTSIZE_10EX, FONTSIZE_11CH, FONTSIZE_12VW, FONTSIZE_13VH, FONTSIZE_14VMIN,",
+    "    FONTSIZE_15VMAX",
+    "    ",
+    "Provide a colour for the icons.",
+    "",
+    "Enable Column if desired, default is row."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "list class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "icon font size",
+      "minimum": "0",
+      "maximum": "1000",
+      "hint": "0 - 1000"
+    },
+    {
+      "type": "integer",
+      "name": "icon font size unit",
+      "minimum": "1",
+      "maximum": "15",
+      "hint": "1 - 15"
+    },
+    {
+      "type": "abstraction",
+      "name": "icon colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable column (default: row)"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "list ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "social media group",
+      "protocol": "/data/web-document-social-media-group-font-awesome/default/x64"
+    }
+  ]
+}

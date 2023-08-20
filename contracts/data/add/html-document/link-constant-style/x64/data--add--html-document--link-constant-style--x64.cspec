@@ -1,0 +1,117 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/link-constant-style/x64",
+  "description": [
+    "Add a Link into a HTML Document.",
+    "",
+    "The \\<a> <a>element to defines a link</a>",
+    "",
+    "The <i>href url</i> attribute to defines the link address.",
+    "",
+    "The <i>ping url/s</i> specifies a space-separated list of URLs typically used for tracking.",
+    "",
+    "The <i>referrer policy</i> specifies which referrer to send. Options below:",
+    "",
+    "    1. no-referrer",
+    "    2. no-referrer-when-downgrade",
+    "    3. origin",
+    "    4. origin-when-cross-origin",
+    "    5. unsafe-url",
+    "    ",
+    "    [1, 2, 3, 4, 5] -> REFERRER_1NONE , REFERRER_2NONEWHENDOWNGRADE, REFERRER_3ORIGIN, REFERRER_4ORIGINWHENCROSS, REFERRER_5UNSAFEURL",
+    "",
+    "",
+    "The <i>rel</i> specifies relationship between the current document and the linked document.",
+    "https://www.w3schools.com/tags/tag_a.asp. Options listed respectively 1-13 below:",
+    "",
+    "    1. alternate",
+    "    2. author",
+    "    3. bookmark",
+    "    4. external",
+    "    5. help",
+    "    6. license",
+    "    7. next",
+    "    8. nofollow",
+    "    9. noreferrer",
+    "    10. noopener",
+    "    11. prev",
+    "    12. search",
+    "    13. tag",
+    "    ",
+    "    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] -> REL_1ALTERNATE, REL_2AUTHOR, REL_3BOOKMARK, REL_4EXTERNAL, REL_5HELP, REL_6LICENSE, REL_7NEXT, REL_8NOFOLLOW, REL_9NOREFERRER, REL_10NOOPENER, REL_11PREV, REL_12SEARCH, REL_13TAG",
+    "",
+    "Choose an INTEGER between 1-4 for the desired target window. Options below:",
+    "",
+    "    1. _blank",
+    "    2. _self",
+    "    3. _parent",
+    "    4. _top",
+    "",
+    "    [1, 2, 3, 4] -> TARGET_1BLANK, TARGET_2SELF, TARGET_3PARENT, TARGET_4TOP",
+    "",
+    "Utilize the style handle to apply the desired styles to the link. Optional ID Selector for further CSS styling."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "filename",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "abstraction",
+      "name": "href url",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "ping url",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "integer",
+      "name": "referrer policy",
+      "minimum": "1",
+      "maximum": "5",
+      "hint": "1, 5"
+    },
+    {
+      "type": "integer",
+      "name": "rel",
+      "minimum": "1",
+      "maximum": "13",
+      "hint": "1, 13"
+    },
+    {
+      "type": "integer",
+      "name": "target window",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "child document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

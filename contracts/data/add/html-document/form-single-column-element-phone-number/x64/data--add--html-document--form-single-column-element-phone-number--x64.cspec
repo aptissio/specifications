@@ -1,0 +1,118 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form-single-column-element-phone-number/x64",
+  "description": [
+    "Add a phone number form element to a single column form within a Web Document.",
+    "",
+    "Example (See Phone Number Below):",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/form_sign_up.png\" width=\"350\" height=\"450\"> ",
+    "",
+    "Add label content.",
+    "",
+    "Provide an initial value if desired. ",
+    "",
+    "The read only attribute specifies that an input field is read-only.",
+    "",
+    "A disabled input field is unusable and un-clickable.",
+    "",
+    "The required attribute specifies that the element must be filled out before submitting the form.",
+    "",
+    "The autofocus attribute specifies that the element should automatically get focus when the page loads.",
+    "",
+    "Autocomplete allows the browser to predict the value.",
+    "",
+    "The placeholder is a short hint is displayed in the input field before the user enters a value.",
+    "",
+    "The title attribute specifies extra information about an element.",
+    "",
+    "Specify a cursor colour & maximum character length of phone number input element.",
+    "",
+    "The regular expression that the input field's value is checked against, when the form is submitted. Learn more: https://www.w3schools.com/js/js_regexp.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "form group",
+      "protocol": "/data/form-single-column-group/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "label content",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "abstraction",
+      "name": "input initial value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "read only"
+    },
+    {
+      "type": "boolean",
+      "name": "disabled"
+    },
+    {
+      "type": "boolean",
+      "name": "required"
+    },
+    {
+      "type": "boolean",
+      "name": "autofocus"
+    },
+    {
+      "type": "boolean",
+      "name": "autocomplete"
+    },
+    {
+      "type": "string",
+      "name": "placeholder",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "string",
+      "name": "title",
+      "length": "1000",
+      "hint": "1000"
+    },
+    {
+      "type": "abstraction",
+      "name": "regex validation",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "cursor colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "input maximum length",
+      "minimum": "0",
+      "maximum": "1000",
+      "hint": "0 to 1000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "input ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input phone number",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

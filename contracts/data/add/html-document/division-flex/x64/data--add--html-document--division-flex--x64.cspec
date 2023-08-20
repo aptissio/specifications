@@ -1,0 +1,118 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/division-flex/x64",
+  "description": [
+    "Add a HTML division to a HTML document that has a flex display. ",
+    "",
+    "Specify between <i>columns or rows</i>.",
+    "",
+    "<i>Enable wrap</i> to allow flex children to wrap onto multiple lines.",
+    "",
+    "<i>Justify Content</i> defines the alignment along the main axis. Choose between the following options:",
+    "",
+    "      -1 - inherit   Inherits this property from its parent element. ",
+    "       0 - initial    Sets this property to its default value. ",
+    "       1. flex-start (default) -  items are packed toward the start of the flex-direction.",
+    "       2. flex-end - items are packed toward the end of the flex-direction.",
+    "       3. center - items are centered along the line",
+    "       4. space-between - items are evenly distributed in the line; first item is on the start line, ",
+    "          last item on the end line",
+    "       5. space-around - items are evenly distributed in the line with equal space around them.",
+    "       6. space-evenly - items are distributed so that the spacing between any two items (and the ",
+    "          space to the edges) is equal.",
+    "",
+    "        [-1, 0, 1, 2, 3, 4, 5, 6] -> JUSTIFYCONTENT_INHERIT, JUSTIFYCONTENT_0INITIAL, JUSTIFYCONTENT_1FLEXSTART, JUSTIFYCONTENT_2FLEXEND, JUSTIFYCONTENT_3CENTER, JUSTIFYCONTENT_4SPACEBETWEEN, JUSTIFYCONTENT_5SPACEAROUND, JUSTIFYCONTENT_6SPACEEVENLY",
+    "",
+    "<img src=\"https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg\" width=\"100%\" height=\"400\"> ",
+    "",
+    "<i>Align Items</i> defines the default behavior for how flex items are laid out along the cross axis on the current line.",
+    "",
+    "      -1 - inherit    Inherits this property from its parent element. ",
+    "       0 - initial    Sets this property to its default value. ",
+    "       1. stretch (default) - stretch to fill the container",
+    "       2. flex-start - items are placed at the start of the cross axis.",
+    "       3. flex-end - items are placed at the end of the cross axis. ",
+    "       4. center - items are centered in the cross-axis",
+    "       5. baseline - items are aligned such as their baselines align",
+    "",
+    "       [-1, 0, 1, 2, 3, 4, 5] ->  ALIGN_ITEMS_INHERIT, ALIGN_ITEMS_0INITIAL, ALIGN_ITEMS_1STRETCH,  ALIGN_ITEMS_2FLEX_START, ALIGN_ITEMS_3FLEX_END, ALIGN_ITEMS_4CENTER, ALIGN_ITEMS_5BASELINE",
+    "",
+    "",
+    "<img src=\"https://css-tricks.com/wp-content/uploads/2018/10/align-items.svg\" width=\"100%\" height=\"400\"> ",
+    "",
+    "<i>Align Content</i> This aligns a flex container\u2019s lines within when there is extra space in the cross-axis.",
+    "",
+    "      1. normal (default) - items are packed in their default position as if no value was set.",
+    "      2. flex-start - items packed to the start of the container.",
+    "      3. flex-end - items packed to the end of the container.",
+    "      4. center - items centered in the container.",
+    "      5. space-between: items evenly distributed.",
+    "      6. space-around: items evenly distributed with equal space around each line.",
+    "      7. space-evenly: items are evenly distributed with equal space around them.",
+    "      8. stretch: lines stretch to take up the remaining space",
+    "",
+    "       [1, 2, 3, 4, 5, 6, 7, 8] -> ",
+    "       ALIGNCONTENT_1NORMAL, ALIGNCONTENT_2FLEXSTART, ALIGNCONTENT_3FLEXEND, ",
+    "       ALIGNCONTENT_4CENTER, ALIGNCONTENT_5SPACEBETWEEN,  ALIGNCONTENT_6SPACEAROUND, ",
+    "       ALIGNCONTENT_7SPACEEVENLY, ALIGNCONTENT_8STRETCH",
+    "",
+    "",
+    "<img src=\"https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg\" width=\"100%\" height=\"400\"> ",
+    "",
+    "Apply the desired styles to the division. Optional ID Selecter for styling CSS"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable columns"
+    },
+    {
+      "type": "boolean",
+      "name": "enable wrap"
+    },
+    {
+      "type": "integer",
+      "name": "justify content",
+      "minimum": "-1",
+      "maximum": "6",
+      "hint": "-1 to 6"
+    },
+    {
+      "type": "integer",
+      "name": "align items",
+      "minimum": "-1",
+      "maximum": "5",
+      "hint": "-1, 5"
+    },
+    {
+      "type": "integer",
+      "name": "align content",
+      "minimum": "1",
+      "maximum": "8",
+      "hint": "1, 8"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "child document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/secp256k1-private-key/default/linux-x64",
+  "description": [
+    "type here to preview description"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "private key",
+      "protocol": "/data/secp256k1-private-key/default/x64"
+    }
+  ],
+  "obligations": []
+}

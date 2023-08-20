@@ -1,0 +1,68 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/html-document-feature-font-awesome/default/x64",
+  "description": [
+    "Design the HTML document components required for the font-awesome feature."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "feature peer count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "measured peer count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-document-feature-font-awesome/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, feature_peer_count, measured_peer_count, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( core, $, feature_peer_count, trigger, debug_msg)",
+      "sub /behaviour/collect/agent-integer/default/x64@codevalley( core, $, measured_peer_count, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/html-document-feature-font-awesome/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "feature peer count",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      }
+    ],
+    "macro": [
+      "def (core, self, feature_peer_count, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/new/agent-integer/constant/x64@codevalley( core, 1, trigger, debug_msg) -> one",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( core, $, feature_peer_count, trigger, debug_msg)",
+      "sub /behaviour/fold/agent-integer/default/x64@codevalley( core, $, one, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

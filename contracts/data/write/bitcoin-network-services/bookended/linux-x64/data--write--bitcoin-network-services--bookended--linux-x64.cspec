@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-network-services/bookended/linux-x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "100",
+      "hint": "100"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin network services",
+      "protocol": "/data/bitcoin-network-services/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "postfix",
+      "length": "100",
+      "hint": "100"
+    }
+  ],
+  "obligations": []
+}

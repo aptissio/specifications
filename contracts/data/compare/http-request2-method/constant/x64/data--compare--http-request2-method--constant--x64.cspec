@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/http-request2-method/constant/x64",
+  "description": [
+    "Compare a http request method."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "condition",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "request",
+      "protocol": "/data/http-request2/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "request method",
+      "length": "15",
+      "hint": "15"
+    }
+  ],
+  "obligations": []
+}

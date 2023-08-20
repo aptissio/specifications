@@ -1,0 +1,64 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/syscall/unlink/default/linux-x64",
+  "description": [
+    "`man 2 unlink` for detail.",
+    "",
+    "  Error Numbers:",
+    "  -1   ->  EPERM",
+    "  -2   ->  ENOENT",
+    "  -4   ->  EINTR",
+    "  -6   ->  ENXIO",
+    "  -9   ->  EBADF",
+    "  -11  ->  EWOULDBLOCK",
+    "  -12  ->  ENOMEM",
+    "  -13  ->  EACCES",
+    "  -14  ->  EFAULT",
+    "  -17  ->  EEXIST",
+    "  -19  ->  ENODEV",
+    "  -20  ->  ENOTDIR",
+    "  -21  ->  EISDIR",
+    "  -22  ->  EINVAL",
+    "  -23  ->  ENFILE",
+    "  -24  ->  EMFILE",
+    "  -26  ->  ETXTBSY",
+    "  -27  ->  EFBIG",
+    "  -28  ->  ENOSPC",
+    "  -30  ->  EROFS",
+    "  -36  ->  ENAMETOOLONG",
+    "  -40  ->  ELOOP",
+    "  -75  ->  EOVERFLOW",
+    "  -77  ->  EBADFD",
+    "  -122 ->  EDQUOT"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "result = unlink()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file path",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "error",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

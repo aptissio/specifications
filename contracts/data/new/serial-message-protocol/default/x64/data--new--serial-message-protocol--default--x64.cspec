@@ -1,0 +1,98 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/serial-message-protocol/default/x64",
+  "description": [
+    "Define the structures and processes for designing a serial message protocol.",
+    "Design a new serial message protocol using the given /protocol version number/.",
+    "/Message ID/s can be enabled to handle in-built unique message handling.",
+    "",
+    "Message data is encapsulated in a packet that includes protocol and message identification, a random nonce, a checksum and the message data.",
+    "",
+    "The /message buffer length/ must be greater than the longest message in the protocol.",
+    "",
+    "The nonce can be used to identify messages that might be duplicated at the transport layer."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new(protocol version number, message ID enabled)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "protocol version number",
+      "minimum": "0",
+      "maximum": "2147483647",
+      "hint": "0 to (2^31)-1"
+    },
+    {
+      "type": "boolean",
+      "name": "message ID enabled"
+    },
+    {
+      "type": "integer",
+      "name": "message buffer length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "message decoding buffer",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "decode messages(message decoding buffer)",
+      "protocol": "/data/procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "decoded message nonce",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "decoded unknown message(raw decode data)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "decode error(raw decode data)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "raw decode data",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "encoded message",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "encoded message nonce",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "encode success(encoded message, encode message nonce)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "encode failure",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message protocol",
+      "protocol": "/data/serial-message-protocol/default/x64"
+    }
+  ]
+}

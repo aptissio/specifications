@@ -1,0 +1,69 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/social-media-group-item-fa-icon-youtube/x64",
+  "description": [
+    "Add a Youtube Social Media Font Awesome Icon to a Social Media group. Add font awesome feature to enable.",
+    "",
+    "Example:",
+    "",
+    "<svg aria-hidden=\"true\" focusable=\"false\" data-prefix=\"fab\" data-icon=\"youtube\" class=\"svg-inline--fa fa-youtube fa-w-18\" role=\"img\" height=\"50\" width=\"50\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 576 512\"><path fill=\"#df2426\" d=\"M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z\"></path></svg>",
+    "",
+    "Utilise Class & ID Selectors to apply styling.",
+    "",
+    "Choose an INTEGER between 1-4 for the desired target window. Options below:",
+    "",
+    "    1. _blank",
+    "    2. _self",
+    "    3. _parent",
+    "    4. _top",
+    "",
+    "    [1, 2, 3, 4] -> TARGET_1BLANK, TARGET_2SELF, TARGET_3PARENT, TARGET_4TOP"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "social media group",
+      "protocol": "/data/web-document-social-media-group-font-awesome/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "social media profile",
+      "protocol": "/data/social-media-profile/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome feature",
+      "protocol": "/data/html-document-feature-font-awesome/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "link class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "target window",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "list item ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "link ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "font awesome ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

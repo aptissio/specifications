@@ -1,0 +1,31 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/finite-field-elliptic-curve/subordinate/x64",
+  "description": [
+    "Design the structures required for a new finite-field elliptic-curve.",
+    "Design a new finite-field, elliptic-curve.",
+    "The supplied /bit width/ must be greater than log2(maximum curve order)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "curve = reserve(order bit width)",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "order bit width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "1 to 2^23"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "curve",
+      "protocol": "/data/finite-field-elliptic-curve/default/x64"
+    }
+  ]
+}

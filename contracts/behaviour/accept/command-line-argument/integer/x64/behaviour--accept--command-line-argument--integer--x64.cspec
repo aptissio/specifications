@@ -1,0 +1,63 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/accept/command-line-argument/integer/x64",
+  "description": [
+    "Accept a Command Line integer into an application. ",
+    "",
+    "Register a command-line argument, where the \"key\" is indicated either using the short or long option name. ",
+    "",
+    "If the argument is required, specify \"true\" for `argument is required` . (At run-time, the program will print \"Error: <long option name> is a mandatory argument.\" if a required argument was not specified.)",
+    "",
+    "The option names should be provided without sigil. (Valid sigils at runtime are \"-\" for short and \"--\" for long.) Note that when the long option name is used, the following run-time format is expected: `--long=\"argument value\"` or `--long=argument_value` . If the argument value contains spaces, be sure to use quotes to indicate the entire value.",
+    "",
+    "The `argument flag` is valid after parsing has been carried out; a \"set\" flag indicates the argument was specified and a \"clear\" flag indicates that it was not."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "application core",
+      "protocol": "/system/execution-bundle/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "short option name",
+      "length": "1",
+      "hint": "1"
+    },
+    {
+      "type": "string",
+      "name": "long option name",
+      "length": "80",
+      "hint": "80"
+    },
+    {
+      "type": "string",
+      "name": "help string",
+      "length": "80",
+      "hint": "80"
+    },
+    {
+      "type": "boolean",
+      "name": "argument is required"
+    },
+    {
+      "type": "integer",
+      "name": "integer default value",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "start command-line menu",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "integer to set",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

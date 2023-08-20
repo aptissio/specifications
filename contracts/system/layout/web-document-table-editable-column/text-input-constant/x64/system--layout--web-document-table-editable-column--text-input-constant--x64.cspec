@@ -1,0 +1,201 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/layout/web-document-table-editable-column/text-input-constant/x64",
+  "description": [
+    "Add a constant editable Column with a form text input value to an editable Table within a Web document.",
+    "",
+    "Provide a Heading for the Column if desired.",
+    "",
+    "Specify a line-height, font-size & column width. Choose an option for each unit from the options:",
+    "",
+    "",
+    "    1 - px     pixels (1px = 1/96th of 1in)",
+    "    2 - %      Relative to the parent element",
+    "    3 - rem    Relative to font-size of the root element",
+    "    4 - em     Relative to the font-size of the element (2em means 2 times the size of the current font)",
+    "    5 - cm \tcentimeters",
+    "    6 - mm \tmillimeters",
+    "    7 - in \tinches (1in = 96px = 2.54cm)",
+    "    8 - pt \tpoints (1pt = 1/72 of 1in)",
+    "    9 - pc     picas (1pc = 12 pt) ",
+    "    10- ex \tRelative to the x-height of the current font (rarely used) \t",
+    "    11- ch \tRelative to the width of the \"0\" (zero) \t",
+    "    12- vw \tRelative to 1% of the width of the viewport* \t",
+    "    13- vh \tRelative to 1% of the height of the viewport* \t",
+    "    14- vmin   Relative to 1% of viewport's* smaller dimension ",
+    "    15 -vmax   Relative to 1% of viewport's* larger dimension ",
+    "    16 -fr     Fractional units",
+    "    17 -auto   If the Auto units is selected than the size will be ignored.",
+    "",
+    "",
+    "    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17] -> UNIT_1PX, UNIT_2PERCENTAGE, UNIT_3REM, UNIT_4EM, UNIT_5CM, UNIT_6MM, UNIT_7IN, UNIT_8PT, UNIT_9PC, UNIT_10EX, UNIT_11CH, UNIT_12VW, UNIT_13VH, UNIT_14VMIN, UNIT_15VMAX, UNIT_16FR, UNIT_17AUTO",
+    "",
+    "",
+    "The required attribute specifies that the element must be filled out before submitting the form.",
+    "",
+    "The placeholder is a short hint is displayed in the input field before the user enters a value.",
+    "",
+    "The title attribute specifies extra information about an element.",
+    "",
+    "The regular expression that the input field's value is checked against, when the form is. Learn more: https://www.w3schools.com/js/js_regexp.asp",
+    "",
+    "This design takes an instance unique identifier. ",
+    "",
+    "",
+    " The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).",
+    "",
+    "<img src=\"https://css-tricks.com/wp-content/uploads/2018/10/justify-content.svg\" width=\"100%\" height=\"400\" > ",
+    "",
+    "Tip: Use the align-items property to align the items vertically.",
+    "",
+    "    -1 - inherit   Inherits this property from its parent element. ",
+    "     0 - initial    Sets this property to its default value. ",
+    "     1 - flex-start Default value. Items are positioned at the beginning ",
+    "                       of the container\t",
+    "     2 - flex-end   Items are positioned at the end of the container \t",
+    "     3 - center     Items are positioned in the center of the container\t",
+    "     4 - space-between   Items will have space between them \t",
+    "     5 - space-around   Items will have space before, between, and after them\t",
+    "     6 - space-evenly - items are distributed so that the spacing between any two items (and the ",
+    "          space to the edges) is equal.",
+    "",
+    "    [-1, 0, 1, 2, 3, 4, 5, 6] -> ",
+    "    JUSTIFYCONTENT_INHERIT, JUSTIFYCONTENT_0INITIAL, JUSTIFYCONTENT_1FLEXSTART, JUSTIFYCONTENT_2FLEXEND, JUSTIFYCONTENT_3CENTER, JUSTIFYCONTENT_4SPACEBETWEEN, JUSTIFYCONTENT_5SPACEAROUND, JUSTIFYCONTENT_6SPACEEVENLY",
+    "",
+    "",
+    "Learn more about Justifying Content: https://www.w3schools.com/cssref/css3_pr_justify-content.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "editable table layout",
+      "protocol": "/data/html-layout-table-editable/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "heading content",
+      "length": "10000",
+      "hint": "0 to 10000"
+    },
+    {
+      "type": "integer",
+      "name": "input line-height",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "input line-height unit",
+      "minimum": "1",
+      "maximum": "17",
+      "hint": "1 - 17"
+    },
+    {
+      "type": "integer",
+      "name": "input font-size",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "input font-size unit",
+      "minimum": "1",
+      "maximum": "17",
+      "hint": "1 - 17"
+    },
+    {
+      "type": "abstraction",
+      "name": "column value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "required"
+    },
+    {
+      "type": "string",
+      "name": "placeholder",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "title",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "string",
+      "name": "input regex validation",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "integer",
+      "name": "maximum instance total",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "instance unique identifier",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "column width",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "column width unit",
+      "minimum": "1",
+      "maximum": "17",
+      "hint": "1 - 17"
+    },
+    {
+      "type": "integer",
+      "name": "justify content",
+      "minimum": "-1",
+      "maximum": "6",
+      "hint": "-1 to 6"
+    },{
+      "type": "abstraction",
+      "name": "form parameter decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "column class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "heading ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input unique identifier",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "submitted data",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input processing",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

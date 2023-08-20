@@ -1,0 +1,43 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/iterate/over-bytes/with-index/x64",
+  "description": [
+    "Iterate over each raw byte in a bytes structure.",
+    "Iterate over each raw byte in a bytes structure, and provide the iteration index (which starts from 0).'Each byte out' and 'iteration index' are valid only in the context of 'each iteration'."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "iterate(bytes, max iterations, {each})",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytes",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "maximum iterations",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "byte",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "i",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "each(byte, i)",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

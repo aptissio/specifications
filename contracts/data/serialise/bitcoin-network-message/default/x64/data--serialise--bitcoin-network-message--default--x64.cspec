@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/serialise/bitcoin-network-message/default/x64",
+  "description": [
+    "Serialise bitcoin network message"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": []
+}

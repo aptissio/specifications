@@ -1,0 +1,24 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/colour/maroon/x64",
+  "description": [
+    "Design a new colour.",
+    "",
+    "Add the colour <span style=\"color: #800000FF; background: white;\"><b>Maroon</b></span> to a HTML Style Sheet"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "maroon",
+      "protocol": "/data/colour/default/x64"
+    }
+  ]
+}

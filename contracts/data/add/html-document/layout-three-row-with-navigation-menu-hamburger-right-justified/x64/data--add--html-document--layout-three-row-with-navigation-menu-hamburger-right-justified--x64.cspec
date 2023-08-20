@@ -1,0 +1,168 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/layout-three-row-with-navigation-menu-hamburger-right-justified/x64",
+  "description": [
+    "Within the parent web document, create a 'three-row-with-burger-menu-right' layout consisting of a header, body and footer, where the header consists of a navigation menu bar justified to the right.",
+    "",
+    "Provide a height for the Header & Footer (px). Specify a colour for all 3 rows.",
+    "",
+    "Customise the navigation menu bar by providing the following requirements:",
+    "",
+    "     Burger Menu List Width(px).",
+    "      Enable Menu List full viewport height ",
+    "      Menu List Font size (px)",
+    "      Menu List Item colour",
+    "      Menu List Item hover colour",
+    "      Enable Menu List Item uppercase",
+    "      Enable Menu List Item bottom border",
+    "      ",
+    "      ",
+    "  <img src=\"https://res.cloudinary.com/dmt8fqzag/image/upload/v1618552165/Screenshot_408_qnnjpr.png\" width=\"100%\" height=\"300\"></img>",
+    "  <img src=\" https://res.cloudinary.com/dmt8fqzag/image/upload/v1618552360/Screenshot_410_bjbc2h.png\" width=\"100%\" height=\"300\"></img>"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "header height (px)",
+      "minimum": "50",
+      "maximum": "100",
+      "hint": "50, 100"
+    },
+    {
+      "type": "abstraction",
+      "name": "navigation menu hamburger colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "menu list width (px)",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "boolean",
+      "name": "enable menu list full viewport height"
+    },
+    {
+      "type": "abstraction",
+      "name": "menu list colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "menu list font-size (px)",
+      "minimum": "0",
+      "maximum": "1000",
+      "hint": "0, 1000"
+    },
+    {
+      "type": "abstraction",
+      "name": "menu list item colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "menu list item hover colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable list item uppercase"
+    },
+    {
+      "type": "boolean",
+      "name": "enable list item bottom border"
+    },
+    {
+      "type": "abstraction",
+      "name": "body background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer background colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "footer height (px)",
+      "minimum": "0",
+      "maximum": "1000",
+      "hint": "0, 1000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "header ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header left ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header left document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header center ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "header center document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "menu list",
+      "protocol": "/data/html-document-navigation-menu-list/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "span class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "menu list ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "body ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "body document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "footer document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

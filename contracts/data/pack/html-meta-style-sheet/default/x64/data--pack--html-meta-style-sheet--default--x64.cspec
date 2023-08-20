@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/html-meta-style-sheet/default/x64",
+  "description": [
+    "Pack a HTML style sheet as HTML meta data.",
+    "Packs a HTML style-sheet.",
+    "This design contribution packs the nominated Cascaded /Style Sheet/ data including HTML meta tags such as <STYLE><\\/STYLE>."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack style meta-data",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "style sheet",
+      "protocol": "/data/html-style-sheet/default/x64"
+    }
+  ],
+  "obligations": []
+}

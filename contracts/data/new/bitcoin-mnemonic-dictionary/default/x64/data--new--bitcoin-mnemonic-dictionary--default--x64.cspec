@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-mnemonic-dictionary/default/x64",
+  "description": [
+    "This design hosts the bitcoin mnemonic dictionary.",
+	"",
+	"Language Options:",
+	"",
+	"     [0, 1, 2, 3, 4, 5, 6, 7, 8, 9] -> LANG_EN, LANG_FR, LANG_IT, LANG_CS, LANG_JA, LANG_KO, LANG_PT, LANG_ES, LANG_ZH_HANS, LANG_ZH_HANT"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new flow",
+      "protocol": "/data/flow/default/x64"
+    },
+	{
+      "type": "integer",
+      "name": "language option",
+      "minimum": "0",
+      "maximum": "10",
+      "hint": "0 to 10"
+	  }
+      ],
+  "obligations": [
+  {
+      "type": "abstraction",
+      "name": "bitcoin mnemonic dictionary",
+      "protocol": "/data/bitcoin-mnemonic-dictionary/default/x64"
+    }
+	]
+}

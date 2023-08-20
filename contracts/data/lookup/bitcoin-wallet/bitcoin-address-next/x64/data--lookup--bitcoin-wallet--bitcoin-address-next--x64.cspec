@@ -1,0 +1,66 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/lookup/bitcoin-wallet/bitcoin-address-next/x64",
+  "description": [
+    "Lookup Bitcoin wallet data.",
+    "Lookup Bitcoin wallet for the next used or unused bitcoin address in an Internal/External key chain. Incase there are no existing unused addresses in the wallet, the agents extends the key chain by the next child index of a used address to return a bitcoin address."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "lookup",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "account number",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "unused address"
+    },
+    {
+      "type": "boolean",
+      "name": "change address"
+    },
+    {
+      "type": "abstraction",
+      "name": "SHA256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RipeMD160 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "HMAC512 procedure",
+      "protocol": "/data/hmac-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "bitcoin address",
+      "protocol": "/data/bitcoin-address/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

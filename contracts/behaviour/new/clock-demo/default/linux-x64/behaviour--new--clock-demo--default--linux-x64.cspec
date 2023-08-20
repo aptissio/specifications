@@ -1,0 +1,24 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/clock-demo/default/linux-x64",
+  "description": [
+    "Creates a dynamic HTML Server-based clock that can be accessed via TCP Port:8080 on any local Interface.",
+    "",
+    "",
+    "Example: http:\\/\\/127.0.0.1:8080\\/clock.html"
+  ],
+  "requirements": [
+    {
+      "type": "site",
+      "name": "site"
+    },
+    {
+      "type": "string",
+      "name": "program name",
+      "length": "80",
+      "hint": "0 to 80"
+    }
+  ],
+  "obligations": []
+}

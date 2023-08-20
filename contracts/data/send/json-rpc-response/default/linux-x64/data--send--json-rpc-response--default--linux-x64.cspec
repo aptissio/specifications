@@ -1,0 +1,44 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/send/json-rpc-response/default/linux-x64",
+  "description": [
+    "Send a response to a JSON Remote Procedure Call request.",
+    "Compose and send a HTTP message comprising of headers and the pre-prepared JSON-RPC 2.0 result or error response stored in the /micro-payment channel RPC interface/ to the open connection referenced by the /micro-payment channel file descriptor/. The /RPC ID/ is the request identifier for which this is a response to.",
+    "If the error code provided in the /JSON RPC interface/ is zero, then the result is sent. Otherwise the error code and error message are sent."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "send()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "connection file descriptor",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "JSON RPC interface",
+      "protocol": "/data/json-rpc-interface/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RPC ID",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

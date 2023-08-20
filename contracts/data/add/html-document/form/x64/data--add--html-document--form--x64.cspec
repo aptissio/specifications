@@ -1,0 +1,138 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form/x64",
+  "description": [
+    "The HTML \\<form> element defines a form that is used to collect user input.",
+    "",
+    "Provide a document URL. The form name will be appended to the document URL to create the form action url, which specifies where to send the form-data when a form is submitted. (example.html/form1)",
+    "",
+    "The method specifies the HTTP method to use when sending form-data. This design assumes the POST method, enable GET method if desired.",
+    "",
+    "Autocomplete specifies whether a form should have autocomplete on or off.",
+    "",
+    "The <i>enctype</i> attribute specifies how the form-data should be encoded when submitting it to the server. Choose from below options 1-3:",
+    "",
+    "",
+    "     1.  application/x-www-form-urlencoded",
+    "      2.   multipart/form-data",
+    "      3.   text/plain",
+    "      ",
+    "",
+    "      [1,2,3] -> ENCTYPE_1FORM_URLENCODED, ENCTYPE_2MULTIPART, ENCTYPE_3TEXTPLAIN",
+    "             ",
+    "            ",
+    "The <i>name</i> attribute specifies the name of a form. It is used to reference elements in a JavaScript, or to reference form data after a form is submitted.",
+    "",
+    "Disable form validation if desired. This will ensure that the form-data(input) should not be validated when submitted.",
+    "",
+    "The <i>rel</i> specifies the relationship between a linked resource and the current document. Choose from 1-10 options below:",
+    "",
+    "       1. external   Specifies that the referenced document is not a part of the current site",
+    "        2. help \t   Links to a help document",
+    "        3. license \tLinks to copyright information for the document",
+    "        4. next \t   The next document in a selection",
+    "        5. nofollow    Links to an unendorsed document, like a paid link.",
+    "        6. noopener  \t ",
+    "        7. noreferrer   Specifies that the browser should not send a HTTP referrer header ",
+    "                        if the user follows the hyperlink",
+    "        8. opener \t ",
+    "        9. prev \t   The previous document in a selection",
+    "        10. search \tLinks to a search tool for the document",
+    "        ",
+    "        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ->  FORM_REL_1EXTERNAL, FORM_REL_2HELP, FORM_REL_3LICENSE, FORM_REL_4NEXT, FORM_REL_5NOFOLLOW, FORM_REL_6NOOPENER, FORM_REL_7NOREFERRER, FORM_REL_8OPENER, FORM_REL_9PREV, FORM_REL_10SEARCH",
+    "",
+    "The <i>target window</i> attribute specifies if the submitted result will open in a new browser tab, a frame, or in the current window.",
+    "",
+    "Choose between 1-4 for the desired target window. Options below:",
+    "",
+    "     1. _blank",
+    "      2. _self",
+    "      3. _parent",
+    "      4. _top",
+    "    ",
+    "    [1, 2, 3, 4] -> TARGET_1BLANK, TARGET_2SELF, TARGET_3PARENT, TARGET_4TOP",
+    "",
+    "This design contribution uses the UTF-8 Character encoding for Unicode Learn more:",
+    "",
+    "https://www.w3schools.com/tags/tag_form.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "unique name-space",
+      "protocol": "/data/unique-identifier-scope/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "document url",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable GET method (default:POST)"
+    },
+    {
+      "type": "boolean",
+      "name": "autocomplete"
+    },
+    {
+      "type": "integer",
+      "name": "enctype",
+      "minimum": "1",
+      "maximum": "3",
+      "hint": "1, 3"
+    },
+    {
+      "type": "boolean",
+      "name": "disable form validation"
+    },
+    {
+      "type": "integer",
+      "name": "relationship to linked document",
+      "minimum": "1",
+      "maximum": "10",
+      "hint": "1, 10"
+    },
+    {
+      "type": "integer",
+      "name": "target window",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "form name",
+      "length": "100",
+      "hint": "100"
+    },
+    {
+      "type": "abstraction",
+      "name": "form action url",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "child document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

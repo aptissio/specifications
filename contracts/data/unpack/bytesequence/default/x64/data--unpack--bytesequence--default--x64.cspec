@@ -1,0 +1,35 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/bytesequence/default/x64",
+  "description": [
+    "Contiguous raw bytes of variable length.",
+    "Unpack as many bytes as possible, up to the runtime ~maximum length~. The resulting ~value~ should only have a length of less than the ~maximum length~ if the ~unpack~ data is shorter than that length.",
+    "Unpacking fails only if the resulting ~value~ would be less than the ~minimum length~. This allows for such behaviour as expressing that the ~value~ be *at least* some minimum length, or *exactly* some given length (when ~minimum length~ is equal to ~maximum length~).",
+    "If the ~minimum length~ is greater than the ~maximum length~, behaviour is undefined."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "value = unpack(minimum length, maximum length)",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "minimum length",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "maximum length",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "value",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

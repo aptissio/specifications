@@ -1,0 +1,76 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/sign/bitcoin-transaction/utxo/x64",
+  "description": [
+    "Sign a Bitcoin transaction using keys associated with a utxo transaction. Boolean value True for Schnorr signature and false for an ecdsa signature.",
+    "",
+    "Result codes:",
+    "[0, 1, 2] -> SIGNATURES_COMPLETE, SIGNATURES_PARTIALLY_COMPLETE, NOT_SIGNED",
+    "",
+    "Error codes:",
+    "[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] -> \\",
+    "NONE, UTXO_NOT_FOUND, UTXO_TYPE_UNSUPPORTED, NON_MULTISIG_P2SH_TX, \\",
+    "UTXO_PUBKEY_NOT_FOUND, UTXO_PRVKEY_NOT_FOUND, \\",
+    "PREIMAGE_FAILED, INSUFIC_SIGSCR_CAPACITY, MULTISIG_SIG_INSERTION_FAILED, \\",
+    "REDEEM_SCR_NOT_FOUND"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "initialise",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "sign(transaction, utxo)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "schnorr signature"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet",
+      "protocol": "/data/bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "utxo tree",
+      "protocol": "/data/txo-tree/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "double SHA256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "error code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/unique-identifier-scope/default/x64",
+  "description": [
+    "Define a unique identifier scope and allocate a index to each peer that is unique to this scope."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "string",
+        "name": "dummy",
+        "length": "0",
+        "hint": "0"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "unique-identifier total",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/unique-identifier-scope/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, dummy, unique_identifier_total, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, dummy, trigger, debug_msg)",
+      "sub /behaviour/new/agent-integer/constant/x64@codevalley( acs, 1, trigger, debug_msg) -> zero",
+      "sub /behaviour/collect-and-distribute/agent-integer/default/x64@codevalley( acs, $, zero, unique_identifier_total, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/unique-identifier-scope/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "string",
+        "name": "dummy",
+        "length": "0",
+        "hint": "0"
+      },
+      {
+        "type": "integer",
+        "name": "unique-identifier",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      }
+    ],
+    "macro": [
+      "def (acs, self, dummy, unique_identifier,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, dummy, trigger, debug_msg)",
+      "sub /behaviour/new/agent-integer/constant/x64@codevalley( acs, 1, trigger, debug_msg) -> one",
+      "sub /behaviour/fold-and-allocate/agent-integer/default/x64@codevalley( acs, $, one, unique_identifier, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

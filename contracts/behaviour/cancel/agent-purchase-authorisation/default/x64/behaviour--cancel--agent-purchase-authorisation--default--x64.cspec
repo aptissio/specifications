@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/cancel/agent-purchase-authorisation/default/x64",
+  "description": [
+    "Cancel an agent contract purchase authorisation."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "agent purchase authorisation manager",
+      "protocol": "/system/agent-purchase-authorisation-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "purchase authorisation to cancel",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "cancel purchase authorisation",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": []
+}

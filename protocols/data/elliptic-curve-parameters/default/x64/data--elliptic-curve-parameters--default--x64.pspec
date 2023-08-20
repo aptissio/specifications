@@ -1,0 +1,142 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/elliptic-curve-parameters/default/x64",
+  "description": [
+    "Elliptic curve parameters used in public-key cryptography, and is defined in Standards for Efficient Cryptography (SEC). Similary the curve is define with the quadratic equation y = x^3 + ax + b"
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "string",
+        "name": "gx",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "gy",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "prime(p)",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "order(n)",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "a",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "b",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "integer",
+        "name": "order width",
+        "minimum": "1",
+        "maximum": "8388608",
+        "hint": "1 to 8 x (2^20)"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/elliptic-curve-parameters/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, gx, gy, prime_p_, order_n_, a, b, order_width, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, gx, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, gy, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, prime_p_, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, order_n_, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, a, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-string/default/x64@codevalley( acs, $, b, trigger, debug_msg)",
+      "sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, order_width, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/elliptic-curve-parameters/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "string",
+        "name": "gx",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "gy",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "prime(p)",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "order(n)",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "a",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "string",
+        "name": "b",
+        "length": "10000",
+        "hint": "10000"
+      },
+      {
+        "type": "integer",
+        "name": "order width",
+        "minimum": "1",
+        "maximum": "8388608",
+        "hint": "1 to 8 x (2^20)"
+      }
+    ],
+    "macro": [
+      "def (acs, self, gx, gy, prime_p_, order_n_, a, b, order_width,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, gx, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, gy, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, prime_p_, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, order_n_, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, a, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-string/default/x64@codevalley( acs, $, b, trigger, debug_msg)",
+      "sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, order_width, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

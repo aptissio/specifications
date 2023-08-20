@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/decode/as-binary-integer/big-endian-bytes/x64",
+  "description": [
+    "Decode a bytesequence as a binary integer.",
+    "Decode a byte in as a big-endian binary number. If the bytes represents a value beyond the saturation limits of the integer out, it is assigned the saturation value."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "decode(bytes in)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytes in",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "integer out",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,55 @@
+{"name": "/data/finite-state-machine-transition/default/x64",
+"type": "protocol",
+"policy":"0",
+"description":[""],
+"host": {
+"requirements": [
+{"name":  "transition event init",
+"type": "abstraction",
+"protocol": "/data/flow/default/x64"},
+{"name":  "register transition event id ",
+"type": "abstraction",
+"protocol": "/data/integer/default/x64"},
+{"name":  "register transition event ",
+"type": "abstraction",
+"protocol": "/data/procedure/default/x64"}
+],
+"obligations": [
+{"name": "<self>",
+"type": "abstraction",
+"protocol": "/data/finite-state-machine-transition/default/x64"}
+], 
+"macro":  ["def (acs, transition_event_init, register_transition_event_id_, register_transition_event_, self, trigger, debug_msg) :",
+"sub /behaviour/add/collaboration-endpoint/host/x64@codevalley(acs, self, trigger, debug_msg) -> {",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, transition_event_init, trigger, debug_msg)",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, register_transition_event_id_, trigger, debug_msg)",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, register_transition_event_, trigger, debug_msg)",
+"}",
+"end"]
+},
+"join": {
+"requirements": [
+{"name": "<self>",
+"type": "abstraction",
+"protocol": "/data/finite-state-machine-transition/default/x64"}
+],
+"obligations": [
+{"name":  "transition event init",
+"type": "abstraction",
+"protocol": "/data/flow/default/x64"},
+{"name":  "register transition event id ",
+"type": "abstraction",
+"protocol": "/data/integer/default/x64"},
+{"name":  "register transition event ",
+"type": "abstraction",
+"protocol": "/data/procedure/default/x64"}
+],
+"macro":  ["def (acs, self, transition_event_init, register_transition_event_id_, register_transition_event_,  trigger, debug_msg) :",
+"sub /behaviour/add/collaboration-endpoint/join/x64@codevalley(acs, self, trigger, debug_msg) -> {",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, transition_event_init, trigger, debug_msg)",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, register_transition_event_id_, trigger, debug_msg)",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, register_transition_event_, trigger, debug_msg)",
+"}",
+"end"]
+}
+}

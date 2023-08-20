@@ -1,0 +1,70 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/bitcoin-network-message/getheaders/x64",
+  "description": [
+    "The locator is an array of block hash identifiers whose purpose is to communicate a position in a blockchain that may be forked from the blockchain that the receiver sees as having the most work. It does so by providing a series of block hash identifiers ranging from the desired height to the genesis block. The locator solves both major currency forks and minor forks caused by near-simultaneous block discovery.",
+    "",
+    "The first hash in the locator is the parent of the desired identifiers. Subsequent elements are ancestors of previous elements, chosen by the client. A common strategy is to provide M direct ancestors and then make the M+Nth element the 2^Nth ancestor, finishing with the genesis block. This results in an amount of data that is approximately the log of the length of the chain.",
+    "",
+    "The response will begin at the child of the first hash in the locator list that matches a block hash identifier held by the responder. If no hashes match, the response will begin at block height 1 (child of the genesis block).",
+    "",
+    "If the locator has no entries, the locator is ignored.",
+    "",
+    "Use a valid locator whose first element is your chain tip and a zero \"Stop At Hash\" to request up to 2000 headers that extend your chain tip."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bitcoin-network-message/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "network",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hashcount",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "double sha256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "locator",
+      "protocol": "/data/list/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "block hash identifiers",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "stop at hash",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

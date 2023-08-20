@@ -1,0 +1,56 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/iterate/over-bytesequence/as-padded-hashing-blocks/x64",
+  "description": [
+    "Iterate over each byte/s in a bytesequence.",
+    "Iterate over each bit block of bytes in 'bytesequence in,' including the addition of padding where necessary. Note: The message length endianness after padding is changed accordingly \"Big endian for SHA algorithm. Little endian for MD4, MD5 and Ripemd-160\" before adding to intermediate and final result of the hash function"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "iterate(bytesequence, {each})",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytesequence",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "block size bits",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "message length integer size bits",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "boolean",
+      "name": "message length little endian"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "i",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "block",
+      "protocol": "/data/bytes/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "each(block, i)",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

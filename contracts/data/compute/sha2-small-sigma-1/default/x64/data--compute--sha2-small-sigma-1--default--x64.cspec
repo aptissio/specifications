@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compute/sha2-small-sigma-1/default/x64",
+  "description": [
+    "Computes SHA2 'Small Sigma 1' function as per RFC6234.",
+    "SHA2-256 Small Sigma 1 function as per RFC6234. SSIG1(x) = ROTR^17(x) XOR ROTR^19(x) XOR SHR^10(x)",
+    "SHA2-256 Small Sigma 1 function implemented for the x64 architecture."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "result = compute(operand x)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "operand x",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ]
+}

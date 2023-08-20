@@ -1,0 +1,21 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/reset/finite-state-machine/default/x64",
+  "description": [
+    "Design the run-time work to `reset` a `finite state machine` to its initial state."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "reset",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "finite state machine",
+      "protocol": "/data/finite-state-machine/default/x64"
+    }
+  ],
+  "obligations": []
+}

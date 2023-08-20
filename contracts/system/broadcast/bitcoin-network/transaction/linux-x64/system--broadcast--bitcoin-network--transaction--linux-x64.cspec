@@ -1,0 +1,122 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/broadcast/bitcoin-network/transaction/linux-x64",
+  "description": [
+    "Broadcast a transaction on the Bitcoin network.",
+    "",
+    "The `callback` will be executed after the broadcast has been actively accepted by or rejected by the network.",
+    "",
+    "`Result code` coding:",
+    "[0, 1, 16, 17, 64, 65, 66] -> RESULT_SUCCESS, RESULT_MALFORMED, RESULT_INVALID, RESULT_OBSOLETE, RESULT_NONSTANDARD, RESULT_DUST, RESULT_INSUFFICIENTFEE",
+    "",
+    "Other positive, non-zero result codes should be treated as broadcast failures."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "broadcast",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "configuration manager",
+      "protocol": "/system/configuration-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "system label",
+      "length": "64",
+      "hint": "64"
+    },
+    {
+      "type": "integer",
+      "name": "system priority",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0,65535"
+    },
+    {
+      "type": "abstraction",
+      "name": "Bitcoin network core",
+      "protocol": "/system/bitcoin-network-core/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "Bitcoin network customisation",
+      "protocol": "/system/bitcoin-network-customisation/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "Bitcoin network peer metrics",
+      "protocol": "/data/bitcoin-network-peer-metrics/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "tx event transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "tx event epoch",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "tx event(transaction, epoch)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "double SHA256",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "token in",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "callback (token out, result code, failure reason)",
+      "protocol": "/data/procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "token out",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "result code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure reason",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

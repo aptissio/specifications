@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/bitcoin-block/target/x64",
+  "description": [
+    "The target is a 256-bit number (extremely large) that all Bitcoin clients share. The SHA-256 hash of a block's header must be lower than or equal to the current target for the block to be accepted by the network. The lower the target, the more difficult it is to generate a block.",
+    "",
+    "The target is used in mining. It is a number that a block hash must be below for the block to be added on to the blockchain.The target adjusts every 2016 blocks (roughly two weeks) to try and ensure that blocks are mined once every 10 minutes on average. It therefore creates a consistent time between blocks and a consistent issuance of new bitcoins in to the network (via the block reward).",
+    "",
+    "REF: https:learnmeabitcoin.comtechnicaltarget"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "target",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ]
+}

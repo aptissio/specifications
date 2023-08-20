@@ -1,0 +1,48 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/finite-field-point/default/x64",
+  "description": [
+    "Design the structures for a finite-field point.",
+    "Design a new finite-field point and initialise the x and y coordinates at run time."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new(order)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "field bit width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "1 to 2^23"
+    },
+    {
+      "type": "string",
+      "name": "order",
+      "length": "1048576",
+      "hint": "2^20"
+    },
+    {
+      "type": "string",
+      "name": "initial x",
+      "length": "1048576",
+      "hint": "2^20"
+    },
+    {
+      "type": "string",
+      "name": "initial y",
+      "length": "1048576",
+      "hint": "2^20"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "point",
+      "protocol": "/data/finite-field-point/default/x64"
+    }
+  ]
+}

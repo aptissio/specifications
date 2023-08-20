@@ -1,0 +1,77 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/register/agent-payment-method-payment-dispatch/default/x64",
+  "description": [
+    "Register an new agent payment method payment dispatch process for the given `method ID`. The work placed in the `start dispatch process` may use the `payment dispatch token`, `dispatch to communications peer ID` and `payment price data` to commence the payment dispatch process. If the dispatch process is asynchronous and is successfully started, then the `payment dispatch queued successfully` flag should be set during the `start dispatch process`. If the dispatch process is NOT asynchronous and is successfully started, the `payment dispatch queued successfully` flag should be set AND the `payment dispatch result code` set to a positive value (triggering the `payment dispatch callback` procedure automatically).",
+    "",
+    "Upon completion of the payment dispatch process, the `payment dispatch result code` and `callback payment reference` should be set accordingly before calling the `payment dispatch callback` procedure (referenced from an appropriate context)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "agent payment method payment dispatch",
+      "protocol": "/system/agent-payment-method-payment-dispatch/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "method id",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "integer",
+      "name": "payment reference maximum length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 - (2^63)-1"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "payment dispatch token",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "dispatch to communications peer ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payment entity",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payment price data",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payment dispatch callback",
+      "protocol": "/data/procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payment dispatch queued successfully",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payment dispatch result code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "callback payment reference",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "start dispatch process",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

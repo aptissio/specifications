@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/broadcast/bitcoin-transaction/via-agent-bitcoin-wallet/x64",
+  "description": [
+    "Broadcast a `Bitcoin transaction`using an agent Bitcoin `wallet`.",
+    "",
+    "The supplied transaction must be \"broadcast ready\"."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "broadcast",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent Bitcoin wallet",
+      "protocol": "/system/agent-bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "Bitcoin transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    }
+  ],
+  "obligations": []
+}

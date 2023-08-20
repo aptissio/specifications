@@ -1,0 +1,35 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/new/financial-conversion-manager/default/x64",
+  "description": [
+    "Designs a system to convert financial currency values.",
+    "Design a new Financial Conversion Manager that at run-time handles multiple requests for multiple asynchronous conversion services."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "concurrent conversion capacity",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "1 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "financial conversion manager",
+      "protocol": "/system/financial-conversion-manager/default/x64"
+    }
+  ]
+}

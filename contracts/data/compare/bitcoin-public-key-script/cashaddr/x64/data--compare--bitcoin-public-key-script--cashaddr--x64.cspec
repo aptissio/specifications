@@ -1,0 +1,32 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/bitcoin-public-key-script/cashaddr/x64",
+  "description": [
+    "Compare one or more Bitcoin public key scripts.",
+    "Compare a Bitcoin public key script with a Bitcoin address in cashaddr format. This comparison will match public key scripts that are of the type 'pay to public key hash' (p2pkh)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin network",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "public key script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "cashaddr address",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": []
+}

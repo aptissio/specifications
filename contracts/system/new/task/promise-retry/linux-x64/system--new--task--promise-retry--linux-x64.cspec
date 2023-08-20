@@ -1,0 +1,101 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/new/task/promise-retry/linux-x64",
+  "description": [
+    "Creates a task-manager sub-process based around a client defined asynchronous process (a.k.a a 'promise').",
+    "",
+    "Values of `retry interval` and `retry limit` must be valid within the context of the `task-manager`.",
+    "",
+    "`start promise` is executed while the `task-manager` context is valid. `task-manager` context also includes `task ID`, `retries remaining` and `result code`, though `result-code` is only valid for tasks linked from the `task exit`.",
+    "",
+    "`result code` coding:",
+    " [0, 1] -> RESULT_SUCCESS, RESULT_FAILURE",
+    "",
+    "The client must provide a sub-process triggered by the `start promise` work and should _always_ result (asynchronously) in a single call to either the `resolve` or `reject` procedure. Prior to these procedure calls, the `resolve retry task ID` _must_ be set by the client, returning the value of `task ID` which is valid during the `start promise` work."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "task manager",
+      "protocol": "/system/task-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "retry interval",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "retry limit",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "task ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "context",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "context init",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task entry",
+      "protocol": "/system/task-entry/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task exit",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "context cleanup",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "start promise",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "resolve retry task ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "resolve procedure",
+      "protocol": "/data/procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "reject procedure",
+      "protocol": "/data/procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "retries remaining",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "result code",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

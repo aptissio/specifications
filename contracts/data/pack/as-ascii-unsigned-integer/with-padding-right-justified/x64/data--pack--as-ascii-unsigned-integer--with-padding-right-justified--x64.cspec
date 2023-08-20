@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/as-ascii-unsigned-integer/with-padding-right-justified/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "unsigned-integer",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "padded length",
+      "minimum": "1",
+      "maximum": "1048576",
+      "hint": "1 to 2^20"
+    },
+    {
+      "type": "string",
+      "name": "padding characters",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": []
+}

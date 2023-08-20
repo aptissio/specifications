@@ -1,0 +1,30 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/unsigned-integer/big-endian/x64",
+  "description": [
+    "Unpack an unsigned integer from a data structure.",
+    "Unpack the big-endian, unsigned integer into /value/ if there's enough data to do so. The data to be unpacked is of a fixed /octet length/ (number of bytes). The value is provided to the client and is valid only upon successful unpacking.The client may freely manipulate the value while it remains valid (though this does not affect the actual packed data)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "value = unpack(minimum, maximum)",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "octet length",
+      "minimum": "1",
+      "maximum": "1048576",
+      "hint": "1 to 2^20"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ]
+}

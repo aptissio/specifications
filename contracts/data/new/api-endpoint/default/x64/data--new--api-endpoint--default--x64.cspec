@@ -1,0 +1,44 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/api-endpoint/default/x64",
+  "description": [
+    "Create a new API endpoint data set.",
+    "Create a new API endpoint dataset for use with connect\\/disconnect agents."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "address",
+      "protocol": "/data/network-address/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "URL root",
+      "length": "2083",
+      "hint": "2083"
+    },
+    {
+      "type": "abstraction",
+      "name": "username",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "password",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "endpoint",
+      "protocol": "/data/api-endpoint/default/x64"
+    }
+  ]
+}

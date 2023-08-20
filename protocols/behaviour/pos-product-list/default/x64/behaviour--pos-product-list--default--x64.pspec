@@ -1,0 +1,106 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/pos-product-list/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "integer",
+        "name": "maximum product count",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (63^2)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "list initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product list",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product attributes",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/pos-product-list/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, max_prod_count, list_init, prod_count,  prod_list, prod_attrs, chain_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, max_prod_count, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, list_init, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, prod_count, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, prod_list, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, prod_attrs, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/pos-product-list/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "maximum product count",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (63^2)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "list initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product list",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product attributes",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, list_inout, max_prod_count, list_init, prod_count, prod_list, prod_attrs, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, list_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, max_prod_count, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, list_init, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, prod_count, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, prod_list, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, prod_attrs, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{"name": "/system/peer-communications-anc/default/x64",
+"type": "protocol",
+"policy":"0",
+"description":[""],
+"host": {
+"requirements": [
+{"name":  "public anp address",
+"type": "abstraction",
+"protocol": "/data/anp-address/default/x64"},
+{"name":  "fetch anp address",
+"type": "abstraction",
+"protocol": "/data/anp-address/default/x64"},
+{"name":  "fetch callback procedure",
+"type": "abstraction",
+"protocol": "/data/procedure/default/x64"},
+{"name":  "fetch procedure",
+"type": "abstraction",
+"protocol": "/data/procedure/default/x64"},
+{"name":  "fetched peer ID",
+"type": "abstraction",
+"protocol": "/data/integer/default/x64"}
+],
+"obligations": [
+{"name": "<self>",
+"type": "abstraction",
+"protocol": "/system/peer-communications-anc/default/x64"}
+], 
+"macro":  ["def (acs, public_anp_address, fetch_anp_address, fetch_callback_procedure, fetch_procedure, fetched_peer_ID, self, trigger, debug_msg) :",
+"sub /behaviour/add/collaboration-endpoint/host/x64@codevalley(acs, self, trigger, debug_msg) -> {",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, public_anp_address, trigger, debug_msg)",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, fetch_anp_address, trigger, debug_msg)",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, fetch_callback_procedure, trigger, debug_msg)",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, fetch_procedure, trigger, debug_msg)",
+"sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley(acs, $, fetched_peer_ID, trigger, debug_msg)",
+"}",
+"end"]
+},
+"join": {
+"requirements": [
+{"name": "<self>",
+"type": "abstraction",
+"protocol": "/system/peer-communications-anc/default/x64"}
+],
+"obligations": [
+{"name":  "public anp address",
+"type": "abstraction",
+"protocol": "/data/anp-address/default/x64"},
+{"name":  "fetch anp address",
+"type": "abstraction",
+"protocol": "/data/anp-address/default/x64"},
+{"name":  "fetch callback procedure",
+"type": "abstraction",
+"protocol": "/data/procedure/default/x64"},
+{"name":  "fetch procedure",
+"type": "abstraction",
+"protocol": "/data/procedure/default/x64"},
+{"name":  "fetched peer ID",
+"type": "abstraction",
+"protocol": "/data/integer/default/x64"}
+],
+"macro":  ["def (acs, self, public_anp_address, fetch_anp_address, fetch_callback_procedure, fetch_procedure, fetched_peer_ID,  trigger, debug_msg) :",
+"sub /behaviour/add/collaboration-endpoint/join/x64@codevalley(acs, self, trigger, debug_msg) -> {",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, public_anp_address, trigger, debug_msg)",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, fetch_anp_address, trigger, debug_msg)",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, fetch_callback_procedure, trigger, debug_msg)",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, fetch_procedure, trigger, debug_msg)",
+"sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley(acs, $, fetched_peer_ID, trigger, debug_msg)",
+"}",
+"end"]
+}
+}

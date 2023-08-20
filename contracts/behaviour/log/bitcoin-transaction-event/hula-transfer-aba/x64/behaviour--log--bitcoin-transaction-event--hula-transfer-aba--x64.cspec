@@ -1,0 +1,75 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/log/bitcoin-transaction-event/hula-transfer-aba/x64",
+  "description": [
+    "Add an application feature to log Bitcoin transaction events that are HULA merchant transactions underwritten by HULA underwriters.",
+    "",
+    "`HULA` is an acronym for `Hocking Underwriting Logging Application`.<br>",
+    "`ABA` is an acronym for `Australian Banking Association`",
+    "",
+    "The `merchant transaction buffer capacity` represents the number of transactions that can be buffered between `flush log buffer` events."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "core",
+      "protocol": "/system/execution-bundle/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "application instance id",
+      "protocol": "/data/application-instance-id/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction event",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction epoch",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "currency value",
+      "protocol": "/data/currency-value/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "merchant cash address",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "merchant transaction buffer capacity",
+      "minimum": "1",
+      "maximum": "1099511627776",
+      "hint": "1 to (2^40)"
+    },
+    {
+      "type": "integer",
+      "name": "log timezone offset",
+      "minimum": "-1440",
+      "maximum": "1440",
+      "hint": "-1440, 1440"
+    },
+    {
+      "type": "abstraction",
+      "name": "hula merchants",
+      "protocol": "/behaviour/hula-merchants/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hula underwriter",
+      "protocol": "/behaviour/hula-underwriter/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "flush log buffer",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": []
+}

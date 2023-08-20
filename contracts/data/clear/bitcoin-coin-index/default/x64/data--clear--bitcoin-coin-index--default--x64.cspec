@@ -1,0 +1,21 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/clear/bitcoin-coin-index/default/x64",
+  "description": [
+    "Remove all records from the given `coin index`."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "clear",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "coin index",
+      "protocol": "/data/bitcoin-coin-index/default/x64"
+    }
+  ],
+  "obligations": []
+}

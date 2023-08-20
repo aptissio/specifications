@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/flag/bookended-inline/linux-x64",
+  "description": [
+    "Writes a flag value as \"SET  \" or \"CLEAR\" (5 char fixed width format) without a trailing carriage return or line feed character to permit multiple flag values to be written on a single line and in a 'block' format if multiple lines are required."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write(flag)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "1048576",
+      "hint": "2^20"
+    },
+    {
+      "type": "abstraction",
+      "name": "flag",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "suffix",
+      "length": "1048576",
+      "hint": "2^20"
+    }
+  ],
+  "obligations": []
+}

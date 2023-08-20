@@ -1,0 +1,80 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/finite-field-integer/default/x64",
+  "description": [
+    "A finite-field integer is an integer belonging to a finite set {0, ..., n-1} where n is the /order/ of that set.",
+    "Finite-field arithmetic is defined such that the result is always contained within the same finite set.",
+    "The host must provide a procedure to perform a modulus operation of the /integer/ to the /finite field order/."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "integer",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "finite field order",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "integer modulus",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/finite-field-integer/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, integer, finite_field_order, integer_modulus, finite_field_integer_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, finite_field_integer_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, integer, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, finite_field_order, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, integer_modulus, trigger, debug_msg)",
+      "}",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/finite-field-integer/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "integer",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "finite field order",
+        "protocol": "/data/unsigned-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "integer modulus",
+        "protocol": "/data/procedure/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, finite_field_integer_inout, integer, finite_field_order, integer_modulus, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, finite_field_integer_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, integer, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, finite_field_order, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, integer_modulus, trigger, debug_msg)",
+      "}",
+      "end "
+    ]
+  }
+}

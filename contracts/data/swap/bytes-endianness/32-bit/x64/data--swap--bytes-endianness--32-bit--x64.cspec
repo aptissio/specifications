@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/swap/bytes-endianness/32-bit/x64",
+  "description": [
+    "Change the order of bytes.",
+    "Convert the endianness of 32 bits. The 4 bytes provided.",
+    "Convert the endianness of 32 bits, bytes in and provide the result as bytes out. Contribution built for the x64 architecture."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "out = swap(in)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "in",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "out",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ]
+}

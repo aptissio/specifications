@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-wallet-utxo-set/default/linux-x64",
+  "description": [
+    "Send a Bitcoin wallet UTXO set to an output device.",
+    "Writes out a list of wallet UTXOs to stdout, ordered by UTXO transaction ID and index."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "utxo prefix",
+      "length": "9994",
+      "hint": "9994"
+    },
+    {
+      "type": "abstraction",
+      "name": "wallet utxo set",
+      "protocol": "/data/bitcoin-wallet-utxo-set/default/x64"
+    }
+  ],
+  "obligations": []
+}

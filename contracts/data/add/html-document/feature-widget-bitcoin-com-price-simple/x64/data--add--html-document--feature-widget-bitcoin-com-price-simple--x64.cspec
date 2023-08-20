@@ -1,0 +1,66 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/feature-widget-bitcoin-com-price-simple/x64",
+  "description": [
+    "Add a Simple Bitcoin.com Price Widget to a Web Document.",
+    "",
+    "Example:",
+    "",
+    " <video width=\"100%\" height=\"100%\" controls>",
+    "  <source src=\"https://aptissio.ddns.net:8443/images/bitcoin_com_price_widget.mp4\"\" type=\"video/mp4\">",
+    "</video>",
+    "",
+    "Enable Bitcoin Cash(BCH) Price, otherwise this design will display Bitcoin (BTC) Price.",
+    "",
+    "Choose between Light or Dark Theme.",
+    "",
+    "Specify a Currency (Ticker) reference from the options below. If no Currency is speified, this design assumes AUD currency.",
+    "",
+    "           ",
+    "    btc,usd,eur,gbp,jpy,cad,aud,cny,chf,sek,nzd,krw,",
+    "    aed,afn,all,amd,ang,aoa,ars,awg,azn,bam,bbd,bdt,",
+    "    bgn,bhd,bif,bmd,bnd,bob,brl,bsd,btn,bwp,byr,bzd,",
+    "    cdf,clf,clp,cop,crc,cup,cve,czk,djf,dkk,dop,dzd,",
+    "    eek,egp,etb,fjd,fkp,gel,ghs,gip,gmd,gnf,gtq,gyd,",
+    "    hkd,hnl,hrk,htg,huf,idr,ils,inr,iqd,irr,isk,jep,",
+    "    jmd,jod,kes,kgs,khr,kmf,kpw,kwd,kyd,kzt,lak,lbp,",
+    "    lkr,lrd,lsl,ltl,lvl,lyd,mad,mdl,mga,mkd,mmk,mnt,",
+    "    mop,mro,mur,mvr,mwk,mxn,myr,mzn,nad,ngn,nio,nok,",
+    "    npr,omr,pab,pen,pgk,php,pkr,pln,pyg,qar,ron,rsd,",
+    "    rub,rwf,sar,sbd,scr,sdg,sgd,shp,sll,sos,srd,std,",
+    "    svc,syp,szl,thb,tjs,tmt,tnd,top,try,ttd,twd,tzs,",
+    "    uah,ugx,uyu,uzs,vef,vnd,vuv,wst,xaf,xag,xau,xcd,",
+    "    xof,xpf,yer,zar,zmw,zwl",
+    "    ",
+    "Learn more: https://tools.bitcoin.com/widgets/"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "web document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable bch price (alternative: btc)"
+    },
+    {
+      "type": "boolean",
+      "name": "enable light theme (alternative: dark)"
+    },
+    {
+      "type": "string",
+      "name": "currency reference",
+      "length": "3",
+      "hint": "0 to 3"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "ID style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

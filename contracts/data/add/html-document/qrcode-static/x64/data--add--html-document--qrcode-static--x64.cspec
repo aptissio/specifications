@@ -1,0 +1,76 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/qrcode-static/x64",
+  "description": [
+    "QR Code generator with a div of a HTML Document.",
+    "",
+    "Choose to enable a box shadow &/or rounded edges into CSS styling.",
+    "",
+    "Add the value to encode",
+    "",
+    "Choose the size (px)",
+    "",
+    "Select background & foreground colors & Apply styling via Class or optional ID Selector",
+    "",
+    "Ensure to enable <i>js feature function</i> to add the required function.",
+    "",
+    "This design assumes Error Correction Level Medium -15% damage with no padding.",
+    "",
+    "<img height='100' src=https://miro.medium.com/max/1400/1*sHmqYIYMV_C3TUhucHrT4w.png>"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "feature js function",
+      "protocol": "/data/html-document-feature-js-function/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable box shadow"
+    },
+    {
+      "type": "boolean",
+      "name": "enable rounded edges"
+    },
+    {
+      "type": "abstraction",
+      "name": "value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "size (px)",
+      "minimum": "0",
+      "maximum": "2000",
+      "hint": "0, 2000"
+    },
+    {
+      "type": "abstraction",
+      "name": "background color",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "foreground color",
+      "protocol": "/data/colour/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

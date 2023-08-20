@@ -1,0 +1,169 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/syscall/open/dynamic/linux-x64",
+  "description": [
+    "See [`man 2 open`](https://man7.org/linux/man-pages/man2/openat.2.html) for detail.",
+    "",
+    "",
+    "Mode:",
+    "0 -> read",
+    "1 -> write",
+    "2 -> read & write",
+    " ",
+    " Permissions:",
+    " 0:- 1:x 2:w 3:wx 4:r 5:rx 6:rw 7:rwx",
+    " <br><u>NOTE:</u> Linux umask settings effect the permissions set upon file creation (if O_CREATE is set).",
+    " ",
+    "  Error Numbers:",
+    "  -1   ->  EPERM",
+    "  -2   ->  ENOENT",
+    "  -4   ->  EINTR",
+    "  -6   ->  ENXIO",
+    "  -9   ->  EBADF",
+    "  -11  ->  EWOULDBLOCK",
+    "  -12  ->  ENOMEM",
+    "  -13  ->  EACCES",
+    "  -14  ->  EFAULT",
+    "  -17  ->  EEXIST",
+    "  -19  ->  ENODEV",
+    "  -20  ->  ENOTDIR",
+    "  -21  ->  EISDIR",
+    "  -22  ->  EINVAL",
+    "  -23  ->  ENFILE",
+    "  -24  ->  EMFILE",
+    "  -26  ->  ETXTBSY",
+    "  -27  ->  EFBIG",
+    "  -28  ->  ENOSPC",
+    "  -30  ->  EROFS",
+    "  -36  ->  ENAMETOOLONG",
+    "  -40  ->  ELOOP",
+    "  -75  ->  EOVERFLOW",
+    "  -77  ->  EBADFD",
+    "  -122 ->  EDQUOT"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "result = open()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file path",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "access mode",
+      "protocol": "/data/file-mode/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_CREATE",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_EXCL",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_NOCTTY",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_TRUNC",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_APPEND",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_NONBLOCK",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_DSYNC",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_ASYNC",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_DIRECT",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_LARGEFILE",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_DIRECTORY",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_NOFOLLOW",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_NOATIME",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_SYNC",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_CLOEXEC",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_PATH",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "O_TMPFILE",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file permissions",
+      "protocol": "/data/file-permissions/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "error",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

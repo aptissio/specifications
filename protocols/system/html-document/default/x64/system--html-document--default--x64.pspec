@@ -1,0 +1,90 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/system/html-document/default/x64",
+  "description": [
+    ""
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "style sheet",
+        "protocol": "/data/html-style-sheet/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "meta data",
+        "protocol": "/data/pack/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "document body",
+        "protocol": "/data/pack/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "javascript",
+        "protocol": "/data/pack/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/system/html-document/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, style_sheet, meta_data, document_body, javascript, html_document_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, html_document_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, style_sheet, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, meta_data, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, document_body, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, javascript, trigger, debug_msg)",
+      "}",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/system/html-document/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "style sheet",
+        "protocol": "/data/html-style-sheet/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "meta data",
+        "protocol": "/data/pack/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "document body",
+        "protocol": "/data/pack/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "javascript",
+        "protocol": "/data/pack/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, html_document_inout, style_sheet, meta_data, document_body, javascript, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, html_document_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, style_sheet, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, meta_data, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, document_body, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, javascript, trigger, debug_msg)",
+      "}",
+      "end "
+    ]
+  }
+}

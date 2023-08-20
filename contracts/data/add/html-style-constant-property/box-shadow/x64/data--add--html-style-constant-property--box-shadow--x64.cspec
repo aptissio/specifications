@@ -1,0 +1,93 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant-property/box-shadow/x64",
+  "description": [
+    "Add the box-shadow property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The box-shadow property attaches one or more shadows to an element.",
+    "",
+    "Example:",
+    "",
+    "<img src=\"https://aptissio.ddns.net:8443/images/ec_image.png\" width=\"300px\" height=\"400\"> ",
+    "",
+    "Provide the following requirements as below:",
+    "",
+    "",
+    "        H-offset: Required. The horizontal offset of the shadow. A positive value puts ",
+    "                 the shadow on the right side of the box, a negative value puts the ",
+    "                 shadow on the left side of the box",
+    "",
+    "",
+    "        V-offset: Required. The vertical offset of the shadow. A positive value puts ",
+    "                 the shadow below the box, a negative value puts the shadow above ",
+    "                 the box",
+    "        ",
+    "        ",
+    "        Blur: \tThe blur radius. The higher the number, the more blurred ",
+    "                the shadow will be spread Optional. The spread radius. A positive ",
+    "                value increases the size of the shadow, a negative value decreases",
+    "                the size of the shadow",
+    "                ",
+    "        Spread: The spread radius. A positive value increases the size of the shadow,",
+    "                a negative value decreases the size of the shadow       ",
+    "        ",
+    "        Specify a box-shadow colour. ",
+    "        ",
+    "        Enable Inset: inset Changes the shadow from an outer shadow (outset) to ",
+    "               an inner shadow",
+    "       ",
+    "       ",
+    "Learn more: https://www.w3schools.com/cssref/css3_pr_box-shadow.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "horizontal offset",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "-2^{63} to 2^{63}-1"
+    },
+    {
+      "type": "integer",
+      "name": "vertical offset",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "-2^{63} to 2^{63}-1"
+    },
+    {
+      "type": "integer",
+      "name": "blur radius",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "-2^{63} to 2^{63}-1"
+    },
+    {
+      "type": "integer",
+      "name": "spread radius",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "-2^{63} to 2^{63}-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "box-shadow colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "enable inset"
+    }
+  ],
+  "obligations": []
+}

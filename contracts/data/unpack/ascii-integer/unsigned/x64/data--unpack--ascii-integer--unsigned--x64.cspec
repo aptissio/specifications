@@ -1,0 +1,48 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/ascii-integer/unsigned/x64",
+  "description": [
+    "An `ASCII` representation (generally considered \"human-readable\") of an integer value.",
+    "",
+    "Unpack as much as `maximum number of digits` to obtain an unsigned integer value.",
+    "",
+    "The `unpack` is only successful if the represented value is within the specified range. The `value` is provided to the client and is valid only upon successful unpacking.",
+    "",
+    "Unpacking will not stop merely because the `maximum number of digits` has been reached; unpacking will consider the entire run of valid digits as part of the `value` .",
+    "",
+    "The list of valid digits depends upon the chosen `base` . A base of `2` has a valid list of just the ASCII characters `'0'` and `'1'` . A base of `16` has the valid list of ASCII `'0'` to `'9'` , `'a'` to `'f'` , and `'A'` to `'F'` , where `'A'` is equivalent to `'a'` , etc. A base of `36` has a valid list of `'0'` to `'9'` , `'a'` to `'z'` , and `'A'` to `'Z'` , where `'A'` is again equivalent to `'a'` , etc.",
+    "",
+    "Signedness is not catered for, meaning that a leading `'+'` or `'-'` is treated as invalid formatting. Further, if no characters can be interpreted (due to an empty string, or an invalid leading character), this is treated as a failed `unpack` ; it is `not` treated as a \"zero\" value, or the like.",
+    "",
+    "The client may freely manipulate the `value` while it remains valid (though this does not affect the actual packed data)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "value = unpack(maximum number of digits, base)",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum number of digits",
+      "minimum": "1",
+      "maximum": "1048576",
+      "hint": "1MB"
+    },
+    {
+      "type": "integer",
+      "name": "base",
+      "minimum": "2",
+      "maximum": "36",
+      "hint": "2, 36"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    }
+  ]
+}

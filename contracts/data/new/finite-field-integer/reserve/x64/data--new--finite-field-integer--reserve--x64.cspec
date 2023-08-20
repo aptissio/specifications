@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/finite-field-integer/reserve/x64",
+  "description": [
+    "Create the structures for a finite-field integer.",
+    "Create a structure for a new finite-field /integer/.",
+    "",
+    "The /finite field order/ value needs to be in the big-endian, ASCII-hex format of \"E9873D79C6D87DC0FB6A5778633389F4453213303DA61F20BD67FC233AA33262\"",
+    "",
+    "The provided /bit width/ must be greater than log2(finite field order).",
+    "",
+    "Supplying a /finite field order/ with an empty string or zero value will produce undefined results."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "reserve()",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "finite field integer bit width",
+      "minimum": "1",
+      "maximum": "8388608",
+      "hint": "1 to 2^23"
+    },
+    {
+      "type": "string",
+      "name": "finite field order",
+      "length": "1048576",
+      "hint": "2^20"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "integer",
+      "protocol": "/data/finite-field-integer/default/x64"
+    }
+  ]
+}

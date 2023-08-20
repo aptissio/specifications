@@ -1,0 +1,25 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/bitcoin-public-key-script/p2pkh-p2sh/x64",
+  "description": [
+    "Pack a Bitcoin public key script.",
+    "Pack a standard Bitcoin public key script that contains the given /Bitcoin address/.",
+    "The type of script chosen, pay to public key hash (p2pkh) or pay to script hash (p2sh) is based upon the type of Bitcoin address supplied.",
+    "",
+    "If the supplied address has a hash length other than 20 then the /pack/ will fail because it would result in an invalid script."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "bitcoin address",
+      "protocol": "/data/bitcoin-address/default/x64"
+    }
+  ],
+  "obligations": []
+}

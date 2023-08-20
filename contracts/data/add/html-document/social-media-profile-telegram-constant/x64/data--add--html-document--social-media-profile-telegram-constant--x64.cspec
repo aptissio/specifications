@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/social-media-profile-telegram-constant/x64",
+  "description": [
+    "Create a new Telegram social media profile."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "profile id",
+      "length": "10000",
+      "hint": "0 to 10000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "social media profile",
+      "protocol": "/data/social-media-profile/default/x64"
+    }
+  ]
+}

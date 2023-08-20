@@ -1,0 +1,21 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/validate/aba-payment/apca-number/x64",
+  "description": [
+    "Direct entry payments include a unique six-digit number which identifies individuals and companies approved by financial institutions to use the system. This number is commonly referred to as an 'APCA Number' and is issued by financial institutions."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "validate",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "acpa number",
+      "protocol": "/data/integer/default/x64"
+    }
+  ],
+  "obligations": []
+}

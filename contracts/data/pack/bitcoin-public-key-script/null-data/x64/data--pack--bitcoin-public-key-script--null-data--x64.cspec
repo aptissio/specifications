@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/pack/bitcoin-public-key-script/null-data/x64",
+  "description": [
+    "Pack a Bitcoin public key script.",
+    "Pack a standard Bitcoin public key script that contains the given /data/.",
+    "This type of script is also known as an OP\\_RETURN script and should only contain \"push data\" operations.",
+    "",
+    "CAUTION: This type of script will make an output provably unspendable!",
+    "",
+    "If the length of the data supplied is greater than 220 bytes, the pack will fail as this type of public key script would produce a \"non-standard\" transaction."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "pack",
+      "protocol": "/data/pack/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "data",
+      "protocol": "/data/pack/default/x64"
+    }
+  ]
+}

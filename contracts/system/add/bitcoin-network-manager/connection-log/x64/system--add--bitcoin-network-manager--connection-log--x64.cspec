@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/add/bitcoin-network-manager/connection-log/x64",
+  "description": [
+    "Add to a Bitcoin connection manager.",
+    "Add a connection logging function to the Bitcoin network manager."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "bitcoin network manager",
+      "protocol": "/system/bitcoin-network-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "log prefix",
+      "length": "250",
+      "hint": "250"
+    }
+  ],
+  "obligations": []
+}

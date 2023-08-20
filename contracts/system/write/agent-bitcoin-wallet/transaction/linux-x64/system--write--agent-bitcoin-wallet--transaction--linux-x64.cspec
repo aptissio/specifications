@@ -1,0 +1,52 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/write/agent-bitcoin-wallet/transaction/linux-x64",
+  "description": [
+    "Write agent bitcoin wallet transaction in a raw format when `print raw format` is TRUE otherwise print it human readable.",
+    "",
+    "Human readable example:",
+    "",
+    "Tx ID: 1DC15A2239925437947F744874FFBAA9CCE153735AA91AE733DD1B149D548CD3",
+    "",
+    "Version: 00000000, Inputs: 1, Outputs: 1, Locktime: 00000000",
+    "",
+    "Inputs:",
+    "",
+    " [0] 121B1DA5BA602D71A158C266C312CC67C8A216B42188CCDD17BF7AD0BC60E37C : 1",
+    "",
+    "     sigScr: OP_DATA_71[30440220197DF093C1E701FA4B4F4F76756722DCAABC49031CC7B9EAC2834F02FDE8F43702204CDCA24055451F77D15F12CE28540BE4CD5D6600212A9398E74B571FB3B3CC8641],OP_DATA_33[02382F2D893F4174B3D98DF1C3C62D51F5754E094097FB6D8B27C4F3878D88B499]",
+    "",
+    "Outputs:",
+    "",
+    " [0] Sats: 999800",
+    "",
+    "      pkScr: OP_HASH160,OP_DATA_20[828330D5B640F71A403AA89149E41E579B095867],OP_EQUAL",
+    "",
+    "Example of the raw data:",
+    "",
+    "00000000017CE360BCD07ABF17DDCC8821B416A2C867CC12C366C258A1712D60BAA51D1B12010000006A4730440220197DF093C1E701FA4B4F4F76756722DCAABC49031CC7B9EAC2834F02FDE8F43702204CDCA24055451F77D15F12CE28540BE4CD5D6600212A9398E74B571FB3B3CC86412102382F2D893F4174B3D98DF1C3C62D51F5754E094097FB6D8B27C4F3878D88B499FFFFFFFF0178410F000000000017A914828330D5B640F71A403AA89149E41E579B0958678700000000"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent bitcoin wallet",
+      "protocol": "/system/agent-bitcoin-wallet/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "print raw format"
+    }
+  ],
+  "obligations": []
+}

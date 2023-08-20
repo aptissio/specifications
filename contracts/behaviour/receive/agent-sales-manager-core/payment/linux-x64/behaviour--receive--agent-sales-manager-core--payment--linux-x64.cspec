@@ -1,0 +1,42 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/receive/agent-sales-manager-core/payment/linux-x64",
+  "description": [
+    "Design a feature to receive an agent sales manager payment."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "agent sales manager core",
+      "protocol": "/behaviour/agent-sales-manager-core/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "remote sales peer ID",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "remote payment entity",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent price tag",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "payment reference",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "send",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ]
+}

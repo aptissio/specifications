@@ -1,0 +1,158 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/pos-order-list/default/x64",
+  "description": [
+    "A POS order list is a set of 'orders' which contain a number of order items. Each order item has a /product ID/ and a /product quantity/ which should relate to a *pos-product-list*. An order has one or more associated attributes. For example, a client can add an order attribute of 'order name', 'order time' or 'order status'. Each attribute has an associated human readable 'name' and 'units' which are available at run-time for displaying along with the attribute values.",
+    "Hosts of this protocol are required to provide the list structures, initialise 'count' values and set the attribute names and units.",
+    "Peers of this protocol may add attributes at build-time, modify the list contents or read the list contents at run time."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "order list initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "integer",
+        "name": "maximum number of orders",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "order count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "order list",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "order attributes",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "item count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "item list",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product quantity",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/pos-order-list/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, list_init, max_order_count, o_count, o_list, o_attr_list, i_count, i_list, prod_id, prod_qty, chain_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, list_init, trigger, debug_msg)",
+      " sub /behaviour/dictate/agent-integer/default/x64@codevalley( acs, $, max_order_count, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, o_count, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, o_list, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, o_attr_list, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, i_count, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, i_list, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, prod_id, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, prod_qty, trigger, debug_msg)",
+      "  }",
+      "end",
+      ""
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/behaviour/pos-order-list/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "order list initialisation",
+        "protocol": "/data/flow/default/x64"
+      },
+      {
+        "type": "integer",
+        "name": "maximum number of orders",
+        "minimum": "1",
+        "maximum": "9223372036854775807",
+        "hint": "1 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "order count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "order list",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "order attributes",
+        "protocol": "/behaviour/pos-list-attributes/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "item count",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "item list",
+        "protocol": "/data/array/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product ID",
+        "protocol": "/data/integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "product quantity",
+        "protocol": "/data/integer/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, chain_inout, list_init, max_order_count, o_count, o_list, o_attr_list, i_count, i_list, prod_id, prod_qty, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, list_init, trigger, debug_msg)",
+      " sub /behaviour/accept/agent-integer/default/x64@codevalley( acs, $, max_order_count, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, o_count, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, o_list, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, o_attr_list, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, i_count, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, i_list, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, prod_id, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, prod_qty, trigger, debug_msg)",
+      "  }",
+      "end",
+      ""
+    ]
+  }
+}

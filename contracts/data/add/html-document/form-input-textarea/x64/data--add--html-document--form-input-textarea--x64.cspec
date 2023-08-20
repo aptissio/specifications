@@ -1,0 +1,177 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form-input-textarea/x64",
+  "description": [
+    "The \\<textarea> tag defines a multi-line text input control. It is often used in a form, to collect user inputs like comments or reviews.",
+    "",
+    "The form id style specifies which form the text area belongs to.",
+    "",
+    "Add label content and choose to display label position options relative to Child Element:",
+    "",
+    "    1. Above",
+    "    2. Left",
+    "    3. Right",
+    "    4. Below",
+    "    ",
+    "    [1, 2, 3, 4] -> LABELPOSITION_1ABOVE, LABELPOSITION_2LEFT, LABELPOSITION_3RIGHT, LABELPOSITION_4BELOW",
+    "    ",
+    "Specify an initial value for textarea.    ",
+    "",
+    "Specify a number of Rows & Columns desired for the textarea input.",
+    "",
+    "Dirname specifies that the text direction of the textarea will be.",
+    "",
+    "The read only attribute specifies that an input field is read-only.",
+    "",
+    "A disabled input field is unusable and un-clickable.",
+    "",
+    "The required attribute specifies that the element must be filled out before submitting the form.",
+    "",
+    "The autofocus attribute specifies that the element should automatically get focus when the page loads.",
+    "",
+    "Enable hard wrap to ensure the text in a text area is to be wrapped when submitted in a form.",
+    "",
+    "The title attribute specifies extra information about an element.",
+    "",
+    "The placeholder is a short hint is displayed in the input field before the user enters a value.",
+    "",
+    "The maxlength attribute specifies the maximum number of characters allowed in an input field.",
+    "",
+    "Specify the color of the cursor.",
+    "",
+    "Example:",
+    "<textarea name=\"comment\" form=\"usrform\">Enter text here...</textarea>",
+    "",
+    "",
+    "Read more:",
+    "",
+    "https://www.w3schools.com/tags/att_textarea_form.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "label content",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "integer",
+      "name": "label position",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    },
+    {
+      "type": "abstraction",
+      "name": "initial value",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "columns",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "integer",
+      "name": "rows",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "string",
+      "name": "dirname",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "boolean",
+      "name": "read only"
+    },
+    {
+      "type": "boolean",
+      "name": "disabled"
+    },
+    {
+      "type": "boolean",
+      "name": "required"
+    },
+    {
+      "type": "boolean",
+      "name": "autofocus"
+    },
+    {
+      "type": "boolean",
+      "name": "enable hard wrap"
+    },
+    {
+      "type": "string",
+      "name": "title",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "string",
+      "name": "placeholder",
+      "length": "9980",
+      "hint": "9980"
+    },
+    {
+      "type": "integer",
+      "name": "input maximum length",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "cursor colour",
+      "protocol": "/data/colour/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form parameter decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "input ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

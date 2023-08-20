@@ -1,0 +1,32 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/finite-field-elliptic-curve-point/default/x64",
+  "description": [
+    "Finite-field elliptic-curve arithmetic point addition.",
+    "Designs a contribution that performs the run-time addition of two points within a finite-field using finite-field arithmetic."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "add(point 1, point 2)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "point 1",
+      "protocol": "/data/finite-field-elliptic-curve-point/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "point 2",
+      "protocol": "/data/finite-field-elliptic-curve-point/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/finite-field-elliptic-curve-point/default/x64"
+    }
+  ],
+  "obligations": []
+}

@@ -1,0 +1,201 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/byte/construction-site/default/x64",
+  "description": [
+    "****level 0 protocol****",
+    "",
+    "",
+    "",
+    "[/byte/construction-site/default/x64](/valley/view/byte/construction-site/default/x64) is one of only three level 0 protocols that terminate the recursion of all protocols in Emergent Coding. ",
+    "",
+    "Designing executable programs using [/byte/construction-site/default/x64](/valley/view/byte/construction-site/default/x64) and [/byte/transport/default/x64](/valley/view/byte/transport/default/x64) protocols is like designing a program at a level slightly higher than assembly (but lower than C!). In Emergent Coding, you will never need to design an actual application at this level. The only time you will need to build programs at this level is if you are prototyping a design for an agent whose own suppliers deal with the [/byte/construction-site/default/x64](/valley/view/byte/construction-site/default/x64) protocol.",
+    "",
+    "The [/byte/construction-site/default/x64](/valley/view/byte/construction-site/default/x64) protocol in particular designs a common imperative programming construct for dictating the order in which statements are executed. (In fact, executable instructions are literally written inside the [/byte/construction-site/default/x64](/valley/view/byte/construction-site/default/x64) by agents that use this protocol.)",
+    "",
+    "The source of the [/byte/construction-site/default/x64](/valley/view/byte/construction-site/default/x64) is designed by [/byte/new/program/default/x64](/valley/view/byte/new/program/default/x64) . The basics of control-flow can then be designed using `/byte/loop/*/default/x64` and `/byte/compare/*/default/x64` agents, who both request and provide branched [/byte/construction-site/default/x64](/valley/view/byte/construction-site/default/x64) protocols for particular cases. ([/byte/byte/loop/default/x64](/valley/view/byte/byte/loop/default/x64) agents are roughly equivalent to &#x201C;**for/while**&#x201D; statements, and `/byte/compare/*/default/x64` agents are roughly equivalent to &#x201C;**if**&#x201D; statements.)",
+    "",
+    "",
+    "",
+    "The example below illustrates how a program that iterates 10 times can be designed using the above agents. (*Note: If you haven&#x2019;t had to deal with dereferencing pointers in your time as a developer, you might want to skip straight to the higher level [/data/flow/default/x64](/valley/view/data/flow/default/x64) protocol.*)",
+    "",
+    "Doesn't function differently to variation level."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "site",
+        "name": "executable"
+      },
+      {
+        "type": "site",
+        "name": "initialised"
+      },
+      {
+        "type": "integer",
+        "name": "base executable offset",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "base initialised offset",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "base uninitialised offset",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "following executable offset",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "following initialised offset",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "following uninitialised offset",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "total executable size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "total initialised size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "total uninitialised size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/byte/construction-site/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, ",
+      "        codeSite, dataSite,",
+      "        codeBase, dataBase, varsBase,",
+      "        codeEnd, dataEnd, varsEnd,",
+      "        codeSize, dataSize, varsSize,",
+      "        cs, trigger, debug_msg) :",
+      "  sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, cs, trigger, debug_msg) -> {",
+      "    sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, codeSite, trigger, debug_msg)",
+      "    sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, dataSite, trigger, debug_msg)",
+      "    sub /behaviour/collect-and-distribute/agent-integer/default/x64@codevalley( core, $, codeBase, codeSize, trigger, debug_msg)",
+      "    sub /behaviour/collect-and-distribute/agent-integer/default/x64@codevalley( core, $, dataBase, dataSize, trigger, debug_msg)",
+      "    sub /behaviour/collect-and-distribute/agent-integer/default/x64@codevalley( core, $, varsBase, varsSize, trigger, debug_msg)",
+      "  }",
+      "  sub /behaviour/add/agent-integer/default/x64@codevalley( core, codeBase, codeSize, codeEnd, trigger, debug_msg)",
+      "  sub /behaviour/add/agent-integer/default/x64@codevalley( core, dataBase, dataSize, dataEnd, trigger, debug_msg)",
+      "  sub /behaviour/add/agent-integer/default/x64@codevalley( core, varsBase, varsSize, varsEnd, trigger, debug_msg)",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/byte/construction-site/default/x64"
+      },
+      {
+        "type": "integer",
+        "name": "requested executable size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "requested initialised size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "requested uninitialised size",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "integer",
+        "name": "issued executable offset",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "issued initialised offset",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "integer",
+        "name": "issued uninitialised offset",
+        "minimum": "0",
+        "maximum": "9223372036854775807",
+        "hint": "0 to (2^63)-1"
+      },
+      {
+        "type": "site",
+        "name": "executable"
+      },
+      {
+        "type": "site",
+        "name": "initialised"
+      }
+    ],
+    "macro": [
+      "def (core, cs,",
+      "        codeSize, dataSize, varsSize,",
+      "        codeOffset, dataOffset, varsOffset,",
+      "        codeSite, dataSite,",
+      "        trigger, debug_msg) :",
+      "  sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, cs, trigger, debug_msg) -> {",
+      "    sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, codeSite, trigger, debug_msg)",
+      "    sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, dataSite, trigger, debug_msg)",
+      "    sub /behaviour/fold-and-allocate/agent-integer/default/x64@codevalley( core, $, codeSize, codeOffset, trigger, debug_msg)",
+      "    sub /behaviour/fold-and-allocate/agent-integer/default/x64@codevalley( core, $, dataSize, dataOffset, trigger, debug_msg)",
+      "    sub /behaviour/fold-and-allocate/agent-integer/default/x64@codevalley( core, $, varsSize, varsOffset, trigger, debug_msg)",
+      "  }",
+      "end"
+    ]
+  }
+}

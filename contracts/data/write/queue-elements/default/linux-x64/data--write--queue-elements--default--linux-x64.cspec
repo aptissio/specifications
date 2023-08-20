@@ -1,0 +1,38 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/queue-elements/default/linux-x64",
+  "description": [
+    "To print all elements of a Queue, we follow the following steps:",
+    "[0] Run a loop till \"queue is not empty\".",
+    "[1] Print the first  element",
+    "[2] Remove the oldest element",
+    "[3] Add all element back in queue",
+    "  ",
+    "",
+    "Note: This process will remove all elements of the queue as well"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "queue name",
+      "protocol": "/data/queue/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "size of queue",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "elements",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ],
+  "obligations": []
+}

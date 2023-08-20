@@ -1,0 +1,35 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/csv-data/comment/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "unpack",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum length",
+      "minimum": "0",
+      "maximum": "2147483647",
+      "hint": "(2^31)-1"
+    },
+    {
+      "type": "string",
+      "name": "comment delimiter",
+      "length": "5",
+      "hint": "5"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "comment",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

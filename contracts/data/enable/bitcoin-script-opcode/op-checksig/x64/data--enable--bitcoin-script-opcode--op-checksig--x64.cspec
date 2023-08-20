@@ -1,0 +1,44 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/enable/bitcoin-script-opcode/op-checksig/x64",
+  "description": [
+    "Enable the OP_CHECKSIG Bitcoin script opcode.<BR>",
+    "At run-time, checks the signature (top of stack) against the public key (top-1 of stack) as a valid signature of the current transaction's input nominated by the transaction input index.",
+    "<P>The client is responsible for providing the previous public key script and the previous output value.  The client must provide a double SHA256 hash procedure which is used to hash the transaction during signature verification.</P>",
+    "The result is stored on the top of the script stack as either a TRUE (signature valid) or FALSE (signature invalid) value."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "opcode",
+      "protocol": "/data/bitcoin-script-opcode/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "current transaction",
+      "protocol": "/data/bitcoin-transaction/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "transaction input index",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "previous public key script",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "previous output value",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "double sha256 procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    }
+  ],
+  "obligations": []
+}

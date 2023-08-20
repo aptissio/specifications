@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/javascript/variable-name-constant/x64",
+  "description": [
+    "Add a unique variable name to a Javascript scope. This design appends \"v\" with a unique number.",
+    "",
+    "Example:",
+    "",
+    "      variable name = v1"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "uid scope",
+      "protocol": "/data/unique-identifier-scope/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "string",
+      "name": "variable name",
+      "length": "100",
+      "hint": "100"
+    }
+  ]
+}

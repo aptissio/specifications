@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/ipv6-address/inline/linux-x64",
+  "description": [
+    "Writes an IPv6 address to standard out in the format `2001:0db8:0000:0000:0000:ff00:0042:8329`<separator>"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write(ipv6 address)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "ipv6 address",
+      "protocol": "/data/ipv6-address/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "separator",
+      "length": "10000",
+      "hint": "10000"
+    }
+  ],
+  "obligations": []
+}

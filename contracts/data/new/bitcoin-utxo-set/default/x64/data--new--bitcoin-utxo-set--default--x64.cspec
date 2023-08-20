@@ -1,0 +1,43 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-utxo-set/default/x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "utxo capacity",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "[1 to (2^63)-1]"
+    },
+    {
+      "type": "integer",
+      "name": "maximum transaction output index",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "[1 to (2^63)-1]"
+    },
+    {
+      "type": "integer",
+      "name": "maximum transaction public key script size",
+      "minimum": "1",
+      "maximum": "9223372036854775807",
+      "hint": "[1 to (2^63)-1]"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "utxo set",
+      "protocol": "/data/bitcoin-utxo-set/default/x64"
+    }
+  ]
+}

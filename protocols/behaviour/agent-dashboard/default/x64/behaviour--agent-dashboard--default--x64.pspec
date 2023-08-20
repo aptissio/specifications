@@ -1,0 +1,138 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/behaviour/agent-dashboard/default/x64",
+  "description": [
+    "Design a HTML Agent dashboard."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "html dynamic data",
+        "protocol": "/data/html-dynamic-data/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "http server",
+        "protocol": "/system/http-document-handler/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target agent name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target network address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "agent map",
+        "protocol": "/data/sorted-map/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "agent name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "agent network address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "agent map structure",
+        "protocol": "/data/structure/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/agent-dashboard/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, html_dynamic_data, http_server, target_agent_name, target_network_address, agent_map, agent_name, agent_network_address, agent_map_structure, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, html_dynamic_data, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, http_server, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, target_agent_name, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, target_network_address, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, agent_map, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, agent_name, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, agent_network_address, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( core, $, agent_map_structure, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/behaviour/agent-dashboard/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "html dynamic data",
+        "protocol": "/data/html-dynamic-data/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "http server",
+        "protocol": "/system/http-document-handler/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target agent name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "target network address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "agent map",
+        "protocol": "/data/sorted-map/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "agent name",
+        "protocol": "/data/bytesequence/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "agent network address",
+        "protocol": "/data/network-address/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "agent map structure",
+        "protocol": "/data/structure/default/x64"
+      }
+    ],
+    "macro": [
+      "def (core, self, html_dynamic_data, http_server, target_agent_name, target_network_address, agent_map, agent_name, agent_network_address, agent_map_structure,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( core, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, html_dynamic_data, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, http_server, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, target_agent_name, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, target_network_address, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, agent_map, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, agent_name, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, agent_network_address, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( core, $, agent_map_structure, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

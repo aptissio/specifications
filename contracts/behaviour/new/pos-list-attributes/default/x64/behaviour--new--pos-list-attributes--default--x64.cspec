@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/pos-list-attributes/default/x64",
+  "description": [
+    "Create a structure into which attributes can be placed.",
+    "Create a structure into which list attributes can be placed. Attribute values are typically placed within a list or array."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "attribute meta context",
+      "protocol": "/data/structure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "attribute meta initialisation",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "attribute values",
+      "protocol": "/data/structure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "list attributes",
+      "protocol": "/behaviour/pos-list-attributes/default/x64"
+    }
+  ]
+}

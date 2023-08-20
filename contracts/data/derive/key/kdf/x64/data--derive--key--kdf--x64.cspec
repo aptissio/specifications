@@ -1,0 +1,47 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/derive/key/kdf/x64",
+  "description": [
+    "ANS X9.63 Key Derivation Function (KDF) shall be used to derive secret keying material from",
+    "a shared secret. The output from a KDF shall only be used for secret keying material, such as a",
+    "symmetric key used for data encryption or message integrity, a secret initialization vector, or a",
+    "master key that will be used to generate other keys (possibly using a different process)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "derive",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "shared secret(Z)",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "shared info(Optional)",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "keydatalen",
+      "minimum": "1",
+      "maximum": "4294967295",
+      "hint": "1 - (2^32)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "keying data(K)",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ]
+}

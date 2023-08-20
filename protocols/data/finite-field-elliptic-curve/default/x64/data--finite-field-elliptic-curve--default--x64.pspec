@@ -1,0 +1,66 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/finite-field-elliptic-curve/default/x64",
+  "description": [
+    "Describe an elliptic curve in the form y^2 \\= x^3 + a\\*x + b."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "a",
+        "protocol": "/data/finite-field-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "b",
+        "protocol": "/data/finite-field-integer/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/finite-field-elliptic-curve/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, a, b, chain_inout, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, a, trigger, debug_msg)",
+      " sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, b, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "<self>",
+        "protocol": "/data/finite-field-elliptic-curve/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "a",
+        "protocol": "/data/finite-field-integer/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "b",
+        "protocol": "/data/finite-field-integer/default/x64"
+      }
+    ],
+    "macro": [
+      "def(acs, chain_inout, a, b, trigger, debug_msg):",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, chain_inout, trigger, debug_msg) -> {",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, a, trigger, debug_msg)",
+      " sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, b, trigger, debug_msg)",
+      "  }",
+      "end "
+    ]
+  }
+}

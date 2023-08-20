@@ -1,0 +1,45 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-property/line-height/x64",
+  "description": [
+    "Add the Line-Height property to a cascaded Style Sheet (CSS) style.",
+    "",
+    "The line-height property specifies the height of a line.",
+    "",
+    "Specify the <i>line-height</i> of the element & whether the units are:",
+    "",
+    "    1. fixed(px)",
+    "     2. relative(%)",
+    "     3. none",
+    "     ",
+    "     [1, 2, 3] -> LINEHEIGHT_1PX, LINEHEIGHT_2PERCENTAGE, LINEHEIGHT_3NONE"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "line-height",
+      "minimum": "0",
+      "maximum": "1024",
+      "hint": "0 - 1024"
+    },
+    {
+      "type": "integer",
+      "name": "line-height unit",
+      "minimum": "1",
+      "maximum": "3",
+      "hint": "1 - 3"
+    }
+  ],
+  "obligations": []
+}

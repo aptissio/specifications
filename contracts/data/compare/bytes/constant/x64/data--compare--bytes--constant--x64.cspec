@@ -1,0 +1,28 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/compare/bytes/constant/x64",
+  "description": [
+    "Compare bytes against bytes.",
+    "Evaluate whether ~bytes~ begins with a constant ~string~."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "compare(string, bytes)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "string",
+      "length": "1048576",
+      "hint": "(2^20)"
+    },
+    {
+      "type": "abstraction",
+      "name": "bytes",
+      "protocol": "/data/bytes/default/x64"
+    }
+  ],
+  "obligations": []
+}

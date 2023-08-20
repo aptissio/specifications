@@ -1,0 +1,26 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/finite-state-machine-events/default/x64",
+  "description": [
+    "Define `finite state machine events` for use with the `finite state machine` (FSM).",
+    "",
+    "Events can be allocated at design time by using `/data/new/finite-state-machine-event/default/x64` contract."
+  ],
+  "requirements": [
+  ],
+  "obligations": [
+    {
+      "type": "integer",
+      "name": "event maximum",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "finite state machine events",
+      "protocol": "/data/finite-state-machine-events/default/x64"
+    }
+  ]
+}

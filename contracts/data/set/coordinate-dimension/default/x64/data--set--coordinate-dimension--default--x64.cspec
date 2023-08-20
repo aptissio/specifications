@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/set/coordinate-dimension/default/x64",
+  "description": [
+    "Set a single dimension of a coordinate.",
+    "Sets the integer value of a coordinate dimension. The condition will return false at run-time if the dimension does not exist."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "set(dimension,value)",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "coordinate",
+      "protocol": "/data/coordinate/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "dimension",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "value",
+      "minimum": "-9223372036854775808",
+      "maximum": "9223372036854775807",
+      "hint": "-(2^63) to (2^63)-1"
+    }
+  ],
+  "obligations": []
+}

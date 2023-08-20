@@ -1,0 +1,52 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/button-reset/x64",
+  "description": [
+    "The button defines a <button style=\"width: auto;\">RESET</button> button.",
+    "(resets the form-data to its initial values).",
+    "",
+    "Form id style specifies which form the button belongs to.",
+    "",
+    "Disabled specifies that a button should be disabled.",
+    "",
+    "This design assumes the button type of \"reset\".",
+    "",
+    "Add styling if required utilizing the class style handle. ",
+    "",
+    "[[https:www.w3schools.comtagsatt_button_type.asp][Learn more]]"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "apply child class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "boolean",
+      "name": "disabled"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "new child id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "child document",
+      "protocol": "/data/html-document/default/x64"
+    }
+  ]
+}

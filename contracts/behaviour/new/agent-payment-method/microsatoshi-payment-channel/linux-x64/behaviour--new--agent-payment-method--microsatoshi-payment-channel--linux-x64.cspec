@@ -1,0 +1,51 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/new/agent-payment-method/microsatoshi-payment-channel/linux-x64",
+  "description": [
+    "Design a new agent payment method using Microsatoshi Bitcoin payment channels.",
+    "",
+    "Payment Roles:",
+    "[0, 1, 2] -> PAYMENT_ROLE_BUYER, PAYMENT_ROLE_SELLER, PAYMENT_ROLE_BUYER_AND_SELLER"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "kademlia node",
+      "protocol": "/system/kademlia-node/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "agent payments",
+      "protocol": "/behaviour/agent-payments/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "startup",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "shutdown",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "payment roles",
+      "minimum": "0",
+      "maximum": "2",
+      "hint": "0 - 2"
+    }
+  ],
+  "obligations": []
+}

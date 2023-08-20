@@ -1,0 +1,36 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unpack/uint16be/default/x64",
+  "description": [
+    "Unpack the 16-bit big-endian integer into value if there's enough data to do so and it represents an integer within the minimum and maximum specified range.The unpack is only successful if the represented value is within the specified range. The value is provided to the client and is valid only upon successful unpacking.The client may freely manipulate the value while it remains valid (though this does not affect the actual packed data)."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "value = unpack(minimum, maximum)",
+      "protocol": "/data/unpack/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "minimum",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0, 65535"
+    },
+    {
+      "type": "integer",
+      "name": "maximum",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0, 65535"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "value",
+      "protocol": "/data/integer/default/x64"
+    }
+  ]
+}

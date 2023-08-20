@@ -1,0 +1,47 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant-property/text-align/x64",
+  "description": [
+    "Add one or more properties to a HTML Cascaded Style Sheet CSS style",
+    "",
+    "Add a Text Align property value in a HTML Document from the folowing options:",
+    "",
+    "",
+    "    -1. - inherit:   Inherits this property from its parent element.",
+    "     0 -  initial:\tSets this property to its default value. ",
+    "     1 -  left:       Aligns the text to the left. \t",
+    "     2 -  right: \t Aligns the text to the right. \t",
+    "     3 -  center: \tCenters the text. \t",
+    "     4 -  justify:    Stretches the lines so that each line has equal width ",
+    "                      like in newspapers and magazines. \t",
+    "     ",
+    "     ",
+    "     [-1, 0, 1, 2, 3, 4] -> TEXTALIGN_INHERIT, TEXTALIGN_0INITIAL, TEXTALIGN_1LEFT, ",
+    "                            TEXTALIGN_2RIGHT, TEXTALIGN_3CENTER, TEXTALIGN_4JUSTIFY",
+    "",
+    "Learn more: ",
+    "",
+    "https://www.w3schools.com/cssref/pr_text_text-align.ASP"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "style handle",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "text align value",
+      "minimum": "-1",
+      "maximum": "4",
+      "hint": "-1, 4"
+    }
+  ],
+  "obligations": []
+}

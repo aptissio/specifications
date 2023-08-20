@@ -1,0 +1,255 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/system/route/http-session-request/file-constant-type/x64",
+  "description": [
+    "This agent works with the http-server with sessions [/system/new/http-server/sessions/linux-x64](/valley/view//system/new/http-server/sessions/linux-x64).",
+    "",
+    "It requires protocols http-server and session-context. Also requires the exit from the previous task in http-server-task-manager to link to. It contributes the workspace for client to do any asynchronous work before contributing to response.",
+    "",
+    "The route agent provides the access to `route method`, `route authority` and `route path` from the http request to compare to desired values in provided `route condition`. If the `route condition` is not successful, route work will not execute.",
+    "",
+    "The agent routes with the given `file name` and requires `maximum file size`. On successful condition the route provides the `control app-flow` which allows client to execute asynchronous work before contributing to response. `Init app-flow from session` is a space for copying the session context to app-flow context but also to work with the `file name` if required.",
+    "",
+    "The agent requires the `file type` from enumerated list below and `encoding`. Example of encoding: \"charset=utf-8\". Encoding can be empty. This is added to the content type http-header.",
+    "",
+    "In app-flow context the client may request the reset of the session by setting the `control app-flow reset session flag`. The reset of session is executed after app-flow work if the flag is set.",
+    "",
+    "The `success render ` and `failure render` are a flows provided for client to store any context and to render the response. Contexts valid in success and failure flows are http-reposnse context, session context and app-flow context.",
+    "",
+    "The agent provides also access to the http-response2 and http-response-headers for client to contribute to the response in the work flow.",
+    "",
+    "The agent automatically handles the exception if the session can't be recalled or reset session fails. The route work will not be executed.",
+    "",
+    "Choose the File Type from the Common Mime Types below:",
+    "",
+    "      1 - audio/aac",
+    "      2 - application/x-abiword",
+    "      3 - application/x-freearc",
+    "      4 - image/avif ",
+    "      5 - video/x-msvideo ",
+    "      6 - application/vnd.amazon.ebook ",
+    "      7 - application/octet-stream ",
+    "      8 - image/bmp ",
+    "      9 - application/x-bzip",
+    "      10 - application/x-bzip2",
+    "      11 - application/x-cdf ",
+    "      12 - application/x-csh ",
+    "      13 - text/css ",
+    "      14 - text/csv ",
+    "      15 - application/msword ",
+    "      16 - application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "      17 - application/vnd.ms-fontobject ",
+    "      18 - application/epub+zip ",
+    "      19 - application/gzip ",
+    "      20 - image/gif ",
+    "      21 - text/html ",
+    "      22 - image/vnd.microsoft.icon ",
+    "      23 - text/calendar ",
+    "      24 - application/java-archive ",
+    "      25 - image/jpeg ",
+    "      26 - text/javascript",
+    "      27 - application/json ",
+    "      28 - application/ld+json ",
+    "      29 - audio/midi ",
+    "      30 - audio/x-midi ",
+    "      31 - text/javascript ",
+    "      32 - audio/mpeg ",
+    "      33 - video/mp4 ",
+    "      34 - video/mpeg ",
+    "      35 - application/vnd.apple.installer+xml ",
+    "      36 - application/vnd.oasis.opendocument.presentation ",
+    "      37 - application/vnd.oasis.opendocument.spreadsheet",
+    "      38 - application/vnd.oasis.opendocument.text ",
+    "      39 - audio/ogg ",
+    "      40 - video/ogg ",
+    "      41 - application/ogg",
+    "      42 - audio/opus ",
+    "      43 - font/otf ",
+    "      44 - image/png ",
+    "      45 - application/pdf ",
+    "      46 - application/x-httpd-php ",
+    "      47 - application/vnd.ms-powerpoint",
+    "      48 - application/vnd.openxmlformats-officedocument.presentationml.presentation ",
+    "      49 - application/vnd.rar ",
+    "      50 - application/x-sh ",
+    "      51 - image/svg+xml ",
+    "      52 - application/x-shockwave-flash",
+    "      53 - application/x-tar ",
+    "      54 - image/tiff ",
+    "      55 - video/mp2t ",
+    "      56 - font/ttf ",
+    "      57 - text/plain",
+    "      58 - application/vnd.visio ",
+    "      59 - audio/wav ",
+    "      60 - audio/webm ",
+    "      61 - video/webm ",
+    "      62 - image/webp ",
+    "      63 - font/woff ",
+    "      64 - font/woff2 ",
+    "      65 - application/xhtml+xml ",
+    "      66 - application/vnd.ms-excel ",
+    "      67 - application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "      68 - application/xml",
+    "      69 - application/vnd.mozilla.xul+xml",
+    "      70 - application/zip",
+    "      71 - video/3gpp",
+    "      72 - video/3gpp2",
+    "      73 - application/x-7z-compressed",
+    "",
+    "    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,\\",
+    "    26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, \\",
+    "    48, 49, 50, 51,52, 53, 54, 55, 56, 67, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73] -> ",
+    "    FILETYPE_1AUDIO, FILETYPE_2APP_XABIWORD, FILETYPE_3APP_FREEARC,FILETYPE_4IMGAVIF, FILETYPE_5VIDXMSVIDEO, FILETYPE_6APP_AMAZONEBOOK,",
+    "    FILETYPE_7APP_OCTETSTREAM, FILETYPE_8APP_IMGBMP, FILETYPE_9APP_XBZIP,FILETYPE_10APP_XBZIP2, FILETYPE_11APP_XCDF, FILETYPE_12APP_XCSH,",
+    "    FILETYPE_13TEXTCSS, FILETYPE_14TEXTCSV, FILETYPE_15APP_MSWORD,FILETYPE_16APP_VNDOPENXML, FILETYPE_17APP_VNDFONTOBJECT,FILETYPE_18APP_EPUBZIP,",
+    "    FILETYPE_19APP_GZIP, FILETYPE_20IMG_GIF, FILETYPE_21TEXT_HTML,FILETYPE_22IMG_VNDMSICON, FILETYPE_23TEXT_CALENDAR,FILETYPE_24APP_JAVAARCH, ",
+    "    FILETYPE_25IMG_JPEG, FILETYPE_26TEXT_JS, FILETYPE_27APP_JS,FILETYPE_28APP_LDJSON, FILETYPE_29AUDIO_MIDI, FILETYPE_30AUDIO_XMIDI, ",
+    "    FILETYPE_31TEXT_JS, FILETYPE_32AUDIO_MPEG, FILETYPE_33VIDEO_MP4,FILETYPE_34VIDEO_MPEG, FILETYPE_35APP_VNDAPPLE,FILETYPE_36APP_VNDOASIS_ODPRES,",
+    "    FILETYPE_37APP_VNDOASIS_ODSS, FILETYPE_38APP_VNDOASIS_ODTEXT,FILETYPE_39AUDIO_OGG, FILETYPE_40VIDEO_OGG, FILETYPE_41APP_OGG, ",
+    "    FILETYPE_42AUDIO_OPUS, FILETYPE_43FONT_OTF, FILETYPE_44IMG_PNG,FILETYPE_45APP_PDF, FILETYPE_46APP_XHTTPDPDF, FILETYPE_47APP_VNDMSPP,",
+    "    FILETYPE_48APP_VNDOPENXMLFORMATS, FILETYPE_49APP_VNDRAR,FILETYPE_50APP_XSH, FILETYPE_51IMG_SVGXML,FILETYPE_52APP_XSHOCKWAVEFLASH,",
+    "    FILETYPE_53APP_XTAR, FILETYPE_54IMG_TIFF, FILETYPE_55VIDEO_MP2T,FILETYPE_56FONT_TTF, FILETYPE_57TEXT_PLAIN, FILETYPE_58APP_VNDVISIO,",
+    "    FILETYPE_59AUDIO_WAV, FILETYPE_60AUDIO_WEBM, FILETYPE_61VIDEO_WEBM,FILETYPE_62IMG_WEBP, FILETYPE_63FONT_WOFF, FILETYPE_64FONT_WOFF2,",
+    "    FILETYPE_65APP_XHTMLXML, FILETYPE_66APP_VNDMSEXCEL, FILETYPE_67APP_VNDOPENXMLFORMATS, FILETYPE_68APP_XML,FILETYPE_69APP_VNDMOZILLXML,",
+    "    FILETYPE_70APP_ZIP, FILETYPE_71VIDEO_3GPP, FILETYPE_72VIDEO_3GPP2,FILETYPE_73APP_X7ZCOMPRESSED",
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "log manager",
+      "protocol": "/system/log-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "config manager",
+      "protocol": "/system/configuration-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http server",
+      "protocol": "/system/http-server/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http session context",
+      "protocol": "/system/http-session-context/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "new request task exit",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "control system label",
+      "length": "64",
+      "hint": "64"
+    },
+    {
+      "type": "integer",
+      "name": "control system priority",
+      "minimum": "0",
+      "maximum": "65535",
+      "hint": "0,65535"
+    },
+    {
+      "type": "abstraction",
+      "name": "file manager",
+      "protocol": "/system/file-manager/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "file name",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "maximum file size",
+      "minimum": "0",
+      "maximum": "10000000",
+      "hint": "0,10000000"
+    },
+    {
+      "type": "integer",
+      "name": "file type",
+      "minimum": "0",
+      "maximum": "73",
+      "hint": "0,73"
+    },
+    {
+      "type": "string",
+      "name": "encoding",
+      "length": "1000",
+      "hint": "1000"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "last request task exit",
+      "protocol": "/system/task-exit/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "route method",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "route authority",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "route path",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "route condition",
+      "protocol": "/data/boolean-condition/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "control app-flow reset session flag",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "initialilse app-flow from session",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "control app-flow",
+      "protocol": "/system/app-flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http-response2",
+      "protocol": "/data/http-response2/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "http response headers",
+      "protocol": "/data/http-headers/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success render",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure render",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/call/json-rpc/no-parameters/linux-x64",
+  "description": [
+    "Execute a remote procedure call using the [[https://www.jsonrpc.org/specification][JSON-RPC protocol]].",
+    "Execute a JSON-RPC call to a TCP/IP network address. Use Basic Authentication with the HTTP request if the username is not empty. The RPC will call the /method/ with the \"params\" JSON property set to /null/.",
+    "",
+    "A response that specifies a /null/ RPC error value, will provide the result within the scope of success. If an error is returned, the error code and error message are provided within the scope of failure."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "call(remote address, RPC username, RPC password, method, {success}, {failure})",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "remote address",
+      "protocol": "/data/network-address/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RPC username",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "RPC password",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "method",
+      "length": "8192",
+      "hint": "8192"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "result",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "error code",
+      "protocol": "/data/integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "error message",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success(result)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure(error code, error message)",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-network-seed/reserve/x64",
+  "description": [
+    "Design a new Bitcoin network seed.",
+    "Design a new structure for Bitcoin network seeds."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "network seeds",
+      "protocol": "/data/bitcoin-network-seed/default/x64"
+    }
+  ]
+}

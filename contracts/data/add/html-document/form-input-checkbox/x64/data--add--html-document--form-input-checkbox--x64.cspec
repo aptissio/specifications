@@ -1,0 +1,122 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/form-input-checkbox/x64",
+  "description": [
+    "This design defines a checkbox. Checkboxes are used to let a user select one or more options of a limited number of choices.",
+    "",
+    "The checkbox is shown as a square box that is ticked (checked) when activated.",
+    "",
+    "Add label content & choose to display label position options relative to Child Element:",
+    "",
+    "    1. Above",
+    "     2. Left",
+    "     3. Right",
+    "     4. Below",
+    "    ",
+    "    [1, 2, 3, 4] -> LABELPOSITION_1ABOVE, LABELPOSITION_2LEFT, ",
+    "                    LABELPOSITION_3RIGHT, LABELPOSITION_4BELOW",
+    "",
+    "",
+    "The required attribute specifies that an input field must be filled out before submitting the form.",
+    "",
+    "The initially checked sets whether or not this checkbox is checked by default (when the page loads)",
+    "",
+    "The title attribute specifies extra information about an element.",
+    "",
+    "<div style=\"width: 50%; background:#c8703f; color:#0992f9\">",
+    " <label for=\"vehicle1\"> I have a bike <-----LABEL",
+    "  <input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">",
+    " </label>",
+    "",
+    "<label for=\"vehicle2\"> I have a car <-----LABEL",
+    "  <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+    "  </label>",
+    "",
+    "<label for=\"vehicle3\"> I have a boat <-----LABEL",
+    "  <input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">",
+    "  </label><br><br>",
+    "</div>",
+    "",
+    "This design sets an input flag on form submission & decodes \"t\" indicating parameter true/checked. Example:",
+    "",
+    "         0 = t",
+    "",
+    "",
+    "Apply styling with the Class or optional ID selector provided.",
+    "",
+    "Learn more..https://www.w3schools.com/tags/att_input_type_checkbox.asp"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form input class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "form id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label class style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "label content",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "integer",
+      "name": "label position",
+      "minimum": "1",
+      "maximum": "4",
+      "hint": "1, 4"
+    },
+    {
+      "type": "boolean",
+      "name": "required"
+    },
+    {
+      "type": "abstraction",
+      "name": "initially checked",
+      "protocol": "/data/flag/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "title",
+      "length": "10000",
+      "hint": "10000"
+    },
+    {
+      "type": "abstraction",
+      "name": "form parameter decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "input ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "label ID style",
+      "protocol": "/data/html-style-constant/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "input flag",
+      "protocol": "/data/flag/default/x64"
+    }
+  ]
+}

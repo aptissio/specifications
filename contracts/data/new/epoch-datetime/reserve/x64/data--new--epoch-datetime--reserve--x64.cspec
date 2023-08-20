@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/epoch-datetime/reserve/x64",
+  "description": [
+    "This agent provides mechanism for calculating the epoch time to datetime.",
+    "",
+	"`init flow` - the flow for ***initialisation*** of the structures used and protocols.",
+	"",
+    "`epoch_datetime` - protocol holding the values and providing the procedure.",
+	"The limit of the maximum year is set to 9999."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "init flow",
+      "protocol": "/data/flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "epoch datetime",
+      "protocol": "/data/epoch-datetime/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-style-constant/id/x64",
+  "description": [
+    "Add a new HTML ID style to the selected html document. The supplied class name must ",
+    "",
+    "only contain valid Cascaded Style Sheet class name characters."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "html document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "id name",
+      "length": "80",
+      "hint": "80"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "id style",
+      "protocol": "/data/html-style-constant/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/byte/new/program/default/linux-a64",
+  "description": [
+    "Design the core outlines of a program, including headers and address-space layout.",
+    "Provision the bare-bones overhead for a program. The entirety of executable content is left for the client to define within the ~main~ ``construction-site``.",
+    "",
+    "Note that there is not even a clean \"exit\" functionality included here implicitly. It's the clients responsibility to ensure that the ~main~ work includes clean exits at the appropriate points. Failure to do so could result in undefined behaviour (though, generally a Segmentation Fault).",
+    "Construct a Linux ELF file.",
+    "",
+    "The CPU stack (pointed to by the Stack Pointer register, \"rsp\") is pre-populated with program arguments and environment variables, as per Linux standard."
+  ],
+  "requirements": [
+    {
+      "type": "site",
+      "name": "program file"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "main()",
+      "protocol": "/byte/construction-site/default/a64"
+    }
+  ]
+}

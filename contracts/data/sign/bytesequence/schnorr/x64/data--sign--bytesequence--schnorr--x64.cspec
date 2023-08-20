@@ -1,0 +1,62 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/sign/bytesequence/schnorr/x64",
+  "description": [
+    "Sign a message with a private key(x), by generating a unique deterministic secret nonce(k) as specificed in the RFC6979 sec 3.6 \u2018additional data\u2019 mechanism, by appending the 16-byte ASCII string \u201cSchnorr+SHA256\u2423\u2423\". (\u2423 represents 0x20 \u2013 ASCII space). The Schnorr signature operates on secp256k1 curve so that bitcoin's ECDSA keypairs (P, x) can be re-used as Schnorr keypairs. The recommeded hash procedure and HMAC procedure are sha256 and HMAC-256 respectively."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "flow",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "private key",
+      "protocol": "/data/bitcoin-extended-private-key/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "hash procedure",
+      "protocol": "/data/hash-procedure/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "HMAC procedure",
+      "protocol": "/data/hmac-procedure/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "schnorr signature(R,s)",
+      "protocol": "/data/bitcoin-signature/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "message(m)",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "public key",
+      "protocol": "/data/finite-field-elliptic-curve-point/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "success",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "failure",
+      "protocol": "/data/flow/default/x64"
+    }
+  ]
+}

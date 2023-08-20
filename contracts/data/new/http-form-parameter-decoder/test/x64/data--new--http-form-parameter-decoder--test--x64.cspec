@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/http-form-parameter-decoder/test/x64",
+  "description": [
+    "Create a dull HTTP parameter decoder.",
+    "This contribution provides a minimal HTTP parameter decoder collaboration to avoid the need to include an entire web-server in test Pilot expressions."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "new",
+      "protocol": "/data/flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "decoder",
+      "protocol": "/data/http-form-parameter-decoder/default/x64"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-extended-public-key/bookended/linux-x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "100",
+      "hint": "100"
+    },
+    {
+      "type": "abstraction",
+      "name": "extended public key",
+      "protocol": "/data/bitcoin-extended-public-key/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "suffix",
+      "length": "100",
+      "hint": "100"
+    }
+  ],
+  "obligations": []
+}

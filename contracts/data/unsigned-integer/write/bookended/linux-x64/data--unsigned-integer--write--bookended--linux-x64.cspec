@@ -1,0 +1,34 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/unsigned-integer/write/bookended/linux-x64",
+  "description": [
+    "Convert an unsigned binary number to a human-readable, ASCII, hexadecimal encoded integer and write to standard out, along with a design time /prefix/ and /suffix.",
+    "The hexadecimal representation is shown in a big-endian format."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write(prefix,unsigned-integer, suffix)",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "8000",
+      "hint": "8000"
+    },
+    {
+      "type": "abstraction",
+      "name": "unsigned-integer",
+      "protocol": "/data/unsigned-integer/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "suffix",
+      "length": "8000",
+      "hint": "8000"
+    }
+  ],
+  "obligations": []
+}

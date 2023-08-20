@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/add/html-document/font/x64",
+  "description": [
+    "Add to a HTML document.",
+    "Allows custom fonts to be applied to a HTML Document"
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "parent document",
+      "protocol": "/data/html-document/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "font-family",
+      "length": "30",
+      "hint": "30"
+    },
+    {
+      "type": "string",
+      "name": "url source",
+      "length": "1000",
+      "hint": "1000"
+    }
+  ],
+  "obligations": []
+}

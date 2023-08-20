@@ -1,0 +1,78 @@
+{
+  "type": "protocol",
+  "policy": 0,
+  "name": "/data/http-server-request/default/x64",
+  "description": [
+    "Complete protocol for a HTTP request."
+  ],
+  "host": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "http request",
+        "protocol": "/data/http-request2/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "http headers",
+        "protocol": "/data/http-headers/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "source IP",
+        "protocol": "/data/network-address/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/http-server-request/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, http_request, http_headers, source_IP, self, trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/host/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, http_request, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, http_headers, trigger, debug_msg)",
+      "sub /behaviour/collect-and-distribute/agent-group/default/x64@codevalley( acs, $, source_IP, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  },
+  "join": {
+    "requirements": [
+      {
+        "type": "abstraction",
+        "name": "COLLABORATION",
+        "protocol": "/data/http-server-request/default/x64"
+      }
+    ],
+    "obligations": [
+      {
+        "type": "abstraction",
+        "name": "http request",
+        "protocol": "/data/http-request2/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "http headers",
+        "protocol": "/data/http-headers/default/x64"
+      },
+      {
+        "type": "abstraction",
+        "name": "source IP",
+        "protocol": "/data/network-address/default/x64"
+      }
+    ],
+    "macro": [
+      "def (acs, self, http_request, http_headers, source_IP,  trigger, debug_msg) :",
+      "sub /behaviour/add/collaboration-endpoint/join/x64@codevalley( acs, self, trigger, debug_msg) -> {",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, http_request, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, http_headers, trigger, debug_msg)",
+      "sub /behaviour/fold-and-allocate/agent-group/default/x64@codevalley( acs, $, source_IP, trigger, debug_msg)",
+      "}",
+      "end"
+    ]
+  }
+}

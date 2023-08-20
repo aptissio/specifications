@@ -1,0 +1,33 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/write/bitcoin-seed/bookended/linux-x64",
+  "description": [
+    ""
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "write",
+      "protocol": "/data/flow/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "prefix",
+      "length": "1048576",
+      "hint": "2^20"
+    },
+    {
+      "type": "abstraction",
+      "name": "seed",
+      "protocol": "/data/bitcoin-seed/default/x64"
+    },
+    {
+      "type": "string",
+      "name": "suffix",
+      "length": "1048576",
+      "hint": "2^20"
+    }
+  ],
+  "obligations": []
+}

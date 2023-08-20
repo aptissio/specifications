@@ -1,0 +1,29 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/program/unit-test/linux-x64",
+  "description": [
+    "Create a new program to unit test a design."
+  ],
+  "requirements": [
+    {
+      "type": "site",
+      "name": "site"
+    },
+    {
+      "type": "boolean",
+      "name": "ENABLE STDOUT"
+    },
+    {
+      "type": "boolean",
+      "name": "STOP TEST UPON FIRST FAILURE"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "unit test",
+      "protocol": "/data/unit-test-procedure/default/x64"
+    }
+  ]
+}

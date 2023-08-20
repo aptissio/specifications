@@ -1,0 +1,71 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/behaviour/authorise/agent-payments/sale/linux-x64",
+  "description": [
+    "Design a sales authorisation feature into a agent payments.",
+    "",
+    "A sales authorisation is a reference that uniquely identifies a sales transaction between a buyer and a seller.",
+    "",
+    "A sales authorisation is obtained by submitting a buyer's `purchase authorisation` to an agent sales manager and processing the necessary payment. The `specialist name` offered by the agent must match that within the `purchase authorisation` or else the sales authorisation will be declined.",
+    "",
+    "A purchase authorisation consists of:",
+    "* The customer's sales network address",
+    "* An authorisation token",
+    "* The fully-qualified specialist name of the agent contract to be purchased.",
+    "* The \"price tag\" of the agent contract to be purchased.",
+    "* The customer's \"payment entity\".",
+    "",
+    "Where __price tag__ and __payment entity__ are strings defined by the applicable payment method to be used.",
+    "",
+    "The client is responsible for obtaining the purchase authorisation, using a feature such as `/behaviour/authorise/agent-payments/purchase/linux-x64`, and transporting it to this feature.",
+    "",
+    "`default sales authorisation timeout` is the default number of seconds allowed for the acquisition of a sales authorisation which may include a payment process."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "agent payments",
+      "protocol": "/behaviour/agent-payments/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "task scheduler",
+      "protocol": "/system/task-scheduler/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "timer manager",
+      "protocol": "/system/timer-manager/default/x64"
+    },
+    {
+      "type": "integer",
+      "name": "default sales authorisation timeout seconds",
+      "minimum": "0",
+      "maximum": "9223372036854775807",
+      "hint": "0 to (2^63)-1"
+    },
+    {
+      "type": "abstraction",
+      "name": "specialist name",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "purchase authorisation",
+      "protocol": "/data/bytesequence/default/x64"
+    },
+    {
+      "type": "abstraction",
+      "name": "request sales authorisation (purchase authorisation)",
+      "protocol": "/system/app-flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "sales authorisation",
+      "protocol": "/data/bytesequence/default/x64"
+    }
+  ]
+}

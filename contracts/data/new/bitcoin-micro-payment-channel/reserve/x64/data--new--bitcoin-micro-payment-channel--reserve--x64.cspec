@@ -1,0 +1,23 @@
+{
+  "type": "supplier",
+  "supplier": "aptissio",
+  "name": "/data/new/bitcoin-micro-payment-channel/reserve/x64",
+  "description": [
+    "Provide a new micro-payment channel.",
+    "Reserves the structures for a new /micro-payment channel/."
+  ],
+  "requirements": [
+    {
+      "type": "abstraction",
+      "name": "reserve()",
+      "protocol": "/data/flow/default/x64"
+    }
+  ],
+  "obligations": [
+    {
+      "type": "abstraction",
+      "name": "micro-payment channel",
+      "protocol": "/data/bitcoin-micro-payment-channel/default/x64"
+    }
+  ]
+}
